@@ -1,0 +1,1400 @@
+{
+    "attacks":[
+        {
+            "id":"1",
+            "name": "Absorb",
+            "background": true,
+            "coloredBackground": true,
+            "psychicBackground": false,
+            "scroll": false, 
+            "code": "00 A3 27 00 2F 27 00 97 27 0A 03 2A 01 0C 0C 08 02 24 7B 3E 08 02 05 01 00 01 00 00 00 04 00 ED 33 05 19 AD 00 3F 02 08 7C 3E 08 02 04 00 00 00 00 01 00 02 00 04 02 03 F9 89 09 08 05 05 01 00 00 00 05 00 05 00 01 00 05 04 03 0E 44 EC 1C 08 05 04 0F 0E C9 56 1D 08 05 02 24 7B 3E 08 02 05 01 00 01 00 04 00 00 00 ED 33 05 0B 03 0D 08"
+        },
+        {
+            "id":"2",
+            "name": "Acid",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,
+            "code": "00 A6 27 0A 03 02 38 6A 3E 08 82 06 14 00 00 00 28 00 01 00 00 00 00 00 19 77 00 C0 04 05 02 38 6A 3E 08 82 06 14 00 00 00 28 00 01 00 18 00 00 00 19 77 00 C0 04 05 02 38 6A 3E 08 82 06 14 00 00 00 28 00 01 00 E8 FF 00 00 19 77 00 C0 04 0F 03 1D 8B 09 08 05 05 01 00 02 00 00 00 0A 00 01 00 03 1D 8B 09 08 05 05 03 00 02 00 00 00 0A 00 01 00 03 DD 9B 0B 08 02 06 14 00 02 00 02 00 00 00 0C 00 1E 7C 02 84 6A 3E 08 82 05 00 00 EA FF 00 00 0F 00 37 00 19 75 00 3F 04 0A 02 84 6A 3E 08 82 05 E6 FF E8 FF 00 00 0F 00 37 00 19 75 00 3F 04 0A 02 84 6A 3E 08 82 05 0F 00 E5 FF 00 00 0F 00 32 00 19 75 00 3F 04 0A 02 84 6A 3E 08 82 05 F1 FF EF FF 00 00 0A 00 2D 00 19 75 00 3F 04 0A 02 84 6A 3E 08 82 05 1B 00 EA FF 00 00 0F 00 32 00 19 75 00 3F 05 0B 03 08"
+        },
+        {
+            "id":"118",
+            "name": "Acid Armor",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "0A 00 0C 0F 00 03 F9 12 0E 08 02 01 00 00 19 D3 00 C0 05 0D 0B 00 04 01 08"
+        },
+        {
+            "id":"119",
+            "name": "Aerial Ace",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 9A 27 0A 01 0C 0C 08 03 7D 90 09 08 02 05 00 00 18 00 06 00 01 00 05 00 03 99 AB 0B 08 02 04 00 00 04 00 07 00 03 00 02 94 32 3E 08 02 03 28 00 E0 FF 00 00 19 99 00 C0 04 05 03 F9 89 09 08 02 05 01 00 00 00 03 00 0A 00 01 00 02 3C 7B 3E 08 02 07 1F 00 03 00 01 00 00 00 0A 00 00 00 00 00 19 81 00 3F 05 0B 01 0D 08"
+        },
+        {
+            "id":"91",
+            "name": "Aeroblast",
+            "background": true,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": true, 
+            "code": "00 AA 27 00 97 27 0A 03 24 E8 59 1D 04 14 12 17 03 2D B8 0B 08 05 04 00 F7 00 03 01 00 FF FF 28 01 0C 0C 08 0E B9 F7 1C 08 03 F9 89 09 08 05 05 01 00 05 00 00 00 32 00 01 00 0E B9 F7 1C 08 0E B9 F7 1C 08 0E B9 F7 1C 08 0E B9 F7 1C 08 05 02 08 7C 3E 08 02 04 00 00 00 00 01 00 00 00 19 81 00 3F 05 0B 03 0D 04 00 0E C7 59 1D 08 08"
+        },
+        {
+            "id":"120",
+            "name": "Agility",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "0A 02 0C 0C 08 03 7D 90 09 08 02 05 00 00 18 00 06 00 04 00 04 00 03 99 AB 0B 08 02 04 00 00 04 00 07 00 0A 00 19 80 00 C0 04 0C 19 80 00 C0 04 0C 19 80 00 C0 04 0C 19 80 00 C0 04 0C 19 80 00 C0 04 0C 05 0B 02 0D 04 01 08"
+        },
+        {
+            "id":"121",
+            "name": "Air Cutter",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 13 27 00 9A 27 00 97 27 04 00 0A 03 0C 0C 08 04 00 03 F1 76 0A 08 02 05 20 00 E8 FF 00 06 02 00 80 00 05 19 79 00 3F 02 AC 32 3E 08 02 04 28 00 E0 FF 00 00 02 00 04 05 03 1D 8B 09 08 02 05 01 00 02 00 00 00 08 00 01 00 03 1D 8B 09 08 02 05 03 00 02 00 00 00 08 00 01 00 05 0D 0B 03 04 00 08"
+        },
+        {
+            "id":"70",
+            "name": "Amnesia",
+            "background": true,
+            "coloredBackground": false,
+            "psychicBackground": true,
+            "scroll": false, 
+            "code": "00 6D 27 0E BB 59 1D 08 04 08 02 F4 6F 3E 08 14 00 19 B3 00 C0 04 36 1C B3 00 C0 10 03 05 0E C7 59 1D 08 08"
+        },
+        {
+            "id":"122",
+            "name": "Ancientpower",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 4A 27 00 97 27 0A 03 0C 0C 08 02 88 7B 3E 08 02 04 04 00 01 00 0A 00 01 00 02 C0 74 3E 08 02 05 14 00 20 00 D0 FF 32 00 02 00 02 C0 74 3E 08 02 05 00 00 20 00 DA FF 19 00 05 00 02 C0 74 3E 08 02 05 20 00 20 00 E4 FF 28 00 03 00 02 C0 74 3E 08 02 05 EC FF 20 00 D0 FF 32 00 02 00 02 C0 74 3E 08 02 05 14 00 20 00 E4 FF 3C 00 01 00 02 C0 74 3E 08 02 05 00 00 20 00 E4 FF 1E 00 04 00 03 1D 8B 09 08 02 05 00 00 01 00 00 00 1E 00 01 00 19 A4 00 C0 04 0A 02 C0 74 3E 08 02 05 0F 00 20 00 D0 FF 19 00 05 00 02 C0 74 3E 08 02 05 F6 FF 20 00 D6 FF 1E 00 04 00 04 0A 02 C0 74 3E 08 02 05 00 00 20 00 D6 FF 19 00 05 00 02 C0 74 3E 08 02 05 E7 FF 20 00 D0 FF 1E 00 04 00 05 02 9C 4E 3D 08 02 05 00 00 10 00 00 00 00 00 04 00 04 03 19 AA 00 3F 02 08 7C 3E 08 03 04 00 00 00 00 01 00 01 00 03 1D 8B 09 08 02 05 01 00 03 00 00 00 06 00 01 00 05 02 84 4E 3D 08 02 03 00 00 00 00 07 00 05 0B 03 0D 08"
+        },
+        {
+            "id":"123",
+            "name": "Arm Thrust",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 9F 27 00 97 27 28 01 0C 0C 08 03 81 99 09 08 05 04 08 00 05 00 00 00 00 00 04 06 02 54 4E 3D 08 02 02 04 00 03 00 04 04 19 BA 00 3F 02 AC 68 3E 08 82 04 0A 00 F8 FF 0E 00 03 00 05 03 81 99 09 08 05 04 08 00 05 00 00 00 01 00 19 7F 00 3F 11 00 2F 1D 08"
+        },
+        {
+            "id":"3",
+            "name": "Aromatherapy",
+            "background": true,
+            "coloredBackground": true,
+            "psychicBackground": false,
+            "scroll": false,
+            "code": "19 C3 00 00 00 AF 27 00 DB 27 00 41 27 02 24 7B 3E 08 00 05 01 00 00 00 00 00 07 00 ED 33 04 01 0A 00 04 01 02 24 30 3E 08 00 07 18 00 10 00 00 00 02 00 02 00 00 00 00 00 02 24 30 3E 08 42 07 40 00 18 00 00 00 03 00 01 00 01 00 00 00 02 3C 30 3E 08 00 07 10 00 18 00 00 00 02 00 01 00 00 00 00 00 04 14 02 24 30 3E 08 42 07 30 00 0C 00 00 00 04 00 03 00 01 00 00 00 02 24 30 3E 08 00 07 64 00 10 00 00 00 03 00 02 00 00 00 00 00 02 24 30 3E 08 00 07 4A 00 18 00 B4 00 03 00 02 00 00 00 00 00 04 0A 02 24 30 3E 08 42 07 50 00 1E 00 00 00 04 00 01 00 01 00 00 00 02 24 30 3E 08 00 07 80 00 0C 00 00 00 03 00 03 00 00 00 00 00 02 3C 30 3E 08 00 07 5A 00 10 00 00 00 02 00 01 00 00 00 00 00 05 0B 00 04 01 02 24 7B 3E 08 00 05 01 00 00 00 07 00 00 00 ED 33 04 01 19 E8 00 C0 03 85 20 0E 08 02 01 01 00 05 19 DD 00 C0 02 0C 34 3E 08 10 07 F1 FF 00 00 00 00 00 00 20 00 3C 00 01 00 04 08 02 0C 34 3E 08 10 07 0C 00 FB FF 00 00 00 00 20 00 3C 00 01 00 05 19 5F 00 C0 02 24 7B 3E 08 00 05 2B 00 03 00 0A 00 00 00 ED 33 02 E0 40 3E 08 10 04 00 00 00 00 00 00 01 00 05 08"
+        },
+        {
+            "id":"124",
+            "name": "Assist",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 0C 28 02 E4 F5 3F 08 32 05 70 00 F0 FF 8C 00 80 00 24 00 04 02 02 E4 F5 3F 08 32 05 D0 00 80 00 F0 FF 30 00 24 00 19 94 00 00 04 02 02 E4 F5 3F 08 32 05 F0 FF 70 00 00 01 F0 FF 24 00 19 94 00 00 04 02 02 E4 F5 3F 08 32 05 6C 00 80 00 54 00 F0 FF 24 00 19 94 00 00 04 02 02 E4 F5 3F 08 32 05 F0 FF 38 00 00 01 38 00 24 00 19 94 00 00 08"
+        },
+        {
+            "id":"125",
+            "name": "Astonish",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 21 28 19 D7 00 C0 02 54 4E 3D 08 02 02 04 00 06 00 04 19 02 94 6D 3E 08 85 02 00 00 01 00 19 C6 00 3F 02 94 6D 3E 08 85 02 01 00 01 00 03 1D 8B 09 08 02 05 01 00 04 00 00 00 05 00 01 00 03 21 9A 0A 08 03 00 05 08"
+        },
+        {
+            "id":"68",
+            "name": "Attract",
+            "background": true,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,   
+            "code": "00 E8 27 1C CD 00 C0 0C 03 03 05 97 09 08 05 05 00 00 0C 00 00 10 04 00 00 00 04 0F 02 18 42 3E 08 83 02 14 00 F8 FF 05 19 DB 00 3F 02 30 42 3E 08 83 02 A0 00 E0 FF 02 30 42 3E 08 83 02 00 FF D8 FF 02 30 42 3E 08 83 02 80 00 F0 FF 02 30 42 3E 08 83 02 A0 01 DA FF 02 30 42 3E 08 83 02 80 FF EA FF 02 30 42 3E 08 83 02 80 FE E1 FF 05 1D DC 00 00 0F 03 E9 9C 0A 08 05 00 02 48 42 3E 08 28 03 10 00 00 01 00 00 02 48 42 3E 08 28 03 E0 00 F0 00 0F 00 02 48 42 3E 08 28 03 7E 00 10 01 1E 00 02 48 42 3E 08 28 03 50 00 E0 00 2D 00 02 48 42 3E 08 28 03 AA 00 10 01 3C 00 02 48 42 3E 08 28 03 28 00 00 01 4B 00 02 48 42 3E 08 28 03 70 00 00 01 5A 00 02 48 42 3E 08 28 03 C8 00 10 01 5A 00 04 4B 03 DD 9B 0B 08 02 06 04 00 04 00 04 00 00 00 0A 00 3F 6F 08"
+        },
+        {
+            "id":"71",
+            "name": "Aurora Beam",
+            "background": true,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false, 
+            "code": "00 9C 27 14 14 17 19 AF 00 C0 10 07 00 00 03 61 AF 0A 08 0A 01 82 00 0E C6 E4 1C 08 03 1D 8B 09 08 05 05 01 00 01 00 00 00 11 00 01 00 0E C6 E4 1C 08 0E C6 E4 1C 08 0E C6 E4 1C 08 10 07 FF FF 1F 39 CF 0D 08 07 B0 00 C0 FF 3F 00 03 00 06 00 00 00 0A 00 03 1D 8B 09 08 05 05 01 00 02 00 00 00 28 00 01 00 0E C6 E4 1C 08 0E C6 E4 1C 08 0E C6 E4 1C 08 0E C6 E4 1C 08 0E C6 E4 1C 08 0E C6 E4 1C 08 05 15 17 08"
+        },
+        {
+            "id":"126",
+            "name": "Barrage",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 0E 28 03 19 25 0E 08 03 00 19 BA 00 C0 04 18 02 88 7B 3E 08 02 04 08 00 01 00 28 00 01 00 03 F9 89 09 08 03 05 01 00 00 00 04 00 14 00 01 00 03 F9 89 09 08 03 05 03 00 00 00 04 00 14 00 01 00 1C CF 00 3F 08 02 08"
+        },
+        {
+            "id":"127",
+            "name": "Barrier",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 B9 27 0C 00 10 1D C9 00 C0 0F 02 58 6E 3E 08 03 03 28 00 00 00 B9 27 05 04 01 0D 08"
+        },
+        {
+            "id":"54",
+            "name": "Baton Pass",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 F2 27 19 D9 00 C0 03 DD 9B 0B 08 02 06 1F 00 01 00 02 00 00 00 0B 00 DF 7A 02 50 F1 3F 08 02 00 08"
+        },
+        {
+            "id":"128",
+            "name": "Beat Up",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 97 27 00 9F 27 0A 01 0C 0C 08 02 08 7C 3E 08 82 04 EC FF EC FF 01 00 02 00 02 10 67 3E 08 83 05 EC FF F4 FF 08 00 01 00 00 00 03 F9 89 09 08 02 05 01 00 03 00 00 00 06 00 01 00 19 74 00 3F 04 08 02 08 7C 3E 08 82 04 08 00 00 00 01 00 02 00 02 10 67 3E 08 83 05 08 00 08 00 08 00 01 00 00 00 03 F9 89 09 08 02 05 01 00 03 00 00 00 06 00 01 00 19 74 00 3F 05 0B 01 0D 08"
+        },
+        {
+            "id":"129",
+            "name": "Belly Drum",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 58 27 00 D1 27 03 E9 65 0A 08 02 00 05 0E 8D D1 1C 08 02 14 39 3E 08 02 04 00 00 00 00 00 00 00 00 19 B2 00 C0 04 0F 0E 72 D1 1C 08 02 14 39 3E 08 02 04 01 00 01 00 01 00 00 00 19 B2 00 C0 04 0F 0E 8D D1 1C 08 02 14 39 3E 08 02 04 00 00 03 00 03 00 80 00 19 B2 00 C0 04 07 0E 72 D1 1C 08 02 14 39 3E 08 02 04 01 00 02 00 00 00 80 00 19 B2 00 C0 04 07 0E 8D D1 1C 08 02 14 39 3E 08 02 04 00 00 01 00 01 00 00 00 19 B2 00 C0 04 07 0E 72 D1 1C 08 02 14 39 3E 08 02 04 01 00 00 00 03 00 00 00 19 B2 00 C0 05 03 A1 66 0A 08 02 00 05 08"
+        },
+        {
+            "id":"130",
+            "name": "Bide Turn 1",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "1C 91 00 C0 09 02 03 DD 9B 0B 08 02 06 02 00 02 00 02 00 00 00 0B 00 1F 00 03 1D 8B 09 08 02 05 00 00 01 00 00 00 20 00 01 00 05 08"
+        },
+        {
+            "id":"131",
+            "name": "Bide Turn 2",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 97 27 0A 03 0C 0C 08 1C 91 00 C0 09 02 03 F9 A7 0B 08 0A 05 02 00 02 00 00 00 0B 00 1F 00 03 1D 8B 09 08 02 05 00 00 01 00 00 00 20 00 01 00 05 02 9C 4E 3D 08 02 05 00 00 18 00 00 00 00 00 04 00 05 03 D1 8C 09 08 02 05 00 00 02 00 00 00 0C 00 01 00 03 1D 8B 09 08 02 05 01 00 03 00 00 00 10 00 01 00 19 84 00 3F 02 08 7C 3E 08 01 04 12 00 F8 FF 01 00 01 00 04 05 19 84 00 3F 02 08 7C 3E 08 01 04 EE FF 08 00 01 00 01 00 04 05 19 84 00 3F 02 08 7C 3E 08 01 04 F8 FF FB FF 01 00 01 00 05 04 05 02 84 4E 3D 08 02 03 00 00 00 00 07 00 05 03 F9 A7 0B 08 0A 05 02 00 02 00 0B 00 00 00 1F 00 05 0B 03 0D 08"
+        },
+        {
+            "id":"132",
+            "name": "Bind",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "03 05 97 09 08 05 05 00 00 06 00 00 0D 04 00 00 00 19 A3 00 3F 0E 26 0D 1D 08 0E 26 0D 1D 08 05 08"
+        },
+        {
+            "id":"133",
+            "name": "Bite",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 9B 27 00 97 27 0A 01 0C 0C 08 19 9A 00 3F 02 30 79 3E 08 02 06 00 00 E0 FF 00 00 00 00 33 03 0A 00 02 30 79 3E 08 02 06 00 00 20 00 04 00 00 00 CD FC 0A 00 04 0A 02 08 7C 3E 08 02 04 00 00 00 00 01 00 02 00 03 F9 89 09 08 05 05 01 00 00 00 04 00 07 00 01 00 05 0B 01 0D 04 01 08"
+        },
+        {
+            "id":"113",
+            "name": "Blast Burn",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 33 27 00 97 27 0A 03 0C 0C 08 19 8E 00 C0 02 A0 5C 3E 08 02 06 E0 FF 00 00 18 00 00 00 00 00 00 00 02 A0 5C 3E 08 02 06 EC FF F6 FF 18 00 00 00 00 00 00 00 02 A0 5C 3E 08 42 06 00 00 F0 FF 18 00 00 00 00 00 00 00 02 A0 5C 3E 08 42 06 14 00 F6 FF 18 00 00 00 00 00 00 00 02 A0 5C 3E 08 42 06 20 00 00 00 18 00 00 00 00 00 00 00 02 A0 5C 3E 08 42 06 14 00 0A 00 18 00 00 00 00 00 00 00 02 A0 5C 3E 08 02 06 00 00 10 00 18 00 00 00 00 00 00 00 02 A0 5C 3E 08 02 06 EC FF 0A 00 18 00 00 00 00 00 00 00 04 19 19 8A 00 C0 02 A0 5C 3E 08 02 06 C0 FF 00 00 18 00 00 00 00 00 00 00 02 A0 5C 3E 08 06 06 D8 FF EC FF 18 00 00 00 00 00 00 00 02 A0 5C 3E 08 46 06 00 00 E0 FF 18 00 00 00 00 00 00 00 02 A0 5C 3E 08 46 06 28 00 EC FF 18 00 00 00 00 00 00 00 03 F9 89 09 08 05 05 01 00 06 00 00 00 08 00 01 00 02 A0 5C 3E 08 42 06 40 00 00 00 18 00 00 00 00 00 00 00 02 A0 5C 3E 08 42 06 28 00 14 00 18 00 00 00 00 00 00 00 02 A0 5C 3E 08 02 06 00 00 20 00 18 00 00 00 00 00 00 00 02 A0 5C 3E 08 02 06 D8 FF 14 00 18 00 00 00 00 00 00 00 03 E9 A0 0B 08 02 03 01 01 01 01 01 01 04 19 19 8A 00 C0 02 A0 5C 3E 08 02 06 A0 FF 00 00 18 00 00 00 00 00 00 00 02 A0 5C 3E 08 06 06 C4 FF E2 FF 18 00 00 00 00 00 00 00 02 A0 5C 3E 08 46 06 00 00 D0 FF 18 00 00 00 00 00 00 00 02 A0 5C 3E 08 46 06 3C 00 E2 FF 18 00 00 00 00 00 00 00 02 08 7C 3E 08 82 04 FC FF 03 00 01 00 00 00 03 F9 89 09 08 05 05 01 00 0C 00 00 00 14 00 01 00 03 7D A4 0B 08 02 04 02 00 00 00 0A 00 01 00 02 A0 5C 3E 08 42 06 60 00 00 00 18 00 00 00 00 00 00 00 02 A0 5C 3E 08 42 06 3C 00 1E 00 18 00 00 00 00 00 00 00 02 A0 5C 3E 08 02 06 00 00 30 00 18 00 00 00 00 00 00 00 02 A0 5C 3E 08 02 06 C4 FF 1E 00 18 00 00 00 00 00 00 00 03 E9 A0 0B 08 02 03 01 01 01 01 01 01 05 0B 03 0D 08"
+        },
+        {
+            "id":"134",
+            "name": "Blaze Kick",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 97 27 00 9F 27 00 2D 27 0A 01 0C 0C 08 19 89 00 3F 02 8C 67 3E 08 83 04 00 00 00 00 01 00 1E 00 03 F9 A7 0B 08 0A 05 04 00 02 00 00 00 07 00 FF 7F 04 1E 19 8C 00 3F 02 08 7C 3E 08 82 04 00 00 00 00 01 00 00 00 03 1D 8B 09 08 02 05 01 00 03 00 00 00 0E 00 01 00 03 F9 A7 0B 08 0A 05 04 00 02 00 00 00 00 00 FF 7F 02 3C 7B 3E 08 02 07 1F 00 03 00 01 00 00 00 08 00 00 00 00 00 0E 50 09 1D 08 05 0B 01 0D 08"
+        },
+        {
+            "id":"92",
+            "name": "Blizzard",
+            "background": true,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": true, 
+            "code": "00 9D 27 0A 03 03 21 B9 0B 08 02 00 14 09 17 03 2D B8 0B 08 05 04 00 F7 00 00 01 00 FF FF 17 05 1B 92 00 C0 3F 02 00 0E B8 E7 1C 08 0E B8 E7 1C 08 19 93 00 3F 05 0E 8E 54 1D 08 05 0B 03 04 14 0E C7 59 1D 08 08"
+        },
+        {
+            "id":"135",
+            "name": "Block",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 0A 28 02 EC F6 3F 08 C2 00 19 BA 00 3F 08"
+        },
+        {
+            "id":"136",
+            "name": "Body Slam",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 97 27 0A 03 0C 0C 08 19 91 00 C0 02 6C 4E 3D 08 02 03 06 00 01 00 00 00 05 04 0B 02 9C 4E 3D 08 02 05 00 00 1A 00 00 00 00 00 05 00 04 06 02 08 7C 3E 08 04 04 F6 FF 00 00 01 00 00 00 1C 86 00 3F 0A 02 04 01 02 9C 4E 3D 08 02 05 01 00 E4 FF 00 00 00 00 03 00 05 03 D1 8C 09 08 02 05 01 00 04 00 00 00 0C 00 01 00 05 04 0A 02 84 4E 3D 08 02 03 00 00 00 00 06 00 04 05 02 84 4E 3D 08 02 03 01 00 00 00 06 00 05 0B 03 0D 08"
+        },
+        {
+            "id":"138",
+            "name": "Bone Rush",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 10 27 00 97 27 0A 03 0C 0C 08 19 B4 00 3F 02 40 7A 3E 08 02 05 D6 FF E7 FF 00 00 00 00 0F 00 04 0C 02 08 7C 3E 08 02 04 00 00 00 00 01 00 02 00 03 F9 89 09 08 05 05 01 00 00 00 03 00 05 00 01 00 19 9F 00 3F 05 0B 03 0D 08"
+        },
+        {
+            "id":"139",
+            "name": "Bonemerang",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 10 27 00 97 27 0A 03 28 01 0C 0C 08 19 B4 00 C0 02 28 7A 3E 08 02 00 04 14 19 9F 00 3F 02 08 7C 3E 08 02 04 00 00 00 00 01 00 01 00 03 F9 89 09 08 05 05 01 00 05 00 00 00 05 00 01 00 04 11 19 73 00 C0 02 54 4E 3D 08 02 02 06 00 FC FF 05 0B 03 0D 08"
+        },
+        {
+            "id":"140",
+            "name": "Bounce Turn 1",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 AC 27 00 97 27 19 C4 00 C0 02 D0 6C 3E 08 02 02 00 00 00 00 08"
+        },
+        {
+            "id":"141",
+            "name": "Bounce Turn 2",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 AC 27 00 97 27 0A 03 0C 0C 08 19 BA 00 3F 02 FC 6C 3E 08 83 00 04 07 19 86 00 3F 02 08 7C 3E 08 82 04 00 00 00 00 01 00 00 00 03 F9 89 09 08 05 05 01 00 00 00 05 00 0B 00 01 00 05 0B 03 0D 08"
+        },
+        {
+            "id":"87",
+            "name": "Brick Break 1",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false, 
+            "code": "00 B7 27 00 97 27 00 9F 27 00 E0 27 0A 01 0C 0C 08 02 54 4E 3D 08 02 02 03 00 08 00 04 04 04 01 02 08 7C 3E 08 03 04 EE FF EE FF 01 00 01 00 02 10 67 3E 08 02 05 EE FF EE FF 0A 00 01 00 00 00 19 73 00 3F 04 14 02 54 4E 3D 08 02 02 03 00 08 00 04 05 02 08 7C 3E 08 03 04 12 00 12 00 01 00 01 00 02 10 67 3E 08 02 05 12 00 12 00 0A 00 01 00 00 00 19 73 00 3F 04 14 03 9D 94 09 08 02 07 00 00 E8 FF 00 00 18 00 0A 00 18 00 03 00 02 24 7B 3E 08 02 05 01 00 02 00 00 00 06 00 00 00 04 25 02 08 7C 3E 08 03 04 00 00 00 00 01 00 01 00 02 10 67 3E 08 02 05 00 00 00 00 0A 00 01 00 00 00 19 74 00 3F 05 02 24 7B 3E 08 02 05 01 00 02 00 06 00 00 00 00 00 05 0B 03 0D 08"
+        },
+        {
+            "id":"88",
+            "name": "Brick Break 2",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false, 
+            "code": "00 B7 27 00 97 27 00 9F 27 00 E0 27 0A 01 0C 0C 08 02 54 4E 3D 08 02 02 03 00 08 00 04 04 04 01 02 08 7C 3E 08 03 04 EE FF EE FF 01 00 01 00 02 10 67 3E 08 02 05 EE FF EE FF 0A 00 01 00 00 00 19 73 00 3F 04 14 02 54 4E 3D 08 02 02 03 00 08 00 04 05 02 08 7C 3E 08 03 04 12 00 12 00 01 00 01 00 02 10 67 3E 08 02 05 12 00 12 00 0A 00 01 00 00 00 19 73 00 3F 04 14 03 9D 94 09 08 02 07 00 00 E8 FF 00 00 18 00 0A 00 18 00 03 00 04 25 02 08 7C 3E 08 03 04 00 00 00 00 01 00 01 00 02 10 67 3E 08 02 05 00 00 00 00 0A 00 01 00 00 00 19 74 00 3F 05 0B 01 08"
+        },
+        {
+            "id":"142",
+            "name": "Bubble",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 AC 27 00 97 27 00 A2 27 00 AB 27 0A 01 0C 0C 08 04 01 02 E0 58 3E 08 02 07 12 00 00 00 0F 00 F1 FF 0A 00 80 00 64 00 19 75 00 C0 1D 76 00 3F 64 04 06 02 E0 58 3E 08 02 07 12 00 00 00 23 00 25 00 28 00 80 00 64 00 19 75 00 C0 1D 76 00 3F 64 04 06 02 E0 58 3E 08 02 07 12 00 00 00 0A 00 DB FF 1E 00 80 00 64 00 19 75 00 C0 1D 76 00 3F 64 04 06 02 E0 58 3E 08 02 07 12 00 00 00 1E 00 0A 00 0F 00 80 00 64 00 19 75 00 C0 1D 76 00 3F 64 04 06 02 E0 58 3E 08 02 07 12 00 00 00 14 00 21 00 14 00 80 00 64 00 19 75 00 C0 1D 76 00 3F 64 04 06 02 E0 58 3E 08 02 07 12 00 00 00 19 00 E2 FF 0A 00 80 00 64 00 19 75 00 C0 1D 76 00 3F 64 05 0E 3D 58 1D 08 05 0B 01 0D 08"
+        },
+        {
+            "id":"143",
+            "name": "Bubblebeam",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 AC 27 00 97 27 00 A2 27 00 AB 27 0A 01 28 01 0C 0C 08 04 01 0E 4D 9D 1C 08 03 05 97 09 08 05 05 00 00 03 00 00 0C 08 00 01 00 0E 4D 9D 1C 08 0E 4D 9D 1C 08 05 0E CC 57 1D 08 05 0B 01 0D 08"
+        },
+        {
+            "id":"144",
+            "name": "Bulk Up",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 AC 27 00 97 27 00 66 27 03 B5 84 0A 08 02 00 19 BA 00 C0 05 02 D0 3E 3E 08 02 00 1C BA 00 C0 04 02 05 08"
+        },
+        {
+            "id":"145",
+            "name": "Bullet Seed",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 16 27 02 94 3D 3E 08 82 02 14 00 00 00 04 05 02 94 3D 3E 08 82 02 14 00 00 00 04 05 02 94 3D 3E 08 82 02 14 00 00 00 04 05 03 1D 8B 09 08 02 05 01 00 02 00 00 00 1E 00 01 00 02 94 3D 3E 08 82 02 14 00 00 00 04 05 02 94 3D 3E 08 82 02 14 00 00 00 04 05 02 94 3D 3E 08 82 02 14 00 00 00 04 05 02 94 3D 3E 08 82 02 14 00 00 00 04 05 02 94 3D 3E 08 82 02 14 00 00 00 04 05 02 94 3D 3E 08 82 02 14 00 00 00 04 05 02 94 3D 3E 08 82 02 14 00 00 00 05 08"
+        },
+        {
+            "id":"72",
+            "name": "Calm Mind 1",
+            "background": true,
+            "coloredBackground": true,
+            "psychicBackground": false,
+            "scroll": false, 
+            "code": "00 DB 27 0A 02 03 3D A8 0B 08 05 05 00 00 00 00 00 00 10 00 00 00 05 03 B1 B9 0B 08 05 01 01 00 05 02 C8 40 3E 08 28 04 00 00 00 00 00 00 00 00 19 B1 00 C0 04 0E 02 C8 40 3E 08 28 04 00 00 00 00 00 00 00 00 19 B1 00 C0 04 0E 02 C8 40 3E 08 28 04 00 00 00 00 00 00 00 00 19 B1 00 C0 05 03 B1 B9 0B 08 05 01 00 00 2C 00 05 03 3D A8 0B 08 05 05 00 00 00 00 10 00 00 00 00 00 05 0B 02 08"
+        },
+        {
+            "id":"73",
+            "name": "Calm Mind 2",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false, 
+            "code": "00 DB 27 0A 02 03 3D A8 0B 08 05 05 00 00 00 00 00 00 00 00 00 00 05 03 B1 B9 0B 08 05 01 01 00 05 02 C8 40 3E 08 28 04 00 00 00 00 00 00 00 00 19 B1 00 C0 04 0E 02 C8 40 3E 08 28 04 00 00 00 00 00 00 00 00 19 B1 00 C0 04 0E 02 C8 40 3E 08 28 04 00 00 00 00 00 00 00 00 19 B1 00 C0 05 03 B1 B9 0B 08 05 01 00 00 2C 00 05 03 3D A8 0B 08 05 05 00 00 00 00 00 00 00 00 00 00 05 0B 02 08"
+        },
+        {
+            "id":"146",
+            "name": "Camouflage",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "0A 02 28 00 0C 10 00 03 35 A9 0B 08 05 04 02 00 03 00 00 00 0E 00 04 10 03 E1 78 0B 08 02 01 04 00 19 B7 00 C0 05 04 08 03 35 A9 0B 08 05 04 02 00 00 00 00 00 00 00 05 03 DD 79 0B 08 02 01 01 00 05 0D 0B 02 08"
+        },
+        {
+            "id":"10",
+            "name": "Charge",
+            "background": true,
+            "coloredBackground": true,
+            "psychicBackground": false,
+            "scroll": false,
+            "code": "00 E3 27 00 E4 27 00 E5 27 0A 00 0C 0C 08 02 24 7B 3E 08 02 05 01 00 02 00 00 00 04 00 00 00 05 03 41 E5 0A 08 02 04 00 00 3C 00 02 00 0C 00 19 CE 00 C0 04 1E 19 CE 00 C0 04 1E 19 CE 00 C0 02 D4 61 3E 08 02 01 00 00 04 19 19 CE 00 C0 04 14 19 CE 00 C0 04 0F 19 CE 00 C0 04 0A 04 06 1C CE 00 C0 06 05 05 02 04 62 3E 08 02 03 00 00 10 00 10 00 04 02 02 04 62 3E 08 02 03 00 00 F0 FF F0 FF 19 70 00 C0 05 02 24 7B 3E 08 02 05 01 00 04 00 04 00 00 00 00 00 05 0B 00 0D 08"
+        },
+        {
+            "id":"147",
+            "name": "Charm",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 E2 27 03 59 05 0E 08 05 03 00 00 02 00 00 00 02 E8 41 3E 08 03 02 00 00 14 00 19 CD 00 C0 04 0F 02 E8 41 3E 08 03 02 EC FF 14 00 19 CD 00 C0 04 0F 02 E8 41 3E 08 03 02 14 00 14 00 19 CD 00 C0 05 08"
+        },
+        {
+            "id":"148",
+            "name": "Clamp",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 A1 27 00 97 27 0A 01 0C 0C 08 19 95 00 3F 02 48 79 3E 08 02 06 E0 FF 00 00 02 00 33 03 00 00 0A 00 02 48 79 3E 08 02 06 20 00 00 00 06 00 CD FC 00 00 0A 00 04 0A 02 08 7C 3E 08 02 04 00 00 00 00 01 00 02 00 03 F9 89 09 08 05 05 01 00 03 00 00 00 05 00 01 00 05 0B 01 0D 05 08"
+        },
+        {
+            "id":"149",
+            "name": "Comet Punch",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 97 27 00 9F 27 0A 01 0C 0C 08 02 08 7C 3E 08 02 04 F8 FF F8 FF 01 00 02 00 02 10 67 3E 08 03 05 F8 FF 00 00 08 00 01 00 00 00 03 F9 89 09 08 02 05 01 00 03 00 00 00 06 00 01 00 19 84 00 3F 05 0B 01 0D 08"
+        },
+        {
+            "id":"24",
+            "name": "Confuse Ray",
+            "background": true,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,
+            "code": "00 1D 27 0A 03 14 02 17 03 45 D4 0D 08 02 04 C0 FF 3F 00 02 00 00 00 03 59 9E 0B 08 02 06 1D 27 00 00 06 00 00 00 0E 00 5F 01 02 C4 75 3E 08 82 03 1C 00 00 00 20 01 05 0C 08 08 19 7B 00 3F 02 DC 75 3E 08 82 02 00 00 F0 FF 05 04 00 0D 0B 03 15 17 08"
+        },
+        {
+            "id":"74",
+            "name": "Confusion",
+            "background": true,
+            "coloredBackground": false,
+            "psychicBackground": true,
+            "scroll": false, 
+            "code": "0A 03 0E BB 59 1D 08 0C 08 08 03 1D 8B 09 08 02 05 00 00 01 00 00 00 0A 00 01 00 03 DD 9B 0B 08 02 06 02 00 00 00 02 00 00 00 08 00 FF 7F 05 19 B1 00 3F 03 F9 89 09 08 02 05 01 00 03 00 00 00 0F 00 01 00 03 B1 98 09 08 05 05 FC FF FC FF 0F 00 01 00 01 00 05 0B 03 0D 04 01 0E C7 59 1D 08 08"
+        },
+        {
+            "id":"150",
+            "name": "Constrict",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 CA 27 1C 94 00 3F 06 04 02 0C 2D 3E 08 84 04 00 00 10 00 00 00 02 00 04 07 02 0C 2D 3E 08 83 04 00 00 00 00 00 00 02 00 02 0C 2D 3E 08 82 04 00 00 08 00 01 00 02 00 04 07 02 0C 2D 3E 08 83 04 00 00 F8 FF 01 00 02 00 04 08 03 1D 8B 09 08 02 05 01 00 03 00 00 00 06 00 01 00 04 14 19 A3 00 3F 10 07 FF FF 05 08"
+        },
+        {
+            "id":"152",
+            "name": "Conversion",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 22 27 0A 02 28 00 0C 10 00 04 00 19 C7 00 C0 02 EC 36 3E 08 02 02 E8 FF E8 FF 04 03 02 EC 36 3E 08 02 02 F8 FF E8 FF 04 03 02 EC 36 3E 08 02 02 08 00 E8 FF 04 03 02 EC 36 3E 08 02 02 18 00 E8 FF 04 03 19 C7 00 C0 02 EC 36 3E 08 02 02 E8 FF F8 FF 04 03 02 EC 36 3E 08 02 02 F8 FF F8 FF 04 03 02 EC 36 3E 08 02 02 08 00 F8 FF 04 03 02 EC 36 3E 08 02 02 18 00 F8 FF 04 03 19 C7 00 C0 02 EC 36 3E 08 02 02 E8 FF 08 00 04 03 02 EC 36 3E 08 02 02 F8 FF 08 00 04 03 02 EC 36 3E 08 02 02 08 00 08 00 04 03 02 EC 36 3E 08 02 02 18 00 08 00 04 03 19 C7 00 C0 02 EC 36 3E 08 02 02 E8 FF 18 00 04 03 02 EC 36 3E 08 02 02 F8 FF 18 00 04 03 02 EC 36 3E 08 02 02 08 00 18 00 04 03 02 EC 36 3E 08 02 02 18 00 18 00 04 14 19 C9 00 C0 03 6D 9F 0B 08 02 07 22 27 01 00 01 00 FF 37 0C 00 00 00 00 00 04 06 03 D5 5C 0A 08 05 00 05 04 01 0B 02 0D 08"
+        },
+        {
+            "id":"151",
+            "name": "Conversion 2",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 22 27 0A 03 2A 01 0C 00 10 04 00 19 C9 00 3F 02 1C 37 3E 08 02 03 E8 FF E8 FF 3C 00 02 1C 37 3E 08 02 03 F8 FF E8 FF 41 00 02 1C 37 3E 08 02 03 08 00 E8 FF 46 00 02 1C 37 3E 08 02 03 18 00 E8 FF 4B 00 02 1C 37 3E 08 02 03 E8 FF F8 FF 50 00 02 1C 37 3E 08 02 03 F8 FF F8 FF 55 00 02 1C 37 3E 08 02 03 08 00 F8 FF 5A 00 02 1C 37 3E 08 02 03 18 00 F8 FF 5F 00 02 1C 37 3E 08 02 03 E8 FF 08 00 64 00 02 1C 37 3E 08 02 03 F8 FF 08 00 69 00 02 1C 37 3E 08 02 03 08 00 08 00 6E 00 02 1C 37 3E 08 02 03 18 00 08 00 73 00 02 1C 37 3E 08 02 03 E8 FF 18 00 78 00 02 1C 37 3E 08 02 03 F8 FF 18 00 7D 00 02 1C 37 3E 08 02 03 08 00 18 00 82 00 02 1C 37 3E 08 02 03 18 00 18 00 87 00 03 E1 5D 0A 08 05 00 04 3C 19 C7 00 3F 04 0A 19 C7 00 3F 04 0A 19 C7 00 3F 04 0A 19 C7 00 3F 04 0A 19 C7 00 3F 04 0A 19 C7 00 3F 04 0A 19 C7 00 3F 04 0A 19 C7 00 3F 05 0B 03 0D 08"
+        },
+        {
+            "id":"93",
+            "name": "Cosmic Power",
+            "background": true,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": true, 
+            "code": "00 41 27 03 11 D4 0D 08 05 02 EC 00 00 00 19 EC 00 00 03 DD B7 0B 08 02 04 00 00 00 00 0F 00 00 00 05 14 10 17 03 2D B8 0B 08 02 04 00 00 80 00 00 00 FF FF 17 04 46 03 DD D3 0D 08 05 02 DD 00 C0 FF 02 F4 33 3E 08 02 06 F1 FF 00 00 00 00 00 00 20 00 3C 00 04 08 02 F4 33 3E 08 02 06 0C 00 FB FF 00 00 00 00 20 00 3C 00 04 28 03 DD B7 0B 08 02 04 00 00 0F 00 00 00 00 00 05 0E C7 59 1D 08 08"
+        },
+        {
+            "id":"153",
+            "name": "Cotton Spore",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 AE 27 0A 03 28 01 1C A2 00 3F 12 0A 0E B5 03 1D 08 0E B5 03 1D 08 0E B5 03 1D 08 05 0B 03 08"
+        },
+        {
+            "id":"154",
+            "name": "Counter",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 97 27 00 9F 27 0A 03 0C 0C 08 03 7D 90 09 08 02 05 00 00 12 00 06 00 01 00 04 00 19 73 00 C0 05 02 9C 4E 3D 08 02 05 00 00 14 00 00 00 00 00 04 00 04 04 02 08 7C 3E 08 02 04 F1 FF 12 00 01 00 00 00 19 74 00 3F 04 01 03 F9 89 09 08 02 05 01 00 05 00 00 00 19 00 01 00 02 10 67 3E 08 03 05 F1 FF 12 00 08 00 01 00 00 00 04 03 02 08 7C 3E 08 02 04 00 00 FC FF 01 00 00 00 19 74 00 3F 04 01 02 10 67 3E 08 03 05 00 00 FC FF 08 00 01 00 00 00 04 03 02 08 7C 3E 08 02 04 0F 00 09 00 01 00 00 00 19 74 00 3F 04 01 02 10 67 3E 08 03 05 0F 00 09 00 08 00 01 00 00 00 04 05 02 84 4E 3D 08 02 03 00 00 00 00 05 00 05 0B 03 0D 08"
+        },
+        {
+            "id":"155",
+            "name": "Covet",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 E2 27 00 F0 27 03 59 05 0E 08 05 03 00 00 02 00 00 00 02 E8 41 3E 08 03 02 00 00 14 00 19 CD 00 C0 04 0F 02 E8 41 3E 08 03 02 EC FF 14 00 19 CD 00 C0 04 0F 02 E8 41 3E 08 03 02 14 00 14 00 19 CD 00 C0 05 03 1D 8B 09 08 02 05 01 00 02 00 00 00 08 00 01 00 1C A9 00 3F 04 03 08"
+        },
+        {
+            "id":"114",
+            "name": "Cross Chop",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 9F 27 00 2D 28 0A 03 0C 0C 08 19 85 00 3F 02 40 67 3E 08 02 03 00 00 00 00 00 00 02 40 67 3E 08 02 03 00 00 00 00 01 00 04 28 19 81 00 3F 02 3C 7B 3E 08 02 07 1F 00 03 00 01 00 FF 7F 0A 00 00 00 0A 00 02 80 7C 3E 08 03 04 00 00 00 00 01 00 14 00 03 F9 89 09 08 05 05 01 00 07 00 00 00 09 00 01 00 05 0B 03 0D 08"
+        },
+        {
+            "id":"65",
+            "name": "Crunch",
+            "background": true,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 9B 27 00 97 27 0A 01 14 01 17 0C 0C 08 19 9A 00 3F 02 30 79 3E 08 02 06 E0 FF E0 FF 01 00 33 03 33 03 0A 00 02 30 79 3E 08 02 06 20 00 20 00 05 00 CD FC CD FC 0A 00 04 0A 02 08 7C 3E 08 02 04 F8 FF 00 00 01 00 01 00 03 F9 89 09 08 05 05 01 00 00 00 07 00 05 00 02 00 05 19 9A 00 3F 02 30 79 3E 08 02 06 20 00 E0 FF 07 00 CD FC 33 03 0A 00 02 30 79 3E 08 02 06 E0 FF 20 00 03 00 33 03 CD FC 0A 00 04 0A 02 08 7C 3E 08 02 04 08 00 00 00 01 00 01 00 03 F9 89 09 08 05 05 01 00 00 00 08 00 04 00 02 00 05 0B 01 0D 04 01 15 17 08"
+        },
+        {
+            "id":"55",
+            "name": "Curse",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 D7 27 00 D8 27 0A 02 03 B5 63 0B 08 05 00 05 04 14 02 80 76 3E 08 02 00 04 3C 0E 99 18 1D 08 04 29 0E 99 18 1D 08 04 29 0E 99 18 1D 08 05 0B 02 04 01 0A 03 19 72 00 3F 02 98 76 3E 08 82 00 03 1D 8B 09 08 02 05 01 00 02 00 00 00 0E 00 01 00 05 02 24 7B 3E 08 02 05 01 00 01 00 10 00 00 00 00 00 05 0B 03 0D 08"
+        },
+        {
+            "id":"27",
+            "name": "Destiny Bond",
+            "background": true,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,
+            "code": "00 CC 27 14 02 19 B6 00 C0 17 03 21 60 0B 08 05 02 00 00 30 00 19 BD 00 C0 04 30 03 D1 8C 09 08 02 05 00 00 02 00 00 00 18 00 01 00 03 3D A8 0B 08 02 05 06 00 01 00 00 00 0C 00 BD 77 04 18 03 3D A8 0B 08 02 05 06 00 01 00 0C 00 00 00 BD 77 19 72 00 3F 05 15 17 0D 0B 05 08"
+        },
+        {
+            "id":"11",
+            "name": "Detect",
+            "background": true,
+            "coloredBackground": true,
+            "psychicBackground": false,
+            "scroll": false,
+            "code": "00 57 27 02 24 7B 3E 08 02 05 01 00 02 00 00 00 09 00 00 00 05 03 F9 A7 0B 08 0A 05 02 00 01 00 00 00 09 00 FF 7F 04 12 19 CA 00 C0 02 80 F4 3B 08 0D 02 14 00 EC FF 05 04 0A 02 24 7B 3E 08 02 05 01 00 02 00 09 00 00 00 00 00 05 0B 03 0D 03 F9 A7 0B 08 0A 05 02 00 02 00 09 00 00 00 FF 7F 05 08"
+        },
+        {
+            "id":"20",
+            "name": "Doom Desire Turn 1",
+            "background": true,
+            "coloredBackground": true,
+            "psychicBackground": false,
+            "scroll": false,
+            "code": "03 39 8B 0B 08 02 00 04 01 0A 02 03 75 8A 0B 08 05 02 01 00 00 00 02 24 7B 3E 08 02 05 01 00 01 00 00 00 04 00 00 00 05 0C 08 08 19 B6 00 C0 03 B1 98 09 08 05 05 FC FF FC FF 0F 00 00 00 01 00 05 04 14 03 75 8A 0B 08 05 02 01 00 01 00 02 24 7B 3E 08 02 05 01 00 01 00 04 00 00 00 00 00 05 0B 02 0D 08"
+        },
+        {
+            "id":"21",
+            "name": "Doom Desire Turn 2",
+            "background": true,
+            "coloredBackground": true,
+            "psychicBackground": false,
+            "scroll": false,
+            "code": "00 D6 27 02 24 7B 3E 08 02 05 01 00 03 00 00 00 10 00 FF 7F 05 04 0A 03 7D 01 0E 08 05 00 04 05 19 BD 00 C0 04 0A 19 BD 00 00 04 0A 19 BD 00 3F 04 17 03 D1 8C 09 08 02 05 01 00 0A 00 00 00 14 00 01 00 19 AA 00 3F 02 94 3F 3E 08 03 04 00 00 00 00 01 00 01 00 04 06 19 AA 00 3F 02 94 3F 3E 08 03 04 18 00 E8 FF 01 00 01 00 04 06 19 AA 00 3F 02 94 3F 3E 08 03 04 F0 FF 10 00 01 00 01 00 04 06 19 AA 00 3F 02 94 3F 3E 08 03 04 E8 FF F4 FF 01 00 01 00 04 06 19 AA 00 3F 02 94 3F 3E 08 03 04 10 00 10 00 01 00 01 00 05 02 24 7B 3E 08 02 05 01 00 03 00 10 00 00 00 FF 7F 05 08"
+        },
+        {
+            "id":"56",
+            "name": "Double Edge",
+            "background": true,
+            "coloredBackground": true,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 97 27 19 C7 00 C0 02 3C 7B 3E 08 02 07 02 00 04 00 02 00 FF 7F 0A 00 00 00 00 00 05 04 0A 19 BA 00 C0 1D BA 00 C0 08 03 7D 90 09 08 02 05 00 00 12 00 06 00 02 00 04 00 05 02 24 7B 3E 08 02 05 01 00 00 00 10 00 10 00 FF 7F 02 9C 4E 3D 08 02 05 00 00 14 00 00 00 00 00 04 00 04 03 05 19 86 00 3F 02 08 7C 3E 08 84 04 F6 FF 00 00 01 00 00 00 02 9C 4E 3D 08 02 05 01 00 E0 FF 00 00 00 00 03 00 05 03 81 99 09 08 02 04 08 00 00 FF 00 00 00 00 03 81 99 09 08 02 04 08 00 00 FF 01 00 00 00 03 D1 8C 09 08 02 05 00 00 04 00 00 00 0C 00 01 00 03 D1 8C 09 08 02 05 01 00 04 00 00 00 0C 00 01 00 02 24 7B 3E 08 02 05 01 00 02 00 10 00 00 00 FF 7F 05 03 81 99 09 08 02 04 08 00 00 FF 00 00 01 00 03 81 99 09 08 02 04 08 00 00 FF 01 00 01 00 05 02 84 4E 3D 08 02 03 00 00 00 00 05 00 04 03 02 84 4E 3D 08 02 03 01 00 00 00 07 00 05 08"
+        },
+        {
+            "id":"75",
+            "name": "Dream Eater",
+            "background": true,
+            "coloredBackground": false,
+            "psychicBackground": true,
+            "scroll": false, 
+            "code": "00 A3 27 00 2F 27 0A 03 2A 01 19 B6 00 C0 0E BB 59 1D 08 0C 08 08 19 C5 00 3F 03 F9 89 09 08 02 05 01 00 05 00 00 00 0F 00 01 00 03 B1 98 09 08 05 05 FA FF FA FF 0F 00 01 00 01 00 05 0C 0C 08 03 F9 89 09 08 02 05 01 00 00 00 02 00 19 00 01 00 0E 89 0A 1D 08 05 04 0F 0E C9 56 1D 08 05 0B 03 0D 04 01 0E C7 59 1D 08 08"
+        },
+        {
+            "id":"57",
+            "name": "Encore",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 F3 27 00 07 28 03 D9 ED 0D 08 02 00 03 39 AB 0B 08 02 05 F8 00 03 00 00 00 0A 00 00 00 05 02 0C F0 3F 08 82 02 00 00 F8 FF 02 24 F0 3F 08 02 05 FE FF 00 00 00 00 00 00 09 00 02 24 F0 3F 08 02 05 02 00 00 00 01 00 00 00 09 00 02 3C F0 3F 08 03 05 FE FF 00 00 00 00 00 00 09 00 02 3C F0 3F 08 03 05 02 00 00 00 01 00 00 00 09 00 04 10 03 11 D4 0D 08 05 02 D8 00 3F 00 03 05 97 09 08 05 05 01 00 08 00 00 06 05 00 01 00 05 03 39 AB 0B 08 02 05 F8 00 03 00 0A 00 00 00 01 00 05 03 79 EE 0D 08 02 00 08"
+        },
+        {
+            "id":"4",
+            "name": "Eruption",
+            "background": true,
+            "coloredBackground": true,
+            "psychicBackground": false,
+            "scroll": false,
+            "code": "00 D9 27 02 24 7B 3E 08 02 05 1F 00 02 00 00 00 04 00 1F 00 05 03 A5 CE 0A 08 02 00 1D AB 00 C0 3C 05 03 A5 CE 0A 08 02 00 1D AB 00 C0 3C 05 04 1E 02 60 5E 3E 08 28 05 C8 00 E0 FF 00 00 64 00 00 00 02 60 5E 3E 08 28 05 1E 00 E0 FF 10 00 5A 00 01 00 02 60 5E 3E 08 28 05 96 00 E0 FF 20 00 3C 00 02 00 02 60 5E 3E 08 28 05 5A 00 E0 FF 30 00 50 00 03 00 02 60 5E 3E 08 28 05 6E 00 E0 FF 40 00 32 00 00 00 02 60 5E 3E 08 28 05 3C 00 E0 FF 50 00 46 00 01 00 04 16 03 B5 94 0B 08 05 03 05 00 08 00 3C 00 03 B5 94 0B 08 05 03 04 00 08 00 3C 00 1C 7C 00 3F 10 0C 04 50 02 24 7B 3E 08 28 05 1F 00 04 00 04 00 00 00 1F 00 08"
+        },
+        {
+            "id":"12",
+            "name": "Explosion",
+            "background": true,
+            "coloredBackground": true,
+            "psychicBackground": false,
+            "scroll": false,
+            "code": "00 D6 27 02 3C 7B 3E 08 02 07 01 00 08 00 09 00 1A 21 08 00 00 00 08 00 03 1D 8B 09 08 05 05 04 00 08 00 00 00 28 00 01 00 03 1D 8B 09 08 05 05 05 00 08 00 00 00 28 00 01 00 03 1D 8B 09 08 05 05 06 00 08 00 00 00 28 00 01 00 03 1D 8B 09 08 05 05 07 00 08 00 00 00 28 00 01 00 03 1D 8B 09 08 05 05 08 00 08 00 00 00 28 00 01 00 0E B2 8E 1C 08 0E B2 8E 1C 08 05 03 F9 A7 0B 08 0A 05 01 00 01 00 10 00 10 00 FF 7F 04 32 03 F9 A7 0B 08 0A 05 01 00 03 00 10 00 00 00 FF 7F 08"
+        },
+        {
+            "id":"76",
+            "name": "Extrasensory",
+            "background": true,
+            "coloredBackground": false,
+            "psychicBackground": true,
+            "scroll": false, 
+            "code": "0E BB 59 1D 08 0A 03 0C 0C 08 03 6D 61 07 08 05 05 00 00 7B 03 0C 00 01 00 01 00 03 59 3A 0B 08 05 01 00 00 19 A3 00 3F 05 03 6D 61 07 08 05 05 00 00 7B 03 0C 00 01 00 01 00 03 59 3A 0B 08 05 01 01 00 19 A3 00 3F 05 03 79 3C 0B 08 05 01 00 00 03 59 3A 0B 08 05 01 02 00 19 B9 00 C0 05 0D 0B 03 0E C7 59 1D 08 08"
+        },
+        {
+            "id":"94",
+            "name": "ExtremeSpeed",
+            "background": true,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": true, 
+            "code": "00 DF 27 00 97 27 03 21 B9 0B 08 02 00 21 07 01 00 95 B6 1C 08 14 09 16 03 2D B8 0B 08 05 04 00 F7 00 00 01 00 FF FF 17 03 7D 91 0A 08 02 00 1C 99 00 C0 08 03 05 04 01 03 2D C1 0B 08 02 00 0A 01 0C 0C 08 04 12 03 11 92 0A 08 02 00 04 02 19 84 00 3F 02 68 7C 3E 08 82 04 01 00 00 00 F4 FF 03 00 04 0A 19 84 00 3F 02 68 7C 3E 08 82 04 01 00 00 00 0C 00 03 00 04 0A 19 74 00 3F 02 68 7C 3E 08 82 04 01 00 00 00 00 00 03 00 05 03 AD 94 0A 08 02 00 04 0A 03 9D 93 0A 08 02 00 1C 80 00 C0 08 04 05 15 16 10 07 FF FF 17 0B 01 0D 04 01 10 07 00 10 04 01 08"
+        },
+        {
+            "id":"64",
+            "name": "Faint Attack",
+            "background": true,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 97 27 0A 00 14 01 17 04 00 19 B7 00 C0 03 7D 90 09 08 02 05 00 00 12 00 06 00 01 00 03 00 03 E1 78 0B 08 02 01 01 00 05 0B 00 2B 00 04 01 03 2D C1 0B 08 02 00 0A 01 0C 0C 08 04 01 19 74 00 3F 02 08 7C 3E 08 02 04 00 00 00 00 01 00 01 00 03 1D 8B 09 08 02 05 01 00 02 00 00 00 09 00 01 00 05 0B 01 0D 04 01 10 07 00 10 04 20 03 81 7A 0B 08 02 00 0A 00 03 DD 79 0B 08 02 01 01 00 05 0B 00 04 01 15 17 08"
+        },
+        {
+            "id":"58",
+            "name": "Fire Blast",
+            "background": true,
+            "coloredBackground": true,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 2D 27 1F 11 CE 0D 08 02 89 00 8A 00 0E 89 7B 1C 08 0E 89 7B 1C 08 0E 89 7B 1C 08 04 18 03 F9 A7 0B 08 0A 05 01 00 03 00 00 00 08 00 00 00 05 04 13 03 F9 89 09 08 02 05 01 00 05 00 00 00 14 00 01 00 0E CD 7B 1C 08 04 03 0E CD 7B 1C 08 04 03 0E CD 7B 1C 08 04 03 0E CD 7B 1C 08 04 03 0E CD 7B 1C 08 04 03 0E CD 7B 1C 08 04 03 0E CD 7B 1C 08 04 03 0E CD 7B 1C 08 04 03 0E CD 7B 1C 08 05 03 F9 A7 0B 08 0A 05 01 00 02 00 08 00 00 00 00 00 05 08"
+        },
+        {
+            "id":"100",
+            "name": "Fissure",
+            "background": true,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 5A 27 03 B5 94 0B 08 03 03 05 00 0A 00 32 00 03 B5 94 0B 08 03 03 01 00 0A 00 32 00 19 E3 00 3F 04 08 0E 9F A7 1C 08 04 0F 02 3C 7B 3E 08 02 07 01 00 03 00 01 00 00 00 0E 00 FF 7F 0E 00 04 0F 0E F0 A7 1C 08 04 0F 02 3C 7B 3E 08 02 07 01 00 03 00 01 00 00 00 0E 00 FF 7F 0E 00 04 0F 0E 9F A7 1C 08 04 32 14 15 16 03 01 98 0B 08 05 03 01 00 05 00 FF FF 17 04 28 15 16 10 07 FF FF 17 08"
+        },
+        {
+            "id":"115",
+            "name": "Flash",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "19 B9 00 C0 03 61 B6 0B 08 02 00 05 08"
+        },
+        {
+            "id":"13",
+            "name": "Flatter",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,
+            "code": "00 F3 27 00 00 28 03 11 D4 0D 08 05 02 D8 00 3F 00 03 D9 ED 0D 08 02 00 03 39 AB 0B 08 02 05 F8 00 03 00 00 00 0A 00 00 00 05 02 A0 F3 3F 08 82 03 00 00 F8 FF 50 00 04 00 02 6C 4E 3D 08 02 03 05 00 02 00 01 00 04 0A 02 6C 4E 3D 08 02 03 05 00 02 00 01 00 04 00 03 DD D3 0D 08 05 02 DE 00 C0 FF 0E D2 2B 1D 08 0E D2 2B 1D 08 0E D2 2B 1D 08 0E D2 2B 1D 08 0E D2 2B 1D 08 0E D2 2B 1D 08 0E D2 2B 1D 08 0E D2 2B 1D 08 0E D2 2B 1D 08 0E D2 2B 1D 08 0E D2 2B 1D 08 0E D2 2B 1D 08 0E D2 2B 1D 08 0E D2 2B 1D 08 0E D2 2B 1D 08 0E D2 2B 1D 08 0E D2 2B 1D 08 0E D2 2B 1D 08 0E D2 2B 1D 08 04 05 03 DD D3 0D 08 05 02 DE 00 3F 00 05 03 39 AB 0B 08 02 05 F8 00 03 00 0A 00 00 00 01 00 05 03 79 EE 0D 08 02 00 08"
+        },
+        {
+            "id":"116",
+            "name": "Focus Punch",
+            "background": true,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 97 27 00 9F 27 14 06 17 04 01 03 2D C0 0B 08 02 00 03 B5 EA 0D 08 02 00 17 0A 03 0C 0C 08 19 BA 00 3F 02 7C 69 3E 08 82 00 04 0A 02 08 7C 3E 08 02 04 F6 FF F8 FF 01 00 00 00 03 F9 89 09 08 05 05 01 00 08 00 00 00 18 00 01 00 04 08 02 08 7C 3E 08 02 04 0A 00 02 00 01 00 00 00 19 74 00 3F 04 08 02 08 7C 3E 08 02 04 0A 00 FA FF 01 00 00 00 19 74 00 3F 04 08 02 08 7C 3E 08 02 04 00 00 08 00 01 00 00 00 19 86 00 3F 05 15 17 0B 03 0D 05 08"
+        },
+        {
+            "id":"59",
+            "name": "Frenzy Plant",
+            "background": true,
+            "coloredBackground": true,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 EF 27 00 97 27 0A 01 28 01 0C 0C 08 02 24 7B 3E 08 02 05 01 00 02 00 00 00 05 00 00 00 05 02 DC 2D 3E 08 02 06 0A 00 08 00 02 00 00 00 00 00 64 00 19 94 00 C0 04 05 02 DC 2D 3E 08 02 06 14 00 F8 FF FE FF 00 00 01 00 5F 00 19 94 00 D5 04 05 02 DC 2D 3E 08 02 06 1E 00 08 00 FC FF 00 00 00 00 5A 00 19 94 00 EA 04 05 02 DC 2D 3E 08 02 06 28 00 F8 FF 04 00 00 00 01 00 55 00 19 94 00 00 04 05 02 DC 2D 3E 08 02 06 32 00 08 00 00 00 00 00 00 00 55 00 19 94 00 15 04 05 02 DC 2D 3E 08 02 06 3C 00 F8 FF FE FF 00 00 01 00 55 00 19 94 00 2A 04 05 02 DC 2D 3E 08 02 06 4B 00 08 00 00 00 00 00 00 00 55 00 19 94 00 3F 04 05 02 DC 2D 3E 08 02 06 55 00 10 00 06 00 00 00 03 00 50 00 19 94 00 3F 04 05 02 DC 2D 3E 08 02 06 55 00 F0 FF FA FF 00 00 02 00 4B 00 19 94 00 3F 04 05 02 08 7C 3E 08 02 04 F6 FF F6 FF 01 00 03 00 19 7F 00 3F 03 F9 89 09 08 03 05 01 00 08 00 00 00 14 00 01 00 04 03 02 08 7C 3E 08 02 04 0A 00 08 00 01 00 03 00 19 7F 00 3F 04 03 02 08 7C 3E 08 02 04 0A 00 FD FF 01 00 02 00 19 7F 00 3F 04 03 02 08 7C 3E 08 02 04 FD FF 01 00 01 00 02 00 19 7F 00 3F 04 02 02 08 7C 3E 08 02 04 F6 FF 01 00 01 00 01 00 19 7F 00 3F 04 02 02 08 7C 3E 08 02 04 00 00 0A 00 01 00 01 00 19 7F 00 3F 05 02 24 7B 3E 08 02 05 01 00 02 00 05 00 00 00 00 00 05 0B 03 0D 08"
+        },
+        {
+            "id":"15",
+            "name": "Giga Drain",
+            "background": true,
+            "coloredBackground": true,
+            "psychicBackground": false,
+            "scroll": false,
+            "code": "00 A3 27 00 2F 27 00 97 27 0A 03 2A 01 0C 0C 08 02 24 7B 3E 08 02 05 01 00 01 00 00 00 0C 00 ED 33 05 19 AD 00 3F 02 08 7C 3E 08 02 04 00 00 00 00 01 00 00 00 04 02 03 F9 89 09 08 05 05 01 00 00 00 05 00 05 00 01 00 05 04 03 0E EC EE 1C 08 05 04 0F 0E C9 56 1D 08 05 02 24 7B 3E 08 02 05 01 00 01 00 0C 00 00 00 ED 33 05 0B 03 0D 08"
+        },
+        {
+            "id":"60",
+            "name": "Glare",
+            "background": true,
+            "coloredBackground": true,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 08 28 00 EA 27 03 CD 21 0E 08 05 01 00 00 19 C1 00 C0 05 03 F9 A7 0B 08 05 05 01 00 00 00 00 00 10 00 00 00 05 02 FC 42 3E 08 00 02 F0 FF F8 FF 02 FC 42 3E 08 00 02 10 00 F8 FF 03 11 9F 0A 08 05 00 19 B9 00 C0 04 02 03 D9 DA 0A 08 03 03 14 00 01 00 00 00 05 03 F9 A7 0B 08 05 05 01 00 00 00 10 00 00 00 00 00 08"
+        },
+        {
+            "id":"5",
+            "name": "Grasswhistle",
+            "background": true,
+            "coloredBackground": true,
+            "psychicBackground": false,
+            "scroll": false,
+            "code": "00 58 27 02 24 7B 3E 08 02 05 01 00 02 00 00 00 04 00 F2 33 05 03 E9 65 0A 08 02 00 05 1B E0 00 C0 3F 02 00 02 80 38 3E 08 82 03 07 00 01 00 00 00 04 05 02 80 38 3E 08 82 03 06 00 01 00 00 00 04 05 02 80 38 3E 08 82 03 01 00 01 00 00 00 04 05 02 80 38 3E 08 82 03 02 00 01 00 00 00 04 05 02 80 38 3E 08 82 03 03 00 01 00 00 00 04 04 02 80 38 3E 08 82 03 02 00 01 00 00 00 04 04 02 80 38 3E 08 82 03 05 00 01 00 00 00 04 04 02 80 38 3E 08 82 03 06 00 01 00 00 00 04 04 02 80 38 3E 08 82 03 02 00 01 00 00 00 04 04 02 80 38 3E 08 82 03 02 00 01 00 00 00 04 04 02 80 38 3E 08 82 03 01 00 01 00 00 00 04 04 02 80 38 3E 08 82 03 05 00 01 00 00 00 04 04 05 03 A1 66 0A 08 02 00 02 24 7B 3E 08 02 05 01 00 04 00 04 00 00 00 F2 33 05 08"
+        },
+        {
+            "id":"30",
+            "name": "Grudge",
+            "background": true,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,
+            "code": "00 0D 28 0A 00 29 14 02 19 B6 00 C0 17 03 C9 68 0B 08 03 00 1C 90 00 C0 10 04 04 0A 04 50 19 72 00 3F 05 15 17 0B 00 08"
+        },
+        {
+            "id":"89",
+            "name": "Guillotine",
+            "background": true,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false, 
+            "code": "00 9A 27 00 97 27 0A 03 0C 0C 08 25 0C 0D 0E 17 19 95 00 3F 02 48 3E 3E 08 02 01 00 00 02 48 3E 3E 08 02 01 01 00 03 F9 A7 0B 08 0A 05 04 00 02 00 00 00 10 00 00 00 04 09 03 1D 8B 09 08 05 05 01 00 02 00 00 00 17 00 01 00 04 2E 03 1D 8B 09 08 05 05 01 00 04 00 00 00 08 00 01 00 02 08 7C 3E 08 03 04 00 00 00 00 01 00 00 00 02 3C 7B 3E 08 02 07 1F 00 03 00 01 00 00 00 08 00 00 00 00 00 19 81 00 3F 05 0B 03 0D 15 17 08"
+        },
+        {
+            "id":"61",
+            "name": "Hail",
+            "background": true,
+            "coloredBackground": true,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 17 28 00 9D 27 03 F9 A7 0B 08 0A 05 01 00 03 00 00 00 06 00 00 00 05 03 8D 03 0B 08 05 00 1C EB 00 00 08 0A 05 03 F9 A7 0B 08 0A 05 01 00 03 00 06 00 00 00 00 00 08"
+        },
+        {
+            "id":"62",
+            "name": "Heal Bell",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 DD 27 00 DE 27 00 DB 27 03 F9 A7 0B 08 0A 05 0A 00 00 00 00 00 0A 00 FF 7F 05 03 B5 96 0A 08 05 00 02 B0 41 3E 08 02 04 00 00 E8 FF 00 00 01 00 04 0C 02 D0 41 3E 08 28 07 00 00 E8 FF 30 00 EE FF 23 00 00 00 00 00 02 D0 41 3E 08 28 07 00 00 E8 FF D0 FF 14 00 1E 00 01 00 01 00 02 D0 41 3E 08 28 07 00 00 E8 FF DA FF E3 FF 1E 00 02 00 02 00 02 D0 41 3E 08 28 07 00 00 E8 FF 24 00 12 00 1E 00 03 00 03 00 0E 2F 1B 1D 08 04 21 02 D0 41 3E 08 28 07 00 00 E8 FF 13 00 1A 00 23 00 04 00 04 00 02 D0 41 3E 08 28 07 00 00 E8 FF DE FF F4 FF 1E 00 05 00 05 00 02 D0 41 3E 08 28 07 00 00 E8 FF 29 00 EC FF 22 00 06 00 02 00 02 D0 41 3E 08 28 07 00 00 E8 FF F1 FF 1A 00 20 00 07 00 00 00 0E 2F 1B 1D 08 04 21 02 D0 41 3E 08 28 07 00 00 E8 FF D0 FF 12 00 1F 00 00 00 02 00 02 D0 41 3E 08 28 07 00 00 E8 FF 30 00 EC FF 1E 00 02 00 05 00 02 D0 41 3E 08 28 07 00 00 E8 FF 26 00 1D 00 21 00 04 00 03 00 02 D0 41 3E 08 28 07 00 00 E8 FF DC FF EE FF 1E 00 06 00 01 00 0E 2F 1B 1D 08 05 03 61 97 0A 08 05 00 05 01 DD 27 01 DE 27 01 DB 27 00 41 27 19 DD 00 C0 02 0C 34 3E 08 10 07 F1 FF 00 00 00 00 00 00 20 00 3C 00 01 00 04 08 02 0C 34 3E 08 10 07 0C 00 FB FF 00 00 00 00 20 00 3C 00 01 00 05 01 41 27 00 DB 27 19 5F 00 C0 03 3D A8 0B 08 0A 05 04 00 03 00 0A 00 00 00 0C 7B 03 F9 A7 0B 08 0A 05 0A 00 03 00 0A 00 00 00 FF 7F 02 E0 40 3E 08 10 04 00 00 00 00 00 00 01 00 08"
+        },
+        {
+            "id":"101",
+            "name": "Horn Drill",
+            "background": true,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": true,                                                                                                                            
+            "code": "00 97 27 00 24 27 24 0A A5 1C 08 14 07 16 03 2D B8 0B 08 05 04 00 F7 00 03 01 00 FF FF 17 0C 0C 08 02 50 35 3E 08 02 01 00 00 19 9B 00 C0 05 04 02 02 50 35 3E 08 02 01 01 00 02 BC 37 3E 08 84 03 00 00 00 00 0C 00 05 09 14 00 03 D1 8C 09 08 02 05 00 00 02 00 00 00 28 00 01 00 03 D1 8C 09 08 02 05 01 00 0A 00 00 00 28 00 01 00 02 98 7C 3E 08 83 04 00 00 00 00 01 00 03 00 19 9F 00 3F 04 04 02 98 7C 3E 08 83 04 00 00 02 00 01 00 03 00 19 9F 00 3F 04 04 02 98 7C 3E 08 83 04 FC FF 03 00 01 00 03 00 19 9F 00 3F 04 04 02 98 7C 3E 08 83 04 F8 FF FB FF 01 00 03 00 19 9F 00 3F 04 04 02 98 7C 3E 08 83 04 04 00 F4 FF 01 00 03 00 19 9F 00 3F 04 04 02 98 7C 3E 08 83 04 10 00 00 00 01 00 03 00 19 9F 00 3F 04 04 02 98 7C 3E 08 83 04 05 00 12 00 01 00 03 00 19 9F 00 3F 04 04 02 98 7C 3E 08 83 04 EF FF 0C 00 01 00 02 00 19 9F 00 3F 04 04 02 98 7C 3E 08 83 04 EB FF F1 FF 01 00 02 00 19 9F 00 3F 04 04 02 98 7C 3E 08 83 04 08 00 E5 FF 01 00 02 00 19 9F 00 3F 04 04 02 98 7C 3E 08 83 04 20 00 00 00 01 00 02 00 19 9F 00 3F 04 04 02 50 35 3E 08 02 01 02 00 05 15 16 10 07 FF FF 17 08"
+        },
+        {
+            "id":"117",
+            "name": "Hydro Cannon",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 A5 27 00 A4 27 0A 03 0C 0C 08 19 9C 00 C0 02 38 5A 3E 08 82 00 04 0A 03 E9 A0 0B 08 02 03 01 01 01 01 01 01 04 1E 1B 9D 00 C0 3F 02 00 0E 7C 46 1D 08 03 F9 89 09 08 05 05 01 00 0A 00 00 00 28 00 01 00 02 38 7C 3E 08 82 04 00 00 00 00 01 00 00 00 0E 7C 46 1D 08 02 38 7C 3E 08 82 04 00 00 00 00 01 00 00 00 0E 7C 46 1D 08 02 38 7C 3E 08 82 04 00 00 00 00 01 00 00 00 0E 7C 46 1D 08 02 38 7C 3E 08 82 04 00 00 00 00 01 00 00 00 0E 7C 46 1D 08 02 38 7C 3E 08 82 04 00 00 00 00 01 00 00 00 0E 7C 46 1D 08 02 38 7C 3E 08 82 04 00 00 00 00 01 00 00 00 05 03 E9 A0 0B 08 02 03 01 01 01 01 01 01 05 0B 03 0D 08"
+        },
+        {
+            "id":"37",
+            "name": "Hyper Beam",
+            "background": true,
+            "coloredBackground": true,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 A3 27 02 24 7B 3E 08 02 05 01 00 04 00 00 00 10 00 00 00 05 04 0A 19 D0 00 C0 03 1D 8B 09 08 02 05 00 00 01 00 00 00 04 00 01 00 05 04 1E 1F 39 CF 0D 08 07 F0 00 C0 FF 3F 00 01 00 0F 00 00 00 05 00 03 F9 89 09 08 02 05 00 00 00 00 04 00 32 00 01 00 03 6D 9F 0B 08 02 07 A3 27 01 00 0C 00 1F 00 10 00 00 00 00 00 0E D8 2A 1D 08 0E D8 2A 1D 08 0E D8 2A 1D 08 0E D8 2A 1D 08 0E D8 2A 1D 08 03 1D 8B 09 08 02 05 01 00 04 00 00 00 32 00 01 00 03 F9 A7 0B 08 0A 05 04 00 02 00 00 00 0B 00 39 67 0E D8 2A 1D 08 0E D8 2A 1D 08 0E D8 2A 1D 08 0E D8 2A 1D 08 0E D8 2A 1D 08 0E D8 2A 1D 08 0E D8 2A 1D 08 0E D8 2A 1D 08 0E D8 2A 1D 08 0E D8 2A 1D 08 0E D8 2A 1D 08 0E D8 2A 1D 08 0E D8 2A 1D 08 0E D8 2A 1D 08 0E D8 2A 1D 08 0E D8 2A 1D 08 0E D8 2A 1D 08 0E D8 2A 1D 08 0E D8 2A 1D 08 0E D8 2A 1D 08 0E D8 2A 1D 08 03 F9 A7 0B 08 0A 05 04 00 02 00 0B 00 00 00 39 67 05 02 24 7B 3E 08 02 05 01 00 04 00 10 00 00 00 00 00 05 0B 03 0D 08"
+        },
+        {
+            "id":"102",
+            "name": "Hyper Fang",
+            "background": true,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 D0 27 19 9A 00 3F 04 01 04 02 03 2D C0 0B 08 02 00 21 07 01 00 C5 21 1D 08 03 B5 EA 0D 08 02 00 21 07 00 00 B7 21 1D 08 13 BE 21 1D 08 16 02 BC EF 3F 08"
+        },
+        {
+            "id":"38",
+            "name": "Hyper Voice",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 DB 27 0E 1F 2D 1D 08 05 04 08 0E 1F 2D 1D 08 05 08"
+        },
+        {
+            "id":"77",
+            "name": "Hypnosis",
+            "background": true,
+            "coloredBackground": false,
+            "psychicBackground": true,
+            "scroll": false, 
+            "code": "00 B3 27 0E BB 59 1D 08 0E 1D 0E 1D 08 0E 1D 0E 1D 08 0E 1D 0E 1D 08 03 DD 9B 0B 08 02 06 04 00 02 00 02 00 00 00 0C 00 5F 7E 05 04 01 0E C7 59 1D 08 08"
+        },
+        {
+            "id":"6",
+            "name": "Ice Beam",
+            "background": true,
+            "coloredBackground": true,
+            "psychicBackground": false,
+            "scroll": false,
+            "code": "0A 01 28 01 0C 0C 08 00 9D 27 02 24 7B 3E 08 02 05 01 00 01 00 00 00 07 00 00 00 05 1F 39 CF 0D 08 07 B0 00 C0 FF 3F 00 04 00 04 00 00 00 0A 00 02 A4 63 3E 08 02 05 14 00 0C 00 00 00 0C 00 14 00 02 A4 63 3E 08 02 05 14 00 F4 FF 00 00 F4 FF 14 00 04 01 0E FC E3 1C 08 0E FC E3 1C 08 0E FC E3 1C 08 02 24 7B 3E 08 02 05 04 00 E1 FF 00 00 07 00 80 7E 03 1D 8B 09 08 02 05 01 00 02 00 00 00 19 00 01 00 0E FC E3 1C 08 0E FC E3 1C 08 0E FC E3 1C 08 0E FC E3 1C 08 0E FC E3 1C 08 0E FC E3 1C 08 0E FC E3 1C 08 0E FC E3 1C 08 02 8C 63 3E 08 02 05 14 00 00 00 00 00 00 00 0B 00 04 01 02 8C 63 3E 08 02 05 14 00 00 00 00 00 00 00 0B 00 05 04 14 0E 0A 54 1D 08 02 24 7B 3E 08 02 05 04 00 05 00 07 00 00 00 80 7E 05 02 24 7B 3E 08 02 05 01 00 00 00 07 00 00 00 00 00 05 0B 01 0D 08"
+        },
+        {
+            "id":"16",
+            "name": "Ice Punch",
+            "background": true,
+            "coloredBackground": true,
+            "psychicBackground": false,
+            "scroll": false,
+            "code": "0A 03 0C 0C 08 00 9D 27 00 97 27 00 9F 27 02 24 7B 3E 08 02 05 01 00 01 00 00 00 07 00 00 00 05 03 F9 A7 0B 08 0A 05 04 00 02 00 00 00 09 00 4C 7F 04 14 19 7A 00 3F 02 60 63 3E 08 02 01 00 00 02 60 63 3E 08 02 01 40 00 02 60 63 3E 08 02 01 80 00 02 60 63 3E 08 02 01 C0 00 04 05 02 48 63 3E 08 02 01 20 00 02 48 63 3E 08 02 01 60 00 02 48 63 3E 08 02 01 A0 00 02 48 63 3E 08 02 01 E0 00 04 11 02 10 67 3E 08 04 05 00 00 F6 FF 08 00 01 00 00 00 02 08 7C 3E 08 03 04 00 00 F6 FF 01 00 01 00 19 84 00 3F 04 02 03 F9 89 09 08 05 05 01 00 00 00 05 00 03 00 01 00 05 04 0F 0E 0A 54 1D 08 04 05 03 F9 A7 0B 08 0A 05 04 00 02 00 09 00 00 00 4C 7F 05 02 24 7B 3E 08 02 05 01 00 00 00 07 00 00 00 00 00 05 0B 03 0D 08"
+        },
+        {
+            "id":"67",
+            "name": "Icy Wind",
+            "background": true,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,   
+            "code": "00 9D 27 00 9E 27 0A 03 03 F9 A7 0B 08 0A 05 0B 00 04 00 00 00 04 00 00 00 14 0F 17 19 82 00 00 17 05 1B 7D 00 C0 3F 02 00 0E 48 9E 1C 08 04 05 0E 48 9E 1C 08 19 7E 00 3F 04 37 0E E2 55 1D 08 05 0B 03 15 16 03 F9 A7 0B 08 0A 05 0B 00 04 00 04 00 00 00 00 00 17 08"
+        },
+        {
+            "id":"103",
+            "name": "Imprison",
+            "background": true,
+            "coloredBackground": false,
+            "psychicBackground": true,
+            "scroll": false,                                                                                                                            
+            "code": "00 09 28 00 0A 28 0E BB 59 1D 08 0A 03 03 85 35 0B 08 05 00 04 08 1C 9F 00 C0 08 05 05 04 04 02 5C 70 3E 08 05 02 00 00 28 00 03 B5 94 0B 08 05 03 04 00 01 00 0A 00 19 D0 00 C0 0B 03 0E C7 59 1D 08 08"
+        },
+        {
+            "id":"22",
+            "name": "Iron Defense",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,
+            "code": "1C 5F 00 C0 1C 02 03 ED 86 0B 08 05 03 00 00 00 00 00 00 02 3C 7B 3E 08 02 07 01 00 08 00 02 00 FF FF 0E 00 FF FF 00 00 05 08"
+        },
+        {
+            "id":"78",
+            "name": "Kinesis",
+            "background": true,
+            "coloredBackground": false,
+            "psychicBackground": true,
+            "scroll": false, 
+            "code": "00 5B 27 00 71 27 19 B6 00 C0 0E BB 59 1D 08 02 8C 6F 3E 08 14 00 02 BC 3B 3E 08 13 03 20 00 F8 FF 00 00 02 BC 3B 3E 08 13 03 20 00 10 00 01 00 1C BD 00 C0 15 02 04 3C 19 A9 00 C0 04 1E 1C A9 00 C0 14 02 04 46 19 BB 00 C0 05 0E C7 59 1D 08 08"
+        },
+        {
+            "id":"7",
+            "name": "Leech Life",
+            "background": true,
+            "coloredBackground": true,
+            "psychicBackground": false,
+            "scroll": false,
+            "code": "00 B1 27 00 A3 27 04 01 00 2F 27 00 97 27 0A 03 2A 01 0C 0C 08 04 01 02 78 72 3E 08 02 03 EC FF 0F 00 0C 00 05 02 08 7C 3E 08 02 04 00 00 00 00 01 00 02 00 19 AD 00 3F 04 02 03 F9 89 09 08 05 05 01 00 00 00 05 00 05 00 01 00 05 02 24 7B 3E 08 02 05 01 00 01 00 00 00 07 00 00 00 05 0E 44 EC 1C 08 05 04 0F 0E C9 56 1D 08 05 02 24 7B 3E 08 02 05 01 00 01 00 07 00 00 00 00 00 05 0B 03 0D 08"
+        },
+        {
+            "id":"79",
+            "name": "Luster Purge",
+            "background": true,
+            "coloredBackground": false,
+            "psychicBackground": true,
+            "scroll": false, 
+            "code": "00 1B 28 00 97 27 14 03 16 03 B5 E7 0D 08 05 00 17 0A 00 0C 0C 08 19 C2 00 C0 02 48 71 3E 08 29 04 00 00 00 00 00 00 00 00 04 14 03 3D A8 0B 08 05 05 05 00 02 00 00 00 10 00 FF FF 03 21 AA 0B 08 05 05 1B 28 02 00 00 00 10 00 FF FF 05 03 21 AA 0B 08 05 05 97 27 00 00 0C 00 0C 00 00 5C 05 02 50 7C 3E 08 83 02 01 00 02 00 03 DD D3 0D 08 05 02 D0 00 3F 00 04 03 02 50 7C 3E 08 83 02 01 00 02 00 03 DD D3 0D 08 05 02 D0 00 3F 00 04 03 02 50 7C 3E 08 83 02 01 00 02 00 03 DD D3 0D 08 05 02 D0 00 3F 00 04 03 02 50 7C 3E 08 83 02 01 00 02 00 03 DD D3 0D 08 05 02 D0 00 3F 00 04 03 02 50 7C 3E 08 83 02 01 00 02 00 03 DD D3 0D 08 05 02 D0 00 3F 00 04 03 02 50 7C 3E 08 83 02 01 00 02 00 03 DD D3 0D 08 05 02 D0 00 3F 00 05 03 3D A8 0B 08 05 05 05 00 02 00 10 00 00 00 FF FF 03 B5 94 0B 08 05 03 01 00 05 00 0E 00 05 0B 00 0D 0E C7 59 1D 08 08"
+        },
+        {
+            "id":"104",
+            "name": "Mach Punch",
+            "background": true,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": true,                                                                                                                            
+            "code": "00 97 27 00 9F 27 0A 02 03 21 B9 0B 08 02 00 21 07 01 00 86 B1 1C 08 14 09 16 03 2D B8 0B 08 05 04 00 F7 00 00 01 00 FF FF 17 04 00 0C 09 08 03 31 70 07 08 02 02 28 71 0A 00 19 88 00 C0 04 06 02 08 7C 3E 08 83 04 00 00 00 00 01 00 01 00 02 10 67 3E 08 84 05 00 00 00 00 08 00 01 00 00 00 19 84 00 3F 03 F9 89 09 08 02 05 01 00 03 00 00 00 06 00 01 00 05 0B 02 0D 15 16 10 07 FF FF 17 08"
+        },
+        {
+            "id":"80",
+            "name": "Meditate",
+            "background": true,
+            "coloredBackground": false,
+            "psychicBackground": true,
+            "scroll": false, 
+            "code": "0E BB 59 1D 08 03 19 34 0B 08 02 00 19 9B 00 C0 04 10 19 91 00 C0 05 0E C7 59 1D 08 08"
+        },
+        {
+            "id":"39",
+            "name": "Mean Look",
+            "background": true,
+            "coloredBackground": true,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 CB 27 0A 03 19 B6 00 C0 02 24 7B 3E 08 02 05 01 00 01 00 00 00 10 00 00 00 05 1C BD 00 3F 0F 04 1D B9 00 3F 55 02 E4 EE 3F 08 02 00 04 78 04 1E 0B 03 05 02 24 7B 3E 08 02 05 01 00 02 00 10 00 00 00 00 00 05 0B 03 0D 08"
+        },
+        {
+            "id":"14",
+            "name": "Mega Drain",
+            "background": true,
+            "coloredBackground": true,
+            "psychicBackground": false,
+            "scroll": false,
+            "code": "00 A3 27 00 2F 27 00 97 27 0A 03 2A 01 0C 0C 08 02 24 7B 3E 08 02 05 01 00 01 00 00 00 08 00 ED 33 05 19 AD 00 3F 02 08 7C 3E 08 02 04 00 00 00 00 01 00 01 00 04 02 03 F9 89 09 08 05 05 01 00 00 00 05 00 05 00 01 00 05 04 03 0E 5C ED 1C 08 05 04 0F 0E C9 56 1D 08 05 02 24 7B 3E 08 02 05 01 00 01 00 08 00 00 00 ED 33 05 0B 03 0D 08"
+        },
+        {
+            "id":"105",
+            "name": "Megahorn",
+            "background": true,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": true,                                                                                                                            
+            "code": "00 A9 27 00 97 27 0A 03 19 A4 00 C0 24 31 F6 1C 08 14 07 16 03 2D B8 0B 08 05 04 00 F7 00 03 01 00 FF FF 17 0C 0C 08 03 F9 89 09 08 05 05 00 00 02 00 00 00 0F 00 01 00 05 04 0A 02 9C 4E 3D 08 02 05 00 00 18 00 00 00 00 00 06 00 04 03 02 24 72 3E 08 03 05 D6 FF 19 00 00 00 00 00 06 00 04 04 19 95 00 3F 02 08 7C 3E 08 02 04 00 00 00 00 01 00 00 00 02 9C 4E 3D 08 02 05 01 00 F0 FF 04 00 01 00 04 00 05 03 D1 8C 09 08 02 05 01 00 FC FF 01 00 0C 00 01 00 02 3C 7B 3E 08 02 07 07 00 05 00 01 00 FF 7F 0A 00 00 00 00 00 04 0A 02 84 4E 3D 08 02 03 00 00 00 00 0B 00 04 03 02 84 4E 3D 08 02 03 01 00 00 00 07 00 05 05 0B 03 0D 15 16 10 07 FF FF 17 08"
+        },
+        {
+            "id":"108",
+            "name": "Mega Kick",
+            "background": true,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 97 27 00 9F 27 0A 01 04 02 02 24 7B 3E 08 02 05 01 00 00 00 00 00 10 00 00 00 0C 0C 08 19 85 00 3F 02 C0 67 3E 08 03 04 00 00 00 00 01 00 32 00 03 F9 A7 0B 08 0A 05 04 00 02 00 00 00 07 00 FF 7F 04 32 19 86 00 3F 0E 89 7D 1C 08 02 08 7C 3E 08 02 04 00 00 00 00 01 00 00 00 03 1D 8B 09 08 02 05 01 00 04 00 00 00 16 00 01 00 03 F9 A7 0B 08 0A 05 04 00 02 00 00 00 00 00 FF 7F 02 3C 7B 3E 08 02 07 1F 00 03 00 01 00 00 00 08 00 00 00 00 00 05 0B 01 0D 04 02 15 17 08"
+        },
+        {
+            "id":"107",
+            "name": "Mega Punch",
+            "background": true,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 97 27 00 9F 27 0A 01 04 02 02 24 7B 3E 08 02 05 01 00 00 00 00 00 10 00 00 00 0C 0C 08 19 85 00 3F 02 C0 67 3E 08 03 04 00 00 00 00 00 00 32 00 03 F9 A7 0B 08 0A 05 04 00 02 00 00 00 07 00 FF 7F 04 32 0E 89 7D 1C 08 02 08 7C 3E 08 02 04 00 00 00 00 01 00 00 00 03 1D 8B 09 08 02 05 01 00 04 00 00 00 16 00 01 00 03 F9 A7 0B 08 0A 05 04 00 02 00 00 00 00 00 FF 7F 02 3C 7B 3E 08 02 07 1F 00 03 00 01 00 00 00 08 00 00 00 00 00 19 74 00 3F 05 0B 01 0D 04 02 15 17 08"
+        },
+        {
+            "id":"106",
+            "name": "Meteor Mash",
+            "background": true,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 F9 27 00 97 27 00 9F 27 1B C9 00 C0 3F 03 00 14 10 17 05 02 BC F6 3F 08 83 05 D0 FF C0 FF 48 00 20 00 1E 00 04 0A 02 BC F6 3F 08 83 05 90 FF C0 FF 08 00 20 00 1E 00 04 28 02 8C 67 3E 08 83 04 00 00 00 00 00 00 1E 00 02 BC F6 3F 08 83 05 B0 FF C0 FF 28 00 20 00 1E 00 04 14 19 74 00 3F 02 08 7C 3E 08 83 04 00 00 00 00 01 00 01 00 03 1D 8B 09 08 02 05 01 00 05 00 00 00 14 00 01 00 05 04 0A 15 17 05 08"
+        },
+        {
+            "id":"40",
+            "name": "Moonlight",
+            "background": true,
+            "coloredBackground": true,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 D2 27 00 D3 27 00 2F 27 0C 00 10 02 24 7B 3E 08 02 05 01 00 01 00 00 00 10 00 00 00 05 02 34 37 3E 08 02 02 78 00 38 00 03 49 60 07 08 03 05 00 00 10 00 10 00 00 00 01 00 19 CC 00 00 04 1E 02 64 37 3E 08 28 02 F4 FF 00 00 04 1E 02 64 37 3E 08 28 02 E8 FF 00 00 04 1E 02 64 37 3E 08 28 02 15 00 00 00 04 1E 02 64 37 3E 08 28 02 00 00 00 00 04 1E 02 64 37 3E 08 28 02 0A 00 00 00 04 14 03 C1 5F 0A 08 02 00 05 0E C9 56 1D 08 05 08"
+        },
+        {
+            "id":"28",
+            "name": "Nightmare",
+            "background": true,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,
+            "code": "14 02 17 24 6F B0 1C 08 0A 03 03 AD 58 0B 08 02 00 03 F9 89 09 08 02 05 01 00 03 00 00 00 28 00 01 00 19 72 00 3F 05 0B 03 15 17 08"
+        },
+        {
+            "id":"26",
+            "name": "Night Shade",
+            "background": true,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,
+            "code": "0A 00 28 00 19 B6 00 C0 14 02 17 04 0A 19 B9 00 C0 03 E9 54 0B 08 05 01 55 00 04 46 03 1D 8B 09 08 02 05 01 00 02 00 00 00 0C 00 01 00 03 DD 9B 0B 08 02 06 04 00 00 00 02 00 00 00 0D 00 00 00 05 0B 00 04 01 15 17 08"
+        },
+        {
+            "id":"41",
+            "name": "Overheat",
+            "background": true,
+            "coloredBackground": true,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 2D 27 00 97 27 0A 03 0C 0C 12 02 24 7B 3E 08 02 05 01 00 01 00 00 00 05 00 1C 00 05 03 11 BE 0B 08 05 00 05 03 6D BE 0B 08 05 02 00 00 01 00 04 01 03 A5 BF 0B 08 05 01 00 00 04 01 19 A4 00 C0 03 6D BE 0B 08 05 02 01 00 00 00 04 01 02 24 7B 3E 08 02 05 02 00 01 00 00 00 0D 00 1C 00 03 F9 89 09 08 05 05 00 00 02 00 00 00 0F 00 01 00 05 19 8A 00 C0 02 60 78 3E 08 02 05 01 00 00 00 1E 00 19 00 EC FF 02 60 78 3E 08 02 05 01 00 20 00 1E 00 19 00 EC FF 02 60 78 3E 08 02 05 01 00 40 00 1E 00 19 00 EC FF 02 60 78 3E 08 02 05 01 00 60 00 1E 00 19 00 EC FF 02 60 78 3E 08 02 05 01 00 80 00 1E 00 19 00 EC FF 02 60 78 3E 08 42 05 01 00 A0 00 1E 00 19 00 EC FF 02 60 78 3E 08 42 05 01 00 C0 00 1E 00 19 00 EC FF 02 60 78 3E 08 42 05 01 00 E0 00 1E 00 19 00 EC FF 04 05 02 60 78 3E 08 02 05 01 00 00 00 1E 00 19 00 00 00 02 60 78 3E 08 02 05 01 00 20 00 1E 00 19 00 00 00 02 60 78 3E 08 02 05 01 00 40 00 1E 00 19 00 00 00 02 60 78 3E 08 02 05 01 00 60 00 1E 00 19 00 00 00 02 60 78 3E 08 02 05 01 00 80 00 1E 00 19 00 00 00 02 60 78 3E 08 42 05 01 00 A0 00 1E 00 19 00 00 00 02 60 78 3E 08 42 05 01 00 C0 00 1E 00 19 00 00 00 02 60 78 3E 08 42 05 01 00 E0 00 1E 00 19 00 00 00 04 05 02 60 78 3E 08 02 05 01 00 00 00 1E 00 19 00 0A 00 02 60 78 3E 08 02 05 01 00 20 00 1E 00 19 00 0A 00 02 60 78 3E 08 02 05 01 00 40 00 1E 00 19 00 0A 00 02 60 78 3E 08 02 05 01 00 60 00 1E 00 19 00 0A 00 02 60 78 3E 08 02 05 01 00 80 00 1E 00 19 00 0A 00 02 60 78 3E 08 42 05 01 00 A0 00 1E 00 19 00 0A 00 02 60 78 3E 08 42 05 01 00 C0 00 1E 00 19 00 0A 00 02 60 78 3E 08 42 05 01 00 E0 00 1E 00 19 00 0A 00 04 05 05 02 08 7C 3E 08 83 04 FB FF 03 00 01 00 00 00 19 8C 00 3F 03 F9 89 09 08 02 05 01 00 0A 00 00 00 19 00 01 00 04 06 02 08 7C 3E 08 83 04 08 00 FB FF 01 00 00 00 19 8C 00 3F 04 08 02 08 7C 3E 08 83 04 0A 00 0A 00 01 00 00 00 19 8C 00 3F 04 08 02 08 7C 3E 08 83 04 00 00 00 00 01 00 00 00 19 8C 00 3F 03 A5 BF 0B 08 05 01 01 00 04 01 02 24 7B 3E 08 02 05 02 00 FF FF 00 00 0D 00 52 4A 03 F9 89 09 08 05 05 00 00 03 00 00 00 0F 00 01 00 05 03 09 BF 0B 08 05 02 00 00 01 00 04 01 02 24 7B 3E 08 02 05 01 00 01 00 05 00 00 00 1C 00 05 0B 03 0D 05 04 0F 03 09 BF 0B 08 05 02 01 00 00 00 04 01 02 24 7B 3E 08 02 05 02 00 00 00 0D 00 00 00 52 4A 05 03 3D BE 0B 08 05 00 05 08"
+        },
+        {
+            "id":"42",
+            "name": "Perish Song 1",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 DE 27 02 84 44 3E 08 04 03 00 00 00 00 00 00 02 84 44 3E 08 04 03 01 00 01 00 10 00 02 84 44 3E 08 04 03 02 00 01 00 20 00 02 84 44 3E 08 04 03 03 00 02 00 30 00 02 84 44 3E 08 04 03 04 00 02 00 40 00 02 84 44 3E 08 04 03 05 00 00 00 50 00 02 84 44 3E 08 04 03 06 00 00 00 60 00 02 84 44 3E 08 04 03 07 00 01 00 70 00 02 84 44 3E 08 04 03 08 00 02 00 80 00 02 84 44 3E 08 04 03 09 00 00 00 90 00 02 84 44 3E 08 04 03 0A 00 02 00 A0 00 02 84 44 3E 08 04 03 0B 00 00 00 B0 00 02 84 44 3E 08 04 03 0C 00 01 00 C0 00 02 84 44 3E 08 04 03 0D 00 03 00 D0 00 02 84 44 3E 08 04 03 0E 00 03 00 E0 00 02 84 44 3E 08 04 03 0F 00 00 00 F0 00 02 9C 44 3E 08 04 03 0F 00 00 00 00 00 04 14 1B A6 00 C0 3F 02 00 04 50 02 24 7B 3E 08 02 05 01 00 03 00 00 00 10 00 00 00 03 75 8A 0B 08 05 02 04 00 00 00 03 75 8A 0B 08 05 02 05 00 00 00 03 75 8A 0B 08 05 02 06 00 00 00 03 75 8A 0B 08 05 02 07 00 00 00 04 64 02 24 7B 3E 08 02 05 01 00 03 00 10 00 00 00 00 00 03 75 8A 0B 08 05 02 04 00 01 00 03 75 8A 0B 08 05 02 05 00 01 00 03 75 8A 0B 08 05 02 06 00 01 00 03 75 8A 0B 08 05 02 07 00 01 00 05 08"
+        },
+        {
+            "id":"43",
+            "name": "Perish Song 2",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 DE 27 02 84 44 3E 08 04 03 00 00 00 00 00 00 02 84 44 3E 08 04 03 01 00 01 00 10 00 02 84 44 3E 08 04 03 02 00 01 00 20 00 02 84 44 3E 08 04 03 03 00 02 00 30 00 02 84 44 3E 08 04 03 04 00 02 00 40 00 02 84 44 3E 08 04 03 05 00 00 00 50 00 02 84 44 3E 08 04 03 06 00 00 00 60 00 02 84 44 3E 08 04 03 07 00 01 00 70 00 02 84 44 3E 08 04 03 08 00 02 00 80 00 02 84 44 3E 08 04 03 09 00 00 00 90 00 02 84 44 3E 08 04 03 0A 00 02 00 A0 00 02 84 44 3E 08 04 03 0B 00 00 00 B0 00 02 84 44 3E 08 04 03 0C 00 01 00 C0 00 02 84 44 3E 08 04 03 0D 00 03 00 D0 00 02 84 44 3E 08 04 03 0E 00 03 00 E0 00 02 84 44 3E 08 04 03 0F 00 00 00 F0 00 02 9C 44 3E 08 04 03 0F 00 00 00 00 00 04 14 1B A6 00 C0 3F 02 00 04 50 03 75 8A 0B 08 05 02 04 00 00 00 03 75 8A 0B 08 05 02 05 00 00 00 03 75 8A 0B 08 05 02 06 00 00 00 03 75 8A 0B 08 05 02 07 00 00 00 04 64 03 75 8A 0B 08 05 02 04 00 01 00 03 75 8A 0B 08 05 02 05 00 01 00 03 75 8A 0B 08 05 02 06 00 01 00 03 75 8A 0B 08 05 02 07 00 01 00 05 08"
+        },
+        {
+            "id":"90",
+            "name": "Poison Fang",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false, 
+            "code": "00 D0 27 00 A6 27 19 9A 00 3F 02 BC EF 3F 08 82 00 04 0A 03 F9 89 09 08 03 05 01 00 03 00 00 00 0A 00 01 00 05 03 DD 9B 0B 08 02 06 04 00 00 00 04 00 00 00 0C 00 1A 68 0E 5B 57 1D 08 05 08"
+        },
+        {
+            "id":"44",
+            "name": "Powder Snow",
+            "background": true,
+            "coloredBackground": true,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 9D 27 0A 03 02 24 7B 3E 08 02 05 01 00 01 00 00 00 03 00 00 00 05 1B 7D 00 C0 3F 02 00 0E 3E E9 1C 08 0E 3E E9 1C 08 19 7E 00 3F 05 20 0E 8E 54 1D 08 05 0B 03 04 14 02 24 7B 3E 08 02 05 01 00 01 00 03 00 00 00 00 00 05 0B 03 0D 08"
+        },
+        {
+            "id":"81",
+            "name": "Psybeam",
+            "background": true,
+            "coloredBackground": false,
+            "psychicBackground": true,
+            "scroll": false, 
+            "code": "00 B3 27 19 B6 00 C0 0E BB 59 1D 08 1F 39 CF 0D 08 07 C1 00 C0 FF 3F 00 03 00 04 00 00 00 0F 00 0E D4 0D 1D 08 0E D4 0D 1D 08 03 05 97 09 08 05 05 00 00 06 00 00 08 04 00 01 00 03 DD 9B 0B 08 02 06 04 00 02 00 02 00 00 00 0C 00 5F 7E 0E D4 0D 1D 08 0E D4 0D 1D 08 0E D4 0D 1D 08 0E D4 0D 1D 08 0E D4 0D 1D 08 0E D4 0D 1D 08 0E D4 0D 1D 08 0E D4 0D 1D 08 0E D4 0D 1D 08 05 04 01 0E C7 59 1D 08 08"
+        },
+        {
+            "id":"45",
+            "name": "Psych Up",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 D4 27 0A 02 03 E5 9C 0B 08 02 06 01 00 02 00 06 00 01 00 0B 00 00 00 0C 0C 08 1C C1 00 C0 05 0A 02 F8 6D 3E 08 02 04 00 00 00 00 00 00 00 00 03 05 97 09 08 05 05 00 00 05 00 00 0A 08 00 00 00 04 7F 04 04 19 B6 00 C0 03 B1 98 09 08 05 05 FB FF FB FF 0A 00 00 00 01 00 03 F9 A7 0B 08 09 05 02 00 02 00 0A 00 00 00 FF 03 04 1E 0B 02 0D 05 08"
+        },
+        {
+            "id":"82",
+            "name": "Psychic",
+            "background": true,
+            "coloredBackground": false,
+            "psychicBackground": true,
+            "scroll": false, 
+            "code": "0A 03 0E BB 59 1D 08 0C 08 08 03 1D 8B 09 08 02 05 00 00 01 00 00 00 0A 00 01 00 03 DD 9B 0B 08 02 06 02 00 00 00 02 00 00 00 08 00 FF 02 05 1C B1 00 3F 0A 03 03 F9 89 09 08 02 05 01 00 05 00 00 00 0F 00 01 00 03 B1 98 09 08 05 05 FA FF FA FF 0F 00 01 00 01 00 05 0B 03 0D 04 01 0E C7 59 1D 08 08"
+        },
+        {
+            "id":"83",
+            "name": "Psycho Boost",
+            "background": true,
+            "coloredBackground": false,
+            "psychicBackground": true,
+            "scroll": false, 
+            "code": "00 E4 27 0A 02 14 03 16 03 B5 E7 0D 08 05 00 17 04 06 03 DD 9B 0B 08 02 06 01 00 02 00 08 00 00 00 0A 00 00 00 04 00 28 00 0C 08 08 04 0A 03 F9 89 09 08 02 05 00 00 03 00 00 00 F0 00 00 00 1C C1 00 C0 0E 0A 02 D0 71 3E 08 02 00 04 6E 1C C1 00 C0 07 0A 05 03 1D 8B 09 08 02 05 01 00 F8 FF 01 00 18 00 01 00 19 B9 00 3F 05 0B 02 0D 0E C7 59 1D 08 08"
+        },
+        {
+            "id":"84",
+            "name": "Psywave",
+            "background": true,
+            "coloredBackground": false,
+            "psychicBackground": true,
+            "scroll": false, 
+            "code": "00 B5 27 19 B6 00 C0 0E BB 59 1D 08 03 01 B1 0A 08 05 01 64 00 1F 39 CF 0D 08 07 C4 00 C0 FF 3F 00 02 00 09 00 00 00 0A 00 0E AD 0E 1D 08 0E AD 0E 1D 08 03 DD 9B 0B 08 02 06 04 00 01 00 04 00 00 00 0C 00 5F 7E 0E AD 0E 1D 08 0E AD 0E 1D 08 0E AD 0E 1D 08 0E AD 0E 1D 08 05 04 01 0E C7 59 1D 08 08"
+        },
+        {
+            "id":"63",
+            "name": "Pursuit",
+            "background": true,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 97 27 0A 01 14 01 17 04 00 0C 0C 08 19 84 00 3F 02 08 7C 3E 08 03 04 00 00 00 00 01 00 02 00 03 D5 9B 09 08 05 05 00 00 01 00 06 00 01 00 00 00 05 0B 01 0D 04 00 15 17 08"
+        },
+        {
+            "id":"46",
+            "name": "Rain Dance",
+            "background": true,
+            "coloredBackground": true,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 83 27 19 78 00 C0 03 F9 A7 0B 08 0A 05 81 07 02 00 00 00 04 00 00 00 05 03 C1 AB 0A 08 02 03 00 00 03 00 78 00 03 C1 AB 0A 08 02 03 00 00 03 00 78 00 04 78 04 1E 05 03 F9 A7 0B 08 0A 05 81 07 02 00 04 00 00 00 00 00 05 08"
+        },
+        {
+            "id":"109",
+            "name": "Refresh",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 DB 27 00 41 27 19 E8 00 C0 03 85 20 0E 08 02 01 00 00 05 19 DD 00 C0 0E 9E 56 1D 08 05 19 5F 00 C0 02 24 7B 3E 08 02 05 1F 00 03 00 0A 00 00 00 0C 7B 02 94 40 3E 08 03 04 00 00 00 00 00 00 00 00 08"
+        },
+        {
+            "id":"47",
+            "name": "Reversal",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 FC 27 00 9F 27 00 97 27 19 CA 00 C0 02 3C 7B 3E 08 02 07 1F 00 03 00 03 00 FF 7F 08 00 00 00 00 00 05 04 1E 03 DD 9B 0B 08 02 06 1F 00 03 00 02 00 00 00 0A 00 FF 7F 04 0A 19 D2 00 C0 02 B8 F3 3F 08 02 02 1A 00 00 00 02 B8 F3 3F 08 02 02 1A 00 2A 00 02 B8 F3 3F 08 02 02 1A 00 54 00 02 B8 F3 3F 08 02 02 1A 00 7E 00 02 B8 F3 3F 08 02 02 1A 00 A8 00 02 B8 F3 3F 08 02 02 1A 00 D2 00 05 04 14 02 54 4E 3D 08 02 02 06 00 04 00 04 08 19 74 00 3F 02 3C 7B 3E 08 02 07 1F 00 03 00 01 00 FF 7F 08 00 00 00 00 00 02 10 67 3E 08 84 05 00 00 00 00 0A 00 01 00 00 00 02 08 7C 3E 08 83 04 00 00 00 00 01 00 01 00 03 D5 9B 09 08 05 05 00 00 01 00 08 00 01 00 00 00 08"
+        },
+        {
+            "id":"17",
+            "name": "Role Play",
+            "background": true,
+            "coloredBackground": true,
+            "psychicBackground": false,
+            "scroll": false,
+            "code": "0A 02 03 F9 A7 0B 08 0A 05 04 00 02 00 00 00 10 00 FF 7F 02 24 7B 3E 08 02 05 01 00 02 00 00 00 0A 00 00 00 05 19 D5 00 C0 1D CA 00 C0 1E 03 B9 0F 0E 08 02 00 05 0B 02 03 F9 A7 0B 08 0A 05 04 00 02 00 10 00 00 00 FF 7F 04 08 02 24 7B 3E 08 02 05 01 00 02 00 0A 00 00 00 00 00 05 0B 03 0D 08"
+        },
+        {
+            "id":"48",
+            "name": "Scary Face",
+            "background": true,
+            "coloredBackground": true,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 EA 27 02 24 7B 3E 08 02 05 01 00 03 00 00 00 10 00 00 00 05 19 B6 00 C0 05 04 0A 19 B9 00 C0 03 11 9F 0A 08 05 00 04 0D 02 FC 42 3E 08 00 02 F0 FF F8 FF 02 FC 42 3E 08 00 02 10 00 F8 FF 05 03 D9 DA 0A 08 03 03 14 00 01 00 00 00 19 7B 00 3F 02 24 7B 3E 08 02 05 01 00 03 00 10 00 00 00 00 00 05 0B 03 0D 08"
+        },
+        {
+            "id":"95",
+            "name": "Seismic Toss",
+            "background": true,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": true, 
+            "code": "00 97 27 00 4A 27 10 07 00 00 0A 03 0C 0C 08 05 03 49 51 0B 08 03 00 04 01 14 11 16 03 89 51 0B 08 03 00 19 E7 00 00 17 05 03 ED 51 0B 08 03 00 21 07 00 00 7F 47 1D 08"
+        },
+        {
+            "id":"23",
+            "name": "Shadow Ball",
+            "background": true,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,
+            "code": "00 C0 27 14 02 17 04 0F 1F 39 CF 0D 08 07 A1 00 C0 FF 3F 00 05 00 05 00 00 00 05 00 02 08 76 3E 08 82 03 10 00 10 00 08 00 05 19 98 00 3F 03 1D 8B 09 08 02 05 01 00 04 00 00 00 08 00 01 00 05 15 17 08"
+        },
+        {
+            "id":"25",
+            "name": "Shadow Punch",
+            "background": true,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,
+            "code": "00 97 27 00 9F 27 14 02 17 0A 02 0C 09 08 03 31 70 07 08 02 02 00 00 0D 00 19 88 00 C0 04 06 02 08 7C 3E 08 83 04 00 00 00 00 01 00 01 00 02 10 67 3E 08 84 05 00 00 00 00 08 00 01 00 00 00 19 84 00 3F 03 F9 89 09 08 02 05 01 00 03 00 00 00 06 00 01 00 05 0B 02 0D 15 17 08"
+        },
+        {
+            "id":"85",
+            "name": "Sheer Cold",
+            "background": true,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false, 
+            "code": "14 0F 17 19 82 00 00 17 00 1A 27 0A 03 28 01 0C 0C 08 03 FD 83 07 08 02 00 1D EB 00 3F 11 05 0B 03 0D 15 17 08"
+        },
+        {
+            "id":"8",
+            "name": "Shock Wave",
+            "background": true,
+            "coloredBackground": true,
+            "psychicBackground": false,
+            "scroll": false,
+            "code": "00 E3 27 00 E4 27 00 11 27 00 35 27 0A 00 0C 0C 08 02 24 7B 3E 08 02 05 01 00 02 00 00 00 04 00 00 00 05 03 41 E5 0A 08 02 04 00 00 14 00 00 00 02 00 19 CE 00 C0 04 0C 02 90 62 3E 08 02 00 04 1E 03 E1 EC 0A 08 05 00 04 0C 05 03 A1 EF 0A 08 05 00 19 D6 00 3F 05 03 F9 89 09 08 02 05 01 00 00 00 06 00 12 00 01 00 03 F9 A7 0B 08 05 05 01 00 03 00 10 00 00 00 FF 7F 03 F9 A7 0B 08 05 05 04 00 00 00 10 00 10 00 00 00 04 04 03 F9 A7 0B 08 05 05 04 00 00 00 00 00 00 00 00 00 05 0B 00 0D 08"
+        },
+        {
+            "id":"97",
+            "name": "Silver Wind",
+            "background": true,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": true, 
+            "code": "14 17 17 03 2D B8 0B 08 05 04 00 FA 00 00 00 00 FF FF 00 1F 28 1B 7D 00 C0 3F 02 00 19 DD 00 00 04 00 0A 03 29 04 00 03 3D A8 0B 08 0A 05 01 00 00 00 00 00 04 00 00 00 03 4D B9 0B 08 02 00 04 00 03 F9 A7 0B 08 0A 05 01 00 00 00 04 00 04 00 00 00 17 02 A8 30 3E 08 C2 07 E0 FF 10 00 00 00 06 00 02 00 03 00 01 00 02 A8 30 3E 08 C2 07 F8 FF 12 00 40 00 03 00 02 00 02 00 01 00 02 A8 30 3E 08 78 07 E8 FF 12 00 5A 00 05 00 01 00 02 00 01 00 02 A8 30 3E 08 78 07 D8 FF 0E 00 80 00 04 00 01 00 02 00 01 00 04 00 02 C0 30 3E 08 C2 07 E0 FF 10 00 00 00 06 00 02 00 03 00 01 00 02 C0 30 3E 08 C2 07 F8 FF 12 00 40 00 03 00 02 00 02 00 01 00 02 C0 30 3E 08 78 07 E8 FF 12 00 5A 00 05 00 01 00 02 00 01 00 02 C0 30 3E 08 78 07 D8 FF 0E 00 80 00 04 00 01 00 02 00 01 00 04 00 02 D8 30 3E 08 C2 07 E0 FF 10 00 00 00 06 00 02 00 03 00 01 00 02 D8 30 3E 08 C2 07 F8 FF 12 00 40 00 03 00 02 00 02 00 01 00 02 D8 30 3E 08 78 07 E8 FF 12 00 5A 00 05 00 01 00 02 00 01 00 02 D8 30 3E 08 78 07 D8 FF 0E 00 80 00 04 00 01 00 02 00 01 00 04 06 02 A8 30 3E 08 C2 07 FC FF 10 00 00 00 06 00 01 00 02 00 01 00 02 A8 30 3E 08 C2 07 F0 FF 0C 00 C0 00 05 00 02 00 03 00 01 00 04 00 02 C0 30 3E 08 C2 07 FC FF 10 00 00 00 06 00 01 00 02 00 01 00 02 C0 30 3E 08 C2 07 F0 FF 0C 00 C0 00 05 00 02 00 03 00 01 00 04 00 02 D8 30 3E 08 C2 07 FC FF 10 00 00 00 06 00 01 00 02 00 01 00 02 D8 30 3E 08 C2 07 F0 FF 0C 00 C0 00 05 00 02 00 03 00 01 00 05 19 7E 00 3F 0B 03 04 00 03 3D A8 0B 08 0A 05 01 00 00 00 04 00 00 00 00 00 10 07 FF FF 17 0E C7 59 1D 08 08"
+        },
+        {
+            "id":"110",
+            "name": "Skill Swap",
+            "background": true,
+            "coloredBackground": false,
+            "psychicBackground": true,
+            "scroll": false,                                                                                                                            
+            "code": "00 0B 28 0E BB 59 1D 08 03 35 38 0B 08 03 01 01 00 03 6D 61 07 08 05 05 01 00 FF 7F 0C 00 03 00 01 00 1C D2 00 C0 18 03 04 10 03 35 38 0B 08 03 01 00 00 03 6D 61 07 08 05 05 00 00 FF 7F 0C 00 03 00 01 00 05 0E C7 59 1D 08 08"
+        },
+        {
+            "id":"98",
+            "name": "Sky Attack Turn 1",
+            "background": true,
+            "coloredBackground": true,
+            "psychicBackground": false,
+            "scroll": false, 
+            "code": "0A 03 0C 0C 0B 03 79 B9 0B 08 05 01 07 00 03 F9 A7 0B 08 0A 05 1B 00 01 00 00 00 0C 00 00 00 05 04 0C 03 F9 A7 0B 08 0A 05 02 00 01 00 08 00 00 00 00 00 03 B5 94 0B 08 05 03 00 00 02 00 10 00 1C E8 00 C0 04 08 03 F9 A7 0B 08 0A 05 02 00 01 00 00 00 0F 00 FF 7F 04 14 03 F9 A7 0B 08 0A 05 02 00 01 00 0F 00 00 00 FF 7F 05 03 F9 A7 0B 08 0A 05 19 00 01 00 08 00 00 00 00 00 05 0B 03 0D 08 0A 03 0C 0C 0B 03 79 B9 0B 08 05 01 07 00 21 07 00 00 40 AD 1C 08 13 B7 AD 1C 08 03 F9 A7 0B 08 0A 05 1B 00 01 00 00 00 0C 00 00 00 05 04 0C 03 F9 A7 0B 08 0A 05 02 00 01 00 08 00 00 00 00 00 03 B5 94 0B 08 05 03 00 00 02 00 10 00 1C E8 00 C0 04 08 03 F9 A7 0B 08 0A 05 02 00 01 00 00 00 0F 00 FF 7F 04 14 03 F9 A7 0B 08 0A 05 02 00 01 00 0F 00 00 00 FF 7F 05 03 F9 A7 0B 08 0A 05 19 00 01 00 08 00 00 00 00 00 05 0B 03 0D 13 24 AD 1C 08"
+        },
+        {
+            "id":"99",
+            "name": "Sky Attack Turn 2",
+            "background": true,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": true, 
+            "code": "00 97 27 00 2C 28 24 E8 59 1D 04 14 12 16 03 2D B8 0B 08 05 04 00 F7 00 03 01 00 FF FF 17 0A 00 03 F9 A7 0B 08 0A 05 02 00 00 00 00 00 10 00 FF 7F 04 04 03 E1 78 0B 08 05 01 00 00 05 03 11 D4 0D 08 05 02 E7 00 C0 FF 02 C4 6D 3E 08 82 00 04 0E 03 1D 8B 09 08 02 05 01 00 0A 00 00 00 12 00 01 00 03 DD D3 0D 08 05 02 86 00 3F 00 04 14 03 DD 79 0B 08 05 01 01 00 04 02 03 F9 A7 0B 08 0A 05 02 00 00 00 0F 00 00 00 FF 7F 05 0B 00 15 16 10 07 FF FF 17 13 24 AD 1C 08"
+        },
+        {
+            "id":"96",
+            "name": "Sky Uppercut",
+            "background": true,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": true, 
+            "code": "00 97 27 0A 03 28 01 14 11 17 19 E7 00 C0 03 31 15 0B 08 05 01 37 00 17 0C 0C 08 04 26 02 9C 4E 3D 08 02 05 00 00 1C 00 00 00 00 00 05 00 04 04 03 1D 8B 09 08 02 05 01 00 04 00 00 00 06 00 01 00 19 74 00 3F 02 08 7C 3E 08 83 04 E4 FF 1C 00 01 00 01 00 04 01 19 74 00 3F 02 08 7C 3E 08 83 04 F1 FF 08 00 01 00 01 00 19 74 00 3F 04 01 19 74 00 3F 02 08 7C 3E 08 83 04 FB FF F4 FF 01 00 01 00 04 01 19 74 00 3F 02 08 7C 3E 08 83 04 00 00 E0 FF 01 00 01 00 04 01 19 74 00 3F 02 08 7C 3E 08 83 04 05 00 CC FF 01 00 01 00 02 9C 4E 3D 08 02 05 01 00 E6 FF 10 00 01 00 04 00 04 04 03 D1 8C 09 08 02 05 01 00 00 00 03 00 06 00 01 00 04 1E 02 84 4E 3D 08 02 03 00 00 00 00 06 00 04 04 02 84 4E 3D 08 02 03 01 00 00 00 06 00 0B 03 0D 10 07 FF FF 17 0E C7 59 1D 08 08"
+        },
+        {
+            "id":"137",
+            "name": "Slam",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 48 27 00 97 27 0A 01 0C 0C 08 19 84 00 C0 02 9C 4E 3D 08 02 05 00 00 14 00 03 00 00 00 04 00 04 01 02 48 31 3E 08 02 02 00 00 00 00 04 03 19 86 00 3F 02 08 7C 3E 08 03 04 00 00 00 00 01 00 01 00 02 9C 4E 3D 08 02 05 01 00 F4 FF 0A 00 00 00 03 00 02 84 4E 3D 08 02 03 00 00 00 00 05 00 04 03 03 D1 8C 09 08 02 05 01 00 00 00 03 00 06 00 01 00 05 04 05 02 84 4E 3D 08 02 03 01 00 00 00 06 00 05 0B 01 0D 08"
+        },
+        {
+            "id":"69",
+            "name": "Solarbeam Turn 1",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,   
+            "code": "00 A3 27 11 21 E5 1C 08"
+        },
+        {
+            "id":"49",
+            "name": "Spark",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 97 27 00 1B 27 04 00 03 DD 9B 0B 08 02 06 03 00 E1 FF 01 00 05 00 05 00 FF 5B 19 70 00 C0 02 C4 5F 3E 08 00 07 20 00 18 00 BE 00 0C 00 00 00 01 00 00 00 04 00 02 C4 5F 3E 08 00 07 50 00 18 00 16 00 0C 00 00 00 01 00 00 00 02 C4 5F 3E 08 00 07 9C 00 18 00 79 00 0D 00 00 00 01 00 01 00 04 00 03 DD 9B 0B 08 02 06 03 00 E1 FF 01 00 00 00 00 00 FF 5B 04 0A 03 DD 9B 0B 08 02 06 03 00 E1 FF 01 00 05 00 05 00 FF 5B 19 70 00 C0 02 C4 5F 3E 08 00 07 64 00 18 00 3C 00 0A 00 00 00 01 00 00 00 02 C4 5F 3E 08 00 07 AA 00 18 00 2A 00 0B 00 00 00 01 00 01 00 04 00 02 C4 5F 3E 08 00 07 EE 00 18 00 A5 00 0A 00 00 00 01 00 01 00 04 00 03 DD 9B 0B 08 02 06 03 00 E1 FF 01 00 00 00 00 00 FF 5B 04 14 03 DD 9B 0B 08 02 06 03 00 E1 FF 01 00 07 00 07 00 FF 5B 19 70 00 C0 02 70 60 3E 08 04 08 00 00 00 00 20 00 0C 00 00 00 14 00 00 00 00 00 02 70 60 3E 08 04 08 00 00 00 00 20 00 0C 00 40 00 14 00 01 00 00 00 02 70 60 3E 08 04 08 00 00 00 00 20 00 0C 00 80 00 14 00 00 00 00 00 02 70 60 3E 08 04 08 00 00 00 00 20 00 0C 00 C0 00 14 00 02 00 00 00 02 70 60 3E 08 04 08 00 00 00 00 10 00 0C 00 20 00 14 00 00 00 00 00 02 70 60 3E 08 04 08 00 00 00 00 10 00 0C 00 60 00 14 00 01 00 00 00 02 70 60 3E 08 04 08 00 00 00 00 10 00 0C 00 A0 00 14 00 00 00 00 00 02 70 60 3E 08 04 08 00 00 00 00 10 00 0C 00 E0 00 14 00 02 00 00 00 04 04 05 03 DD 9B 0B 08 02 06 03 00 E1 FF 01 00 00 00 00 00 FF 5B 02 54 4E 3D 08 02 02 04 00 04 00 04 04 19 D0 00 3F 02 08 7C 3E 08 82 04 00 00 00 00 01 00 02 00 03 F9 89 09 08 02 05 01 00 03 00 00 00 06 00 01 00 05 03 DD 9B 0B 08 02 06 04 00 E1 FF 02 00 00 00 06 00 FF 5B 0E D4 58 1D 08 05 08"
+        },
+        {
+            "id":"31",
+            "name": "Spider Web",
+            "background": true,
+            "coloredBackground": true,
+            "psychicBackground": false,
+            "scroll": false,
+            "code": "00 C5 27 00 C4 27 0A 03 04 00 02 24 7B 3E 08 02 05 01 00 02 00 00 00 09 00 00 00 05 28 01 1C 7A 00 C0 09 06 0E A5 15 1D 08 0E A5 15 1D 08 0E A5 15 1D 08 0E A5 15 1D 08 0E A5 15 1D 08 0E A5 15 1D 08 0E A5 15 1D 08 0E A5 15 1D 08 0E A5 15 1D 08 0E A5 15 1D 08 0E A5 15 1D 08 0E A5 15 1D 08 0E A5 15 1D 08 0E A5 15 1D 08 05 19 7B 00 3F 02 DC 72 3E 08 02 00 05 0B 03 04 01 02 24 7B 3E 08 02 05 01 00 02 00 09 00 00 00 00 00 05 0B 03 0D 08"
+        },
+        {
+            "id":"29",
+            "name": "Spite",
+            "background": true,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,
+            "code": "14 02 19 B6 00 C0 17 0A 03 03 DD 9B 0B 08 02 06 02 00 02 00 06 00 00 00 08 00 FF 7F 03 AD 5A 0B 08 02 00 1C B6 00 3F 14 03 05 15 17 0B 01 08"
+        },
+        {
+            "id":"32",
+            "name": "String Shot",
+            "background": true,
+            "coloredBackground": true,
+            "psychicBackground": false,
+            "scroll": false,
+            "code": "00 C3 27 00 C4 27 0A 03 04 00 02 24 7B 3E 08 02 05 01 00 02 00 00 00 09 00 00 00 05 1C 7A 00 C0 09 06 0E 04 15 1D 08 0E 04 15 1D 08 0E 04 15 1D 08 0E 04 15 1D 08 0E 04 15 1D 08 0E 04 15 1D 08 0E 04 15 1D 08 0E 04 15 1D 08 0E 04 15 1D 08 0E 04 15 1D 08 0E 04 15 1D 08 0E 04 15 1D 08 0E 04 15 1D 08 0E 04 15 1D 08 0E 04 15 1D 08 0E 04 15 1D 08 0E 04 15 1D 08 0E 04 15 1D 08 05 19 7B 00 3F 02 A8 72 3E 08 82 02 00 00 0A 00 04 04 02 A8 72 3E 08 82 02 00 00 FE FF 04 04 02 A8 72 3E 08 82 02 00 00 16 00 05 0B 03 04 01 05 02 24 7B 3E 08 02 05 01 00 02 00 09 00 00 00 00 00 05 0B 03 0D 08"
+        },
+        {
+            "id":"50",
+            "name": "Sunny Day",
+            "background": true,
+            "coloredBackground": true,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 AD 27 0A 02 0C 0D 03 03 F9 A7 0B 08 0A 05 81 07 01 00 00 00 06 00 FF 7F 05 26 C3 00 C0 3F 01 00 0E 8B 03 1D 08 0E 8B 03 1D 08 0E 8B 03 1D 08 0E 8B 03 1D 08 05 03 F9 A7 0B 08 0A 05 81 07 01 00 06 00 00 00 FF 7F 05 0B 02 0D 08"
+        },
+        {
+            "id":"111",
+            "name": "Super Fang",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 D0 27 03 D1 8C 09 08 02 05 00 00 01 00 00 00 14 00 01 00 19 A4 00 C0 05 03 D1 8C 09 08 02 05 00 00 03 00 00 00 30 00 01 00 03 6D 61 07 08 02 05 00 00 DF 04 0C 00 04 00 01 00 05 04 14 02 54 4E 3D 08 02 02 04 00 04 00 04 04 02 EC 37 3E 08 82 00 19 9A 00 3F 04 08 02 3C 7B 3E 08 02 07 01 00 03 00 01 00 5F 08 0E 00 FF 7F 0E 00 03 F9 89 09 08 02 05 01 00 00 00 07 00 0C 00 01 00 05 0D 08"
+        },
+        {
+            "id":"33",
+            "name": "Tail Glow",
+            "background": true,
+            "coloredBackground": true,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 E4 27 0A 00 0C 0C 08 02 24 7B 3E 08 02 05 01 00 02 00 00 00 04 00 00 00 05 02 78 73 3E 08 42 01 00 00 04 12 1C DD 00 C0 10 06 05 0B 00 0D 04 01 02 24 7B 3E 08 02 05 01 00 04 00 04 00 00 00 00 00 05 0B 03 0D 08"
+        },
+        {
+            "id":"86",
+            "name": "Teleport",
+            "background": true,
+            "coloredBackground": false,
+            "psychicBackground": true,
+            "scroll": false, 
+            "code": "0E BB 59 1D 08 03 81 34 0B 08 02 00 19 C4 00 C0 04 0F 0E C7 59 1D 08 05 08"
+        },
+        {
+            "id":"66",
+            "name": "Thief",
+            "background": true,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 97 27 0A 01 04 01 14 01 17 0C 0C 08 02 54 4E 3D 08 02 02 06 00 04 00 04 06 19 73 00 3F 02 08 7C 3E 08 02 04 00 00 00 00 01 00 02 00 03 1D 8B 09 08 02 05 01 00 01 00 00 00 08 00 01 00 05 04 14 0B 01 0D 15 17 08"
+        },
+        {
+            "id":"112",
+            "name": "Thunder",
+            "background": true,
+            "coloredBackground": true,
+            "psychicBackground": false,
+            "scroll": true,                                                                                                                            
+            "code": "00 35 27 14 0B 16 03 2D B8 0B 08 05 04 00 FF 00 00 01 00 FF FF 17 02 24 7B 3E 08 02 05 01 00 02 00 00 00 10 00 00 00 04 10 03 E9 A0 0B 08 02 03 01 01 01 01 01 01 19 83 00 3F 04 01 02 38 5F 3E 08 82 02 10 00 DC FF 04 01 02 38 5F 3E 08 82 02 10 00 EC FF 04 01 02 38 5F 3E 08 82 02 10 00 0C 00 04 14 02 38 5F 3E 08 86 02 F0 FF E0 FF 19 83 00 3F 04 01 02 38 5F 3E 08 86 02 F0 FF F0 FF 04 01 02 38 5F 3E 08 86 02 F0 FF 10 00 19 83 00 3F 04 05 03 E9 A0 0B 08 02 03 01 01 01 01 01 01 04 01 02 38 5F 3E 08 82 02 18 00 E0 FF 04 01 02 38 5F 3E 08 82 02 18 00 F0 FF 04 01 02 38 5F 3E 08 82 02 18 00 10 00 04 1E 03 E9 A0 0B 08 02 03 01 01 01 01 01 01 04 05 03 E9 A0 0B 08 02 03 01 01 01 01 01 01 04 01 02 38 5F 3E 08 82 02 00 00 E0 FF 19 D6 00 3F 04 01 02 38 5F 3E 08 82 02 00 00 F0 FF 04 01 02 38 5F 3E 08 82 02 00 00 10 00 04 0A 03 E9 A0 0B 08 02 03 01 01 01 01 01 01 04 01 03 D9 DA 0A 08 02 04 1E 00 03 00 01 00 00 00 04 02 03 E9 A0 0B 08 02 03 01 01 01 01 01 01 04 01 02 24 7B 3E 08 82 05 01 00 02 00 10 00 00 00 00 00 05 15 16 10 07 FF FF 17 08"
+        },
+        {
+            "id":"18",
+            "name": "Thunderbolt",
+            "background": true,
+            "coloredBackground": true,
+            "psychicBackground": false,
+            "scroll": false,
+            "code": "00 11 27 00 2A 28 00 1B 27 03 F9 A7 0B 08 0A 05 01 00 00 00 00 00 06 00 00 00 05 04 0A 03 21 E2 0A 08 05 03 18 00 CC FF 00 00 19 6F 00 3F 04 07 03 21 E2 0A 08 05 03 E8 FF CC FF 00 00 19 6F 00 3F 04 07 03 21 E2 0A 08 05 03 00 00 C4 FF 01 00 19 6F 00 3F 04 09 03 F9 A7 0B 08 0A 05 04 00 00 00 00 00 0D 00 00 00 05 03 F9 A7 0B 08 0A 05 04 00 00 00 0D 00 00 00 00 00 05 04 14 02 58 60 3E 08 83 04 2C 00 00 00 00 00 03 00 02 70 60 3E 08 84 08 00 00 00 00 20 00 2C 00 00 00 28 00 00 00 03 80 02 70 60 3E 08 84 08 00 00 00 00 20 00 2C 00 40 00 28 00 01 00 03 80 02 70 60 3E 08 84 08 00 00 00 00 20 00 2C 00 80 00 28 00 00 00 03 80 02 70 60 3E 08 84 08 00 00 00 00 20 00 2C 00 C0 00 28 00 02 00 03 80 02 70 60 3E 08 84 08 00 00 00 00 10 00 2C 00 20 00 28 00 00 00 03 80 02 70 60 3E 08 84 08 00 00 00 00 10 00 2C 00 60 00 28 00 01 00 03 80 02 70 60 3E 08 84 08 00 00 00 00 10 00 2C 00 A0 00 28 00 00 00 03 80 02 70 60 3E 08 84 08 00 00 00 00 10 00 2C 00 E0 00 28 00 02 00 03 80 19 D0 00 3F 04 00 03 F9 A7 0B 08 0A 05 01 00 00 00 02 00 02 00 00 00 04 06 03 F9 A7 0B 08 0A 05 01 00 00 00 06 00 06 00 00 00 04 06 03 F9 A7 0B 08 0A 05 01 00 00 00 02 00 02 00 00 00 04 06 03 F9 A7 0B 08 0A 05 01 00 00 00 06 00 06 00 00 00 05 04 14 1D 70 00 3F 13 0E D4 58 1D 08 05 04 14 03 F9 A7 0B 08 0A 05 01 00 00 00 06 00 00 00 00 00 05 08"
+        },
+        {
+            "id":"19",
+            "name": "Thundershock",
+            "background": true,
+            "coloredBackground": true,
+            "psychicBackground": false,
+            "scroll": false,
+            "code": "00 11 27 00 1B 27 03 F9 A7 0B 08 0A 05 01 00 00 00 00 00 06 00 00 00 05 04 0A 03 21 E2 0A 08 05 03 00 00 D4 FF 00 00 19 6F 00 3F 04 09 03 F9 A7 0B 08 0A 05 04 00 00 00 00 00 0D 00 00 00 05 03 F9 A7 0B 08 0A 05 04 00 00 00 0D 00 00 00 00 00 05 04 14 0E D4 58 1D 08 05 04 14 03 F9 A7 0B 08 0A 05 01 00 00 00 06 00 00 00 00 00 05 08"
+        },
+        {
+            "id":"51",
+            "name": "Thunderpunch",
+            "background": true,
+            "coloredBackground": true,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 97 27 00 9F 27 00 35 27 0A 01 0C 0C 08 02 24 7B 3E 08 02 05 01 00 02 00 00 00 10 00 00 00 05 19 84 00 3F 02 10 67 3E 08 84 05 00 00 00 00 08 00 01 00 00 00 02 08 7C 3E 08 83 04 00 00 00 00 01 00 01 00 04 01 03 E9 A0 0B 08 02 03 01 01 01 01 01 01 04 01 02 38 5F 3E 08 82 02 00 00 D0 FF 04 01 02 38 5F 3E 08 02 02 00 00 F0 FF 04 01 02 38 5F 3E 08 02 02 00 00 10 00 04 01 19 D6 00 3F 03 E9 A0 0B 08 02 03 01 01 01 01 01 01 04 02 03 F9 89 09 08 02 05 01 00 00 00 03 00 0F 00 01 00 02 08 7C 3E 08 03 04 00 00 00 00 01 00 02 00 04 01 02 24 7B 3E 08 02 05 01 00 02 00 10 00 00 00 00 00 05 0B 03 0D 04 14 05 0B 01 0D 08"
+        },
+        {
+            "id":"34",
+            "name": "Thunder Wave",
+            "background": true,
+            "coloredBackground": true,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 11 27 00 1B 27 00 BD 27 03 F9 A7 0B 08 0A 05 01 00 00 00 00 00 06 00 00 00 05 04 0A 03 21 E2 0A 08 05 03 00 00 D0 FF 00 00 19 83 00 3F 04 14 1C 70 00 3F 0A 04 02 B8 60 3E 08 82 02 F0 FF F0 FF 04 04 02 B8 60 3E 08 82 02 F0 FF 00 00 04 04 02 B8 60 3E 08 82 02 F0 FF 10 00 05 03 F9 A7 0B 08 0A 05 01 00 00 00 06 00 00 00 00 00 05 08"
+        },
+        {
+            "id":"52",
+            "name": "Tri Attack 1",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 F6 27 02 D8 F0 3F 08 82 02 10 00 00 00 19 D5 00 C0 04 14 19 D5 00 C0 04 14 1F 39 CF 0D 08 07 D5 00 C0 FF 3F 00 05 00 06 00 00 00 07 00 05 02 24 7B 3E 08 02 05 01 00 02 00 00 00 10 00 00 00 04 10 00 31 27 02 88 5C 3E 08 82 06 00 00 00 00 1E 00 1E 00 FF FF 00 00 19 8A 00 3F 02 88 5C 3E 08 82 06 00 00 00 00 1E 00 1E 00 00 00 01 00 04 01 02 88 5C 3E 08 82 06 00 00 00 00 1E 00 1E 00 FF FF FF FF 04 01 02 88 5C 3E 08 82 06 00 00 00 00 1E 00 1E 00 02 00 01 00 04 01 02 88 5C 3E 08 82 06 00 00 00 00 1E 00 1E 00 01 00 FF FF 04 01 02 88 5C 3E 08 82 06 00 00 00 00 1E 00 1E 00 FF FF 01 00 04 01 02 88 5C 3E 08 82 06 00 00 00 00 1E 00 1E 00 01 00 FE FF 04 01 02 88 5C 3E 08 82 06 00 00 00 00 1E 00 1E 00 03 00 01 00 04 02 03 D9 DA 0A 08 02 04 14 00 03 00 01 00 01 00 05 00 35 27 03 E9 A0 0B 08 02 03 01 01 01 01 01 01 19 D6 00 3F 02 38 5F 3E 08 82 02 00 00 D0 FF 04 01 02 38 5F 3E 08 82 02 00 00 F0 FF 04 01 02 38 5F 3E 08 82 02 00 00 10 00 04 14 03 D9 DA 0A 08 02 04 14 00 03 00 01 00 00 00 04 02 03 E9 A0 0B 08 02 03 01 01 01 01 01 01 05 00 9D 27 0E 0A 54 1D 08 02 24 7B 3E 08 02 05 01 00 02 00 10 00 00 00 00 00 05 08"
+        },
+        {
+            "id":"53",
+            "name": "Tri Attack 2",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 F6 27 02 D8 F0 3F 08 82 02 10 00 00 00 19 D5 00 C0 04 14 19 D5 00 C0 04 14 1F 39 CF 0D 08 07 D5 00 C0 FF 3F 00 05 00 06 00 00 00 07 00 05 04 10 00 31 27 02 88 5C 3E 08 82 06 00 00 00 00 1E 00 1E 00 FF FF 00 00 19 8A 00 3F 02 88 5C 3E 08 82 06 00 00 00 00 1E 00 1E 00 00 00 01 00 04 01 02 88 5C 3E 08 82 06 00 00 00 00 1E 00 1E 00 FF FF FF FF 04 01 02 88 5C 3E 08 82 06 00 00 00 00 1E 00 1E 00 02 00 01 00 04 01 02 88 5C 3E 08 82 06 00 00 00 00 1E 00 1E 00 01 00 FF FF 04 01 02 88 5C 3E 08 82 06 00 00 00 00 1E 00 1E 00 FF FF 01 00 04 01 02 88 5C 3E 08 82 06 00 00 00 00 1E 00 1E 00 01 00 FE FF 04 01 02 88 5C 3E 08 82 06 00 00 00 00 1E 00 1E 00 03 00 01 00 04 02 03 D9 DA 0A 08 02 04 14 00 03 00 01 00 01 00 05 00 35 27 03 E9 A0 0B 08 02 03 01 01 01 01 01 01 19 D6 00 3F 02 38 5F 3E 08 82 02 00 00 D0 FF 04 01 02 38 5F 3E 08 82 02 00 00 F0 FF 04 01 02 38 5F 3E 08 82 02 00 00 10 00 04 14 03 D9 DA 0A 08 02 04 14 00 03 00 01 00 00 00 04 02 03 E9 A0 0B 08 02 03 01 01 01 01 01 01 05 00 9D 27 0E 0A 54 1D 08 08"
+        },
+        {
+            "id":"9",
+            "name": "Volt Tackle",
+            "background": true,
+            "coloredBackground": true,
+            "psychicBackground": false,
+            "scroll": false,
+            "code": "00 11 27 00 E4 27 00 E5 27 0A 00 0C 0C 08 03 F9 A7 0B 08 0A 05 01 00 00 00 00 00 08 00 00 00 05 02 1C 62 3E 08 01 00 19 CE 00 C0 05 0B 00 0D 04 08 03 11 EA 0A 08 05 01 00 00 19 6F 00 C0 05 03 11 EA 0A 08 05 01 01 00 19 6F 00 3F 05 03 11 EA 0A 08 05 01 02 00 19 6F 00 C0 05 03 11 EA 0A 08 05 01 03 00 19 6F 00 3F 05 03 11 EA 0A 08 05 01 04 00 19 6F 00 C0 04 08 03 1D 8B 09 08 02 05 01 00 0A 00 00 00 12 00 01 00 19 AA 00 3F 02 04 62 3E 08 02 03 01 00 10 00 10 00 04 02 02 04 62 3E 08 02 03 01 00 F0 FF F0 FF 04 08 03 A1 E8 0A 08 05 00 05 03 1D 8B 09 08 02 05 00 00 03 00 00 00 09 00 01 00 19 70 00 C0 02 04 62 3E 08 02 03 00 00 10 00 10 00 04 02 02 04 62 3E 08 02 03 00 00 F0 FF F0 FF 05 03 F9 A7 0B 08 0A 05 01 00 00 00 08 00 00 00 00 00 05 08"
+        },
+        {
+            "id":"35",
+            "name": "Water Pulse",
+            "background": true,
+            "coloredBackground": true,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 AB 27 00 30 28 0A 01 28 01 19 77 00 C0 02 24 7B 3E 08 02 05 01 00 00 00 00 00 07 00 20 73 05 04 0A 02 70 5B 3E 08 42 07 64 00 64 00 08 00 01 00 14 00 28 00 00 00 02 70 5B 3E 08 42 07 14 00 64 00 10 00 02 00 0A 00 23 00 01 00 02 70 5B 3E 08 42 07 C8 00 50 00 08 00 01 00 28 00 14 00 00 00 02 70 5B 3E 08 42 07 50 00 3C 00 0A 00 03 00 14 00 32 00 00 00 02 70 5B 3E 08 42 07 8C 00 64 00 10 00 01 00 14 00 1E 00 01 00 19 77 00 3F 05 19 C0 00 C0 02 E8 3C 3E 08 82 04 00 00 00 00 28 00 0F 00 04 05 19 C0 00 C0 02 E8 3C 3E 08 82 04 00 00 00 00 28 00 0F 00 04 05 19 C0 00 C0 02 E8 3C 3E 08 82 04 00 00 00 00 28 00 0F 00 04 0D 03 F9 89 09 08 02 05 01 00 00 00 08 00 12 00 01 00 05 02 24 7B 3E 08 02 05 01 00 01 00 07 00 00 00 20 73 05 0B 03 0D 08"
+        },
+        {
+            "id":"36",
+            "name": "Wish",
+            "background": true,
+            "coloredBackground": true,
+            "psychicBackground": false,
+            "scroll": false,                                                                                                                            
+            "code": "00 F9 27 00 41 27 02 24 7B 3E 08 02 05 01 00 03 00 00 00 0A 00 00 00 05 27 C8 00 3F C0 FD 00 02 68 F1 3F 08 28 00 05 04 3C 1C BC 00 C0 10 03 0E 9E 56 1D 08 05 02 24 7B 3E 08 02 05 01 00 03 00 0A 00 00 00 00 00 05 0B 03 0D 08"
+        }
+    ]
+}
+
