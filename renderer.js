@@ -16,6 +16,8 @@ ipcRenderer.on('romNotLoaded', (event) => {
 
 //Generic Popup Error Message
 ipcRenderer.on('errorMessage', (event, message) => {
+    console.log('errorrrr')
+    console.log(message)
     alert(message)
 });
 

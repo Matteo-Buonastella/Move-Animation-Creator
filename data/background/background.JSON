@@ -1,13 +1,16 @@
 {
     "staticBackground": [
         {
-            "code": "14 WW 17"
+            "code": "14 WW 17",
+            "solarbeamCode": "0E 07 5A 1D 08",
+            "highImpactCode": "0E 89 7D 1C 08",
+            "guillotineCode": "25 0C 0D 0E 17 19 95 00 3F"
         }
     ],
 
     "srollBackground": [
         {
-            "code": "14 WW 17 03 2D B8 0B 08 05 04 00 XX 00 YY 00 00 FF FF",
+            "code": "14 WW 16 03 2D B8 0B 08 05 04 00 XX 00 YY 00 00 FF FF",
             "psychicCode": "0E BB 59 1D 08",
             "endingCode": "0E C7 59 1D 08"
         }
@@ -101,7 +104,7 @@
         {
             "id": 12,
             "name": "Thunder (0B)",
-            "code": "B",
+            "code": "0B",
             "vertical": false,
             "horizontal": true
         },
