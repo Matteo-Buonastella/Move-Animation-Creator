@@ -29,4 +29,9 @@ You can combine up to 4 animations together. Select the move(s) you want to use/
 * BR: Background cannot be removed. Any attempt to do so will be ignored. You can still replace it with another background
 * BRR: Background cannot be removed or replaced. Any attempt to do so will be ignored
 
+## Keep Background Checkbox
+If you aren't using a Default Background (see above) and you want a move to keeps its background, check this box. For example: If I Select the background to be "Dark" and the moves I want to combine are Pursuit, Shadow Ball and Tackle, but I want Shadow Ball to kepp its Ghost background, I would check Keep Background for Shadow Ball. This is how the animation would look: 
+Notice how Tackle uses the Ghost background. This is because when you select Keep background, all moves after it will use the background that you chose to keep. The best way to learn how this works is to play around with the application and create some test animations.
+*It is NOT recommended to select Keep Background for more than 1 Psychic move. If you Select Keep Background for a Psychic move, every move after it will NOT have a background.
+
 
