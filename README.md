@@ -15,22 +15,18 @@ A dropdown list is provided with all the backgrouds for you to choose from. Belo
 * These moves use different backgrounds depending on who is attacking (you or CPU). This application automatically uses the correct the background depending on who's attacking so you don't have to worry about it
 
 ## Background Scroll
-Some backgrounds are scrollable such as the Thunder background. If you choose to have a scrolling background, the entire animation from start to finish will have it's background scrolled. 
+Some backgrounds are scrollable such as the Thunder background. If you choose to have a scrolling background, the entire animation from start to finish will have it's background scrolled (even if the background gets switched) 
 
-##Scroll Speed
+## Scroll Speed
 This setting will effect how fast the background will scroll vertically/horizontally. This setting has no effect if "No Scroll" is selected for the Background Scroll
 
-
-
-
-
-
+## Animations to Combine
+You can combine up to 4 animations together. Select the move(s) you want to use/combine with the dropdown list. Some moves have an abbreviation. The following list will explain what they mean
 
 **Abbreviations**
 
-Some moves in the Animation dropdown list will have an abbreviation. The following list will explain what they mean
-* CR: Colored Background can not be removed. Any attempt to do so will be ignored. You can still add a background to it
-
-
+* CR: Colored Background can not be removed. Any attempt to do so will be ignored. You can still add a background to the move
+* BR: Background cannot be removed. Any attempt to do so will be ignored. You can still replace it with another background
+* BRR: Background cannot be removed or replaced. Any attempt to do so will be ignored
 
 
