@@ -12,6 +12,7 @@ A dropdown list is provided with all the backgrouds for you to choose from. Belo
 * This option will remove any background from an animation. This includes both regular backgrounds like Shadow Ball and colored backgrounds like Absorb. Some moves cannot have their backgroud removed. A list of moves that can't have their background removed will be listed below. Any attempt to do so will be ignored
 
 **Abbreviations**
+
 Some moves in the Animation dropdown list will have an abbreviation. The following list will explain what they mean
 * CR: Colored Background can not be removed. Any attempt to do so will be ignored. You can still add a background to it
 
