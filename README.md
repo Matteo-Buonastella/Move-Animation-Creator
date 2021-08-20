@@ -30,7 +30,7 @@ You can combine up to 4 animations together. Select the move(s) you want to use/
 * BRR: Background cannot be removed or replaced. Any attempt to do so will be ignored
 
 ## Keep Background Checkbox
-If you aren't using a Default Background (see above) and you want a move to keeps its background, check this box. For example: If I Select the background to be "Dark" and the moves I want to combine are Pursuit, Shadow Ball and Tackle, but I want Shadow Ball to keep its Ghost background, I would check Keep Background for Shadow Ball. This is how the animation would look: 
+If you aren't using a Default Background (see above) and you want a move to keeps its background, check this box. For example: If I Select the background to be "Dark" and the moves I want to combine are Pursuit, Shadow Ball and Tackle, but I want Shadow Ball to keep its Ghost background, I would check Keep Background for Shadow Ball. This is how the animation would look: [Video](https://www.youtube.com/watch?v=QOTW5hlX6XE&ab_channel=KakashiSensei)
 
 Notice how Tackle uses the Ghost background. This is because when you select Keep background, all moves after it will use the background that you chose to keep. The best way to learn how this works is to play around with the application and create some test animations.
 
