@@ -11,6 +11,19 @@ A dropdown list is provided with all the backgrouds for you to choose from. Belo
 **No/Remove Background**
 * This option will remove any background from an animation. This includes both regular backgrounds like Shadow Ball and colored backgrounds like Absorb. Some moves cannot have their backgroud removed. A list of moves that can't have their background removed will be listed below. Any attempt to do so will be ignored
 
+
+## Background Scroll
+Some backgrounds are scrollable such as the Thunder background. If you choose to have a scrolling background, the entire animation from start to finish will have it's background scrolled. 
+
+##Scroll Speed
+This setting will effect how fast the background will scroll vertically/horizontally. This setting has no effect if "No Scroll" is selected for the Background Scroll
+
+
+
+
+
+
+
 **Abbreviations**
 
 Some moves in the Animation dropdown list will have an abbreviation. The following list will explain what they mean
