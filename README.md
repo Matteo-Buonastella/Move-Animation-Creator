@@ -34,6 +34,6 @@ If you aren't using a Default Background (see above) and you want a move to keep
 
 Notice how Tackle uses the Ghost background. This is because when you select Keep background, all moves after it will use the background that you chose to keep. The best way to learn how this works is to play around with the application and create some test animations.
 
-*It is NOT recommended to select Keep Background for more than 1 Psychic move. If you Select Keep Background for a Psychic move, every move after it will NOT have a background.
+*It is NOT recommended to select Keep Background for more than 1 Psychic move. If you Select Keep Background for a Psychic move, every move after it will NOT have a background.*
 
 
