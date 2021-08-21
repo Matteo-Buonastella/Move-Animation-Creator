@@ -54,4 +54,5 @@ To insert an animation, you will need to provide a memory offset. Use a tool suc
 ## Examples
 1. [Default Background: Harden + Mach Punch + Take Down + Recover](https://www.youtube.com/watch?v=RDaWZ_JCh1g&ab_channel=KakashiSensei)
 2. [No/Remove Background: Rain Dance (CR) + Ice Beam + Scary Face + Hyper Beam](https://www.youtube.com/watch?v=iau3--UqlA8&ab_channel=KakashiSensei)
+
 *Because Rain Dance is a CR move, it can not have its colored background removed which is why it's still present in the animation*
