@@ -44,6 +44,8 @@ Notice how Tackle uses the Ghost background. This is because when you select Kee
 
 *It is NOT recommended to select Keep Background for more than 1 move with the Psychic Background. If you Select Keep Background for a Psychic move, every move after it will NOT have a background.*
 
+![KeepBackground](https://imgur.com/vfJnVTx.png)
+
 ## Inserting an Animation
 To insert an animation, you will need to provide a memory offset. Use a tool such as FreeSpaceFinder to search for free space. The number of bytes needed will be provided to you. Use the exact location that FreeSpaceFinder spits out. For example, 82748A
 
