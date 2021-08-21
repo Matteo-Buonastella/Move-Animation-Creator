@@ -39,4 +39,5 @@ Notice how Tackle uses the Ghost background. This is because when you select Kee
 ## Inserting an Animation
 To insert an animation, you will need to provide a memory offset. Use a tool such as FreeSpaceFinder to search for free space. The number of bytes needed will be provided to you. Use the exact location that FreeSpaceFinder spits out. For example, 82748A
 
+![Insert Image](https://imgur.com/UVjpqI7.png)
 
