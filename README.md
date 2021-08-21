@@ -22,6 +22,8 @@ Some backgrounds are scrollable such as the Thunder background. If you choose to
 ## Scroll Speed
 This setting will effect how fast the background will scroll vertically/horizontally. This setting has no effect if "No Scroll" is selected for the Background Scroll
 
+![Scroll Speed](https://imgur.com/Cv91Hju.png)
+
 ## Animations to Combine
 You can combine up to 4 animations together. Select the move(s) you want to use/combine with the dropdown list. Some moves have an abbreviation. The following list will explain what they mean
 
