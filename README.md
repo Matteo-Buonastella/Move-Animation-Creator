@@ -51,3 +51,5 @@ To insert an animation, you will need to provide a memory offset. Use a tool suc
 
 ![Insert Image](https://imgur.com/UVjpqI7.png)
 
+## Examples
+1. [Default Background: Harden + Mach Punch + Take Down + Recover](https://www.youtube.com/watch?v=RDaWZ_JCh1g&ab_channel=KakashiSensei)
