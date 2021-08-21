@@ -15,7 +15,9 @@ A dropdown list is provided with all the backgrouds for you to choose from. Belo
 * These moves use different backgrounds depending on who is attacking (you or CPU). This application automatically uses the correct the background depending on who's attacking so you don't have to worry about it
 
 ## Background Scroll
-Some backgrounds are scrollable such as the Thunder background. If you choose to have a scrolling background, the entire animation from start to finish will have it's background scrolled (even if the background gets switched) 
+Some backgrounds are scrollable such as the Thunder background. If you choose to have a scrolling background, the entire animation from start to finish will have it's background scrolled (even if the background gets switched). Backgrounds that can't have a scroll will have the options auto disabled.
+
+![Scroll](https://imgur.com/Vd3eGeo.png)
 
 ## Scroll Speed
 This setting will effect how fast the background will scroll vertically/horizontally. This setting has no effect if "No Scroll" is selected for the Background Scroll
