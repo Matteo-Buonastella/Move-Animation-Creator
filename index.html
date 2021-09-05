@@ -31,6 +31,7 @@
                         <select class="form-select" id="select-background"  aria-label="Default select example">
                             <option id="1" value="Default" selected>Default</option>
                             <option id="2" value="No Background">No/Remove Background</option>
+                            <option value="" disabled="disabled">─────────────────────────</option>
                             <option id="3" value="Dark (00)">Dark (00)</option>
                             <option id="5" value="Ghost (02)">Ghost (02)</option>
                             <option id="6" value="Psychic (03)">Psychic (03)</option>
@@ -51,6 +52,23 @@
                             <option id="25" value="Silver Wind (16)">Silver Wind (16)</option>
                             <option id="26" value="Silver Wind (17)">Silver Wind (17)</option>
                             <option id="27" value="Solarbeam (18)">Solarbeam (18)</option>  <!-- Will auto select the correct Solarbeam background depending on who is attacking-->
+                            <option value="" disabled="disabled">─────────────────────────</option>
+                            <option id="42" value="Light Black">Light Black</option>
+                            <option id="43" value="Deep Black">Deep Black</option>
+                            <option id="34" value="Light Blue">Light Blue</option>
+                            <option id="35" value="Deep Blue">Deep Blue</option>
+                            <option id="28" value="Light Green">Light Green</option>
+                            <option id="29" value="Deep Green">Deep Green</option>
+                            <option id="30" value="Light Orange">Light Orange</option>
+                            <option id="31" value="Deep Orange">Deep Orange</option>
+                            <option id="38" value="Light Pink">Light Pink</option>
+                            <option id="39" value="Deep Pink">Deep Pink</option>
+                            <option id="40" value="Light Purple">Light Purple</option>
+                            <option id="41" value="Deep Purple">Deep Purple</option>
+                            <option id="32" value="Light Red">Light Red</option>
+                            <option id="33" value="Deep Red">Deep Red</option>
+                            <option id="36" value="Light Sky Blue">Light Sky Blue</option>
+                            <option id="37" value="Deep Sky Blue">Deep Sky Blue</option>
                         </select>
                     </div>
                     
@@ -107,23 +125,24 @@
 
                 <hr>
                 <div class="row">
-                    <div class="col-3"></div>
-                    <div class="col-6">
-                        <label class="fw-bold">Animation(s) to Combine</label>
-                    </div>
                     <div class="col-3 d-flex justify-content-center fw-bold">Keep Background</div>
+                    <div class="col-6 d-flex justify-content-center fw-bold">Animation(s) to Combine </div>
+                    <div class="col-3 d-flex justify-content-center fw-bold">Post Animation</div>
                 </div>
+                
 
                 <div class="row">
-                    <div class="col-3"> 
-                      <!-- <small>BR: Background cannot be removed</small> <br>
-                        <small>CR: Colored background cannot be removed (can still add background on top)</small> --> 
+                    <div class="col-3 mt-5 d-flex justify-content-center">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="checkbox1" disabled>
+                            <label class="form-check-label" for="flexCheckDefault">
+                            </label>
+                          </div>
                     </div>
                     <div class="col-6">
-                        <div> 
                             <!--Animation 1-->
-                            <label for="background" class="form-label" >Animation 1 <i>(required)</i></label>
-                            <select class="form-select" id="select-animation1"  aria-label="Default select example">
+                            <label for="background" class="form-label" >Animation 1</label>
+                            <select class="form-select " id="select-animation1"   aria-label="Default select example">
                                 <option id="1" value="Absorb" selected>Absorb</option>
                                 <option id="2" value="Acid">Acid</option>
                                 <option id="118" value="Acid Armor">Acid Armor</option>
@@ -405,7 +424,7 @@
                                 <option id="289" value="Scratch">Scratch</option>
                                 <option id="290" value="Screech">Screech</option>
                                 <option id="390" value="Seed Bomb">Seed Bomb</option>
-                                <option id="95" value="Seismic Toss">Seismic Toss (BRS)</option>
+                                <option id="95" value="Seismic Toss">Seismic Toss (BRR)</option>
                                 <option id="291" value="Selfdestruct">Selfdestruct</option>
                                 <option id="23" value="Shadow Ball">Shadow Ball</option>
                                 <option id="25" value="Shadow Punch">Shadow Punch</option>
@@ -422,7 +441,7 @@
                                 <option id="297" value="Skull Bash Turn 2">Skull Bash Turn 2</option>
                                 <option id="98" value="Sky Attack Turn 1">Sky Attack Turn 1 (CR)</option>
                                 <option id="99" value="Sky Attack Turn 2">Sky Attack Turn 2 (BR)</option>
-                                <option id="96" value="Sky Uppercut">Sky Uppercut (BRSS)</option>
+                                <option id="96" value="Sky Uppercut">Sky Uppercut (BRR)</option>
                                 <option id="298" value="Slack Off">Slack Off</option>
                                 <option id="137" value="Slam">Slam</option>
                                 <option id="299" value="Slash">Slash</option>
@@ -480,10 +499,10 @@
                                 <option id="66" value="Thief">Thief</option>
                                 <option id="339" value="Thrash">Thrash</option>
                                 <option id="112" value="Thunder">Thunder</option>
-                                <option id="18" value="Thunderbolt">Thunderbolt (CR)</option>
-                                <option id="19" value="Thundershock">Thundershock (CR)</option>
+                                <option id="18" value="Thunderbolt">Thunderbolt</option>
+                                <option id="19" value="Thundershock">Thundershock</option>
                                 <option id="51" value="Thunderpunch">Thunderpunch</option>
-                                <option id="34" value="Thunder Wave">Thunder Wave (CR)</option>
+                                <option id="34" value="Thunder Wave">Thunder Wave</option>
                                 <option id="340" value="Tickle">Tickle</option>
                                 <option id="341" value="Torment">Torment</option>
                                 <option id="342" value="Toxic">Toxic</option>
@@ -498,7 +517,7 @@
                                 <option id="349" value="Vicegrip">Vicegrip</option>
                                 <option id="350" value="Vine Whip">Vine Whip</option>
                                 <option id="351" value="Vital Throw">Vital Throw</option>
-                                <option id="9" value="Volt Tackle">Volt Tackle (CR)</option>
+                                <option id="9" value="Volt Tackle">Volt Tackle</option>
                                 <option id="352" value="Water Gun">Water Gun</option>
                                 <option id="35" value="Water Pulse">Water Pulse</option>
                                 <option id="353" value="Water Sport">Water Sport</option>
@@ -524,19 +543,63 @@
                                 <option id="371" value="Yawn">Yawn</option>
                                 <option id="372" value="Zap Cannon">Zap Cannon</option>
                             </select>
-                        </div>
                     </div>
+                        <div class="col-3">
+                            <div> 
+                                <label for="background" class="form-label" ></i></label>
+                                <select class="form-select" id="select-postAnimation1" aria-label="Default select example" style="margin-top: 6px;">
+                                    <option id="1" value="Default" selected>Default</option>
+                                    <option id="2" value="None/Remove">None/Remove</option>
+                                    <option value="" disabled="disabled">--- Health Animations (5) ---</option>
+                                    <option id="4" value="Absorb Bubbles">Absorb Bubbles </option>
+                                    <option id="5" value="Giga Drain Bubbles">Giga Drain Bubbles</option>
+                                    <option id="6" value="HP Recover">HP Recover</option>
+                                    <option id="7" value="Mega Drain Bubbles">Mega Drain Bubbles</option>
+                                    <option id="8" value="Synthesis + HP Recover">Synthesis + HP Recover</option>
+                                    <option value="" disabled="disabled">--- Fire Animations (4) ---</option>
+                                    <option id="9" value="Ember Flames">Ember Flames</option>
+                                    <option id="10" value="Fire Blast Flames">Fire Blast Flames</option>
+                                    <option id="11" value="Fire Spin">Fire Spin</option>
+                                    <option id="12" value="Scattered Flames">Scattered Flames</option>
+                                    <option value="" disabled="disabled">--- Rock Animations (3) ---</option>
+                                    <option id="13" value="Heavy Rock Fall">Heavy Rock Fall</option>
+                                    <option id="14" value="Rock Fall">Rock Fall</option>
+                                    <option id="15" value="Sand Tomb">Sand Tomb</option>
+                                    <option value="" disabled="disabled">--- Explosion Animations (2) ---</option>
+                                    <option id="16" value="Explosion">Explosion</option>
+                                    <option id="17" value="Self Explosion">Self Explosion</option>
+                                    <option value="" disabled="disabled">--- Ice Animations (2) ---</option>
+                                    <option id="18" value="Ice Crystals">Ice Crystals</option>
+                                    <option id="19" value="Ice Wave">Ice Wave</option>
+                                    <option value="" disabled="disabled">--- Poison Animations (2) ---</option>
+                                    <option id="20" value="Poison Bubbles">Poison Bubbles</option>
+                                    <option id="21" value="Toxic Bubbles">Toxic Bubbles</option>
+                                    <option value="" disabled="disabled">--- Water Animations (2) ---</option>
+                                    <option id="22" value="Water Bubbles">Water Bubbles</option>
+                                    <option id="23" value="Waterfall">Waterfall</option>
+                                    <option value="" disabled="disabled">--- Other Animations (9) ---</option>
+                                    <option id="24" value="Confetti">Confetti</option>
+                                    <option id="25" value="Focus Energy">Focus Energy</option>
+                                    <option id="26" value="Growth">Growth</option>
+                                    <option id="27" value="Hyper Voice Yell Once">Hyper Voice Yell Once</option>
+                                    <option id="28" value="Hyper Voice Yell Twice">Hyper Voice Yell Twice</option>
+                                    <option id="29" value="Paralysis">Paralysis</option>
+                                    <option id="30" value="Sparkle">Sparkle</option>
+                                    <option id="31" value="Self Sparkle">Self Sparkle</option>
+                                    <option id="32" value="Squeeze Foe">Squeeze Foe</option>
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
                         <div class="col-3 mt-5 d-flex justify-content-center">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="checkbox1" disabled>
+                                <input class="form-check-input" type="checkbox" value="" id="checkbox2" disabled>
                                 <label class="form-check-label" for="flexCheckDefault">
-                                  
                                 </label>
                               </div>
                         </div>
-                </div>
-                    <div class="row">
-                        <div class="col"></div>
                         <div class="col-6">
                             <!--Animation 2-->
                             <label for="background" class="form-label" >Animation 2</label>
@@ -823,7 +886,7 @@
                                 <option id="289" value="Scratch">Scratch</option>
                                 <option id="290" value="Screech">Screech</option>
                                 <option id="390" value="Seed Bomb">Seed Bomb</option>
-                                <option id="95" value="Seismic Toss">Seismic Toss (BRS)</option>
+                                <option id="95" value="Seismic Toss">Seismic Toss (BRR)</option>
                                 <option id="291" value="Selfdestruct">Selfdestruct</option>
                                 <option id="23" value="Shadow Ball">Shadow Ball</option>
                                 <option id="25" value="Shadow Punch">Shadow Punch</option>
@@ -840,7 +903,7 @@
                                 <option id="297" value="Skull Bash Turn 2">Skull Bash Turn 2</option>
                                 <option id="98" value="Sky Attack Turn 1">Sky Attack Turn 1 (CR)</option>
                                 <option id="99" value="Sky Attack Turn 2">Sky Attack Turn 2 (BR)</option>
-                                <option id="96" value="Sky Uppercut">Sky Uppercut (BRSS)</option>
+                                <option id="96" value="Sky Uppercut">Sky Uppercut (BRR)</option>
                                 <option id="298" value="Slack Off">Slack Off</option>
                                 <option id="137" value="Slam">Slam</option>
                                 <option id="299" value="Slash">Slash</option>
@@ -898,10 +961,10 @@
                                 <option id="66" value="Thief">Thief</option>
                                 <option id="339" value="Thrash">Thrash</option>
                                 <option id="112" value="Thunder">Thunder</option>
-                                <option id="18" value="Thunderbolt">Thunderbolt (CR)</option>
-                                <option id="19" value="Thundershock">Thundershock (CR)</option>
+                                <option id="18" value="Thunderbolt">Thunderbolt</option>
+                                <option id="19" value="Thundershock">Thundershock</option>
                                 <option id="51" value="Thunderpunch">Thunderpunch</option>
-                                <option id="34" value="Thunder Wave">Thunder Wave (CR)</option>
+                                <option id="34" value="Thunder Wave">Thunder Wave</option>
                                 <option id="340" value="Tickle">Tickle</option>
                                 <option id="341" value="Torment">Torment</option>
                                 <option id="342" value="Toxic">Toxic</option>
@@ -916,7 +979,7 @@
                                 <option id="349" value="Vicegrip">Vicegrip</option>
                                 <option id="350" value="Vine Whip">Vine Whip</option>
                                 <option id="351" value="Vital Throw">Vital Throw</option>
-                                <option id="9" value="Volt Tackle">Volt Tackle (CR)</option>
+                                <option id="9" value="Volt Tackle">Volt Tackle</option>
                                 <option id="352" value="Water Gun">Water Gun</option>
                                 <option id="35" value="Water Pulse">Water Pulse</option>
                                 <option id="353" value="Water Sport">Water Sport</option>
@@ -943,18 +1006,64 @@
                                 <option id="372" value="Zap Cannon">Zap Cannon</option>
                             </select>
                         </div>
-                        <div class="col-3 mt-5 d-flex justify-content-center">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="checkbox2" disabled>
-                                <label class="form-check-label" for="flexCheckDefault">
-                                  
-                                </label>
-                              </div>
+                        <div class="col-3">
+                            <div> 
+                                <label for="background" class="form-label" ></i></label>
+                                <select class="form-select" id="select-postAnimation2" aria-label="Default select example" style="margin-top: 6px;">
+                                    <option id="1" value="Default" selected>Default</option>
+                                    <option id="2" value="None/Remove">None/Remove</option>
+                                    <option value="" disabled="disabled">--- Health Animations (5) ---</option>
+                                    <option id="4" value="Absorb Bubbles">Absorb Bubbles </option>
+                                    <option id="5" value="Giga Drain Bubbles">Giga Drain Bubbles</option>
+                                    <option id="6" value="HP Recover">HP Recover</option>
+                                    <option id="7" value="Mega Drain Bubbles">Mega Drain Bubbles</option>
+                                    <option id="8" value="Synthesis + HP Recover">Synthesis + HP Recover</option>
+                                    <option value="" disabled="disabled">--- Fire Animations (4) ---</option>
+                                    <option id="9" value="Ember Flames">Ember Flames</option>
+                                    <option id="10" value="Fire Blast Flames">Fire Blast Flames</option>
+                                    <option id="11" value="Fire Spin">Fire Spin</option>
+                                    <option id="12" value="Scattered Flames">Scattered Flames</option>
+                                    <option value="" disabled="disabled">--- Rock Animations (3) ---</option>
+                                    <option id="13" value="Heavy Rock Fall">Heavy Rock Fall</option>
+                                    <option id="14" value="Rock Fall">Rock Fall</option>
+                                    <option id="15" value="Sand Tomb">Sand Tomb</option>
+                                    <option value="" disabled="disabled">--- Explosion Animations (2) ---</option>
+                                    <option id="16" value="Explosion">Explosion</option>
+                                    <option id="17" value="Self Explosion">Self Explosion</option>
+                                    <option value="" disabled="disabled">--- Ice Animations (2) ---</option>
+                                    <option id="18" value="Ice Crystals">Ice Crystals</option>
+                                    <option id="19" value="Ice Wave">Ice Wave</option>
+                                    <option value="" disabled="disabled">--- Poison Animations (2) ---</option>
+                                    <option id="20" value="Poison Bubbles">Poison Bubbles</option>
+                                    <option id="21" value="Toxic Bubbles">Toxic Bubbles</option>
+                                    <option value="" disabled="disabled">--- Water Animations (2) ---</option>
+                                    <option id="22" value="Water Bubbles">Water Bubbles</option>
+                                    <option id="23" value="Waterfall">Waterfall</option>
+                                    <option value="" disabled="disabled">--- Other Animations (9) ---</option>
+                                    <option id="24" value="Confetti">Confetti</option>
+                                    <option id="25" value="Focus Energy">Focus Energy</option>
+                                    <option id="26" value="Growth">Growth</option>
+                                    <option id="27" value="Hyper Voice Yell Once">Hyper Voice Yell Once</option>
+                                    <option id="28" value="Hyper Voice Yell Twice">Hyper Voice Yell Twice</option>
+                                    <option id="29" value="Paralysis">Paralysis</option>
+                                    <option id="30" value="Sparkle">Sparkle</option>
+                                    <option id="31" value="Self Sparkle">Self Sparkle</option>
+                                    <option id="32" value="Squeeze Foe">Squeeze Foe</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
                     
                     <div class="row">
-                        <div class="col"></div>
+
+                        <div class="col-3 mt-5 d-flex justify-content-center">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="checkbox3" disabled>
+                                <label class="form-check-label" for="flexCheckDefault">
+                                </label>
+                              </div>
+                        </div>
+
                         <div class="col-6">
                             <!--Animation 3-->
                             <label for="background" class="form-label" >Animation 3</label>
@@ -1241,7 +1350,7 @@
                                 <option id="289" value="Scratch">Scratch</option>
                                 <option id="290" value="Screech">Screech</option>
                                 <option id="390" value="Seed Bomb">Seed Bomb</option>
-                                <option id="95" value="Seismic Toss">Seismic Toss (BRS)</option>
+                                <option id="95" value="Seismic Toss">Seismic Toss (BRR)</option>
                                 <option id="291" value="Selfdestruct">Selfdestruct</option>
                                 <option id="23" value="Shadow Ball">Shadow Ball</option>
                                 <option id="25" value="Shadow Punch">Shadow Punch</option>
@@ -1258,7 +1367,7 @@
                                 <option id="297" value="Skull Bash Turn 2">Skull Bash Turn 2</option>
                                 <option id="98" value="Sky Attack Turn 1">Sky Attack Turn 1 (CR)</option>
                                 <option id="99" value="Sky Attack Turn 2">Sky Attack Turn 2 (BR)</option>
-                                <option id="96" value="Sky Uppercut">Sky Uppercut (BRSS)</option>
+                                <option id="96" value="Sky Uppercut">Sky Uppercut (BRR)</option>
                                 <option id="298" value="Slack Off">Slack Off</option>
                                 <option id="137" value="Slam">Slam</option>
                                 <option id="299" value="Slash">Slash</option>
@@ -1316,10 +1425,10 @@
                                 <option id="66" value="Thief">Thief</option>
                                 <option id="339" value="Thrash">Thrash</option>
                                 <option id="112" value="Thunder">Thunder</option>
-                                <option id="18" value="Thunderbolt">Thunderbolt (CR)</option>
-                                <option id="19" value="Thundershock">Thundershock (CR)</option>
+                                <option id="18" value="Thunderbolt">Thunderbolt</option>
+                                <option id="19" value="Thundershock">Thundershock</option>
                                 <option id="51" value="Thunderpunch">Thunderpunch</option>
-                                <option id="34" value="Thunder Wave">Thunder Wave (CR)</option>
+                                <option id="34" value="Thunder Wave">Thunder Wave</option>
                                 <option id="340" value="Tickle">Tickle</option>
                                 <option id="341" value="Torment">Torment</option>
                                 <option id="342" value="Toxic">Toxic</option>
@@ -1334,7 +1443,7 @@
                                 <option id="349" value="Vicegrip">Vicegrip</option>
                                 <option id="350" value="Vine Whip">Vine Whip</option>
                                 <option id="351" value="Vital Throw">Vital Throw</option>
-                                <option id="9" value="Volt Tackle">Volt Tackle (CR)</option>
+                                <option id="9" value="Volt Tackle">Volt Tackle</option>
                                 <option id="352" value="Water Gun">Water Gun</option>
                                 <option id="35" value="Water Pulse">Water Pulse</option>
                                 <option id="353" value="Water Sport">Water Sport</option>
@@ -1361,18 +1470,62 @@
                                 <option id="372" value="Zap Cannon">Zap Cannon</option>
                             </select>
                         </div>
-                        <div class="col-3 mt-5 d-flex justify-content-center">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="checkbox3" disabled>
-                                <label class="form-check-label" for="flexCheckDefault">
-                                  
-                                </label>
-                              </div>
+                        <div class="col-3">
+                            <div> 
+                                <label for="background" class="form-label" ></i></label>
+                                <select class="form-select" id="select-postAnimation3" aria-label="Default select example" style="margin-top: 6px;">
+                                    <option id="1" value="Default" selected>Default</option>
+                                    <option id="2" value="None/Remove">None/Remove</option>
+                                    <option value="" disabled="disabled">--- Health Animations (5) ---</option>
+                                    <option id="4" value="Absorb Bubbles">Absorb Bubbles </option>
+                                    <option id="5" value="Giga Drain Bubbles">Giga Drain Bubbles</option>
+                                    <option id="6" value="HP Recover">HP Recover</option>
+                                    <option id="7" value="Mega Drain Bubbles">Mega Drain Bubbles</option>
+                                    <option id="8" value="Synthesis + HP Recover">Synthesis + HP Recover</option>
+                                    <option value="" disabled="disabled">--- Fire Animations (4) ---</option>
+                                    <option id="9" value="Ember Flames">Ember Flames</option>
+                                    <option id="10" value="Fire Blast Flames">Fire Blast Flames</option>
+                                    <option id="11" value="Fire Spin">Fire Spin</option>
+                                    <option id="12" value="Scattered Flames">Scattered Flames</option>
+                                    <option value="" disabled="disabled">--- Rock Animations (3) ---</option>
+                                    <option id="13" value="Heavy Rock Fall">Heavy Rock Fall</option>
+                                    <option id="14" value="Rock Fall">Rock Fall</option>
+                                    <option id="15" value="Sand Tomb">Sand Tomb</option>
+                                    <option value="" disabled="disabled">--- Explosion Animations (2) ---</option>
+                                    <option id="16" value="Explosion">Explosion</option>
+                                    <option id="17" value="Self Explosion">Self Explosion</option>
+                                    <option value="" disabled="disabled">--- Ice Animations (2) ---</option>
+                                    <option id="18" value="Ice Crystals">Ice Crystals</option>
+                                    <option id="19" value="Ice Wave">Ice Wave</option>
+                                    <option value="" disabled="disabled">--- Poison Animations (2) ---</option>
+                                    <option id="20" value="Poison Bubbles">Poison Bubbles</option>
+                                    <option id="21" value="Toxic Bubbles">Toxic Bubbles</option>
+                                    <option value="" disabled="disabled">--- Water Animations (2) ---</option>
+                                    <option id="22" value="Water Bubbles">Water Bubbles</option>
+                                    <option id="23" value="Waterfall">Waterfall</option>
+                                    <option value="" disabled="disabled">--- Other Animations (9) ---</option>
+                                    <option id="24" value="Confetti">Confetti</option>
+                                    <option id="25" value="Focus Energy">Focus Energy</option>
+                                    <option id="26" value="Growth">Growth</option>
+                                    <option id="27" value="Hyper Voice Yell Once">Hyper Voice Yell Once</option>
+                                    <option id="28" value="Hyper Voice Yell Twice">Hyper Voice Yell Twice</option>
+                                    <option id="29" value="Paralysis">Paralysis</option>
+                                    <option id="30" value="Sparkle">Sparkle</option>
+                                    <option id="31" value="Self Sparkle">Self Sparkle</option>
+                                    <option id="32" value="Squeeze Foe">Squeeze Foe</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
 
                     <div class="row">
-                        <div class="col"></div>
+                        <div class="col-3 mt-5 d-flex justify-content-center">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="checkbox4" disabled>
+                                <label class="form-check-label" for="flexCheckDefault">
+                                </label>
+                              </div>
+                        </div>
                         <div class="col-6">
                              <!--Animation 4-->
                              <label for="background" class="form-label" >Animation 4</label>
@@ -1675,7 +1828,7 @@
                                  <option id="297" value="Skull Bash Turn 2">Skull Bash Turn 2</option>
                                  <option id="98" value="Sky Attack Turn 1">Sky Attack Turn 1 (CR)</option>
                                  <option id="99" value="Sky Attack Turn 2">Sky Attack Turn 2 (BR)</option>
-                                 <option id="96" value="Sky Uppercut">Sky Uppercut (BRSS)</option>
+                                 <option id="96" value="Sky Uppercut">Sky Uppercut (BRR)</option>
                                  <option id="298" value="Slack Off">Slack Off</option>
                                  <option id="137" value="Slam">Slam</option>
                                  <option id="299" value="Slash">Slash</option>
@@ -1733,10 +1886,10 @@
                                  <option id="66" value="Thief">Thief</option>
                                  <option id="339" value="Thrash">Thrash</option>
                                  <option id="112" value="Thunder">Thunder</option>
-                                 <option id="18" value="Thunderbolt">Thunderbolt (CR)</option>
-                                 <option id="19" value="Thundershock">Thundershock (CR)</option>
+                                 <option id="18" value="Thunderbolt">Thunderbolt</option>
+                                 <option id="19" value="Thundershock">Thundershock</option>
                                  <option id="51" value="Thunderpunch">Thunderpunch</option>
-                                 <option id="34" value="Thunder Wave">Thunder Wave (CR)</option>
+                                 <option id="34" value="Thunder Wave">Thunder Wave</option>
                                  <option id="340" value="Tickle">Tickle</option>
                                  <option id="341" value="Torment">Torment</option>
                                  <option id="342" value="Toxic">Toxic</option>
@@ -1751,7 +1904,7 @@
                                  <option id="349" value="Vicegrip">Vicegrip</option>
                                  <option id="350" value="Vine Whip">Vine Whip</option>
                                  <option id="351" value="Vital Throw">Vital Throw</option>
-                                 <option id="9" value="Volt Tackle">Volt Tackle (CR)</option>
+                                 <option id="9" value="Volt Tackle">Volt Tackle</option>
                                  <option id="352" value="Water Gun">Water Gun</option>
                                  <option id="35" value="Water Pulse">Water Pulse</option>
                                  <option id="353" value="Water Sport">Water Sport</option>
@@ -1778,13 +1931,51 @@
                                  <option id="372" value="Zap Cannon">Zap Cannon</option>
                              </select>
                         </div>
-                        <div class="col-3 mt-5 d-flex justify-content-center">
-                            <div class="form-check">
-                                <input class="form-check-input "  type="checkbox" value="" id="checkbox4" disabled>
-                                <label class="form-check-label" for="flexCheckDefault">
-                                  
-                                </label>
-                              </div>
+                        <div class="col-3">
+                            <div> 
+                                <label for="background" class="form-label" ></i></label>
+                                <select class="form-select" id="select-postAnimation4" aria-label="Default select example" style="margin-top: 6px;">
+                                    <option id="1" value="Default" selected>Default</option>
+                                    <option id="2" value="None/Remove">None/Remove</option>
+                                    <option value="" disabled="disabled">--- Health Animations (5) ---</option>
+                                    <option id="4" value="Absorb Bubbles">Absorb Bubbles </option>
+                                    <option id="5" value="Giga Drain Bubbles">Giga Drain Bubbles</option>
+                                    <option id="6" value="HP Recover">HP Recover</option>
+                                    <option id="7" value="Mega Drain Bubbles">Mega Drain Bubbles</option>
+                                    <option id="8" value="Synthesis + HP Recover">Synthesis + HP Recover</option>
+                                    <option value="" disabled="disabled">--- Fire Animations (4) ---</option>
+                                    <option id="9" value="Ember Flames">Ember Flames</option>
+                                    <option id="10" value="Fire Blast Flames">Fire Blast Flames</option>
+                                    <option id="11" value="Fire Spin">Fire Spin</option>
+                                    <option id="12" value="Scattered Flames">Scattered Flames</option>
+                                    <option value="" disabled="disabled">--- Rock Animations (3) ---</option>
+                                    <option id="13" value="Heavy Rock Fall">Heavy Rock Fall</option>
+                                    <option id="14" value="Rock Fall">Rock Fall</option>
+                                    <option id="15" value="Sand Tomb">Sand Tomb</option>
+                                    <option value="" disabled="disabled">--- Explosion Animations (2) ---</option>
+                                    <option id="16" value="Explosion">Explosion</option>
+                                    <option id="17" value="Self Explosion">Self Explosion</option>
+                                    <option value="" disabled="disabled">--- Ice Animations (2) ---</option>
+                                    <option id="18" value="Ice Crystals">Ice Crystals</option>
+                                    <option id="19" value="Ice Wave">Ice Wave</option>
+                                    <option value="" disabled="disabled">--- Poison Animations (2) ---</option>
+                                    <option id="20" value="Poison Bubbles">Poison Bubbles</option>
+                                    <option id="21" value="Toxic Bubbles">Toxic Bubbles</option>
+                                    <option value="" disabled="disabled">--- Water Animations (2) ---</option>
+                                    <option id="22" value="Water Bubbles">Water Bubbles</option>
+                                    <option id="23" value="Waterfall">Waterfall</option>
+                                    <option value="" disabled="disabled">--- Other Animations (9) ---</option>
+                                    <option id="24" value="Confetti">Confetti</option>
+                                    <option id="25" value="Focus Energy">Focus Energy</option>
+                                    <option id="26" value="Growth">Growth</option>
+                                    <option id="27" value="Hyper Voice Yell Once">Hyper Voice Yell Once</option>
+                                    <option id="28" value="Hyper Voice Yell Twice">Hyper Voice Yell Twice</option>
+                                    <option id="29" value="Paralysis">Paralysis</option>
+                                    <option id="30" value="Sparkle">Sparkle</option>
+                                    <option id="31" value="Self Sparkle">Self Sparkle</option>
+                                    <option id="32" value="Squeeze Foe">Squeeze Foe</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
 
@@ -1832,6 +2023,11 @@
             const attack3KeepBackground = document.querySelector('#checkbox3').checked;
             const attack4KeepBackground = document.querySelector('#checkbox4').checked;
 
+            const postAnimation1 = document.querySelector('#select-postAnimation1').value
+            const postAnimation2 = document.querySelector('#select-postAnimation2').value
+            const postAnimation3 = document.querySelector('#select-postAnimation3').value
+            const postAnimation4 = document.querySelector('#select-postAnimation4').value
+
             var scrollType;
             if(document.getElementById('noScroll').checked){
                 scrollType = "No Scroll"
@@ -1840,7 +2036,7 @@
             } else if (document.getElementById('horizontalScroll').checked){
                 scrollType = "Horizontal Scroll"
             }
-            ipcRenderer.send('form:submit', attackName, background, scrollType, scrollSpeed, attack1, attack2, attack3, attack4, attack1KeepBackground, attack2KeepBackground, attack3KeepBackground, attack4KeepBackground);
+            ipcRenderer.send('form:submit', attackName, background, scrollType, scrollSpeed, attack1, attack2, attack3, attack4, attack1KeepBackground, attack2KeepBackground, attack3KeepBackground, attack4KeepBackground, postAnimation1, postAnimation2, postAnimation3, postAnimation4);
         }
 
     </script>

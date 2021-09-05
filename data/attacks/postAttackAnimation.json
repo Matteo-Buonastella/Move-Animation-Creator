@@ -1,0 +1,210 @@
+{
+    "postAttack": [
+        {
+            "id": 14,
+            "name": "Absorb Bubbles",
+            "code": "",
+            "pointer": "0E 44 EC 1C 08",
+            "import": "00 A3 27"  
+        },
+        {
+            "id": 17,
+            "name": "Confetti",
+            "code": "",
+            "pointer": "0E D2 2B 1D 08 0E D2 2B 1D 08 0E D2 2B 1D 08 0E D2 2B 1D 08 0E D2 2B 1D 08 0E D2 2B 1D 08 0E D2 2B 1D 08 0E D2 2B 1D 08 0E D2 2B 1D 08 0E D2 2B 1D 08 0E D2 2B 1D 08 0E D2 2B 1D 08 0E D2 2B 1D 08 0E D2 2B 1D 08 0E D2 2B 1D 08 0E D2 2B 1D 08 0E D2 2B 1D 08 0E D2 2B 1D 08 0E D2 2B 1D 08",
+            "import": "00 00 28"  
+        },
+        {
+            "id": 10,
+            "name": "Ember Flames",
+            "code": "",
+            "pointer": "19 89 00 3F 0E D5 7C 1C 08 0E D5 7C 1C 08 0E D5 7C 1C 08",
+            "import": "00 2D 27"  
+        },
+        {
+            "id": 1,
+            "name": "Explosion",
+            "code": "00 D6 27 19 AA 00 3F 02 94 3F 3E 08 83 04 00 00 00 00 01 00 01 00 04 06 19 AA 00 3F 02 94 3F 3E 08 83 04 18 00 E8 FF 01 00 01 00 04 06 19 AA 00 3F 02 94 3F 3E 08 83 04 F0 FF 10 00 01 00 01 00 04 06 19 AA 00 3F 02 94 3F 3E 08 83 04 E8 FF F4 FF 01 00 01 00 04 06 19 AA 00 3F 02 94 3F 3E 08 83 04 10 00 10 00 01 00 01 00 05 0B 03 0D 08",
+            "pointer": "19 AA 00 3F 04 03 02 94 3F 3E 08 84 04 F0 FF F1 FF 01 00 00 00 19 AA 00 3F 04 03 02 94 3F 3E 08 84 04 10 00 FB FF 01 00 00 00 19 AA 00 3F 04 03 02 94 3F 3E 08 84 04 F4 FF 12 00 01 00 00 00 19 AA 00 3F 04 03 02 94 3F 3E 08 84 04 00 00 05 00 01 00 00 00 19 AA 00 3F 04 03 05",
+            "import": "00 D6 27"
+        },
+        {
+            "id": 11,
+            "name": "Fire Blast Flames",
+            "code": "",
+            "pointer": "0E CD 7B 1C 08 04 03 0E CD 7B 1C 08 04 03 0E CD 7B 1C 08 04 03 0E CD 7B 1C 08 04 03 0E CD 7B 1C 08 04 03 0E CD 7B 1C 08 04 03 0E CD 7B 1C 08 04 03 0E CD 7B 1C 08 04 03 0E CD 7B 1C 08",
+            "import": "00 2D 27"  
+        },
+        {
+            "id": 25,
+            "name": "Fire Spin",
+            "code": "",
+            "pointer": "19 8F 00 4F 0E 5F 88 1C 08 0E 5F 88 1C 08 0E 5F 88 1C 08",
+            "import": "00 2D 27"  
+        },
+        {
+            "id": 15,
+            "name": "Focus Energy",
+            "code": "",
+            "pointer": "19 A4 00 C0 0E 67 B2 1C 08 0E 67 B2 1C 08",
+            "import": "00 C8 27"  
+        },
+        {
+            "id": 18,
+            "name": "Giga Drain Bubbles",
+            "code": "",
+            "pointer": "0E EC EE 1C 08",
+            "import": "00 A3 27"  
+        },
+        {
+            "id": 19,
+            "name": "Growth",
+            "code": "",
+            "pointer": "0E 60 99 1C 08",
+            "import": ""  
+        },
+        {
+            "id": 13,
+            "name": "Heavy Rock Fall",
+            "code": "",
+            "pointer": "0E 23 9C 1C 08 0E 23 9C 1C 08",
+            "import": "00 4A 27"  
+        },
+        {
+            "id": 6,
+            "name": "HP Recover",
+            "code": "",
+            "pointer": "0E C9 56 1D 08",
+            "import": "00 2F 27"  
+        },
+        {
+            "id": 20,
+            "name": "Hyper Voice Yell Once",
+            "code": "",
+            "pointer": "0E 1F 2D 1D 08",
+            "import": "00 DB 27"  
+        },
+        {
+            "id": 21,
+            "name": "Hyper Voice Yell Twice",
+            "code": "",
+            "pointer": "0E 1F 2D 1D 08 0E 1F 2D 1D 08",
+            "import": "00 DB 27"  
+        },
+        {
+            "id": 5,
+            "name": "Ice Crystals",
+            "code": "",
+            "pointer": "0E 0A 54 1D 08",
+            "import": "00 9D 27"  
+        },
+        {
+            "id": 22,
+            "name": "Ice Wave",
+            "code": "",
+            "pointer": "0E E2 55 1D 08",
+            "import": "00 9E 27"  
+        },
+        {
+            "id": 24,
+            "name": "Mega Drain Bubbles",
+            "code": "",
+            "pointer": "0E 5C ED 1C 08",
+            "import": "00 A3 27"  
+        },
+        {
+            "id": 7,
+            "name": "Paralysis",
+            "code": "",
+            "pointer": "0E D4 58 1D 08",
+            "import": "00 1B 27"  
+        },
+        {
+            "id": 2,
+            "name": "Poison Bubbles",
+            "code": "02 B8 6A 3E 08 82 03 0A 00 0A 00 00 00 19 8D 00 3F 04 06 02 B8 6A 3E 08 82 03 14 00 EC FF 00 00 19 8D 00 3F 04 06 02 B8 6A 3E 08 82 03 EC FF 0F 00 00 00 19 8D 00 3F 04 06 02 B8 6A 3E 08 82 03 00 00 00 00 00 00 19 8D 00 3F 04 06 02 B8 6A 3E 08",
+            "pointer": "0E 5B 57 1D 08",
+            "import": "00 A6 27"
+        },
+        {
+            "id": 12,
+            "name": "Rock Fall",
+            "code": "",
+            "pointer": "0E 23 9C 1C 08",
+            "import": "00 4A 27"  
+        },
+        {
+            "id": 27,
+            "name": "Sand Tomb",
+            "code": "",
+            "pointer": "19 DF 00 3F 0E E3 2D 1D 08 0E E3 2D 1D 08 0E E3 2D 1D 08",
+            "import": "00 5A 27"  
+        },
+        {
+            "id": 4,
+            "name": "Scattered Flames",
+            "code": "",
+            "pointer": "19 8A 00 3F 0E 50 09 1D 08",
+            "shortPointer": "0E 50 09 1D 08",
+            "import": "00 2D 27"  
+        },
+        {
+            "id": 16,
+            "name": "Self Explosion",
+            "code": "",
+            "pointer": "0E B2 8E 1C 08",
+            "import": "00 D6 27"  
+        },
+        {
+            "id": 26,
+            "name": "Self Sparkle",
+            "code": "",
+            "pointer": "19 DD 00 C0 0E 9E 56 1D 08",
+            "shortPointer": "0E 9E 56 1D 08",
+            "import": "00 41 27"  
+        },
+        {
+            "id": 9,
+            "name": "Squeeze Foe",
+            "code": "",
+            "pointer": "0E 26 0D 1D 08",
+            "import": ""  
+        },
+        {
+            "id": 23,
+            "name": "Sparkle",
+            "code": "",
+            "pointer": "19 C8 00 C0 0E 4F DC 1C 08",
+            "shortPointer": "0E 4F DC 1C 08",
+            "import": "00 56 27"  
+        },
+        {
+            "id": 28,
+            "name": "Synthesis + HP Recover",
+            "code": "",
+            "pointer": "19 85 00 C0 0E 9E 56 1D 08 05 0E C9 56 1D 08",
+            "import": "00 2F 27 00 41 27"  
+        },
+        {
+            "id": 29,
+            "name": "Toxic Bubbles",
+            "code": "",
+            "pointer": "0E 4B F1 1C 08",
+            "import": "00 A7 27"  
+        },
+        {
+            "id": 3,
+            "name": "Water Bubbles",
+            "code": "02 D0 6A 3E 08 02 03 0A 00 0A 00 01 00 19 77 00 3F 04 06 02 D0 6A 3E 08 02 03 E4 FF F6 FF 01 00 19 77 00 3F 04 06 02 D0 6A 3E 08 02 03 14 00 EC FF 01 00 19 77 00 3F 04 06 02 D0 6A 3E 08 02 03 EC FF 0F 00 01 00 19 77 00 3F 04 06 02 D0 6A 3E 08 02 03 00 00 00 00 01 00 19 77 00 3F 04 06 02 D0 6A 3E 08 02 03 1B 00 08 00 01 00 19 77 00 3F 04 06 02 D0 6A 3E 08 02 03 EC FF EC FF 01 00 19 77 00 3F 04 06 02 D0 6A 3E 08",
+            "pointer": "0E 3D 58 1D 08",
+            "import": "00 AB 27"
+        },
+        {
+            "id": 8,
+            "name": "Waterfall",
+            "code": "",
+            "pointer": "0E A2 8C 1C 08",
+            "import": "00 AB 27 00 A4 27"  
+        }
+    ]
+}

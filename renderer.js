@@ -9,6 +9,10 @@ ipcRenderer.on('backgroundImage', (event, accessToken) => {
     document.getElementById("displayBackgroundImage").src = "./data/background/images/" + accessToken + ".png";
 });
 
+ipcRenderer.on('postAttackImage', (event, accessToken) => {
+    document.getElementById("displayPostAttackImage").src = "./data/post-attack/" + accessToken + ".png";
+});
+
 //Rom not loaded. Display error popup
 ipcRenderer.on('romNotLoaded', (event) => {
     alert("Error: ROM not loaded")
