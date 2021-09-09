@@ -1561,7 +1561,7 @@ function findOffsetToInsert(startingOffset, bytesNeeded){
         var locationFound = true;
         var end = i + bytesNeeded;
         for(var j=i; j<=end; j++){
-            if(romHex[j] != "0xff"){
+            if(romHex[j] != "0xff" || (j >= "4548160" && j <= "4548859" )){  //There are some protected areas that you want to avoid just to be safe
                 locationFound = false;
                 break;
             } 
