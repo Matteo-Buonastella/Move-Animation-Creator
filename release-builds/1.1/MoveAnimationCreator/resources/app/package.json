@@ -1,6 +1,6 @@
 {
   "name": "moveanimator",
-  "version": "1.2.0",
+  "version": "1.1.0",
   "description": "Create Move Animations for Fire Red",
   "main": "main.js",
   "scripts": {

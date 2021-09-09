@@ -14,7 +14,6 @@ var attackData = require('./data/attacks/attacks.json');
 let mainWindow;
 let insertWindow
 let postAnimationWindow;
-let freeSpaceFinderWindow;
 var rom = null;
 
 //Create main Browser window
@@ -22,7 +21,7 @@ function createWindow(){
     mainWindow = new BrowserWindow({
         width: 900,
         height: 700,
-        title:'Move Animation Creator 1.2',
+        title:'Move Animation Creator 1.1',
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false,
@@ -46,7 +45,7 @@ function createWindow(){
     })    
 
     mainWindow.webContents.on('did-finish-load', () => {
-        mainWindow.setTitle("Move Animation Creator 1.2")
+        mainWindow.setTitle("Move Animation Creator 1.1")
     })
 }
 
@@ -56,8 +55,8 @@ function createInsertWindow(){
       parent:mainWindow,
       modal: true,
       show: false,
-      width: 290,
-      height: 270,
+      width: 280,
+      height: 250,
       title:'Insert Animation',
       webPreferences: {
         nodeIntegration: true,
@@ -116,40 +115,6 @@ function createInsertWindow(){
   
       postAnimationWindow.webContents.on('did-finish-load', () => {
         postAnimationWindow.setTitle("Post Animation")
-      })
-  }
-
-  function createFreeSpaceFinderWindow(){
-    freeSpaceFinderWindow = new BrowserWindow({
-        parent:insertWindow,
-        modal: true,
-        show: false,
-        width: 350,
-        height: 300,
-        title:'Free Space Search',
-        webPreferences: {
-          nodeIntegration: true,
-          contextIsolation: false,
-          enableRemoteModule: true,
-        },
-      });
-      freeSpaceFinderWindow.loadURL(url.format({
-        pathname: path.join(__dirname, 'searchFreeSpace.html'),
-        protocol: 'file:',
-        slashes:true
-      }));
-      freeSpaceFinderWindow.setMenu(null);
-      // Handle garbage collection
-      freeSpaceFinderWindow.on('close', function(){
-        freeSpaceFinderWindow = null;
-      });
-  
-      freeSpaceFinderWindow.once('ready-to-show', () => {
-        freeSpaceFinderWindow.show()
-      })
-  
-      freeSpaceFinderWindow.webContents.on('did-finish-load', () => {
-        freeSpaceFinderWindow.setTitle("Search Free Space")
       })
   }
 
@@ -749,6 +714,19 @@ ipcMain.on('form:submit', function(event, attackName, background, scrollType, sc
         //ROM has not been loaded. Display error message
         mainWindow.webContents.send('romNotLoaded');
     }
+
+    
+
+    //Scroll Type
+
+    // Access form data here
+   /* console.log(attackName)
+    console.log(background)
+    console.log(scrollType)
+    console.log(scrollSpeed)
+    console.log(attack1)
+    console.log(attack2)
+    console.log(attack3) */
  });
 
 ipcMain.on('backgroud:change', function(event, data) {
@@ -775,44 +753,6 @@ ipcMain.on('postAttack:change', function(event, data) {
 
     loadPostAttackImageToUI(data);
 });
-
-ipcMain.on('button:searchFreeSpace', function(event, bytesNeeded){
-    createFreeSpaceFinderWindow();
-    freeSpaceFinderWindow.webContents.on('did-finish-load', function () {
-        freeSpaceFinderWindow.webContents.send('setFreeSpaceWindowInitialParameters', bytesNeeded);
-    });
-});
-
-ipcMain.on('form:freeSpaceFinderInsertMemory', function(event, memoryOffset){
-    insertWindow.webContents.send('setInputMemoryOffset', memoryOffset)
-    freeSpaceFinderWindow.close();
-})
-
-ipcMain.on('form:searchForFreeSpace', function(event, startingOffset, bytesNeeded){
-
-    //Display loading symbol on Search Button
-    freeSpaceFinderWindow.webContents.send('setSearchLoadingSpinner', true);
-    
-    //Make sure you don't look for free space in the header (the first 1040 bytes (0x410))
-    if(startingOffset < 1040){
-        startingOffset = 410; 
-    } 
-
-    //Increase the bytes needed in order to reduce the chances of you inserting a move animation in a block of FF that is actually used by something else
-    if(bytesNeeded < 20){
-        bytesNeeded = 20
-    }
-    
-    var offset = findOffsetToInsert(startingOffset, bytesNeeded)
-
-    freeSpaceFinderWindow.webContents.send('setSearchLoadingSpinner', false);
-    //Make sure an offset was found
-    if(offset == "" || typeof(offset) == 'undefined'){
-        freeSpaceFinderWindow.webContents.send('errorMessage', "Error, could not find a valid offset.");
-    } else {
-        freeSpaceFinderWindow.webContents.send('setInsertMemoryOffset', offset.toString('16'));
-    }
-})
 
 //Insert Animation Clicked
 ipcMain.on('form:insertAnimationSubmit', function(event, memoryOffset, hex){
@@ -1549,32 +1489,6 @@ function getBackgroundObject(backgroundName){
         }
     }
 }
-
-//Function recieves a memory offset to start looking from and the number of bytes needed. Then it returns a memory address that is safe to insert from
-function findOffsetToInsert(startingOffset, bytesNeeded){
-    var romHex = fs.readFileSync(rom)
-    startingOffsetDecimal = parseInt(startingOffset, 16); //Convert hex to dec 
-
-    var offsetToInsert;
-    bytesNeeded = parseInt(bytesNeeded)
-    for(var i=startingOffsetDecimal; i<romHex.length; i++){
-        var locationFound = true;
-        var end = i + bytesNeeded;
-        for(var j=i; j<=end; j++){
-            if(romHex[j] != "0xff"){
-                locationFound = false;
-                break;
-            } 
-        }
-        if(locationFound == true){
-            offsetToInsert = i;
-            break;
-        }
-    }
-
-    return offsetToInsert   
-}
-
 
 
 function isValidOffset(memoryOffset){

@@ -12,7 +12,6 @@
         <div class="container mt-2">
             <div class="row">
                 <div class="col">
-                    <button type="submit" id="searchFreeSpaceBtn" class="btn-sm btn-primary mb-2">Find Free Space</button>
                     <p>Bytes Needed: <strong><span id="bytesNeeded"></span></strong></p>
                 </div>
             </div>
@@ -51,12 +50,6 @@
 
                 ipcRenderer.send('form:insertAnimationSubmit', memoryOffset, hex);
             }
-
-            var btn = document.getElementById('searchFreeSpaceBtn');
-            btn.addEventListener('click', function (event) {
-                const bytesNeeded = document.querySelector('#bytesNeeded').innerText
-                ipcRenderer.send('button:searchFreeSpace', bytesNeeded);
-            });
 
         </script>
         

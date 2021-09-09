@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Move Animation Creator</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <meta charset="utf-8">
+    </head>
+
+    <body>
+        <div class="container mt-2">
+            <div class="row">
+                <div class="col-6">
+                <label for="background" class="form-label" ></i></label>
+                <select class="form-select" id="select-postAnimation" aria-label="Default select example" style="margin-top: 6px;">
+                    <option id="1" value="Default" selected>Default</option>
+                    <option id="2" value="None/Remove">None/Remove</option>
+                    <option value="" disabled="disabled">--- Health Animations (5) ---</option>
+                    <option id="3" value="Absorb Bubbles">Absorb Bubbles </option>
+                    <option id="3" value="Giga Drain Bubbles">Giga Drain Bubbles</option>
+                    <option id="3" value="HP Recover">HP Recover</option>
+                    <option id="3" value="Mega Drain Bubbles">Mega Drain Bubbles</option>
+                    <option id="3" value="Synthesis + HP Recover">Synthesis + HP Recover</option>
+                    <option value="" disabled="disabled">--- Fire Animations (4) ---</option>
+                    <option id="3" value="Ember Flames">Ember Flames</option>
+                    <option id="4" value="Fire Blast Flames">Fire Blast Flames</option>
+                    <option id="5" value="Fire Spin">Fire Spin</option>
+                    <option id="6" value="Scattered Flames">Scattered Flames</option>
+                    <option value="" disabled="disabled">--- Rock Animations (3) ---</option>
+                    <option id="3" value="Heavy Rock Fall">Heavy Rock Fall</option>
+                    <option id="3" value="Rock Fall">Rock Fall</option>
+                    <option id="3" value="Sand Tomb">Sand Tomb</option>
+                    <option value="" disabled="disabled">--- Explosion Animations (2) ---</option>
+                    <option id="3" value="Explosion">Explosion</option>
+                    <option id="3" value="Self Explosion">Self Explosion</option>
+                    <option value="" disabled="disabled">--- Ice Animations (2) ---</option>
+                    <option id="3" value="Ice Crystals">Ice Crystals</option>
+                    <option id="3" value="Ice Wave">Ice Wave</option>
+                    <option value="" disabled="disabled">--- Poison Animations (2) ---</option>
+                    <option id="6" value="Poison Bubbles">Poison Bubbles</option>
+                    <option id="6" value="Toxic Bubbles">Toxic Bubbles</option>
+                    <option value="" disabled="disabled">--- Water Animations (2) ---</option>
+                    <option id="6" value="Water Bubbles">Water Bubbles</option>
+                    <option id="6" value="Waterfall">Waterfall</option>
+                    <option value="" disabled="disabled">--- Other Animations (9) ---</option>
+                    <option id="6" value="Confetti">Confetti</option>
+                    <option id="6" value="Focus Energy">Focus Energy</option>
+                    <option id="6" value="Growth">Growth</option>
+                    <option id="6" value="Hyper Voice Yell Once">Hyper Voice Yell Once</option>
+                    <option id="6" value="Hyper Voice Yell Twice">Hyper Voice Yell Twice</option>
+                    <option id="6" value="Paralysis">Paralysis</option>
+                    <option id="6" value="Sparkle">Sparkle</option>
+                    <option id="6" value="Self Sparkle">Self Sparkle</option>
+                    <option id="6" value="Squeeze Foe">Squeeze Foe</option>
+                </select>
+            </div>
+            <div class="col-6">
+                <img id="displayPostAttackImage" width="400px" src="./data/background/images/Dark(00).png" class="img-fluid" alt="Default">
+            </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+    <script>
+         var $ = require('jquery');
+         require('./renderer.js');
+         const electron = require('electron')
+         const {ipcRenderer} = electron
+
+         $('#select-postAnimation').on('change', function(e) {
+             e.preventDefault();
+             ipcRenderer.send('postAttack:change', this.value)
+         });
+         
+ 
+        
+ 
+     </script>
+        
+        
+    </body>
+</html>

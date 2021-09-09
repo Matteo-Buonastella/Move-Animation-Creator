@@ -1,0 +1,265 @@
+{
+    "staticBackground": [
+        {
+            "code": "14 WW 17",
+            "solarbeamCode": "0E 07 5A 1D 08",
+            "highImpactCode": "0E 89 7D 1C 08",
+            "guillotineCode": "25 0C 0D 0E 17 19 95 00 3F"
+        }
+    ],
+
+    "srollBackground": [
+        {
+            "code": "14 WW 16 03 2D B8 0B 08 05 04 00 XX 00 YY 00 00 FF FF",
+            "psychicCode": "0E BB 59 1D 08",
+            "endingCode": "0E C7 59 1D 08"
+        }
+    ],
+
+    "coloredBackground": [
+        {
+            "code": "02 24 7B 3E 08 02 05 01 00 SS 00 00 00 YY 00 XX XX 05",
+            "startOfCode": "02 24 7B 3E 08 02 05 01 00",
+            "startOfElectricCode": "03 F9 A7 0B 08 0A 05 01 00 00 00 00 00 06 00 00 00 05",
+
+            "lightGreen": "02 24 7B 3E 08 02 05 01 00 01 00 00 00 04 00 ED 33 05",
+            "lightGreenEnd": "02 24 7B 3E 08 02 05 01 00 01 00 04 00 00 00 ED 33 05 0B 03 0D 08",
+            "deepGreen": "02 24 7B 3E 08 02 05 01 00 01 00 00 00 0C 00 ED 33 05",
+            "deepGreenEnd": "02 24 7B 3E 08 02 05 01 00 01 00 0C 00 00 00 ED 33 05 0B 03 0D 08",
+            "lightRed": "02 24 7B 3E 08 02 05 01 00 01 00 00 00 04 00 1F 00 05",
+            "lightRedEnd": "02 24 7B 3E 08 02 05 01 00 01 00 04 00 00 00 1F 00 05 0B 03 0D 08",
+            "deepRed": "02 24 7B 3E 08 02 05 01 00 01 00 00 00 0C 00 1F 00 05",
+            "deepRedEnd": "02 24 7B 3E 08 02 05 01 00 01 00 0C 00 00 00 1F 00 05 0B 03 0D 08",
+            "lightOrange": "02 24 7B 3E 08 02 05 01 00 01 00 00 00 04 00 DF 01 05",
+            "lightOrangeEnd": "02 24 7B 3E 08 02 05 01 00 01 00 04 00 00 00 DF 01 05 0B 03 0D 08",
+            "deepOrange": "02 24 7B 3E 08 02 05 01 00 01 00 00 00 0C 00 DF 01 05",
+            "deepOrangeEnd": "02 24 7B 3E 08 02 05 01 00 01 00 0C 00 00 00 DF 01 05 0B 03 0D 08",
+            "lightBlue": "02 24 7B 3E 08 02 05 01 00 01 00 00 00 04 00 20 7C 05",
+            "lightBlueEnd": "02 24 7B 3E 08 02 05 01 00 01 00 04 00 00 00 20 7C 05 0B 03 0D 08",
+            "deepBlue": "02 24 7B 3E 08 02 05 01 00 01 00 00 00 0C 00 20 7C 05",
+            "deepBlueEnd": "02 24 7B 3E 08 02 05 01 00 01 00 0C 00 00 00 20 7C 05 0B 03 0D 08",
+            "lightSkyBlue": "02 24 7B 3E 08 02 05 01 00 01 00 00 00 04 00 E0 7B 05",
+            "lightSkyBlueEnd": "02 24 7B 3E 08 02 05 01 00 01 00 04 00 00 00 E0 7B 05 0B 03 0D 08",
+            "deepSkyBlue": "02 24 7B 3E 08 02 05 01 00 01 00 00 00 0C 00 E0 7B 05",
+            "deepSkyBlueEnd": "02 24 7B 3E 08 02 05 01 00 01 00 0C 00 00 00 E0 7B 05 0B 03 0D 08",
+            "lightPink": "02 24 7B 3E 08 02 05 01 00 01 00 00 00 04 00 1F 78 05",
+            "lightPinkEnd": "02 24 7B 3E 08 02 05 01 00 01 00 04 00 00 00 1F 78 05 0B 03 0D 08",
+            "deepPink": "02 24 7B 3E 08 02 05 01 00 01 00 00 00 0C 00 1F 78 05",
+            "deepPinkEnd": "02 24 7B 3E 08 02 05 01 00 01 00 0C 00 00 00 1F 78 05 0B 03 0D 08",
+            "lightPurple": "02 24 7B 3E 08 02 05 01 00 01 00 00 00 04 00 15 7C 05",
+            "lightPurpleEnd": "02 24 7B 3E 08 02 05 01 00 01 00 04 00 00 00 15 7C 05 0B 03 0D 08",
+            "deepPurple": "02 24 7B 3E 08 02 05 01 00 01 00 00 00 0C 00 15 7C 05",
+            "deepPurpleEnd": "02 24 7B 3E 08 02 05 01 00 01 00 0C 00 00 00 15 7C 05 0B 03 0D 08",
+            "lightBlack": "02 24 7B 3E 08 02 05 01 00 01 00 00 00 04 00 00 00 05",
+            "lightBlackEnd": "02 24 7B 3E 08 02 05 01 00 01 00 04 00 00 00 00 00 05 0B 03 0D 08",
+            "deepBlack": "02 24 7B 3E 08 02 05 01 00 01 00 00 00 0C 00 00 00 05",
+            "deepBlackEnd": "02 24 7B 3E 08 02 05 01 00 01 00 0C 00 00 00 00 00 05 0B 03 0D 08"
+        }
+    ],
+
+    "backgrounds": [
+        {
+            "id": 1,
+            "name": "Dark (00)",
+            "code": "00",
+            "vertical": false,
+            "horizontal": false
+        },
+        {
+            "id": 2,
+            "name": "Dark (01)",
+            "code": "01",
+            "vertical": false,
+            "horizontal": false
+        },
+        {
+            "id": 3,
+            "name": "Ghost (02)",
+            "code": "02",
+            "vertical": false,
+            "horizontal": true
+        },
+        {
+            "id": 4,
+            "name": "Psychic (03)",
+            "code": "03",
+            "vertical": false,
+            "horizontal": false
+        },
+        {
+            "id": 5,
+            "name": "High Impact (04)",
+            "code": "04",
+            "vertical": false,
+            "horizontal": false
+        },
+        {
+            "id": 6,
+            "name": "High Impact (05)",
+            "code": "05",
+            "vertical": false,
+            "horizontal": false
+        },
+        {
+            "id": 7,
+            "name": "High Impact (06)",
+            "code": "06",
+            "vertical": false,
+            "horizontal": false
+        },
+        {
+            "id": 8,
+            "name": "Horn Drill (07)",
+            "code": "07",
+            "vertical": true,
+            "horizontal": true
+        },
+        {
+            "id": 9,
+            "name": "Horn Drill (08)",
+            "code": "08",
+            "vertical": true,
+            "horizontal": true
+        },
+        {
+            "id": 10,
+            "name": "High Speed (09)",
+            "code": "09",
+            "vertical": false,
+            "horizontal": true
+        },
+        {
+            "id": 11,
+            "name": "High Speed (0A)",
+            "code": "0A",
+            "vertical": false,
+            "horizontal": true
+        },
+        {
+            "id": 12,
+            "name": "Thunder (0B)",
+            "code": "0B",
+            "vertical": false,
+            "horizontal": true
+        },
+        {
+            "id": 13,
+            "name": "Guillotine (0C)",
+            "code": "0C",
+            "vertical": false,
+            "horizontal": false
+        },
+        {
+            "id": 14,
+            "name": "Guillotine (0D)",
+            "code": "0D",
+            "vertical": false,
+            "horizontal": false
+        },
+        {
+            "id": 15,
+            "name": "Guillotine (0E)",
+            "code": "0E",
+            "vertical": false,
+            "horizontal": false
+        },
+        {
+            "id": 16,
+            "name": "Ice (0F)",
+            "code": "0F",
+            "vertical": false,
+            "horizontal": true
+        },
+        {
+            "id": 17,
+            "name": "Space (10)",
+            "code": "10",
+            "vertical": true,
+            "horizontal": true
+        },
+        {
+            "id": 18,
+            "name": "Seismic Toss (11)",
+            "code": "11",
+            "vertical": true,
+            "horizontal": true
+        },
+        {
+            "id": 19,
+            "name": "Flying (12)",
+            "code": "12",
+            "vertical": true,
+            "horizontal": true
+        },
+        {
+            "id": 20,
+            "name": "Flying (13)",
+            "code": "13",
+            "vertical": true,
+            "horizontal": true
+        },
+        {
+            "id": 21,
+            "name": "Aurora Beam (14)",
+            "code": "14",
+            "vertical": false,
+            "horizontal": true
+        },
+        {
+            "id": 22,
+            "name": "Fissure (15)",
+            "code": "15",
+            "vertical": false,
+            "horizontal": true
+        },
+        {
+            "id": 23,
+            "name": "Silver Wind (16)",
+            "code": "16",
+            "vertical": false,
+            "horizontal": true
+        },
+        {
+            "id": 24,
+            "name": "Silver Wind (17)",
+            "code": "17",
+            "vertical": false,
+            "horizontal": true
+        },
+        {
+            "id": 25,
+            "name": "Solarbeam (18)",
+            "code": "18",
+            "vertical": false,
+            "horizontal": false
+        },
+        {
+            "id": 26,
+            "name": "Solarbeam (19)",
+            "code": "19",
+            "vertical": false,
+            "horizontal": false
+        },
+        {
+            "id": 27,
+            "name": "Solarbeam (1A)",
+            "code": "1A",
+            "vertical": false,
+            "horizontal": false
+        },
+        {
+            "id": 28,
+            "name": "Light Green",
+            "code": "N/A",
+            "vertical": false,
+            "horizontal": false
+        },
+        {
+            "id": 29,
+            "name": "Deep Green",
+            "code": "N/A",
+            "vertical": false,
+            "horizontal": false
+        }
+    ]
+}

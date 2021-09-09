@@ -73,34 +73,8 @@ ipcRenderer.on('keepBackgroundCheckbox', (event, backgroundName) => {
     }
 });
 
-/////////////Insert Animation///////////////////
+//Insert Animation
 ipcRenderer.on('setInsertWindowVariables', (event, bytes, hex) => {
     document.getElementById("bytesNeeded").innerText = bytes;
     document.getElementById("hex").value = hex;
 });
-
-ipcRenderer.on('setInputMemoryOffset', (event, memoryOffset) => {
-    document.getElementById("offset").value = memoryOffset;
-});
-
-///////////////Search Free Space/////////////////////
-
-
-ipcRenderer.on('setFreeSpaceWindowInitialParameters', (event, bytesNeeded) => {
-    document.getElementById("bytesNeeded").value = bytesNeeded;
-});
-
-ipcRenderer.on('setSearchLoadingSpinner', (event, value) => {
-    console.log('dog')
-    if(value == true){
-        document.getElementById("searchLoadingSpinner").className = "spinner-border spinner-border-sm";
-    }
-    else {
-        document.getElementById("searchLoadingSpinner").className = "";
-    }
-});
-
-ipcRenderer.on('setInsertMemoryOffset', (event, offset) => {
-    document.getElementById("memoryOffset").value = offset;
-});
-
