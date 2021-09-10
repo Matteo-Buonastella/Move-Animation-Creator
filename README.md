@@ -60,3 +60,4 @@ To insert an animation, you will need to provide a memory offset. A built in Fre
 *Because Rain Dance is a CR move, it can not have its colored background removed which is why it's still present in the animation*
 3. [Fire Sting: Poison Sting + Scattered Flames](https://www.youtube.com/watch?v=-wl_ENibbT4&ab_channel=KakashiSensei)
 4. [Scald: (Light Red Background + Hydro Pump + Scattered Flames)](https://www.youtube.com/watch?v=YQaVM0Ecfxo&ab_channel=KakashiSensei)
+5. [Ice Fang: (Bite + Ice Crystals)](https://www.youtube.com/watch?v=R_QNO54coXM&ab_channel=KakashiSensei)
