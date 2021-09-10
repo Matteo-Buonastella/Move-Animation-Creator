@@ -46,6 +46,9 @@ Notice how Tackle uses the Ghost background. This is because when you select Kee
 
 ![KeepBackground](https://imgur.com/vfJnVTx.png)
 
+## Post Attack Animation
+A post attack animation is the little animation that occurs after an attack, like the water bubbles after Bubble, the poison bubbles after Poison Sting, the ice crystals after Ice Beam and so on and so on. For each animation in the sequence, you can now control what post attack animation displays. You can either leave it as a default, remove it (like removing the poison bubbles from Poison Sting) or insert your own from a list of 30 options. If you add a post attack animation to an animation that already has one, the program will automatically replace the old one with the new one. Check out the example below where we replace the poison bubbles with scattered flames. If you ever wanted to create a move like Ice Fang, now you can by doing Bite + Ice Crystals
+
 ## Inserting an Animation
 To insert an animation, you will need to provide a memory offset. Use a tool such as FreeSpaceFinder to search for free space. The number of bytes needed will be provided to you. Use the exact location that FreeSpaceFinder spits out. For example, 82748A
 
@@ -55,3 +58,4 @@ To insert an animation, you will need to provide a memory offset. Use a tool suc
 1. [Default Background: Harden + Mach Punch + Take Down + Recover](https://www.youtube.com/watch?v=RDaWZ_JCh1g&ab_channel=KakashiSensei)
 2. [No/Remove Background: Rain Dance (CR) + Ice Beam + Scary Face + Hyper Beam](https://www.youtube.com/watch?v=iau3--UqlA8&ab_channel=KakashiSensei)
 *Because Rain Dance is a CR move, it can not have its colored background removed which is why it's still present in the animation*
+3. [Fire Sting: Poison Sting + Scattered Flames](https://www.youtube.com/watch?v=-wl_ENibbT4&ab_channel=KakashiSensei)
