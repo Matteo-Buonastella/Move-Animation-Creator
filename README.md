@@ -1,6 +1,6 @@
 # Move-Animation-Creator
 
-This application allows you to create your own move animations by combining and manipulating existing animations. You can combine up to 4 move animations 
+This application allows you to create your own move animations for Fire Red by combining and manipulating existing animations. You can combine up to 4 move animations 
 
 ## Selecting a Background
 A dropdown list is provided with all the backgrouds for you to choose from. Below are some details on the options provided. If you select a background for your animation, the default behavior for this application is the following: First it will go through each move animation that you chose and remove it's background (if possible), including colored backgrounds. Secondly, it will combine all the animations together so that they are played in sequence. Lastly, the background you chose will be applied to the start of the animation and will be used for the entire sequence, unless specified otherwise via the Keep Background checkbox explained below
