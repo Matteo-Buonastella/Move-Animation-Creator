@@ -11,6 +11,7 @@
     "srollBackground": [
         {
             "code": "14 WW 16 03 2D B8 0B 08 05 04 00 XX 00 YY 00 00 FF FF",
+            "codeDelay": "14 WW 17 03 2D B8 0B 08 05 04 00 XX 00 YY 00 00 FF FF",
             "psychicCode": "0E BB 59 1D 08",
             "endingCode": "0E C7 59 1D 08"
         }

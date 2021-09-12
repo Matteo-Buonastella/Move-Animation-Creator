@@ -22,7 +22,7 @@ function createWindow(){
     mainWindow = new BrowserWindow({
         width: 900,
         height: 700,
-        title:'Move Animation Creator 1.2',
+        title:'Move Animation Creator 1.2.1',
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false,
@@ -46,7 +46,7 @@ function createWindow(){
     })    
 
     mainWindow.webContents.on('did-finish-load', () => {
-        mainWindow.setTitle("Move Animation Creator 1.2")
+        mainWindow.setTitle("Move Animation Creator 1.2.1")
     })
 }
 
@@ -1309,7 +1309,12 @@ function addBackground(hex, backgroundName, scrollType, scrollSpeed, psychicBack
     } 
     //Background is scrolling vertically or horizontally
     else{
-        var backgroundStart = background.srollBackground[0].code;
+        //Some backgrounds cant start immediately and need to use 14 XX 17 instead of 14 XX 16
+        if(backgroundName == "Ghost (02)" || backgroundName == "Space (10)"){
+            var backgroundStart = background.srollBackground[0].codeDelay;
+        } else{
+            var backgroundStart = background.srollBackground[0].code;
+        }
         backgroundStart = addBackgroundIdToCode(backgroundStart, backgroundObject.code);
         if(scrollType == "Vertical Scroll"){
             backgroundStart = addVerticalSpeedToCode(backgroundStart, scrollSpeed);
