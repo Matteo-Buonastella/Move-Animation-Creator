@@ -8,11 +8,13 @@ const fs = require('fs');
 var ipc = require('electron').ipcRenderer;
 
 var background = require('./data/background/background.json');
+var preAttackAnimation = require('./data/attacks/preAttackAnimation.json')
 var postAttackAnimation = require('./data/attacks/postAttackAnimation.json');
 var attackData = require('./data/attacks/attacks.json');
 
 let mainWindow;
 let insertWindow
+let preAnimationWindow;
 let postAnimationWindow;
 let freeSpaceFinderWindow;
 var rom = null;
@@ -20,9 +22,9 @@ var rom = null;
 //Create main Browser window
 function createWindow(){
     mainWindow = new BrowserWindow({
-        width: 900,
-        height: 700,
-        title:'Move Animation Creator 1.2.1',
+        width: 1100,
+        height: 800,
+        title:'Move Animation Creator 1.3',
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false,
@@ -46,7 +48,7 @@ function createWindow(){
     })    
 
     mainWindow.webContents.on('did-finish-load', () => {
-        mainWindow.setTitle("Move Animation Creator 1.2.1")
+        mainWindow.setTitle("Move Animation Creator 1.3")
     })
 }
 
@@ -119,6 +121,40 @@ function createInsertWindow(){
       })
   }
 
+  function createPreAnimationWindow(){
+    preAnimationWindow = new BrowserWindow({
+        modal: true,
+        show: false,
+        width: 600,
+        height: 250,
+        title:'Pre Animation Images',
+        webPreferences: {
+          nodeIntegration: true,
+          contextIsolation: false,
+          enableRemoteModule: true,
+        },
+      });
+
+      preAnimationWindow.loadURL(url.format({
+        pathname: path.join(__dirname, 'preAttackImages.html'),
+        protocol: 'file:',
+        slashes:true
+      }));
+      preAnimationWindow.setMenu(null);
+      // Handle garbage collection
+      preAnimationWindow.on('close', function(){
+        preAnimationWindow = null;
+      });
+  
+      preAnimationWindow.once('ready-to-show', () => {
+        preAnimationWindow.show()
+      })
+  
+      preAnimationWindow.webContents.on('did-finish-load', () => {
+        preAnimationWindow.setTitle("Pre Animation")
+      })
+  }
+
   function createFreeSpaceFinderWindow(){
     freeSpaceFinderWindow = new BrowserWindow({
         parent:insertWindow,
@@ -177,6 +213,18 @@ const mainMenuTemplate = [
 ]
 
 mainMenuTemplate.push({
+    label: 'Pre Attack Images',
+    submenu: [
+        {
+            label: 'View',
+            click(item, focusedWindow){
+                createPreAnimationWindow();
+            }
+        }
+    ]
+})
+
+mainMenuTemplate.push({
     label: 'Post Attack Images',
     submenu: [
         {
@@ -187,6 +235,8 @@ mainMenuTemplate.push({
         }
     ]
 })
+
+
 
 //Add developer tools item if not in production
 /*
@@ -202,7 +252,7 @@ if(process.env.Node_ENV !== 'production'){
             }
         ]
     })
-} */
+} */ 
 
 //Run create window
 app.whenReady().then(() => {
@@ -238,7 +288,7 @@ async function openRom(){
 /////Ipc's
 
 //Create Animation
-ipcMain.on('form:submit', function(event, attackName, background, scrollType, scrollSpeed, attack1, attack2, attack3, attack4, attack1KeepBackground, attack2KeepBackground, attack3KeepBackground, attack4KeepBackground, postAnimation1, postAnimation2, postAnimation3, postAnimation4) {
+ipcMain.on('form:submit', function(event, attackName, background, scrollType, scrollSpeed, attack1, attack2, attack3, attack4, attack1KeepBackground, attack2KeepBackground, attack3KeepBackground, attack4KeepBackground, postAnimation1, postAnimation2, postAnimation3, postAnimation4, preAnimation1, preAnimation2, preAnimation3, preAnimation4) {
     
     var backgroundCode;
     var removeBackround = false;
@@ -260,6 +310,7 @@ ipcMain.on('form:submit', function(event, attackName, background, scrollType, sc
             //If only 1 move
             if(attack2 == "---"){
                 var moveData1 = getMoveAnimationData(attack1);
+                moveData1.code = addPreAnimation(moveData1, preAnimation1);
                 moveData1.code = trimTrailing08(moveData1.code)
                 moveData1.code = addPostAnimation(moveData1, postAnimation1)
                 moveData1.code = concat08(moveData1.code)
@@ -275,6 +326,8 @@ ipcMain.on('form:submit', function(event, attackName, background, scrollType, sc
                 var moveData2 = getMoveAnimationData(attack2);
                 moveData1.code = trimTrailing08(moveData1.code)
                 moveData2.code = trimTrailing08(moveData2.code)
+                moveData1.code = addPreAnimation(moveData1, preAnimation1);
+                moveData2.code = addPreAnimation(moveData2, preAnimation2);
                 moveData1.code = addPostAnimation(moveData1, postAnimation1)
                 moveData2.code = addPostAnimation(moveData2, postAnimation2)
 
@@ -295,6 +348,9 @@ ipcMain.on('form:submit', function(event, attackName, background, scrollType, sc
                 moveData1.code = trimTrailing08(moveData1.code)
                 moveData2.code = trimTrailing08(moveData2.code)
                 moveData3.code = trimTrailing08(moveData3.code)
+                moveData1.code = addPreAnimation(moveData1, preAnimation1);
+                moveData2.code = addPreAnimation(moveData2, preAnimation2);
+                moveData3.code = addPreAnimation(moveData3, preAnimation3);
                 moveData1.code = addPostAnimation(moveData1, postAnimation1)
                 moveData2.code = addPostAnimation(moveData2, postAnimation2)
                 moveData3.code = addPostAnimation(moveData3, postAnimation3)
@@ -318,6 +374,10 @@ ipcMain.on('form:submit', function(event, attackName, background, scrollType, sc
                 moveData2.code = trimTrailing08(moveData2.code)
                 moveData3.code = trimTrailing08(moveData3.code)
                 moveData4.code = trimTrailing08(moveData4.code)
+                moveData1.code = addPreAnimation(moveData1, preAnimation1);
+                moveData2.code = addPreAnimation(moveData2, preAnimation2);
+                moveData3.code = addPreAnimation(moveData3, preAnimation3);
+                moveData4.code = addPreAnimation(moveData4, preAnimation4);
                 moveData1.code = addPostAnimation(moveData1, postAnimation1)
                 moveData2.code = addPostAnimation(moveData2, postAnimation2)
                 moveData3.code = addPostAnimation(moveData3, postAnimation3)
@@ -348,6 +408,7 @@ ipcMain.on('form:submit', function(event, attackName, background, scrollType, sc
                    moveData1.code = removeBackground(moveData1)
                 }
                 moveData1.code = trimTrailing08(moveData1.code)
+                moveData1.code = addPreAnimation(moveData1, preAnimation1);
                 moveData1.code = addPostAnimation(moveData1, postAnimation1)
                 moveData1.code = concat08(moveData1.code)
 
@@ -371,6 +432,8 @@ ipcMain.on('form:submit', function(event, attackName, background, scrollType, sc
 
                 moveData1.code = trimTrailing08(moveData1.code)
                 moveData2.code = trimTrailing08(moveData2.code)
+                moveData1.code = addPreAnimation(moveData1, preAnimation1);
+                moveData2.code = addPreAnimation(moveData2, preAnimation2);
                 moveData1.code = addPostAnimation(moveData1, postAnimation1)
                 moveData2.code = addPostAnimation(moveData2, postAnimation2)
 
@@ -402,6 +465,9 @@ ipcMain.on('form:submit', function(event, attackName, background, scrollType, sc
                 moveData1.code = trimTrailing08(moveData1.code)
                 moveData2.code = trimTrailing08(moveData2.code)
                 moveData3.code = trimTrailing08(moveData3.code)
+                moveData1.code = addPreAnimation(moveData1, preAnimation1);
+                moveData2.code = addPreAnimation(moveData2, preAnimation2);
+                moveData3.code = addPreAnimation(moveData3, preAnimation3);
                 moveData1.code = addPostAnimation(moveData1, postAnimation1)
                 moveData2.code = addPostAnimation(moveData2, postAnimation2)
                 moveData3.code = addPostAnimation(moveData3, postAnimation3)
@@ -438,6 +504,10 @@ ipcMain.on('form:submit', function(event, attackName, background, scrollType, sc
                 moveData2.code = trimTrailing08(moveData2.code)
                 moveData3.code = trimTrailing08(moveData3.code)
                 moveData4.code = trimTrailing08(moveData4.code)
+                moveData1.code = addPreAnimation(moveData1, preAnimation1);
+                moveData2.code = addPreAnimation(moveData2, preAnimation2);
+                moveData3.code = addPreAnimation(moveData3, preAnimation3);
+                moveData4.code = addPreAnimation(moveData4, preAnimation4);
                 moveData1.code = addPostAnimation(moveData1, postAnimation1)
                 moveData2.code = addPostAnimation(moveData2, postAnimation2)
                 moveData3.code = addPostAnimation(moveData3, postAnimation3)
@@ -471,6 +541,7 @@ ipcMain.on('form:submit', function(event, attackName, background, scrollType, sc
                 }
 
                 moveData1.code = trimTrailing08(moveData1.code)
+                moveData1.code = addPreAnimation(moveData1, preAnimation1);
                 moveData1.code = addPostAnimation(moveData1, postAnimation1)
                 moveData1.code = addBackground(moveData1.code, background, scrollType, scrollSpeed, psychicBackgroundUsed)
 
@@ -528,8 +599,10 @@ ipcMain.on('form:submit', function(event, attackName, background, scrollType, sc
                 }
 
                 moveData1.code = trimTrailing08(moveData1.code);
+                moveData1.code = addPreAnimation(moveData1, preAnimation1);
                 moveData1.code = addPostAnimation(moveData1, postAnimation1)
                 moveData2.code = trimTrailing08(moveData2.code);
+                moveData2.code = addPreAnimation(moveData2, preAnimation2);
                 moveData2.code = addPostAnimation(moveData2, postAnimation2)
 
                 //Psychic background can not go beyond 1 move when using Keep Background functionality. If another move with a psychic background comes after this, don't incldde closing animation.
@@ -609,6 +682,9 @@ ipcMain.on('form:submit', function(event, attackName, background, scrollType, sc
                 moveData1.code = trimTrailing08(moveData1.code);
                 moveData2.code = trimTrailing08(moveData2.code);
                 moveData3.code = trimTrailing08(moveData3.code);
+                moveData1.code = addPreAnimation(moveData1, preAnimation1);
+                moveData2.code = addPreAnimation(moveData2, preAnimation2);
+                moveData3.code = addPreAnimation(moveData3, preAnimation3);
                 moveData1.code = addPostAnimation(moveData1, postAnimation1)
                 moveData2.code = addPostAnimation(moveData2, postAnimation2)
                 moveData3.code = addPostAnimation(moveData3, postAnimation3)
@@ -704,6 +780,10 @@ ipcMain.on('form:submit', function(event, attackName, background, scrollType, sc
                 moveData2.code = trimTrailing08(moveData2.code);
                 moveData3.code = trimTrailing08(moveData3.code);
                 moveData4.code = trimTrailing08(moveData4.code);
+                moveData1.code = addPreAnimation(moveData1, preAnimation1);
+                moveData2.code = addPreAnimation(moveData2, preAnimation2);
+                moveData3.code = addPreAnimation(moveData3, preAnimation3);
+                moveData4.code = addPreAnimation(moveData4, preAnimation4);
                 moveData1.code = addPostAnimation(moveData1, postAnimation1)
                 moveData2.code = addPostAnimation(moveData2, postAnimation2)
                 moveData3.code = addPostAnimation(moveData3, postAnimation3)
@@ -773,7 +853,12 @@ ipcMain.on('backgroud:change', function(event, data) {
 ipcMain.on('postAttack:change', function(event, data) {
     postAnimationWindow.webContents.send('postAttackImage', data);
 
-    loadPostAttackImageToUI(data);
+   // loadPostAttackImageToUI(data);
+});
+
+ipcMain.on('preAttack:change', function(event, data) {
+    preAnimationWindow.webContents.send('preAttackImage', data);
+    
 });
 
 ipcMain.on('button:searchFreeSpace', function(event, bytesNeeded){
@@ -857,11 +942,11 @@ async function loadBackgroundToUI(data){
     })
 }
 
-async function loadPostAttackImageToUI(data){
+/*async function loadPostAttackImageToUI(data){
     mainWindow.webContents.on('did-finish-load', ()=>{
         mainWindow.webContents.send('postAttackImage', data);
     })
-}
+} */
 
 //Function enables/disables certain scroll radio buttons depending on background. 
 async function setRadioButtonPermission(vertical, horizontal){
@@ -1216,6 +1301,12 @@ function addBackground(hex, backgroundName, scrollType, scrollSpeed, psychicBack
             hex = hex.replace(/^/, backgroundStart + " ");
             hex = hex.concat(backgroundEnd);
         }
+        else if(backgroundName == "Deep Green Slow"){
+            var backgroundStart = background.coloredBackground[0].deepGreenSlow;
+            var backgroundEnd = background.coloredBackground[0].deepGreenSlowEnd;
+            hex = hex.replace(/^/, backgroundStart + " ");
+            hex = hex.concat(backgroundEnd);
+        }
         else if(backgroundName == "Light Red"){
             var backgroundStart = background.coloredBackground[0].lightRed;
             var backgroundEnd = background.coloredBackground[0].lightRedEnd;
@@ -1225,6 +1316,12 @@ function addBackground(hex, backgroundName, scrollType, scrollSpeed, psychicBack
         else if(backgroundName == "Deep Red"){
             var backgroundStart = background.coloredBackground[0].deepRed;
             var backgroundEnd = background.coloredBackground[0].deepRedEnd;
+            hex = hex.replace(/^/, backgroundStart + " ");
+            hex = hex.concat(backgroundEnd);
+        }
+        else if(backgroundName == "Deep Red Slow"){
+            var backgroundStart = background.coloredBackground[0].deepRedSlow;
+            var backgroundEnd = background.coloredBackground[0].deepRedSlowEnd;
             hex = hex.replace(/^/, backgroundStart + " ");
             hex = hex.concat(backgroundEnd);
         }
@@ -1240,6 +1337,12 @@ function addBackground(hex, backgroundName, scrollType, scrollSpeed, psychicBack
             hex = hex.replace(/^/, backgroundStart + " ");
             hex = hex.concat(backgroundEnd);
         }
+        else if (backgroundName == "Deep Orange Slow"){
+            var backgroundStart = background.coloredBackground[0].deepOrangeSlow;
+            var backgroundEnd = background.coloredBackground[0].deepOrangeSlowEnd;
+            hex = hex.replace(/^/, backgroundStart + " ");
+            hex = hex.concat(backgroundEnd);
+        }
         else if (backgroundName == "Light Blue"){
             var backgroundStart = background.coloredBackground[0].lightBlue;
             var backgroundEnd = background.coloredBackground[0].lightBlueEnd;
@@ -1249,6 +1352,12 @@ function addBackground(hex, backgroundName, scrollType, scrollSpeed, psychicBack
         else if (backgroundName == "Deep Blue"){
             var backgroundStart = background.coloredBackground[0].deepBlue;
             var backgroundEnd = background.coloredBackground[0].deepBlueEnd;
+            hex = hex.replace(/^/, backgroundStart + " ");
+            hex = hex.concat(backgroundEnd);
+        }
+        else if(backgroundName == "Deep Blue Slow"){
+            var backgroundStart = background.coloredBackground[0].deepBlueSlow;
+            var backgroundEnd = background.coloredBackground[0].deepBlueSlowEnd;
             hex = hex.replace(/^/, backgroundStart + " ");
             hex = hex.concat(backgroundEnd);
         }
@@ -1264,6 +1373,12 @@ function addBackground(hex, backgroundName, scrollType, scrollSpeed, psychicBack
             hex = hex.replace(/^/, backgroundStart + " ");
             hex = hex.concat(backgroundEnd);
         }
+        else if(backgroundName == "Deep Sky Blue Slow"){
+            var backgroundStart = background.coloredBackground[0].deepSkyBlueSlow;
+            var backgroundEnd = background.coloredBackground[0].deepSkyBlueSlowEnd;
+            hex = hex.replace(/^/, backgroundStart + " ");
+            hex = hex.concat(backgroundEnd);
+        }
         else if (backgroundName == "Light Pink"){
             var backgroundStart = background.coloredBackground[0].lightPink;
             var backgroundEnd = background.coloredBackground[0].lightPinkEnd;
@@ -1273,6 +1388,12 @@ function addBackground(hex, backgroundName, scrollType, scrollSpeed, psychicBack
         else if (backgroundName == "Deep Pink"){
             var backgroundStart = background.coloredBackground[0].deepPink;
             var backgroundEnd = background.coloredBackground[0].deepPinkEnd;
+            hex = hex.replace(/^/, backgroundStart + " ");
+            hex = hex.concat(backgroundEnd);
+        }
+        else if(backgroundName == "Deep Pink Slow"){
+            var backgroundStart = background.coloredBackground[0].deepPinkSlow;
+            var backgroundEnd = background.coloredBackground[0].deepPinkSlowEnd;
             hex = hex.replace(/^/, backgroundStart + " ");
             hex = hex.concat(backgroundEnd);
         }
@@ -1288,6 +1409,12 @@ function addBackground(hex, backgroundName, scrollType, scrollSpeed, psychicBack
             hex = hex.replace(/^/, backgroundStart + " ");
             hex = hex.concat(backgroundEnd);
         }
+        else if(backgroundName == "Deep Purple Slow"){
+            var backgroundStart = background.coloredBackground[0].deepPurpleSlow;
+            var backgroundEnd = background.coloredBackground[0].deepPurpleSlowEnd;
+            hex = hex.replace(/^/, backgroundStart + " ");
+            hex = hex.concat(backgroundEnd);
+        }
         else if (backgroundName == "Light Black"){
             var backgroundStart = background.coloredBackground[0].lightBlack;
             var backgroundEnd = background.coloredBackground[0].lightBlackEnd;
@@ -1297,6 +1424,12 @@ function addBackground(hex, backgroundName, scrollType, scrollSpeed, psychicBack
         else if (backgroundName == "Deep Black") {
             var backgroundStart = background.coloredBackground[0].deepBlack;
             var backgroundEnd = background.coloredBackground[0].deepBlackEnd;
+            hex = hex.replace(/^/, backgroundStart + " ");
+            hex = hex.concat(backgroundEnd);
+        }
+        else if (backgroundName == "Deep Black Slow"){
+            var backgroundStart = background.coloredBackground[0].deepBlackSlow;
+            var backgroundEnd = background.coloredBackground[0].deepBlackSlowEnd;
             hex = hex.replace(/^/, backgroundStart + " ");
             hex = hex.concat(backgroundEnd);
         }
@@ -1410,10 +1543,39 @@ function addPostAnimation(moveData, postAnimation){
     }
 }
 
+//Recieves a Move Object and the pre animaton that they want and returns the hex code with pre animation appended.
+function addPreAnimation(moveData, preAnimation){
+    if(preAnimation == "None"){
+        return moveData.code;
+    } 
+    else{
+        var preAnimationObjectToAdd = getPreAnimationObject(preAnimation);
+
+        //Add the animation pointer to the start
+        moveData.code = moveData.code.replace(/^/, preAnimationObjectToAdd.pointer + " ");
+
+        //Add any imports to the start
+        if(preAnimationObjectToAdd.import != ""){
+            moveData.code = moveData.code.replace(/^/, preAnimationObjectToAdd.import + " ");
+        }
+
+        return moveData.code;
+    }
+}
+
 function getPostAnimationObject(postAnimation){
     for(var i=0; i<postAttackAnimation.postAttack.length; i++){
         if(postAnimation == postAttackAnimation.postAttack[i].name){
             return postAttackAnimation.postAttack[i]
+        }
+    }
+}
+
+//Function recieves a pre animation and returns the hex code for it.
+function getPreAnimationObject(preAnimation){
+    for(var i=0; i<preAttackAnimation.preAttack.length; i++){
+        if(preAnimation == preAttackAnimation.preAttack[i].name){
+            return preAttackAnimation.preAttack[i]
         }
     }
 }
