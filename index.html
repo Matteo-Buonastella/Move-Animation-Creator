@@ -122,11 +122,27 @@
                         <label for="scrollSpeed" class="form-label"><span class="fw-bold">Scroll Speed </span> <i>(no effect if No Scroll is selected)</i></label>
                         <select class="form-select" id="select-scrollSpeed"  aria-label="Default select example">
                             <option id="1" value="01">Very Slow</option>
-                            <option id="2" value="02">Slow</option>
-                            <option id="3" value="03" selected>Medium</option>
-                            <option id="4" value="04">Fast</option>
-                            <option id="5" value="05">Very Fast</option>
+                            <option id="2" value="03">Slow</option>
+                            <option id="3" value="05" selected>Medium</option>
+                            <option id="4" value="07">Fast</option>
+                            <option id="5" value="09">Very Fast</option>
                         </select>
+                    </div>
+                    <div class="col"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col-6 mb-3">
+                        <label  class="form-label"><span class="fw-bold">Blink</span> 
+                        </label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="checkbox-removeBackgroundBlink">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Remove
+                            </label>
+                        </div>
+                    
                     </div>
                     <div class="col"></div>
                 </div>
@@ -153,24 +169,30 @@
                             <label for="background" class="form-label" ></i></label>
                             <select class="form-select" id="select-preAnimation1" aria-label="Default select example" style="margin-top: 6px;">
                                 <option id="1" value="None" selected>None</option>
-                                <option value="" disabled="disabled">--- Move User (9) ---</option>
+                                <option value="" disabled="disabled">--- Move User (12) ---</option>
                                 <option id="2" value="Bigger Shadow User">Bigger Shadow User</option>
+                                <option id="27" value="Buff Up">Buff Up</option>
+                                <option id="23" value="Head Down User">Head Down User</option>
                                 <option id="8" value="Move Circle User">Move Circle User</option>
                                 <option id="6" value="Move Down User">Move Down User</option>
                                 <option id="2" value="Move Left and Right User">Move Left and Right User</option>
                                 <option id="17" value="Psychic Shadow User">Psychic Shadow User</option>
+                                <option id="30" value="Ready Aim">Ready Aim</option>
                                 <option id="14" value="Shake Up & Down User">Shake Up & Down User</option>
                                 <option id="23" value="Shake Turn Red">Shake Turn Red</option>
                                 <option id="3" value="Slight Shake User">Slight Shake User</option>
                                 <option id="21" value="User Yawns">User Yawns</option>
-                                <option value="" disabled="disabled">--- Other (6) ---</option>
+                                <option value="" disabled="disabled">--- Other (10) ---</option>
                                 <option id="4" value="Air Cutter Start">Air Cutter Start</option>
                                 <option id="5" value="Ancientpower Lift Rocks">Ancientpower Lift Rocks</option>
                                 <option id="22" value="Charm">Charm</option>
                                 <option id="10" value="Destiny Bond Surface">Destiny Bond Surface</option>
+                                <option id="24" value="Fade But Not You">Fade But Not You</option>
                                 <option id="7" value="Hearts User">Hearts User</option>
+                                <option id="28" value="Invert Background">Invert Background</option>
                                 <option id="18" value="Leafs">Leafs</option>
                                 <option id="20" value="Shooting Stars">Shooting Stars</option>
+                                <option id="29" value="Sun Rays">Sun Rays</option>
                             </select>
                         </div>
                     </div>
@@ -185,16 +207,14 @@
                                 <option id="91" value="Aeroblast">Aeroblast</option>
                                 <option id="120" value="Agility">Agility</option>
                                 <option id="121" value="Air Cutter">Air Cutter</option>
-                                <option id="376" value="Air Slash">Air Slash</option>
                                 <option id="70" value="Amnesia">Amnesia</option>
                                 <option id="122" value="Ancientpower">Ancientpower</option>
-                                <option id="373" value="Aqua Jet">Aqua Jet</option>
                                 <option id="382" value="Aqua Tail">Aqua Tail</option>
                                 <option id="123" value="Arm Thrust">Arm Thrust</option>
-                                <option id="3" value="Aromatherapy">Aromatherapy (CR)</option>
+                                <option id="3" value="Aromatherapy">Aromatherapy</option>
                                 <option id="124" value="Assist">Assist</option>
                                 <option id="125" value="Astonish">Astonish</option>
-                                <option id="68" value="Attract">Attract (BRR)</option>
+                                <option id="68" value="Attract">Attract</option>
                                 <option id="71" value="Aurora Beam">Aurora Beam</option>
                                 <option id="126" value="Barrage">Barrage</option>
                                 <option id="127" value="Barrier">Barrier</option>
@@ -218,10 +238,7 @@
                                 <option id="88" value="Brick Break 2">Brick Break 2</option>
                                 <option id="142" value="Bubble">Bubble</option>
                                 <option id="143" value="Bubblebeam">Bubblebeam</option>
-                                <option id="387" value="Bug Buzz">Bug Buzz</option>
                                 <option id="144" value="Bulk Up">Bulk Up</option>
-                                <option id="374" value="Bulldoze">Bulldoze</option>
-                                <option id="386" value="Bullet Punch">Bullet Punch</option>
                                 <option id="145" value="Bullet Seed">Bullet Seed</option>
                                 <option id="72" value="Calm Mind 1">Calm Mind 1 (CR)</option>
                                 <option id="73" value="Calm Mind 2">Calm Mind 2</option>
@@ -246,12 +263,11 @@
                                 <option id="55" value="Curse">Curse</option>
                                 <option id="158" value="Cut">Cut</option>
                                 <option id="159" value="Defense Curl">Defense Curl</option>
-                                <option id="27" value="Destiny Bond">Destiny Bond (BR)</option>
+                                <option id="27" value="Destiny Bond">Destiny Bond</option>
                                 <option id="11" value="Detect">Detect</option>
                                 <option id="160" value="Dig Turn 1">Dig Turn 1</option>
                                 <option id="161" value="Dig Turn 2">Dig Turn 2</option>
                                 <option id="162" value="Disable">Disable</option>
-                                <option id="379" value="Discharge">Discharge</option>
                                 <option id="163" value="Dive Turn 1">Dive Turn 1</option>
                                 <option id="164" value="Dive Turn 2">Dive Turn 2</option>
                                 <option id="166" value="Dizzy Punch">Dizzy Punch</option>
@@ -259,26 +275,23 @@
                                 <option id="21" value="Doom Desire Turn 2">Doom Desire Turn 2</option>
                                 <option id="167" value="Double Kick">Double Kick</option>
                                 <option id="168" value="Double Team">Double Team</option>
-                                <option id="56" value="Double Edge">Double Edge (CR)</option>
+                                <option id="56" value="Double Edge">Double Edge</option>
                                 <option id="169" value="Doubleslap">Doubleslap</option>
                                 <option id="170" value="Dragon Claw">Dragon Claw</option>
                                 <option id="171" value="Dragon Dance">Dragon Dance</option>
                                 <option id="172" value="Dragon Rage">Dragon Rage</option>
-                                <option id="381" value="Dragon Rush">Dragon Rush</option>
                                 <option id="173" value="Dragonbreath">Dragonbreath</option>
-                                <option id="383" value="Drain Punch">Drain Punch</option>
                                 <option id="75" value="Dream Eater">Dream Eater</option>
                                 <option id="174" value="Drill Peck">Drill Peck</option>
                                 <option id="175" value="Dynamicpunch">Dynamicpunch</option>
                                 <option id="176" value="Earthquake">Earthquake</option>
-                                <option id="391" value="Earth Power">Earth Power (BRR)</option>
                                 <option id="177" value="Egg Bomb">Egg Bomb</option>
                                 <option id="178" value="Ember">Ember</option>
                                 <option id="57" value="Encore">Encore</option>
                                 <option id="179" value="Endeavor">Endeavor</option>
                                 <option id="180" value="Endure">Endure</option>
-                                <option id="4" value="Eruption">Eruption (CR)</option>
-                                <option id="12" value="Explosion">Explosion (CR)</option>
+                                <option id="4" value="Eruption">Eruption</option>
+                                <option id="12" value="Explosion">Explosion</option>
                                 <option id="76" value="Extrasensory">Extrasensory</option>
                                 <option id="94" value="ExtremeSpeed">ExtremeSpeed</option>
                                 <option id="181" value="Facade">Facade</option>
@@ -287,10 +300,10 @@
                                 <option id="183" value="Fake Tears">Fake Tears</option>
                                 <option id="184" value="False Swipe">False Swipe</option>
                                 <option id="185" value="Featherdance">Featherdance</option>
-                                <option id="58" value="Fire Blast">Fire Blast (CR)</option>
+                                <option id="58" value="Fire Blast">Fire Blast</option>
                                 <option id="186" value="Fire Punch">Fire Punch</option>
                                 <option id="187" value="Fire Spin">Fire Spin</option>
-                                <option id="100" value="Fissure">Fissure (BR)</option>
+                                <option id="100" value="Fissure">Fissure</option>
                                 <option id="188" value="Flail">Flail</option>
                                 <option id="189" value="Flame Wheel">Flame Wheel</option>
                                 <option id="190" value="Flamethrower">Flamethrower</option>
@@ -298,7 +311,6 @@
                                 <option id="13" value="Flatter">Flatter</option>
                                 <option id="191" value="Fly Turn 1">Fly Turn 1</option>
                                 <option id="192" value="Fly Turn 2">Fly Turn 2</option>
-                                <option id="385" value="Focus Blast">Focus Blast</option>
                                 <option id="193" value="Focus Energy">Focus Energy</option>
                                 <option id="116" value="Focus Punch">Focus Punch</option>
                                 <option id="194" value="Follow Me">Follow Me</option>
@@ -311,15 +323,14 @@
                                 <option id="200" value="Future Sight Turn 1">Future Sight Turn 1</option>
                                 <option id="201" value="Future Sight Turn 2">Future Sight Turn 2</option>
                                 <option id="15" value="Giga Drain">Giga Drain</option>
-                                <option id="395" value="Giga Impact">Giga Impact</option>
-                                <option id="60" value="Glare">Glare (CR)</option>
+                                <option id="60" value="Glare">Glare</option>
                                 <option id="5" value="Grasswhistle">Grasswhistle</option>
                                 <option id="202" value="Growl">Growl</option>
                                 <option id="203" value="Growth">Growth</option>
-                                <option id="30" value="Grudge">Grudge (BR)</option>
-                                <option id="89" value="Guillotine">Guillotine (BRR)</option>
+                                <option id="30" value="Grudge">Grudge</option>
+                                <option id="89" value="Guillotine">Guillotine</option>
                                 <option id="204" value="Gust">Gust</option>
-                                <option id="61" value="Hail">Hail (CR)</option>
+                                <option id="61" value="Hail">Hail</option>
                                 <option id="205" value="Harden">Harden</option>
                                 <option id="206" value="Haze">Haze</option>
                                 <option id="207" value="Headbutt">Headbutt</option>
@@ -334,7 +345,7 @@
                                 <option id="117" value="Hydro Cannon">Hydro Cannon</option>
                                 <option id="214" value="Hydro Pump">Hydro Pump</option>
                                 <option id="37" value="Hyper Beam">Hyper Beam</option>
-                                <option id="102" value="Hyper Fang">Hyper Fang (BRR)</option>
+                                <option id="102" value="Hyper Fang">Hyper Fang</option>
                                 <option id="38" value="Hyper Voice">Hyper Voice</option>
                                 <option id="77" value="Hypnosis">Hypnosis</option>
                                 <option id="215" value="Ice Ball">Ice Ball</option>
@@ -345,7 +356,6 @@
                                 <option id="103" value="Imprison">Imprison</option>
                                 <option id="217" value="Ingrain">Ingrain</option>
                                 <option id="22" value="Iron Defense">Iron Defense</option>
-                                <option id="388" value="Iron Head">Iron Head</option>
                                 <option id="218" value="Iron Tail">Iron Tail</option>
                                 <option id="219" value="Jump Kick">Jump Kick</option>
                                 <option id="220" value="Karate Chop">Karate Chop</option>
@@ -360,21 +370,18 @@
                                 <option id="227" value="Lock On">Lock On</option>
                                 <option id="228" value="Lovely Kiss">Lovely Kiss</option>
                                 <option id="229" value="Low Kick">Low Kick</option>
-                                <option id="79" value="Luster Purge">Luster Purge (BRR)</option>
+                                <option id="79" value="Luster Purge">Luster Purge</option>
                                 <option id="104" value="Mach Punch">Mach Punch</option>
                                 <option id="230" value="Magic Coat">Magic Coat</option>
                                 <option id="231" value="Magical Leaf">Magical Leaf</option>
-                                <option id="375" value="Magnet Bomb">Magnet Bomb</option>
                                 <option id="232" value="Magnitude 5">Magnitude 5</option>
                                 <option id="233" value="Magnitude 10">Magnitude 10</option>
                                 <option id="80" value="Meditate">Meditate</option>
                                 <option id="39" value="Mean Look">Mean Look</option>
                                 <option id="14" value="Mega Drain">Mega Drain</option>
                                 <option id="105" value="Megahorn">Megahorn</option>
-                                <option id="108" value="Mega Kick">Mega Kick (BRR)</option>
-                                <option id="397" value="Mega Kick (No Background)">Mega Kick (No Background)</option>
-                                <option id="107" value="Mega Punch">Mega Punch (BRR)</option>
-                                <option id="396" value="Mega Punch (No Background)">Mega Punch (No Background)</option>
+                                <option id="108" value="Mega Kick">Mega Kick</option>
+                                <option id="107" value="Mega Punch">Mega Punch</option>
                                 <option id="234" value="Memento">Memento</option>
                                 <option id="235" value="Metal Claw">Metal Claw</option>
                                 <option id="236" value="Metal Sound">Metal Sound</option>
@@ -387,27 +394,23 @@
                                 <option id="241" value="Mirror Coat">Mirror Coat</option>
                                 <option id="242" value="Mist Ball">Mist Ball</option>
                                 <option id="243" value="Mist">Mist</option>
-                                <option id="40" value="Moonlight">Moonlight (CR)</option>
+                                <option id="40" value="Moonlight">Moonlight</option>
                                 <option id="244" value="Morning Sun">Morning Sun</option>
                                 <option id="245" value="Mud Shot">Mud Shot</option>
                                 <option id="246" value="Mud-Slap">Mud-Slap</option>
                                 <option id="247" value="Mud Sport">Mud Sport</option>
                                 <option id="248" value="Muddy Water">Muddy Water</option>
-                                <option id="393" value="Nasty Plot">Nasty Plot (BRR)</option>
                                 <option id="249" value="Needle Arm">Needle Arm</option>
                                 <option id="28" value="Nightmare">Nightmare</option>
                                 <option id="26" value="Night Shade">Night Shade</option>
-                                <option id="378" value="Night Slash">Night Slash</option>
                                 <option id="250" value="Octazooka">Octazooka</option>
                                 <option id="251" value="Odor Sleuth">Odor Sleuth</option>
                                 <option id="252" value="Outrage">Outrage</option>
                                 <option id="41" value="Overheat">Overheat</option>
                                 <option id="253" value="Pain Split">Pain Split</option>
-                                <option id="394" value="Parabolic Charge">Parabolic Charge</option>
                                 <option id="254" value="Pay Day">Pay Day</option>
                                 <option id="255" value="Peck">Peck</option>
-                                <option id="42" value="Perish Song 1">Perish Song 1</option>
-                                <option id="43" value="Perish Song 2">Perish Song 2</option>
+                                <option id="42" value="Perish Song">Perish Song</option>
                                 <option id="256" value="Petal Dance">Petal Dance</option>
                                 <option id="257" value="Pin Missle">Pin Missle</option>
                                 <option id="90" value="Poison Fang">Poison Fang</option>
@@ -417,19 +420,18 @@
                                 <option id="261" value="Poisonpowder">Poisonpowder</option>
                                 <option id="262" value="Pound">Pound</option>
                                 <option id="44" value="Powder Snow">Powder Snow</option>
-                                <option id="392" value="Power Whip">Power Whip (BRR)</option>
-                                <option id="380" value="PowerUpPunch">PowerUpPunch</option>
-                                <option id="263" value="Present">Present</option>
+                                <option id="263" value="Present Bomb">Present Bomb</option>
+                                <option id="449" value="Present Gift">Present Gift</option>
                                 <option id="264" value="Protect">Protect</option>
                                 <option id="81" value="Psybeam">Psybeam</option>
                                 <option id="45" value="Psych Up">Psych Up</option>
                                 <option id="82" value="Psychic">Psychic</option>
-                                <option id="83" value="Psycho Boost">Psycho Boost (BRR)</option>
+                                <option id="83" value="Psycho Boost">Psycho Boost</option>
                                 <option id="84" value="Psywave">Psywave</option>
                                 <option id="63" value="Pursuit">Pursuit</option>
                                 <option id="265" value="Quick Attack">Quick Attack</option>
                                 <option id="266" value="Rage">Rage</option>
-                                <option id="46" value="Rain Dance">Rain Dance (CR)</option>
+                                <option id="46" value="Rain Dance">Rain Dance</option>
                                 <option id="267" value="Rapid Spin">Rapid Spin</option>
                                 <option id="268" value="Razor Leaf">Razor Leaf</option>
                                 <option id="269" value="Razor Wind Turn 1">Razor Wind Turn 1</option>
@@ -458,12 +460,10 @@
                                 <option id="48" value="Scary Face">Scary Face</option>
                                 <option id="289" value="Scratch">Scratch</option>
                                 <option id="290" value="Screech">Screech</option>
-                                <option id="390" value="Seed Bomb">Seed Bomb</option>
-                                <option id="95" value="Seismic Toss">Seismic Toss (BRR)</option>
+                                <option id="95" value="Seismic Toss">Seismic Toss</option>
                                 <option id="291" value="Selfdestruct">Selfdestruct</option>
                                 <option id="23" value="Shadow Ball">Shadow Ball</option>
                                 <option id="25" value="Shadow Punch">Shadow Punch</option>
-                                <option id="384" value="Shadow Sneak">Shadow Sneak</option>
                                 <option id="292" value="Sharpen">Sharpen</option>
                                 <option id="85" value="Sheer Cold">Sheer Cold</option>
                                 <option id="8" value="Shock Wave">Shock Wave</option>
@@ -474,9 +474,9 @@
                                 <option id="110" value="Skill Swap">Skill Swap</option>
                                 <option id="296" value="Skull Bash Turn 1">Skull Bash Turn 1</option>
                                 <option id="297" value="Skull Bash Turn 2">Skull Bash Turn 2</option>
-                                <option id="98" value="Sky Attack Turn 1">Sky Attack Turn 1 (CR)</option>
-                                <option id="99" value="Sky Attack Turn 2">Sky Attack Turn 2 (BR)</option>
-                                <option id="96" value="Sky Uppercut">Sky Uppercut (BRR)</option>
+                                <option id="98" value="Sky Attack Turn 1">Sky Attack Turn 1</option>
+                                <option id="99" value="Sky Attack Turn 2">Sky Attack Turn 2</option>
+                                <option id="96" value="Sky Uppercut">Sky Uppercut</option>
                                 <option id="298" value="Slack Off">Slack Off</option>
                                 <option id="137" value="Slam">Slam</option>
                                 <option id="299" value="Slash">Slash</option>
@@ -491,15 +491,14 @@
                                 <option id="308" value="Snore">Snore</option>
                                 <option id="309" value="Softboiled">Softboiled</option>
                                 <option id="69" value="Solarbeam Turn 1">Solarbeam Turn 1</option>
-                                <option id="165" value="Solarbeam Turn 2">Solarbeam Turn 2 (BRR)</option>
-                                <option id="398" value="Solarbeam Turn 2 (No Background)">Solarbeam Turn 2 (No Background)</option>
+                                <option id="165" value="Solarbeam Turn 2">Solarbeam Turn 2</option>
                                 <option id="310" value="Sonicboom">Sonicboom</option>
                                 <option id="49" value="Spark">Spark</option>
                                 <option id="31" value="Spider Web">Spider Web</option>
                                 <option id="311" value="Spike Cannon">Spike Cannon</option>
                                 <option id="312" value="Spikes">Spikes</option>
                                 <option id="313" value="Spit Up">Spit Up</option>
-                                <option id="29" value="Spite">Spite (BR)</option>
+                                <option id="29" value="Spite">Spite</option>
                                 <option id="314" value="Splash">Splash</option>
                                 <option id="315" value="Spore">Spore</option>
                                 <option id="316" value="Steel Wing">Steel Wing</option>
@@ -508,7 +507,6 @@
                                 <option id="319" value="Strength">Strength</option>
                                 <option id="32" value="String Shot">String Shot</option>
                                 <option id="320" value="Struggle">Struggle</option>
-                                <option id="389" value="Struggle Bug">Struggle Bug</option>
                                 <option id="321" value="Stun Spore">Stun Spore</option>
                                 <option id="322" value="Submission">Submission</option>
                                 <option id="323" value="Substitute">Substitute</option>
@@ -543,8 +541,7 @@
                                 <option id="342" value="Toxic">Toxic</option>
                                 <option id="343" value="Transform">Transform</option>
                                 <option id="344" value="Trick">Trick</option>
-                                <option id="52" value="Tri Attack 1">Tri Attack 1</option>
-                                <option id="53" value="Tri Attack 2">Tri Attack 2</option>
+                                <option id="52" value="Tri Attack">Tri Attack</option>
                                 <option id="345" value="Triple Kick">Triple Kick</option>
                                 <option id="346" value="Twineedle">Twineedle</option>
                                 <option id="347" value="Twister">Twister</option>
@@ -574,7 +571,6 @@
                                 <option id="36" value="Wish">Wish</option>
                                 <option id="369" value="Withdraw">Withdraw</option>
                                 <option id="370" value="Wrap">Wrap</option>
-                                <option id="377" value="X-Scissor">X-Scissor</option>
                                 <option id="371" value="Yawn">Yawn</option>
                                 <option id="372" value="Zap Cannon">Zap Cannon</option>
                                 <option value="" disabled="disabled">─────────────────────────</option>
@@ -628,6 +624,13 @@
                                 <option id="446" value="Surrounding Flames">Surrounding Flames</option>
                                 <option id="447" value="Synthesis + HP Recover">Synthesis + HP Recover</option>
                                 <option id="448" value="Tickle Shake Foe">Tickle Shake Foe</option>
+                                <option id="449" value="Vampire Ghost">Vampire Ghost</option>
+                                <option id="450" value="Water Bubbles">Water Bubbles</option>
+                                <option id="451" value="Water Drip">Water Drip</option>
+                                <option id="452" value="Water From Above">Water From Above</option>
+                                <option id="453" value="Will-O-Flames">Will-O-Flames</option>
+                                <option id="454" value="Yawn Cloud">Yawn Cloud</option>
+                                <option id="455" value="X">X</option>
                             </select>
                     </div>
                         <div class="col-2">
@@ -671,8 +674,8 @@
                                     <option id="55" value="Eruption Rocks">Eruption Rocks</option>
                                     <option id="13" value="Heavy Rock Fall">Heavy Rock Fall</option>
                                     <option id="14" value="Rock Fall">Rock Fall</option>
-                                    <option id="45" value="Rock Smash">Rock Smash</option>
-                                    <option id="15" value="Sand Tomb">Sand Tomb</option>
+                                    <option id="45" value="Rock Smash Foe">Rock Smash</option>
+                                    <option id="15" value="Sand Tomb Foe">Sand Tomb Foe</option>
 
                                     <option value="" disabled="disabled">--- Water Animations (4) ---</option>
                                     <option id="22" value="Water Bubbles">Water Bubbles</option>
@@ -698,11 +701,12 @@
                                     <option id="18" value="Ice Crystals">Ice Crystals</option>
                                     <option id="19" value="Ice Wave">Ice Wave</option>
 
-                                    <option value="" disabled="disabled">--- Move User (2) ---</option>
+                                    <option value="" disabled="disabled">--- Move User (3) ---</option>
                                     <option id="36" value="Bigger Shadow User">Bigger Shadow User</option>
+                                    <option id="65" value="Come Back">Come Back</option>
                                     <option id="37" value="Psychic Shadow User">Psychic Shadow User</option>
 
-                                    <option value="" disabled="disabled">--- Other Animations (21) ---</option>
+                                    <option value="" disabled="disabled">--- Other Animations (22) ---</option>
                                     <option id="63" value="Angel Ghost">Angel Ghost</option>
                                     <option id="53" value="Blow Smoke">Blow Smoke</option>
                                     <option id="54" value="Claws">Claws</option>
@@ -720,6 +724,7 @@
                                     <option id="35" value="Razor Leaf Blades">Razor Leaf Blades</option>
                                     <option id="30" value="Sparkle">Sparkle</option>
                                     <option id="31" value="Self Sparkle">Self Sparkle</option>
+                                    <option id="67" value="Slice-X">Slice-X</option>
                                     <option id="38" value="Smokescreen Debris">Smokescreen Debris</option>
                                     <option id="41" value="Superpower Strike">Superpower Strike</option>
                                     <option id="59" value="Vampire Ghost">Vampire Ghost</option>
@@ -743,24 +748,30 @@
                                 <label for="background" class="form-label" ></i></label>
                                 <select class="form-select" id="select-preAnimation2" aria-label="Default select example" style="margin-top: 6px;">
                                     <option id="1" value="None" selected>None</option>
-                                    <option value="" disabled="disabled">--- Move User (9) ---</option>
+                                    <option value="" disabled="disabled">--- Move User (12) ---</option>
                                     <option id="2" value="Bigger Shadow User">Bigger Shadow User</option>
+                                    <option id="27" value="Buff Up">Buff Up</option>
+                                    <option id="23" value="Head Down User">Head Down User</option>
                                     <option id="8" value="Move Circle User">Move Circle User</option>
                                     <option id="6" value="Move Down User">Move Down User</option>
                                     <option id="2" value="Move Left and Right User">Move Left and Right User</option>
                                     <option id="17" value="Psychic Shadow User">Psychic Shadow User</option>
+                                    <option id="30" value="Ready Aim">Ready Aim</option>
                                     <option id="14" value="Shake Up & Down User">Shake Up & Down User</option>
                                     <option id="23" value="Shake Turn Red">Shake Turn Red</option>
                                     <option id="3" value="Slight Shake User">Slight Shake User</option>
                                     <option id="21" value="User Yawns">User Yawns</option>
-                                    <option value="" disabled="disabled">--- Other (6) ---</option>
+                                    <option value="" disabled="disabled">--- Other (10) ---</option>
                                     <option id="4" value="Air Cutter Start">Air Cutter Start</option>
                                     <option id="5" value="Ancientpower Lift Rocks">Ancientpower Lift Rocks</option>
                                     <option id="22" value="Charm">Charm</option>
                                     <option id="10" value="Destiny Bond Surface">Destiny Bond Surface</option>
+                                    <option id="24" value="Fade But Not You">Fade But Not You</option>
                                     <option id="7" value="Hearts User">Hearts User</option>
+                                    <option id="28" value="Invert Background">Invert Background</option>
                                     <option id="18" value="Leafs">Leafs</option>
                                     <option id="20" value="Shooting Stars">Shooting Stars</option>
+                                    <option id="29" value="Sun Rays">Sun Rays</option>
                                 </select>
                             </div>
                         </div>
@@ -776,16 +787,14 @@
                                 <option id="91" value="Aeroblast">Aeroblast</option>
                                 <option id="120" value="Agility">Agility</option>
                                 <option id="121" value="Air Cutter">Air Cutter</option>
-                                <option id="376" value="Air Slash">Air Slash</option>
                                 <option id="70" value="Amnesia">Amnesia</option>
                                 <option id="122" value="Ancientpower">Ancientpower</option>
-                                <option id="373" value="Aqua Jet">Aqua Jet</option>
                                 <option id="382" value="Aqua Tail">Aqua Tail</option>
                                 <option id="123" value="Arm Thrust">Arm Thrust</option>
-                                <option id="3" value="Aromatherapy">Aromatherapy (CR)</option>
+                                <option id="3" value="Aromatherapy">Aromatherapy</option>
                                 <option id="124" value="Assist">Assist</option>
                                 <option id="125" value="Astonish">Astonish</option>
-                                <option id="68" value="Attract">Attract (BRR)</option>
+                                <option id="68" value="Attract">Attract</option>
                                 <option id="71" value="Aurora Beam">Aurora Beam</option>
                                 <option id="126" value="Barrage">Barrage</option>
                                 <option id="127" value="Barrier">Barrier</option>
@@ -809,10 +818,7 @@
                                 <option id="88" value="Brick Break 2">Brick Break 2</option>
                                 <option id="142" value="Bubble">Bubble</option>
                                 <option id="143" value="Bubblebeam">Bubblebeam</option>
-                                <option id="387" value="Bug Buzz">Bug Buzz</option>
                                 <option id="144" value="Bulk Up">Bulk Up</option>
-                                <option id="374" value="Bulldoze">Bulldoze</option>
-                                <option id="386" value="Bullet Punch">Bullet Punch</option>
                                 <option id="145" value="Bullet Seed">Bullet Seed</option>
                                 <option id="72" value="Calm Mind 1">Calm Mind 1 (CR)</option>
                                 <option id="73" value="Calm Mind 2">Calm Mind 2</option>
@@ -837,12 +843,11 @@
                                 <option id="55" value="Curse">Curse</option>
                                 <option id="158" value="Cut">Cut</option>
                                 <option id="159" value="Defense Curl">Defense Curl</option>
-                                <option id="27" value="Destiny Bond">Destiny Bond (BR)</option>
+                                <option id="27" value="Destiny Bond">Destiny Bond</option>
                                 <option id="11" value="Detect">Detect</option>
                                 <option id="160" value="Dig Turn 1">Dig Turn 1</option>
                                 <option id="161" value="Dig Turn 2">Dig Turn 2</option>
                                 <option id="162" value="Disable">Disable</option>
-                                <option id="379" value="Discharge">Discharge</option>
                                 <option id="163" value="Dive Turn 1">Dive Turn 1</option>
                                 <option id="164" value="Dive Turn 2">Dive Turn 2</option>
                                 <option id="166" value="Dizzy Punch">Dizzy Punch</option>
@@ -850,26 +855,23 @@
                                 <option id="21" value="Doom Desire Turn 2">Doom Desire Turn 2</option>
                                 <option id="167" value="Double Kick">Double Kick</option>
                                 <option id="168" value="Double Team">Double Team</option>
-                                <option id="56" value="Double Edge">Double Edge (CR)</option>
+                                <option id="56" value="Double Edge">Double Edge</option>
                                 <option id="169" value="Doubleslap">Doubleslap</option>
                                 <option id="170" value="Dragon Claw">Dragon Claw</option>
                                 <option id="171" value="Dragon Dance">Dragon Dance</option>
                                 <option id="172" value="Dragon Rage">Dragon Rage</option>
-                                <option id="381" value="Dragon Rush">Dragon Rush</option>
                                 <option id="173" value="Dragonbreath">Dragonbreath</option>
-                                <option id="383" value="Drain Punch">Drain Punch</option>
                                 <option id="75" value="Dream Eater">Dream Eater</option>
                                 <option id="174" value="Drill Peck">Drill Peck</option>
                                 <option id="175" value="Dynamicpunch">Dynamicpunch</option>
                                 <option id="176" value="Earthquake">Earthquake</option>
-                                <option id="391" value="Earth Power">Earth Power (BRR)</option>
                                 <option id="177" value="Egg Bomb">Egg Bomb</option>
                                 <option id="178" value="Ember">Ember</option>
                                 <option id="57" value="Encore">Encore</option>
                                 <option id="179" value="Endeavor">Endeavor</option>
                                 <option id="180" value="Endure">Endure</option>
-                                <option id="4" value="Eruption">Eruption (CR)</option>
-                                <option id="12" value="Explosion">Explosion (CR)</option>
+                                <option id="4" value="Eruption">Eruption</option>
+                                <option id="12" value="Explosion">Explosion</option>
                                 <option id="76" value="Extrasensory">Extrasensory</option>
                                 <option id="94" value="ExtremeSpeed">ExtremeSpeed</option>
                                 <option id="181" value="Facade">Facade</option>
@@ -878,10 +880,10 @@
                                 <option id="183" value="Fake Tears">Fake Tears</option>
                                 <option id="184" value="False Swipe">False Swipe</option>
                                 <option id="185" value="Featherdance">Featherdance</option>
-                                <option id="58" value="Fire Blast">Fire Blast (CR)</option>
+                                <option id="58" value="Fire Blast">Fire Blast</option>
                                 <option id="186" value="Fire Punch">Fire Punch</option>
                                 <option id="187" value="Fire Spin">Fire Spin</option>
-                                <option id="100" value="Fissure">Fissure (BR)</option>
+                                <option id="100" value="Fissure">Fissure</option>
                                 <option id="188" value="Flail">Flail</option>
                                 <option id="189" value="Flame Wheel">Flame Wheel</option>
                                 <option id="190" value="Flamethrower">Flamethrower</option>
@@ -889,7 +891,6 @@
                                 <option id="13" value="Flatter">Flatter</option>
                                 <option id="191" value="Fly Turn 1">Fly Turn 1</option>
                                 <option id="192" value="Fly Turn 2">Fly Turn 2</option>
-                                <option id="385" value="Focus Blast">Focus Blast</option>
                                 <option id="193" value="Focus Energy">Focus Energy</option>
                                 <option id="116" value="Focus Punch">Focus Punch</option>
                                 <option id="194" value="Follow Me">Follow Me</option>
@@ -902,15 +903,14 @@
                                 <option id="200" value="Future Sight Turn 1">Future Sight Turn 1</option>
                                 <option id="201" value="Future Sight Turn 2">Future Sight Turn 2</option>
                                 <option id="15" value="Giga Drain">Giga Drain</option>
-                                <option id="395" value="Giga Impact">Giga Impact</option>
-                                <option id="60" value="Glare">Glare (CR)</option>
+                                <option id="60" value="Glare">Glare</option>
                                 <option id="5" value="Grasswhistle">Grasswhistle</option>
                                 <option id="202" value="Growl">Growl</option>
                                 <option id="203" value="Growth">Growth</option>
-                                <option id="30" value="Grudge">Grudge (BR)</option>
-                                <option id="89" value="Guillotine">Guillotine (BRR)</option>
+                                <option id="30" value="Grudge">Grudge</option>
+                                <option id="89" value="Guillotine">Guillotine</option>
                                 <option id="204" value="Gust">Gust</option>
-                                <option id="61" value="Hail">Hail (CR)</option>
+                                <option id="61" value="Hail">Hail</option>
                                 <option id="205" value="Harden">Harden</option>
                                 <option id="206" value="Haze">Haze</option>
                                 <option id="207" value="Headbutt">Headbutt</option>
@@ -925,7 +925,7 @@
                                 <option id="117" value="Hydro Cannon">Hydro Cannon</option>
                                 <option id="214" value="Hydro Pump">Hydro Pump</option>
                                 <option id="37" value="Hyper Beam">Hyper Beam</option>
-                                <option id="102" value="Hyper Fang">Hyper Fang (BRR)</option>
+                                <option id="102" value="Hyper Fang">Hyper Fang</option>
                                 <option id="38" value="Hyper Voice">Hyper Voice</option>
                                 <option id="77" value="Hypnosis">Hypnosis</option>
                                 <option id="215" value="Ice Ball">Ice Ball</option>
@@ -936,7 +936,6 @@
                                 <option id="103" value="Imprison">Imprison</option>
                                 <option id="217" value="Ingrain">Ingrain</option>
                                 <option id="22" value="Iron Defense">Iron Defense</option>
-                                <option id="388" value="Iron Head">Iron Head</option>
                                 <option id="218" value="Iron Tail">Iron Tail</option>
                                 <option id="219" value="Jump Kick">Jump Kick</option>
                                 <option id="220" value="Karate Chop">Karate Chop</option>
@@ -951,21 +950,18 @@
                                 <option id="227" value="Lock On">Lock On</option>
                                 <option id="228" value="Lovely Kiss">Lovely Kiss</option>
                                 <option id="229" value="Low Kick">Low Kick</option>
-                                <option id="79" value="Luster Purge">Luster Purge (BRR)</option>
+                                <option id="79" value="Luster Purge">Luster Purge</option>
                                 <option id="104" value="Mach Punch">Mach Punch</option>
                                 <option id="230" value="Magic Coat">Magic Coat</option>
                                 <option id="231" value="Magical Leaf">Magical Leaf</option>
-                                <option id="375" value="Magnet Bomb">Magnet Bomb</option>
                                 <option id="232" value="Magnitude 5">Magnitude 5</option>
                                 <option id="233" value="Magnitude 10">Magnitude 10</option>
                                 <option id="80" value="Meditate">Meditate</option>
                                 <option id="39" value="Mean Look">Mean Look</option>
                                 <option id="14" value="Mega Drain">Mega Drain</option>
                                 <option id="105" value="Megahorn">Megahorn</option>
-                                <option id="108" value="Mega Kick">Mega Kick (BRR)</option>
-                                <option id="397" value="Mega Kick (No Background)">Mega Kick (No Background)</option>
-                                <option id="107" value="Mega Punch">Mega Punch (BRR)</option>
-                                <option id="396" value="Mega Punch (No Background)">Mega Punch (No Background)</option>
+                                <option id="108" value="Mega Kick">Mega Kick</option>
+                                <option id="107" value="Mega Punch">Mega Punch</option>
                                 <option id="234" value="Memento">Memento</option>
                                 <option id="235" value="Metal Claw">Metal Claw</option>
                                 <option id="236" value="Metal Sound">Metal Sound</option>
@@ -978,27 +974,23 @@
                                 <option id="241" value="Mirror Coat">Mirror Coat</option>
                                 <option id="242" value="Mist Ball">Mist Ball</option>
                                 <option id="243" value="Mist">Mist</option>
-                                <option id="40" value="Moonlight">Moonlight (CR)</option>
+                                <option id="40" value="Moonlight">Moonlight</option>
                                 <option id="244" value="Morning Sun">Morning Sun</option>
                                 <option id="245" value="Mud Shot">Mud Shot</option>
                                 <option id="246" value="Mud-Slap">Mud-Slap</option>
                                 <option id="247" value="Mud Sport">Mud Sport</option>
                                 <option id="248" value="Muddy Water">Muddy Water</option>
-                                <option id="393" value="Nasty Plot">Nasty Plot (BRR)</option>
                                 <option id="249" value="Needle Arm">Needle Arm</option>
                                 <option id="28" value="Nightmare">Nightmare</option>
                                 <option id="26" value="Night Shade">Night Shade</option>
-                                <option id="378" value="Night Slash">Night Slash</option>
                                 <option id="250" value="Octazooka">Octazooka</option>
                                 <option id="251" value="Odor Sleuth">Odor Sleuth</option>
                                 <option id="252" value="Outrage">Outrage</option>
                                 <option id="41" value="Overheat">Overheat</option>
                                 <option id="253" value="Pain Split">Pain Split</option>
-                                <option id="394" value="Parabolic Charge">Parabolic Charge</option>
                                 <option id="254" value="Pay Day">Pay Day</option>
                                 <option id="255" value="Peck">Peck</option>
-                                <option id="42" value="Perish Song 1">Perish Song 1</option>
-                                <option id="43" value="Perish Song 2">Perish Song 2</option>
+                                <option id="42" value="Perish Song">Perish Song</option>
                                 <option id="256" value="Petal Dance">Petal Dance</option>
                                 <option id="257" value="Pin Missle">Pin Missle</option>
                                 <option id="90" value="Poison Fang">Poison Fang</option>
@@ -1008,19 +1000,18 @@
                                 <option id="261" value="Poisonpowder">Poisonpowder</option>
                                 <option id="262" value="Pound">Pound</option>
                                 <option id="44" value="Powder Snow">Powder Snow</option>
-                                <option id="392" value="Power Whip">Power Whip (BRR)</option>
-                                <option id="380" value="PowerUpPunch">PowerUpPunch</option>
-                                <option id="263" value="Present">Present</option>
+                                <option id="263" value="Present Bomb">Present Bomb</option>
+                                <option id="449" value="Present Gift">Present Gift</option>
                                 <option id="264" value="Protect">Protect</option>
                                 <option id="81" value="Psybeam">Psybeam</option>
                                 <option id="45" value="Psych Up">Psych Up</option>
                                 <option id="82" value="Psychic">Psychic</option>
-                                <option id="83" value="Psycho Boost">Psycho Boost (BRR)</option>
+                                <option id="83" value="Psycho Boost">Psycho Boost</option>
                                 <option id="84" value="Psywave">Psywave</option>
                                 <option id="63" value="Pursuit">Pursuit</option>
                                 <option id="265" value="Quick Attack">Quick Attack</option>
                                 <option id="266" value="Rage">Rage</option>
-                                <option id="46" value="Rain Dance">Rain Dance (CR)</option>
+                                <option id="46" value="Rain Dance">Rain Dance</option>
                                 <option id="267" value="Rapid Spin">Rapid Spin</option>
                                 <option id="268" value="Razor Leaf">Razor Leaf</option>
                                 <option id="269" value="Razor Wind Turn 1">Razor Wind Turn 1</option>
@@ -1049,12 +1040,10 @@
                                 <option id="48" value="Scary Face">Scary Face</option>
                                 <option id="289" value="Scratch">Scratch</option>
                                 <option id="290" value="Screech">Screech</option>
-                                <option id="390" value="Seed Bomb">Seed Bomb</option>
-                                <option id="95" value="Seismic Toss">Seismic Toss (BRR)</option>
+                                <option id="95" value="Seismic Toss">Seismic Toss</option>
                                 <option id="291" value="Selfdestruct">Selfdestruct</option>
                                 <option id="23" value="Shadow Ball">Shadow Ball</option>
                                 <option id="25" value="Shadow Punch">Shadow Punch</option>
-                                <option id="384" value="Shadow Sneak">Shadow Sneak</option>
                                 <option id="292" value="Sharpen">Sharpen</option>
                                 <option id="85" value="Sheer Cold">Sheer Cold</option>
                                 <option id="8" value="Shock Wave">Shock Wave</option>
@@ -1065,9 +1054,9 @@
                                 <option id="110" value="Skill Swap">Skill Swap</option>
                                 <option id="296" value="Skull Bash Turn 1">Skull Bash Turn 1</option>
                                 <option id="297" value="Skull Bash Turn 2">Skull Bash Turn 2</option>
-                                <option id="98" value="Sky Attack Turn 1">Sky Attack Turn 1 (CR)</option>
-                                <option id="99" value="Sky Attack Turn 2">Sky Attack Turn 2 (BR)</option>
-                                <option id="96" value="Sky Uppercut">Sky Uppercut (BRR)</option>
+                                <option id="98" value="Sky Attack Turn 1">Sky Attack Turn 1</option>
+                                <option id="99" value="Sky Attack Turn 2">Sky Attack Turn 2</option>
+                                <option id="96" value="Sky Uppercut">Sky Uppercut</option>
                                 <option id="298" value="Slack Off">Slack Off</option>
                                 <option id="137" value="Slam">Slam</option>
                                 <option id="299" value="Slash">Slash</option>
@@ -1082,15 +1071,14 @@
                                 <option id="308" value="Snore">Snore</option>
                                 <option id="309" value="Softboiled">Softboiled</option>
                                 <option id="69" value="Solarbeam Turn 1">Solarbeam Turn 1</option>
-                                <option id="165" value="Solarbeam Turn 2">Solarbeam Turn 2 (BRR)</option>
-                                <option id="398" value="Solarbeam Turn 2 (No Background)">Solarbeam Turn 2 (No Background)</option>
+                                <option id="165" value="Solarbeam Turn 2">Solarbeam Turn 2</option>
                                 <option id="310" value="Sonicboom">Sonicboom</option>
                                 <option id="49" value="Spark">Spark</option>
                                 <option id="31" value="Spider Web">Spider Web</option>
                                 <option id="311" value="Spike Cannon">Spike Cannon</option>
                                 <option id="312" value="Spikes">Spikes</option>
                                 <option id="313" value="Spit Up">Spit Up</option>
-                                <option id="29" value="Spite">Spite (BR)</option>
+                                <option id="29" value="Spite">Spite</option>
                                 <option id="314" value="Splash">Splash</option>
                                 <option id="315" value="Spore">Spore</option>
                                 <option id="316" value="Steel Wing">Steel Wing</option>
@@ -1099,7 +1087,6 @@
                                 <option id="319" value="Strength">Strength</option>
                                 <option id="32" value="String Shot">String Shot</option>
                                 <option id="320" value="Struggle">Struggle</option>
-                                <option id="389" value="Struggle Bug">Struggle Bug</option>
                                 <option id="321" value="Stun Spore">Stun Spore</option>
                                 <option id="322" value="Submission">Submission</option>
                                 <option id="323" value="Substitute">Substitute</option>
@@ -1134,8 +1121,7 @@
                                 <option id="342" value="Toxic">Toxic</option>
                                 <option id="343" value="Transform">Transform</option>
                                 <option id="344" value="Trick">Trick</option>
-                                <option id="52" value="Tri Attack 1">Tri Attack 1</option>
-                                <option id="53" value="Tri Attack 2">Tri Attack 2</option>
+                                <option id="52" value="Tri Attack">Tri Attack</option>
                                 <option id="345" value="Triple Kick">Triple Kick</option>
                                 <option id="346" value="Twineedle">Twineedle</option>
                                 <option id="347" value="Twister">Twister</option>
@@ -1165,7 +1151,6 @@
                                 <option id="36" value="Wish">Wish</option>
                                 <option id="369" value="Withdraw">Withdraw</option>
                                 <option id="370" value="Wrap">Wrap</option>
-                                <option id="377" value="X-Scissor">X-Scissor</option>
                                 <option id="371" value="Yawn">Yawn</option>
                                 <option id="372" value="Zap Cannon">Zap Cannon</option>
                                 <option value="" disabled="disabled">─────────────────────────</option>
@@ -1219,6 +1204,13 @@
                                 <option id="446" value="Surrounding Flames">Surrounding Flames</option>
                                 <option id="447" value="Synthesis + HP Recover">Synthesis + HP Recover</option>
                                 <option id="448" value="Tickle Shake Foe">Tickle Shake Foe</option>
+                                <option id="449" value="Vampire Ghost">Vampire Ghost</option>
+                                <option id="450" value="Water Bubbles">Water Bubbles</option>
+                                <option id="451" value="Water Drip">Water Drip</option>
+                                <option id="452" value="Water From Above">Water From Above</option>
+                                <option id="453" value="Will-O-Flames">Will-O-Flames</option>
+                                <option id="454" value="Yawn Cloud">Yawn Cloud</option>
+                                <option id="455" value="X">X</option>
                             </select>
                         </div>
                         <div class="col-2">
@@ -1262,8 +1254,8 @@
                                     <option id="55" value="Eruption Rocks">Eruption Rocks</option>
                                     <option id="13" value="Heavy Rock Fall">Heavy Rock Fall</option>
                                     <option id="14" value="Rock Fall">Rock Fall</option>
-                                    <option id="45" value="Rock Smash">Rock Smash</option>
-                                    <option id="15" value="Sand Tomb">Sand Tomb</option>
+                                    <option id="45" value="Rock Smash Foe">Rock Smash</option>
+                                    <option id="15" value="Sand Tomb Foe">Sand Tomb Foe</option>
 
                                     <option value="" disabled="disabled">--- Water Animations (4) ---</option>
                                     <option id="22" value="Water Bubbles">Water Bubbles</option>
@@ -1289,11 +1281,12 @@
                                     <option id="18" value="Ice Crystals">Ice Crystals</option>
                                     <option id="19" value="Ice Wave">Ice Wave</option>
 
-                                    <option value="" disabled="disabled">--- Move User (2) ---</option>
+                                    <option value="" disabled="disabled">--- Move User (3) ---</option>
                                     <option id="36" value="Bigger Shadow User">Bigger Shadow User</option>
+                                    <option id="65" value="Come Back">Come Back</option>
                                     <option id="37" value="Psychic Shadow User">Psychic Shadow User</option>
 
-                                    <option value="" disabled="disabled">--- Other Animations (21) ---</option>
+                                    <option value="" disabled="disabled">--- Other Animations (22) ---</option>
                                     <option id="63" value="Angel Ghost">Angel Ghost</option>
                                     <option id="53" value="Blow Smoke">Blow Smoke</option>
                                     <option id="54" value="Claws">Claws</option>
@@ -1311,6 +1304,7 @@
                                     <option id="35" value="Razor Leaf Blades">Razor Leaf Blades</option>
                                     <option id="30" value="Sparkle">Sparkle</option>
                                     <option id="31" value="Self Sparkle">Self Sparkle</option>
+                                    <option id="67" value="Slice-X">Slice-X</option>
                                     <option id="38" value="Smokescreen Debris">Smokescreen Debris</option>
                                     <option id="41" value="Superpower Strike">Superpower Strike</option>
                                     <option id="59" value="Vampire Ghost">Vampire Ghost</option>
@@ -1336,24 +1330,30 @@
                                 <label for="background" class="form-label" ></i></label>
                                 <select class="form-select" id="select-preAnimation3" aria-label="Default select example" style="margin-top: 6px;">
                                     <option id="1" value="None" selected>None</option>
-                                    <option value="" disabled="disabled">--- Move User (9) ---</option>
+                                    <option value="" disabled="disabled">--- Move User (12) ---</option>
                                     <option id="2" value="Bigger Shadow User">Bigger Shadow User</option>
+                                    <option id="27" value="Buff Up">Buff Up</option>
+                                    <option id="23" value="Head Down User">Head Down User</option>
                                     <option id="8" value="Move Circle User">Move Circle User</option>
                                     <option id="6" value="Move Down User">Move Down User</option>
                                     <option id="2" value="Move Left and Right User">Move Left and Right User</option>
                                     <option id="17" value="Psychic Shadow User">Psychic Shadow User</option>
+                                    <option id="30" value="Ready Aim">Ready Aim</option>
                                     <option id="14" value="Shake Up & Down User">Shake Up & Down User</option>
                                     <option id="23" value="Shake Turn Red">Shake Turn Red</option>
                                     <option id="3" value="Slight Shake User">Slight Shake User</option>
                                     <option id="21" value="User Yawns">User Yawns</option>
-                                    <option value="" disabled="disabled">--- Other (6) ---</option>
+                                    <option value="" disabled="disabled">--- Other (10) ---</option>
                                     <option id="4" value="Air Cutter Start">Air Cutter Start</option>
                                     <option id="5" value="Ancientpower Lift Rocks">Ancientpower Lift Rocks</option>
                                     <option id="22" value="Charm">Charm</option>
                                     <option id="10" value="Destiny Bond Surface">Destiny Bond Surface</option>
+                                    <option id="24" value="Fade But Not You">Fade But Not You</option>
                                     <option id="7" value="Hearts User">Hearts User</option>
+                                    <option id="28" value="Invert Background">Invert Background</option>
                                     <option id="18" value="Leafs">Leafs</option>
                                     <option id="20" value="Shooting Stars">Shooting Stars</option>
+                                    <option id="29" value="Sun Rays">Sun Rays</option>
                                 </select>
                             </div>
                         </div>
@@ -1370,16 +1370,14 @@
                                 <option id="91" value="Aeroblast">Aeroblast</option>
                                 <option id="120" value="Agility">Agility</option>
                                 <option id="121" value="Air Cutter">Air Cutter</option>
-                                <option id="376" value="Air Slash">Air Slash</option>
                                 <option id="70" value="Amnesia">Amnesia</option>
                                 <option id="122" value="Ancientpower">Ancientpower</option>
-                                <option id="373" value="Aqua Jet">Aqua Jet</option>
                                 <option id="382" value="Aqua Tail">Aqua Tail</option>
                                 <option id="123" value="Arm Thrust">Arm Thrust</option>
-                                <option id="3" value="Aromatherapy">Aromatherapy (CR)</option>
+                                <option id="3" value="Aromatherapy">Aromatherapy</option>
                                 <option id="124" value="Assist">Assist</option>
                                 <option id="125" value="Astonish">Astonish</option>
-                                <option id="68" value="Attract">Attract (BRR)</option>
+                                <option id="68" value="Attract">Attract</option>
                                 <option id="71" value="Aurora Beam">Aurora Beam</option>
                                 <option id="126" value="Barrage">Barrage</option>
                                 <option id="127" value="Barrier">Barrier</option>
@@ -1403,10 +1401,7 @@
                                 <option id="88" value="Brick Break 2">Brick Break 2</option>
                                 <option id="142" value="Bubble">Bubble</option>
                                 <option id="143" value="Bubblebeam">Bubblebeam</option>
-                                <option id="387" value="Bug Buzz">Bug Buzz</option>
                                 <option id="144" value="Bulk Up">Bulk Up</option>
-                                <option id="374" value="Bulldoze">Bulldoze</option>
-                                <option id="386" value="Bullet Punch">Bullet Punch</option>
                                 <option id="145" value="Bullet Seed">Bullet Seed</option>
                                 <option id="72" value="Calm Mind 1">Calm Mind 1 (CR)</option>
                                 <option id="73" value="Calm Mind 2">Calm Mind 2</option>
@@ -1431,12 +1426,11 @@
                                 <option id="55" value="Curse">Curse</option>
                                 <option id="158" value="Cut">Cut</option>
                                 <option id="159" value="Defense Curl">Defense Curl</option>
-                                <option id="27" value="Destiny Bond">Destiny Bond (BR)</option>
+                                <option id="27" value="Destiny Bond">Destiny Bond</option>
                                 <option id="11" value="Detect">Detect</option>
                                 <option id="160" value="Dig Turn 1">Dig Turn 1</option>
                                 <option id="161" value="Dig Turn 2">Dig Turn 2</option>
                                 <option id="162" value="Disable">Disable</option>
-                                <option id="379" value="Discharge">Discharge</option>
                                 <option id="163" value="Dive Turn 1">Dive Turn 1</option>
                                 <option id="164" value="Dive Turn 2">Dive Turn 2</option>
                                 <option id="166" value="Dizzy Punch">Dizzy Punch</option>
@@ -1444,26 +1438,23 @@
                                 <option id="21" value="Doom Desire Turn 2">Doom Desire Turn 2</option>
                                 <option id="167" value="Double Kick">Double Kick</option>
                                 <option id="168" value="Double Team">Double Team</option>
-                                <option id="56" value="Double Edge">Double Edge (CR)</option>
+                                <option id="56" value="Double Edge">Double Edge</option>
                                 <option id="169" value="Doubleslap">Doubleslap</option>
                                 <option id="170" value="Dragon Claw">Dragon Claw</option>
                                 <option id="171" value="Dragon Dance">Dragon Dance</option>
                                 <option id="172" value="Dragon Rage">Dragon Rage</option>
-                                <option id="381" value="Dragon Rush">Dragon Rush</option>
                                 <option id="173" value="Dragonbreath">Dragonbreath</option>
-                                <option id="383" value="Drain Punch">Drain Punch</option>
                                 <option id="75" value="Dream Eater">Dream Eater</option>
                                 <option id="174" value="Drill Peck">Drill Peck</option>
                                 <option id="175" value="Dynamicpunch">Dynamicpunch</option>
                                 <option id="176" value="Earthquake">Earthquake</option>
-                                <option id="391" value="Earth Power">Earth Power (BRR)</option>
                                 <option id="177" value="Egg Bomb">Egg Bomb</option>
                                 <option id="178" value="Ember">Ember</option>
                                 <option id="57" value="Encore">Encore</option>
                                 <option id="179" value="Endeavor">Endeavor</option>
                                 <option id="180" value="Endure">Endure</option>
-                                <option id="4" value="Eruption">Eruption (CR)</option>
-                                <option id="12" value="Explosion">Explosion (CR)</option>
+                                <option id="4" value="Eruption">Eruption</option>
+                                <option id="12" value="Explosion">Explosion</option>
                                 <option id="76" value="Extrasensory">Extrasensory</option>
                                 <option id="94" value="ExtremeSpeed">ExtremeSpeed</option>
                                 <option id="181" value="Facade">Facade</option>
@@ -1472,10 +1463,10 @@
                                 <option id="183" value="Fake Tears">Fake Tears</option>
                                 <option id="184" value="False Swipe">False Swipe</option>
                                 <option id="185" value="Featherdance">Featherdance</option>
-                                <option id="58" value="Fire Blast">Fire Blast (CR)</option>
+                                <option id="58" value="Fire Blast">Fire Blast</option>
                                 <option id="186" value="Fire Punch">Fire Punch</option>
                                 <option id="187" value="Fire Spin">Fire Spin</option>
-                                <option id="100" value="Fissure">Fissure (BR)</option>
+                                <option id="100" value="Fissure">Fissure</option>
                                 <option id="188" value="Flail">Flail</option>
                                 <option id="189" value="Flame Wheel">Flame Wheel</option>
                                 <option id="190" value="Flamethrower">Flamethrower</option>
@@ -1483,7 +1474,6 @@
                                 <option id="13" value="Flatter">Flatter</option>
                                 <option id="191" value="Fly Turn 1">Fly Turn 1</option>
                                 <option id="192" value="Fly Turn 2">Fly Turn 2</option>
-                                <option id="385" value="Focus Blast">Focus Blast</option>
                                 <option id="193" value="Focus Energy">Focus Energy</option>
                                 <option id="116" value="Focus Punch">Focus Punch</option>
                                 <option id="194" value="Follow Me">Follow Me</option>
@@ -1496,15 +1486,14 @@
                                 <option id="200" value="Future Sight Turn 1">Future Sight Turn 1</option>
                                 <option id="201" value="Future Sight Turn 2">Future Sight Turn 2</option>
                                 <option id="15" value="Giga Drain">Giga Drain</option>
-                                <option id="395" value="Giga Impact">Giga Impact</option>
-                                <option id="60" value="Glare">Glare (CR)</option>
+                                <option id="60" value="Glare">Glare</option>
                                 <option id="5" value="Grasswhistle">Grasswhistle</option>
                                 <option id="202" value="Growl">Growl</option>
                                 <option id="203" value="Growth">Growth</option>
-                                <option id="30" value="Grudge">Grudge (BR)</option>
-                                <option id="89" value="Guillotine">Guillotine (BRR)</option>
+                                <option id="30" value="Grudge">Grudge</option>
+                                <option id="89" value="Guillotine">Guillotine</option>
                                 <option id="204" value="Gust">Gust</option>
-                                <option id="61" value="Hail">Hail (CR)</option>
+                                <option id="61" value="Hail">Hail</option>
                                 <option id="205" value="Harden">Harden</option>
                                 <option id="206" value="Haze">Haze</option>
                                 <option id="207" value="Headbutt">Headbutt</option>
@@ -1519,7 +1508,7 @@
                                 <option id="117" value="Hydro Cannon">Hydro Cannon</option>
                                 <option id="214" value="Hydro Pump">Hydro Pump</option>
                                 <option id="37" value="Hyper Beam">Hyper Beam</option>
-                                <option id="102" value="Hyper Fang">Hyper Fang (BRR)</option>
+                                <option id="102" value="Hyper Fang">Hyper Fang</option>
                                 <option id="38" value="Hyper Voice">Hyper Voice</option>
                                 <option id="77" value="Hypnosis">Hypnosis</option>
                                 <option id="215" value="Ice Ball">Ice Ball</option>
@@ -1530,7 +1519,6 @@
                                 <option id="103" value="Imprison">Imprison</option>
                                 <option id="217" value="Ingrain">Ingrain</option>
                                 <option id="22" value="Iron Defense">Iron Defense</option>
-                                <option id="388" value="Iron Head">Iron Head</option>
                                 <option id="218" value="Iron Tail">Iron Tail</option>
                                 <option id="219" value="Jump Kick">Jump Kick</option>
                                 <option id="220" value="Karate Chop">Karate Chop</option>
@@ -1545,21 +1533,18 @@
                                 <option id="227" value="Lock On">Lock On</option>
                                 <option id="228" value="Lovely Kiss">Lovely Kiss</option>
                                 <option id="229" value="Low Kick">Low Kick</option>
-                                <option id="79" value="Luster Purge">Luster Purge (BRR)</option>
+                                <option id="79" value="Luster Purge">Luster Purge</option>
                                 <option id="104" value="Mach Punch">Mach Punch</option>
                                 <option id="230" value="Magic Coat">Magic Coat</option>
                                 <option id="231" value="Magical Leaf">Magical Leaf</option>
-                                <option id="375" value="Magnet Bomb">Magnet Bomb</option>
                                 <option id="232" value="Magnitude 5">Magnitude 5</option>
                                 <option id="233" value="Magnitude 10">Magnitude 10</option>
                                 <option id="80" value="Meditate">Meditate</option>
                                 <option id="39" value="Mean Look">Mean Look</option>
                                 <option id="14" value="Mega Drain">Mega Drain</option>
                                 <option id="105" value="Megahorn">Megahorn</option>
-                                <option id="108" value="Mega Kick">Mega Kick (BRR)</option>
-                                <option id="397" value="Mega Kick (No Background)">Mega Kick (No Background)</option>
-                                <option id="107" value="Mega Punch">Mega Punch (BRR)</option>
-                                <option id="396" value="Mega Punch (No Background)">Mega Punch (No Background)</option>
+                                <option id="108" value="Mega Kick">Mega Kick</option>
+                                <option id="107" value="Mega Punch">Mega Punch</option>
                                 <option id="234" value="Memento">Memento</option>
                                 <option id="235" value="Metal Claw">Metal Claw</option>
                                 <option id="236" value="Metal Sound">Metal Sound</option>
@@ -1572,27 +1557,23 @@
                                 <option id="241" value="Mirror Coat">Mirror Coat</option>
                                 <option id="242" value="Mist Ball">Mist Ball</option>
                                 <option id="243" value="Mist">Mist</option>
-                                <option id="40" value="Moonlight">Moonlight (CR)</option>
+                                <option id="40" value="Moonlight">Moonlight</option>
                                 <option id="244" value="Morning Sun">Morning Sun</option>
                                 <option id="245" value="Mud Shot">Mud Shot</option>
                                 <option id="246" value="Mud-Slap">Mud-Slap</option>
                                 <option id="247" value="Mud Sport">Mud Sport</option>
                                 <option id="248" value="Muddy Water">Muddy Water</option>
-                                <option id="393" value="Nasty Plot">Nasty Plot (BRR)</option>
                                 <option id="249" value="Needle Arm">Needle Arm</option>
                                 <option id="28" value="Nightmare">Nightmare</option>
                                 <option id="26" value="Night Shade">Night Shade</option>
-                                <option id="378" value="Night Slash">Night Slash</option>
                                 <option id="250" value="Octazooka">Octazooka</option>
                                 <option id="251" value="Odor Sleuth">Odor Sleuth</option>
                                 <option id="252" value="Outrage">Outrage</option>
                                 <option id="41" value="Overheat">Overheat</option>
                                 <option id="253" value="Pain Split">Pain Split</option>
-                                <option id="394" value="Parabolic Charge">Parabolic Charge</option>
                                 <option id="254" value="Pay Day">Pay Day</option>
                                 <option id="255" value="Peck">Peck</option>
-                                <option id="42" value="Perish Song 1">Perish Song 1</option>
-                                <option id="43" value="Perish Song 2">Perish Song 2</option>
+                                <option id="42" value="Perish Song">Perish Song</option>
                                 <option id="256" value="Petal Dance">Petal Dance</option>
                                 <option id="257" value="Pin Missle">Pin Missle</option>
                                 <option id="90" value="Poison Fang">Poison Fang</option>
@@ -1602,19 +1583,18 @@
                                 <option id="261" value="Poisonpowder">Poisonpowder</option>
                                 <option id="262" value="Pound">Pound</option>
                                 <option id="44" value="Powder Snow">Powder Snow</option>
-                                <option id="392" value="Power Whip">Power Whip (BRR)</option>
-                                <option id="380" value="PowerUpPunch">PowerUpPunch</option>
-                                <option id="263" value="Present">Present</option>
+                                <option id="263" value="Present Bomb">Present Bomb</option>
+                                <option id="449" value="Present Gift">Present Gift</option>
                                 <option id="264" value="Protect">Protect</option>
                                 <option id="81" value="Psybeam">Psybeam</option>
                                 <option id="45" value="Psych Up">Psych Up</option>
                                 <option id="82" value="Psychic">Psychic</option>
-                                <option id="83" value="Psycho Boost">Psycho Boost (BRR)</option>
+                                <option id="83" value="Psycho Boost">Psycho Boost</option>
                                 <option id="84" value="Psywave">Psywave</option>
                                 <option id="63" value="Pursuit">Pursuit</option>
                                 <option id="265" value="Quick Attack">Quick Attack</option>
                                 <option id="266" value="Rage">Rage</option>
-                                <option id="46" value="Rain Dance">Rain Dance (CR)</option>
+                                <option id="46" value="Rain Dance">Rain Dance</option>
                                 <option id="267" value="Rapid Spin">Rapid Spin</option>
                                 <option id="268" value="Razor Leaf">Razor Leaf</option>
                                 <option id="269" value="Razor Wind Turn 1">Razor Wind Turn 1</option>
@@ -1643,12 +1623,10 @@
                                 <option id="48" value="Scary Face">Scary Face</option>
                                 <option id="289" value="Scratch">Scratch</option>
                                 <option id="290" value="Screech">Screech</option>
-                                <option id="390" value="Seed Bomb">Seed Bomb</option>
-                                <option id="95" value="Seismic Toss">Seismic Toss (BRR)</option>
+                                <option id="95" value="Seismic Toss">Seismic Toss</option>
                                 <option id="291" value="Selfdestruct">Selfdestruct</option>
                                 <option id="23" value="Shadow Ball">Shadow Ball</option>
                                 <option id="25" value="Shadow Punch">Shadow Punch</option>
-                                <option id="384" value="Shadow Sneak">Shadow Sneak</option>
                                 <option id="292" value="Sharpen">Sharpen</option>
                                 <option id="85" value="Sheer Cold">Sheer Cold</option>
                                 <option id="8" value="Shock Wave">Shock Wave</option>
@@ -1659,9 +1637,9 @@
                                 <option id="110" value="Skill Swap">Skill Swap</option>
                                 <option id="296" value="Skull Bash Turn 1">Skull Bash Turn 1</option>
                                 <option id="297" value="Skull Bash Turn 2">Skull Bash Turn 2</option>
-                                <option id="98" value="Sky Attack Turn 1">Sky Attack Turn 1 (CR)</option>
-                                <option id="99" value="Sky Attack Turn 2">Sky Attack Turn 2 (BR)</option>
-                                <option id="96" value="Sky Uppercut">Sky Uppercut (BRR)</option>
+                                <option id="98" value="Sky Attack Turn 1">Sky Attack Turn 1</option>
+                                <option id="99" value="Sky Attack Turn 2">Sky Attack Turn 2</option>
+                                <option id="96" value="Sky Uppercut">Sky Uppercut</option>
                                 <option id="298" value="Slack Off">Slack Off</option>
                                 <option id="137" value="Slam">Slam</option>
                                 <option id="299" value="Slash">Slash</option>
@@ -1676,15 +1654,14 @@
                                 <option id="308" value="Snore">Snore</option>
                                 <option id="309" value="Softboiled">Softboiled</option>
                                 <option id="69" value="Solarbeam Turn 1">Solarbeam Turn 1</option>
-                                <option id="165" value="Solarbeam Turn 2">Solarbeam Turn 2 (BRR)</option>
-                                <option id="398" value="Solarbeam Turn 2 (No Background)">Solarbeam Turn 2 (No Background)</option>
+                                <option id="165" value="Solarbeam Turn 2">Solarbeam Turn 2</option>
                                 <option id="310" value="Sonicboom">Sonicboom</option>
                                 <option id="49" value="Spark">Spark</option>
                                 <option id="31" value="Spider Web">Spider Web</option>
                                 <option id="311" value="Spike Cannon">Spike Cannon</option>
                                 <option id="312" value="Spikes">Spikes</option>
                                 <option id="313" value="Spit Up">Spit Up</option>
-                                <option id="29" value="Spite">Spite (BR)</option>
+                                <option id="29" value="Spite">Spite</option>
                                 <option id="314" value="Splash">Splash</option>
                                 <option id="315" value="Spore">Spore</option>
                                 <option id="316" value="Steel Wing">Steel Wing</option>
@@ -1693,7 +1670,6 @@
                                 <option id="319" value="Strength">Strength</option>
                                 <option id="32" value="String Shot">String Shot</option>
                                 <option id="320" value="Struggle">Struggle</option>
-                                <option id="389" value="Struggle Bug">Struggle Bug</option>
                                 <option id="321" value="Stun Spore">Stun Spore</option>
                                 <option id="322" value="Submission">Submission</option>
                                 <option id="323" value="Substitute">Substitute</option>
@@ -1728,8 +1704,7 @@
                                 <option id="342" value="Toxic">Toxic</option>
                                 <option id="343" value="Transform">Transform</option>
                                 <option id="344" value="Trick">Trick</option>
-                                <option id="52" value="Tri Attack 1">Tri Attack 1</option>
-                                <option id="53" value="Tri Attack 2">Tri Attack 2</option>
+                                <option id="52" value="Tri Attack">Tri Attack</option>
                                 <option id="345" value="Triple Kick">Triple Kick</option>
                                 <option id="346" value="Twineedle">Twineedle</option>
                                 <option id="347" value="Twister">Twister</option>
@@ -1759,7 +1734,6 @@
                                 <option id="36" value="Wish">Wish</option>
                                 <option id="369" value="Withdraw">Withdraw</option>
                                 <option id="370" value="Wrap">Wrap</option>
-                                <option id="377" value="X-Scissor">X-Scissor</option>
                                 <option id="371" value="Yawn">Yawn</option>
                                 <option id="372" value="Zap Cannon">Zap Cannon</option>
                                 <option value="" disabled="disabled">─────────────────────────</option>
@@ -1813,6 +1787,13 @@
                                 <option id="446" value="Surrounding Flames">Surrounding Flames</option>
                                 <option id="447" value="Synthesis + HP Recover">Synthesis + HP Recover</option>
                                 <option id="448" value="Tickle Shake Foe">Tickle Shake Foe</option>
+                                <option id="449" value="Vampire Ghost">Vampire Ghost</option>
+                                <option id="450" value="Water Bubbles">Water Bubbles</option>
+                                <option id="451" value="Water Drip">Water Drip</option>
+                                <option id="452" value="Water From Above">Water From Above</option>
+                                <option id="453" value="Will-O-Flames">Will-O-Flames</option>
+                                <option id="454" value="Yawn Cloud">Yawn Cloud</option>
+                                <option id="455" value="X">X</option>
                             </select>
                         </div>
                         <div class="col-2">
@@ -1855,8 +1836,8 @@
                                     <option id="55" value="Eruption Rocks">Eruption Rocks</option>
                                     <option id="13" value="Heavy Rock Fall">Heavy Rock Fall</option>
                                     <option id="14" value="Rock Fall">Rock Fall</option>
-                                    <option id="45" value="Rock Smash">Rock Smash</option>
-                                    <option id="15" value="Sand Tomb">Sand Tomb</option>
+                                    <option id="45" value="Rock Smash Foe">Rock Smash</option>
+                                    <option id="15" value="Sand Tomb Foe">Sand Tomb Foe</option>
 
                                     <option value="" disabled="disabled">--- Water Animations (4) ---</option>
                                     <option id="22" value="Water Bubbles">Water Bubbles</option>
@@ -1882,11 +1863,12 @@
                                     <option id="18" value="Ice Crystals">Ice Crystals</option>
                                     <option id="19" value="Ice Wave">Ice Wave</option>
 
-                                    <option value="" disabled="disabled">--- Move User (2) ---</option>
+                                    <option value="" disabled="disabled">--- Move User (3) ---</option>
                                     <option id="36" value="Bigger Shadow User">Bigger Shadow User</option>
+                                    <option id="65" value="Come Back">Come Back</option>
                                     <option id="37" value="Psychic Shadow User">Psychic Shadow User</option>
 
-                                    <option value="" disabled="disabled">--- Other Animations (21) ---</option>
+                                    <option value="" disabled="disabled">--- Other Animations (22) ---</option>
                                     <option id="63" value="Angel Ghost">Angel Ghost</option>
                                     <option id="53" value="Blow Smoke">Blow Smoke</option>
                                     <option id="54" value="Claws">Claws</option>
@@ -1904,6 +1886,7 @@
                                     <option id="35" value="Razor Leaf Blades">Razor Leaf Blades</option>
                                     <option id="30" value="Sparkle">Sparkle</option>
                                     <option id="31" value="Self Sparkle">Self Sparkle</option>
+                                    <option id="67" value="Slice-X">Slice-X</option>
                                     <option id="38" value="Smokescreen Debris">Smokescreen Debris</option>
                                     <option id="41" value="Superpower Strike">Superpower Strike</option>
                                     <option id="59" value="Vampire Ghost">Vampire Ghost</option>
@@ -1927,24 +1910,30 @@
                                 <label for="background" class="form-label" ></i></label>
                                 <select class="form-select" id="select-preAnimation4" aria-label="Default select example" style="margin-top: 6px;">
                                     <option id="1" value="None" selected>None</option>
-                                    <option value="" disabled="disabled">--- Move User (9) ---</option>
+                                    <option value="" disabled="disabled">--- Move User (12) ---</option>
                                     <option id="2" value="Bigger Shadow User">Bigger Shadow User</option>
+                                    <option id="27" value="Buff Up">Buff Up</option>
+                                    <option id="23" value="Head Down User">Head Down User</option>
                                     <option id="8" value="Move Circle User">Move Circle User</option>
                                     <option id="6" value="Move Down User">Move Down User</option>
                                     <option id="2" value="Move Left and Right User">Move Left and Right User</option>
                                     <option id="17" value="Psychic Shadow User">Psychic Shadow User</option>
+                                    <option id="30" value="Ready Aim">Ready Aim</option>
                                     <option id="14" value="Shake Up & Down User">Shake Up & Down User</option>
                                     <option id="23" value="Shake Turn Red">Shake Turn Red</option>
                                     <option id="3" value="Slight Shake User">Slight Shake User</option>
                                     <option id="21" value="User Yawns">User Yawns</option>
-                                    <option value="" disabled="disabled">--- Other (6) ---</option>
+                                    <option value="" disabled="disabled">--- Other (10) ---</option>
                                     <option id="4" value="Air Cutter Start">Air Cutter Start</option>
                                     <option id="5" value="Ancientpower Lift Rocks">Ancientpower Lift Rocks</option>
                                     <option id="22" value="Charm">Charm</option>
                                     <option id="10" value="Destiny Bond Surface">Destiny Bond Surface</option>
+                                    <option id="24" value="Fade But Not You">Fade But Not You</option>
                                     <option id="7" value="Hearts User">Hearts User</option>
+                                    <option id="28" value="Invert Background">Invert Background</option>
                                     <option id="18" value="Leafs">Leafs</option>
                                     <option id="20" value="Shooting Stars">Shooting Stars</option>
+                                    <option id="29" value="Sun Rays">Sun Rays</option>
                                 </select>
                             </div>
                         </div>
@@ -1960,16 +1949,14 @@
                                  <option id="91" value="Aeroblast">Aeroblast</option>
                                  <option id="120" value="Agility">Agility</option>
                                  <option id="121" value="Air Cutter">Air Cutter</option>
-                                 <option id="376" value="Air Slash">Air Slash</option>
                                  <option id="70" value="Amnesia">Amnesia</option>
                                  <option id="122" value="Ancientpower">Ancientpower</option>
-                                 <option id="373" value="Aqua Jet">Aqua Jet</option>
                                  <option id="382" value="Aqua Tail">Aqua Tail</option>
                                  <option id="123" value="Arm Thrust">Arm Thrust</option>
-                                 <option id="3" value="Aromatherapy">Aromatherapy (CR)</option>
+                                 <option id="3" value="Aromatherapy">Aromatherapy</option>
                                  <option id="124" value="Assist">Assist</option>
                                  <option id="125" value="Astonish">Astonish</option>
-                                 <option id="68" value="Attract">Attract (BRR)</option>
+                                 <option id="68" value="Attract">Attract</option>
                                  <option id="71" value="Aurora Beam">Aurora Beam</option>
                                  <option id="126" value="Barrage">Barrage</option>
                                  <option id="127" value="Barrier">Barrier</option>
@@ -1993,10 +1980,7 @@
                                  <option id="88" value="Brick Break 2">Brick Break 2</option>
                                  <option id="142" value="Bubble">Bubble</option>
                                  <option id="143" value="Bubblebeam">Bubblebeam</option>
-                                 <option id="387" value="Bug Buzz">Bug Buzz</option>
                                  <option id="144" value="Bulk Up">Bulk Up</option>
-                                 <option id="374" value="Bulldoze">Bulldoze</option>
-                                 <option id="386" value="Bullet Punch">Bullet Punch</option>
                                  <option id="145" value="Bullet Seed">Bullet Seed</option>
                                  <option id="72" value="Calm Mind 1">Calm Mind 1 (CR)</option>
                                  <option id="73" value="Calm Mind 2">Calm Mind 2</option>
@@ -2021,12 +2005,11 @@
                                  <option id="55" value="Curse">Curse</option>
                                  <option id="158" value="Cut">Cut</option>
                                  <option id="159" value="Defense Curl">Defense Curl</option>
-                                 <option id="27" value="Destiny Bond">Destiny Bond (BR)</option>
+                                 <option id="27" value="Destiny Bond">Destiny Bond</option>
                                  <option id="11" value="Detect">Detect</option>
                                  <option id="160" value="Dig Turn 1">Dig Turn 1</option>
                                  <option id="161" value="Dig Turn 2">Dig Turn 2</option>
                                  <option id="162" value="Disable">Disable</option>
-                                 <option id="379" value="Discharge">Discharge</option>
                                  <option id="163" value="Dive Turn 1">Dive Turn 1</option>
                                  <option id="164" value="Dive Turn 2">Dive Turn 2</option>
                                  <option id="166" value="Dizzy Punch">Dizzy Punch</option>
@@ -2034,26 +2017,23 @@
                                  <option id="21" value="Doom Desire Turn 2">Doom Desire Turn 2</option>
                                  <option id="167" value="Double Kick">Double Kick</option>
                                  <option id="168" value="Double Team">Double Team</option>
-                                 <option id="56" value="Double Edge">Double Edge (CR)</option> 
+                                 <option id="56" value="Double Edge">Double Edge</option> 
                                  <option id="169" value="Doubleslap">Doubleslap</option>
                                  <option id="170" value="Dragon Claw">Dragon Claw</option>
                                  <option id="171" value="Dragon Dance">Dragon Dance</option>
                                  <option id="172" value="Dragon Rage">Dragon Rage</option>
-                                 <option id="381" value="Dragon Rush">Dragon Rush</option>
                                  <option id="173" value="Dragonbreath">Dragonbreath</option>
-                                 <option id="383" value="Drain Punch">Drain Punch</option>
                                  <option id="75" value="Dream Eater">Dream Eater</option>
                                  <option id="174" value="Drill Peck">Drill Peck</option>
                                  <option id="175" value="Dynamicpunch">Dynamicpunch</option>
                                  <option id="176" value="Earthquake">Earthquake</option>
-                                 <option id="391" value="Earth Power">Earth Power (BRR)</option>
                                  <option id="177" value="Egg Bomb">Egg Bomb</option>
                                  <option id="178" value="Ember">Ember</option>
                                  <option id="57" value="Encore">Encore</option>
                                  <option id="179" value="Endeavor">Endeavor</option>
                                  <option id="180" value="Endure">Endure</option>
-                                 <option id="4" value="Eruption">Eruption (CR)</option>
-                                 <option id="12" value="Explosion">Explosion (CR)</option>
+                                 <option id="4" value="Eruption">Eruption</option>
+                                 <option id="12" value="Explosion">Explosion</option>
                                  <option id="76" value="Extrasensory">Extrasensory</option>
                                  <option id="94" value="ExtremeSpeed">ExtremeSpeed</option>
                                  <option id="181" value="Facade">Facade</option>
@@ -2062,10 +2042,10 @@
                                  <option id="183" value="Fake Tears">Fake Tears</option>
                                  <option id="184" value="False Swipe">False Swipe</option>
                                  <option id="185" value="Featherdance">Featherdance</option>
-                                 <option id="58" value="Fire Blast">Fire Blast (CR)</option>
+                                 <option id="58" value="Fire Blast">Fire Blast</option>
                                  <option id="186" value="Fire Punch">Fire Punch</option>
                                  <option id="187" value="Fire Spin">Fire Spin</option>
-                                 <option id="100" value="Fissure">Fissure (BR)</option>
+                                 <option id="100" value="Fissure">Fissure</option>
                                  <option id="188" value="Flail">Flail</option>
                                  <option id="189" value="Flame Wheel">Flame Wheel</option>
                                  <option id="190" value="Flamethrower">Flamethrower</option>
@@ -2073,7 +2053,6 @@
                                  <option id="13" value="Flatter">Flatter</option>
                                  <option id="191" value="Fly Turn 1">Fly Turn 1</option>
                                  <option id="192" value="Fly Turn 2">Fly Turn 2</option>
-                                 <option id="385" value="Focus Blast">Focus Blast</option>
                                  <option id="193" value="Focus Energy">Focus Energy</option>
                                  <option id="116" value="Focus Punch">Focus Punch</option>
                                  <option id="194" value="Follow Me">Follow Me</option>
@@ -2086,15 +2065,14 @@
                                  <option id="200" value="Future Sight Turn 1">Future Sight Turn 1</option>
                                  <option id="201" value="Future Sight Turn 2">Future Sight Turn 2</option>
                                  <option id="15" value="Giga Drain">Giga Drain</option>
-                                 <option id="395" value="Giga Impact">Giga Impact</option>
-                                 <option id="60" value="Glare">Glare (CR)</option>
+                                 <option id="60" value="Glare">Glare</option>
                                  <option id="5" value="Grasswhistle">Grasswhistle</option>
                                  <option id="202" value="Growl">Growl</option>
                                  <option id="203" value="Growth">Growth</option>
-                                 <option id="30" value="Grudge">Grudge (BR)</option>
-                                 <option id="89" value="Guillotine">Guillotine (BRR)</option>
+                                 <option id="30" value="Grudge">Grudge</option>
+                                 <option id="89" value="Guillotine">Guillotine</option>
                                  <option id="204" value="Gust">Gust</option>
-                                 <option id="61" value="Hail">Hail (CR)</option>
+                                 <option id="61" value="Hail">Hail</option>
                                  <option id="205" value="Harden">Harden</option>
                                  <option id="206" value="Haze">Haze</option>
                                  <option id="207" value="Headbutt">Headbutt</option>
@@ -2109,7 +2087,7 @@
                                  <option id="117" value="Hydro Cannon">Hydro Cannon</option>
                                  <option id="214" value="Hydro Pump">Hydro Pump</option>
                                  <option id="37" value="Hyper Beam">Hyper Beam</option>
-                                 <option id="102" value="Hyper Fang">Hyper Fang (BRR)</option>
+                                 <option id="102" value="Hyper Fang">Hyper Fang</option>
                                  <option id="38" value="Hyper Voice">Hyper Voice</option>
                                  <option id="77" value="Hypnosis">Hypnosis</option>
                                  <option id="215" value="Ice Ball">Ice Ball</option>
@@ -2120,7 +2098,6 @@
                                  <option id="103" value="Imprison">Imprison</option>
                                  <option id="217" value="Ingrain">Ingrain</option>
                                  <option id="22" value="Iron Defense">Iron Defense</option>
-                                 <option id="388" value="Iron Head">Iron Head</option>
                                  <option id="218" value="Iron Tail">Iron Tail</option>
                                  <option id="219" value="Jump Kick">Jump Kick</option>
                                  <option id="220" value="Karate Chop">Karate Chop</option>
@@ -2135,21 +2112,18 @@
                                  <option id="227" value="Lock On">Lock On</option>
                                  <option id="228" value="Lovely Kiss">Lovely Kiss</option>
                                  <option id="229" value="Low Kick">Low Kick</option>
-                                 <option id="79" value="Luster Purge">Luster Purge (BRR)</option>
+                                 <option id="79" value="Luster Purge">Luster Purge</option>
                                  <option id="104" value="Mach Punch">Mach Punch</option>
                                  <option id="230" value="Magic Coat">Magic Coat</option>
                                  <option id="231" value="Magical Leaf">Magical Leaf</option>
-                                 <option id="375" value="Magnet Bomb">Magnet Bomb</option>
                                  <option id="232" value="Magnitude 5">Magnitude 5</option>
                                  <option id="233" value="Magnitude 10">Magnitude 10</option>
                                  <option id="80" value="Meditate">Meditate</option>
                                  <option id="39" value="Mean Look">Mean Look</option>
                                  <option id="14" value="Mega Drain">Mega Drain</option>
                                  <option id="105" value="Megahorn">Megahorn</option>
-                                 <option id="108" value="Mega Kick">Mega Kick (BRR)</option>
-                                 <option id="397" value="Mega Kick (No Background)">Mega Kick (No Background)</option>
-                                 <option id="107" value="Mega Punch">Mega Punch (BRR)</option>
-                                 <option id="396" value="Mega Punch (No Background)">Mega Punch (No Background)</option>
+                                 <option id="108" value="Mega Kick">Mega Kick</option>
+                                 <option id="107" value="Mega Punch">Mega Punch</option>
                                  <option id="234" value="Memento">Memento</option>
                                  <option id="235" value="Metal Claw">Metal Claw</option>
                                  <option id="236" value="Metal Sound">Metal Sound</option>
@@ -2162,27 +2136,23 @@
                                  <option id="241" value="Mirror Coat">Mirror Coat</option>
                                  <option id="242" value="Mist Ball">Mist Ball</option>
                                  <option id="243" value="Mist">Mist</option>
-                                 <option id="40" value="Moonlight">Moonlight (CR)</option>
+                                 <option id="40" value="Moonlight">Moonlight</option>
                                  <option id="244" value="Morning Sun">Morning Sun</option>
                                  <option id="245" value="Mud Shot">Mud Shot</option>
                                  <option id="246" value="Mud-Slap">Mud-Slap</option>
                                  <option id="247" value="Mud Sport">Mud Sport</option>
                                  <option id="248" value="Muddy Water">Muddy Water</option>
-                                 <option id="393" value="Nasty Plot">Nasty Plot (BRR)</option>
                                  <option id="249" value="Needle Arm">Needle Arm</option>
                                  <option id="28" value="Nightmare">Nightmare</option>
                                  <option id="26" value="Night Shade">Night Shade</option>
-                                 <option id="378" value="Night Slash">Night Slash</option>
                                  <option id="250" value="Octazooka">Octazooka</option>
                                  <option id="251" value="Odor Sleuth">Odor Sleuth</option>
                                  <option id="252" value="Outrage">Outrage</option>
                                  <option id="41" value="Overheat">Overheat</option>
                                  <option id="253" value="Pain Split">Pain Split</option>
-                                 <option id="394" value="Parabolic Charge">Parabolic Charge</option>
                                  <option id="254" value="Pay Day">Pay Day</option>
                                  <option id="255" value="Peck">Peck</option>
-                                 <option id="42" value="Perish Song 1">Perish Song 1</option>
-                                 <option id="43" value="Perish Song 2">Perish Song 2</option>
+                                 <option id="42" value="Perish Song">Perish Song</option>
                                  <option id="256" value="Petal Dance">Petal Dance</option>
                                  <option id="257" value="Pin Missle">Pin Missle</option>
                                  <option id="90" value="Poison Fang">Poison Fang</option>
@@ -2192,18 +2162,17 @@
                                  <option id="261" value="Poisonpowder">Poisonpowder</option>
                                  <option id="262" value="Pound">Pound</option>
                                  <option id="44" value="Powder Snow">Powder Snow</option>
-                                 <option id="392" value="Power Whip">Power Whip (BRR)</option>
-                                 <option id="380" value="PowerUpPunch">PowerUpPunch</option>
-                                 <option id="263" value="Present">Present</option>
+                                 <option id="263" value="Present Bomb">Present Bomb</option>
+                                 <option id="449" value="Present Gift">Present Gift</option>
                                  <option id="264" value="Protect">Protect</option>
                                  <option id="81" value="Psybeam">Psybeam</option>
                                  <option id="45" value="Psych Up">Psych Up</option>
                                  <option id="82" value="Psychic">Psychic</option>
-                                 <option id="83" value="Psycho Boost">Psycho Boost (BRR)</option>
+                                 <option id="83" value="Psycho Boost">Psycho Boost</option>
                                  <option id="63" value="Pursuit">Pursuit</option>
                                  <option id="265" value="Quick Attack">Quick Attack</option>
                                  <option id="266" value="Rage">Rage</option>
-                                 <option id="46" value="Rain Dance">Rain Dance (CR)</option>
+                                 <option id="46" value="Rain Dance">Rain Dance</option>
                                  <option id="267" value="Rapid Spin">Rapid Spin</option>
                                  <option id="268" value="Razor Leaf">Razor Leaf</option>
                                  <option id="269" value="Razor Wind Turn 1">Razor Wind Turn 1</option>
@@ -2232,12 +2201,10 @@
                                  <option id="48" value="Scary Face">Scary Face</option>
                                  <option id="289" value="Scratch">Scratch</option>
                                  <option id="290" value="Screech">Screech</option>
-                                 <option id="390" value="Seed Bomb">Seed Bomb</option>
-                                 <option id="95" value="Seismic Toss">Seismic Toss (BRR)</option>
+                                 <option id="95" value="Seismic Toss">Seismic Toss</option>
                                  <option id="291" value="Selfdestruct">Selfdestruct</option>
                                  <option id="23" value="Shadow Ball">Shadow Ball</option>
                                  <option id="25" value="Shadow Punch">Shadow Punch</option>
-                                 <option id="384" value="Shadow Sneak">Shadow Sneak</option>
                                  <option id="292" value="Sharpen">Sharpen</option>
                                  <option id="85" value="Sheer Cold">Sheer Cold</option>
                                  <option id="8" value="Shock Wave">Shock Wave</option>
@@ -2248,9 +2215,9 @@
                                  <option id="110" value="Skill Swap">Skill Swap</option>
                                  <option id="296" value="Skull Bash Turn 1">Skull Bash Turn 1</option>
                                  <option id="297" value="Skull Bash Turn 2">Skull Bash Turn 2</option>
-                                 <option id="98" value="Sky Attack Turn 1">Sky Attack Turn 1 (CR)</option>
-                                 <option id="99" value="Sky Attack Turn 2">Sky Attack Turn 2 (BR)</option>
-                                 <option id="96" value="Sky Uppercut">Sky Uppercut (BRR)</option>
+                                 <option id="98" value="Sky Attack Turn 1">Sky Attack Turn 1</option>
+                                 <option id="99" value="Sky Attack Turn 2">Sky Attack Turn 2</option>
+                                 <option id="96" value="Sky Uppercut">Sky Uppercut</option>
                                  <option id="298" value="Slack Off">Slack Off</option>
                                  <option id="137" value="Slam">Slam</option>
                                  <option id="299" value="Slash">Slash</option>
@@ -2265,15 +2232,14 @@
                                  <option id="308" value="Snore">Snore</option>
                                  <option id="309" value="Softboiled">Softboiled</option>
                                  <option id="69" value="Solarbeam Turn 1">Solarbeam Turn 1</option>
-                                 <option id="165" value="Solarbeam Turn 2">Solarbeam Turn 2 (BRR)</option>
-                                 <option id="398" value="Solarbeam Turn 2 (No Background)">Solarbeam Turn 2 (No Background)</option>
+                                 <option id="165" value="Solarbeam Turn 2">Solarbeam Turn 2</option>
                                  <option id="310" value="Sonicboom">Sonicboom</option>
                                  <option id="49" value="Spark">Spark</option>
                                  <option id="31" value="Spider Web">Spider Web</option>
                                  <option id="311" value="Spike Cannon">Spike Cannon</option>
                                  <option id="312" value="Spikes">Spikes</option>
                                  <option id="313" value="Spit Up">Spit Up</option>
-                                 <option id="29" value="Spite">Spite (BR)</option>
+                                 <option id="29" value="Spite">Spite</option>
                                  <option id="314" value="Splash">Splash</option>
                                  <option id="315" value="Spore">Spore</option>
                                  <option id="316" value="Steel Wing">Steel Wing</option>
@@ -2282,7 +2248,6 @@
                                  <option id="319" value="Strength">Strength</option>
                                  <option id="32" value="String Shot">String Shot</option>
                                  <option id="320" value="Struggle">Struggle</option>
-                                 <option id="389" value="Struggle Bug">Struggle Bug</option>
                                  <option id="321" value="Stun Spore">Stun Spore</option>
                                  <option id="322" value="Submission">Submission</option>
                                  <option id="323" value="Substitute">Substitute</option>
@@ -2317,8 +2282,7 @@
                                  <option id="342" value="Toxic">Toxic</option>
                                  <option id="343" value="Transform">Transform</option>
                                  <option id="344" value="Trick">Trick</option>
-                                 <option id="52" value="Tri Attack 1">Tri Attack 1</option>
-                                 <option id="53" value="Tri Attack 2">Tri Attack 2</option>
+                                 <option id="52" value="Tri Attack">Tri Attack</option>
                                  <option id="345" value="Triple Kick">Triple Kick</option>
                                  <option id="346" value="Twineedle">Twineedle</option>
                                  <option id="347" value="Twister">Twister</option>
@@ -2348,7 +2312,6 @@
                                  <option id="36" value="Wish">Wish</option>
                                  <option id="369" value="Withdraw">Withdraw</option>
                                  <option id="370" value="Wrap">Wrap</option>
-                                 <option id="377" value="X-Scissor">X-Scissor</option>
                                  <option id="371" value="Yawn">Yawn</option>
                                  <option id="372" value="Zap Cannon">Zap Cannon</option>
                                  <option value="" disabled="disabled">─────────────────────────</option>
@@ -2402,6 +2365,13 @@
                                 <option id="446" value="Surrounding Flames">Surrounding Flames</option>
                                 <option id="447" value="Synthesis + HP Recover">Synthesis + HP Recover</option>
                                 <option id="448" value="Tickle Shake Foe">Tickle Shake Foe</option>
+                                <option id="449" value="Vampire Ghost">Vampire Ghost</option>
+                                <option id="450" value="Water Bubbles">Water Bubbles</option>
+                                <option id="451" value="Water Drip">Water Drip</option>
+                                <option id="452" value="Water From Above">Water From Above</option>
+                                <option id="453" value="Will-O-Flames">Will-O-Flames</option>
+                                <option id="454" value="Yawn Cloud">Yawn Cloud</option>
+                                <option id="455" value="X">X</option>
                              </select>
                         </div>
                         <div class="col-2">
@@ -2445,8 +2415,8 @@
                                     <option id="55" value="Eruption Rocks">Eruption Rocks</option>
                                     <option id="13" value="Heavy Rock Fall">Heavy Rock Fall</option>
                                     <option id="14" value="Rock Fall">Rock Fall</option>
-                                    <option id="45" value="Rock Smash">Rock Smash</option>
-                                    <option id="15" value="Sand Tomb">Sand Tomb</option>
+                                    <option id="45" value="Rock Smash Foe">Rock Smash</option>
+                                    <option id="15" value="Sand Tomb Foe">Sand Tomb Foe</option>
 
                                     <option value="" disabled="disabled">--- Water Animations (4) ---</option>
                                     <option id="22" value="Water Bubbles">Water Bubbles</option>
@@ -2472,11 +2442,12 @@
                                     <option id="18" value="Ice Crystals">Ice Crystals</option>
                                     <option id="19" value="Ice Wave">Ice Wave</option>
 
-                                    <option value="" disabled="disabled">--- Move User (2) ---</option>
+                                    <option value="" disabled="disabled">--- Move User (3) ---</option>
                                     <option id="36" value="Bigger Shadow User">Bigger Shadow User</option>
+                                    <option id="65" value="Come Back">Come Back</option>
                                     <option id="37" value="Psychic Shadow User">Psychic Shadow User</option>
 
-                                    <option value="" disabled="disabled">--- Other Animations (21) ---</option>
+                                    <option value="" disabled="disabled">--- Other Animations (22) ---</option>
                                     <option id="63" value="Angel Ghost">Angel Ghost</option>
                                     <option id="53" value="Blow Smoke">Blow Smoke</option>
                                     <option id="54" value="Claws">Claws</option>
@@ -2494,6 +2465,7 @@
                                     <option id="35" value="Razor Leaf Blades">Razor Leaf Blades</option>
                                     <option id="30" value="Sparkle">Sparkle</option>
                                     <option id="31" value="Self Sparkle">Self Sparkle</option>
+                                    <option id="67" value="Slice-X">Slice-X</option>
                                     <option id="38" value="Smokescreen Debris">Smokescreen Debris</option>
                                     <option id="41" value="Superpower Strike">Superpower Strike</option>
                                     <option id="59" value="Vampire Ghost">Vampire Ghost</option>
@@ -2538,6 +2510,8 @@
             const attackName = "nothing"
             const background = document.querySelector('#select-background').value
             const scrollSpeed = document.querySelector('#select-scrollSpeed').value
+            const removeBlink = document.querySelector('#checkbox-removeBackgroundBlink').checked
+
             const attack1 = document.querySelector('#select-animation1').value
             const attack2 = document.querySelector('#select-animation2').value
             const attack3 = document.querySelector('#select-animation3').value
@@ -2566,7 +2540,7 @@
             } else if (document.getElementById('horizontalScroll').checked){
                 scrollType = "Horizontal Scroll"
             }
-            ipcRenderer.send('form:submit', attackName, background, scrollType, scrollSpeed, attack1, attack2, attack3, attack4, attack1KeepBackground, attack2KeepBackground, attack3KeepBackground, attack4KeepBackground, postAnimation1, postAnimation2, postAnimation3, postAnimation4, preAnimation1, preAnimation2, preAnimation3, preAnimation4);
+            ipcRenderer.send('form:submit', attackName, background, scrollType, scrollSpeed, removeBlink, attack1, attack2, attack3, attack4, attack1KeepBackground, attack2KeepBackground, attack3KeepBackground, attack4KeepBackground, postAnimation1, postAnimation2, postAnimation3, postAnimation4, preAnimation1, preAnimation2, preAnimation3, preAnimation4);
         }
 
     </script>

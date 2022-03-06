@@ -10,7 +10,9 @@ ipcRenderer.on('backgroundImage', (event, accessToken) => {
 });
 
 ipcRenderer.on('postAttackImage', (event, accessToken) => {
-    if(accessToken == "Heavy Shake Foe" || accessToken == "Tickle Shake Foe" || accessToken == "Hit Foe In Circle"){
+    if(accessToken == "Heavy Shake Foe" || accessToken == "Tickle Shake Foe" || accessToken == "Hit Foe In Circle"
+    || accessToken == "Slice-X" || accessToken == "Come Back"
+    ){
         document.getElementById("displayPostAttackImage").src = "./data/post-attack/" + accessToken + ".gif";
     } else{
         document.getElementById("displayPostAttackImage").src = "./data/post-attack/" + accessToken + ".png";
@@ -18,7 +20,12 @@ ipcRenderer.on('postAttackImage', (event, accessToken) => {
 });
 
 ipcRenderer.on('preAttackImage', (event, accessToken) => {
-    if(accessToken == "Move Circle User" || accessToken == "Move Down User" || accessToken == "Move Left and Right User" || accessToken == "Shake Up & Down User" || accessToken == "Shake Turn Red" || accessToken == "Slight Shake User" || accessToken == "User Yawns" || accessToken == "Air Cutter Start" || accessToken == "Ancientpower Lift Rocks" || accessToken == "Charm" || accessToken == "Destiny Bond Surface" || accessToken == "Leafs" || accessToken == "Shooting Stars"){
+    if(accessToken == "Move Circle User" || accessToken == "Move Down User" || accessToken == "Move Left and Right User" || accessToken == "Shake Up & Down User" 
+    || accessToken == "Shake Turn Red" || accessToken == "Slight Shake User" || accessToken == "User Yawns" 
+    || accessToken == "Air Cutter Start" || accessToken == "Ancientpower Lift Rocks" || accessToken == "Charm" 
+    || accessToken == "Destiny Bond Surface" || accessToken == "Leafs" || accessToken == "Shooting Stars" || accessToken == "Buff Up" 
+    || accessToken == "Ready Aim" || accessToken == "Fade But Not You" || accessToken == "Invert Background" || accessToken == "Sun Rays"
+    ){
         document.getElementById("displayPreAttackImage").src = "./data/pre-attack/" + accessToken + ".gif"; 
     } else {
         document.getElementById("displayPreAttackImage").src = "./data/pre-attack/" + accessToken + ".png"; 

@@ -2,7 +2,7 @@ const electron = require('electron');
 const path = require('path');
 const url = require('url');
 const checkDiskSpace = require('check-disk-space').default
-const {app, BroswerWindow, dialog, BrowserView, BrowserWindow, ipcMain, Menu} = electron;
+const {app, BroswerWindow, dialog, BrowserView, BrowserWindow, ipcMain, Menu, Notification} = electron;
 const fs = require('fs');
 
 var ipc = require('electron').ipcRenderer;
@@ -18,13 +18,15 @@ let preAnimationWindow;
 let postAnimationWindow;
 let freeSpaceFinderWindow;
 var rom = null;
+var romType = null; //Either FireRed or Emerald
+
 
 //Create main Browser window
 function createWindow(){
     mainWindow = new BrowserWindow({
         width: 1100,
         height: 800,
-        title:'Move Animation Creator 1.3',
+        title:'Move Animation Creator 1.4',
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false,
@@ -48,7 +50,7 @@ function createWindow(){
     })    
 
     mainWindow.webContents.on('did-finish-load', () => {
-        mainWindow.setTitle("Move Animation Creator 1.3")
+    mainWindow.setTitle("Move Animation Creator 1.4")
     })
 }
 
@@ -239,8 +241,8 @@ mainMenuTemplate.push({
 
 
 //Add developer tools item if not in production
-/*
-if(process.env.Node_ENV !== 'production'){
+
+/*if(process.env.Node_ENV !== 'production'){
     mainMenuTemplate.push({
         label: 'Developer Tools',
         submenu: [
@@ -252,15 +254,17 @@ if(process.env.Node_ENV !== 'production'){
             }
         ]
     })
-} */ 
+} */
 
 //Run create window
 app.whenReady().then(() => {
     createWindow();
    
     app.on('activate', function(){
-        if (BrowserWindow.getAllWindows().length === 0) createWindow()
-    })
+        if (BrowserWindow.getAllWindows().length === 0){
+            createWindow();
+        } 
+    }) 
 })
 
 //Quit when all windows are closed
@@ -280,552 +284,201 @@ async function openRom(){
         ]
     }).then((filepath) => {
         rom = filepath.filePaths[0];
+        romType = determineRomType(rom);
         mainWindow.webContents.send('romName', filepath.filePaths[0]);
     });
+}
 
+
+//This function determines if the ROM is FireRed or Emerald
+function determineRomType(rom){
+    var array = []
+    var romHex = fs.readFileSync(rom)
+    var startingOffsetDecimal = 172 //Location of the Header (in decimal) that tells you the type of game (Fire Red or Emerald)
+    for (var i=startingOffsetDecimal; i<176; i++){
+        array.push(romHex[i].toString('16'))
+    }
+
+    if(array[0] == "42" && array[1] == "50" && array[2] == "52" && array[3] == "45"){
+        return "Fire Red";
+    } else if (array[0] == "42" && array[1] == "50" && array[2] == "45" && array[3] == "45"){
+        return "Emerald";
+    } else {
+        mainWindow.webContents.send('errorMessage', "Error: ROM is neither Fire Red or Emerald.");
+    }
 }
 
 /////Ipc's
 
 //Create Animation
-ipcMain.on('form:submit', function(event, attackName, background, scrollType, scrollSpeed, attack1, attack2, attack3, attack4, attack1KeepBackground, attack2KeepBackground, attack3KeepBackground, attack4KeepBackground, postAnimation1, postAnimation2, postAnimation3, postAnimation4, preAnimation1, preAnimation2, preAnimation3, preAnimation4) {
-    
-    var backgroundCode;
-    var removeBackround = false;
-    var scrollSpeedCode;
-    var animation1;
-    var animation2;
-    var animation3;
-    var animation4;
+ipcMain.on('form:submit', function(event, attackName, background, scrollType, scrollSpeed, removeBlink, attack1, attack2, attack3, attack4, attack1KeepBackground, attack2KeepBackground, attack3KeepBackground, attack4KeepBackground, postAnimation1, postAnimation2, postAnimation3, postAnimation4, preAnimation1, preAnimation2, preAnimation3, preAnimation4) {
     var combinedAnimation;
     var bytesNeeded;
-    var psychicBackgroundUsed;
+    var psychicBackgroundUsed = false;
+    var moveData1;
+    var moveData2;
+    var moveData3;
+    var moveData4;
 
     //Check if ROM is open
     if(rom != null){
-
-        //Case 1. User selects Default Background
-        if(background == 'Default'){
-            backgroundCode = null;
-            //If only 1 move
-            if(attack2 == "---"){
-                var moveData1 = getMoveAnimationData(attack1);
-                moveData1.code = addPreAnimation(moveData1, preAnimation1);
-                moveData1.code = trimTrailing08(moveData1.code)
-                moveData1.code = addPostAnimation(moveData1, postAnimation1)
-                moveData1.code = concat08(moveData1.code)
-                bytesNeeded = getBytesNeeded(moveData1.code);
-                createInsertWindow();
-                insertWindow.webContents.on('did-finish-load', function () {
-                    insertWindow.webContents.send('setInsertWindowVariables', bytesNeeded, moveData1.code);
-                });
+        //Case 1. User selects Default Background or No Background
+        if(background == 'Default' || background == "No Background"){
+            moveData1 = getMoveAnimationData(attack1);
+            moveData1.code = selectAnimationCodeToUse(moveData1);
+            if(background == "No Background" && moveData1.background == true && attack1KeepBackground == false){
+                moveData1.code = removeBackground(moveData1);
             }
-            //If 2 moves
-            else if (attack2 != '---' && attack3 == "---"){
-                var moveData1 = getMoveAnimationData(attack1);
-                var moveData2 = getMoveAnimationData(attack2);
-                moveData1.code = trimTrailing08(moveData1.code)
-                moveData2.code = trimTrailing08(moveData2.code)
-                moveData1.code = addPreAnimation(moveData1, preAnimation1);
-                moveData2.code = addPreAnimation(moveData2, preAnimation2);
-                moveData1.code = addPostAnimation(moveData1, postAnimation1)
-                moveData2.code = addPostAnimation(moveData2, postAnimation2)
-
-                combinedAnimation = concatTwoAnimations(moveData1.code, moveData2.code);
-                combinedAnimation = concat08(combinedAnimation)
-
-                bytesNeeded = getBytesNeeded(combinedAnimation)
-                createInsertWindow();
-                insertWindow.webContents.on('did-finish-load', function () {
-                    insertWindow.webContents.send('setInsertWindowVariables', bytesNeeded, combinedAnimation);
-                });
+            if(removeBlink == true){
+                moveData1.code = removeBlinkTemp(moveData1.code);
             }
-            //3 Moves
-            else if (attack2 != '---' && attack3 != "---" && attack4 == "---"){
-                var moveData1 = getMoveAnimationData(attack1);
-                var moveData2 = getMoveAnimationData(attack2);
-                var moveData3 = getMoveAnimationData(attack3);
-                moveData1.code = trimTrailing08(moveData1.code)
-                moveData2.code = trimTrailing08(moveData2.code)
-                moveData3.code = trimTrailing08(moveData3.code)
-                moveData1.code = addPreAnimation(moveData1, preAnimation1);
+            moveData1.code = trimTrailing08(moveData1.code);
+            moveData1.code = addPreAnimation(moveData1, preAnimation1);
+            moveData1.code = addPostAnimation(moveData1, postAnimation1);
+
+            if(attack2 != "---"){
+                moveData2 = getMoveAnimationData(attack2);
+                moveData2.code = selectAnimationCodeToUse(moveData2);
+                if(background == "No Background" && moveData2.background == true && attack2KeepBackground == false){
+                    moveData2.code = removeBackground(moveData2);
+                }
+                if(removeBlink == true){
+                    moveData2.code = removeBlinkTemp(moveData2.code);
+                }
+                moveData2.code = trimTrailing08(moveData2.code);
                 moveData2.code = addPreAnimation(moveData2, preAnimation2);
+                moveData2.code = addPostAnimation(moveData2, postAnimation2);
+            }
+            if(attack3 != "---"){
+                moveData3 = getMoveAnimationData(attack3);
+                moveData3.code = selectAnimationCodeToUse(moveData3);
+                if(background == "No Background" && moveData3.background == true && attack3KeepBackground == false){
+                    moveData3.code = removeBackground(moveData3);
+                }
+                if(removeBlink == true){
+                    moveData3.code = removeBlinkTemp(moveData3.code);
+                }
+                moveData3.code = trimTrailing08(moveData3.code);
                 moveData3.code = addPreAnimation(moveData3, preAnimation3);
-                moveData1.code = addPostAnimation(moveData1, postAnimation1)
-                moveData2.code = addPostAnimation(moveData2, postAnimation2)
-                moveData3.code = addPostAnimation(moveData3, postAnimation3)
-
-                combinedAnimation = concatThreeAnimations(moveData1.code, moveData2.code, moveData3.code);
-                combinedAnimation = concat08(combinedAnimation)
-
-                bytesNeeded = getBytesNeeded(combinedAnimation)
-                createInsertWindow();
-                insertWindow.webContents.on('did-finish-load', function () {
-                    insertWindow.webContents.send('setInsertWindowVariables', bytesNeeded, combinedAnimation);
-                });
+                moveData3.code = addPostAnimation(moveData3, postAnimation3);
             }
-            //4 moves
-            else if (attack2 != '---' && attack3 != "---" && attack4 != "---"){
-                var moveData1 = getMoveAnimationData(attack1);
-                var moveData2 = getMoveAnimationData(attack2);
-                var moveData3 = getMoveAnimationData(attack3);
-                var moveData4 = getMoveAnimationData(attack4);
-                moveData1.code = trimTrailing08(moveData1.code)
-                moveData2.code = trimTrailing08(moveData2.code)
-                moveData3.code = trimTrailing08(moveData3.code)
-                moveData4.code = trimTrailing08(moveData4.code)
-                moveData1.code = addPreAnimation(moveData1, preAnimation1);
-                moveData2.code = addPreAnimation(moveData2, preAnimation2);
-                moveData3.code = addPreAnimation(moveData3, preAnimation3);
+            if(attack4 != "---"){
+                moveData4 = getMoveAnimationData(attack4);
+                moveData4.code = selectAnimationCodeToUse(moveData4);
+                if(background == "No Background" && moveData4.background == true && attack4KeepBackground == false){
+                    moveData4.code = removeBackground(moveData4);
+                }
+                if(removeBlink == true){
+                    moveData4.code = removeBlinkTemp(moveData4.code);
+                }
+                moveData4.code = trimTrailing08(moveData4.code);
                 moveData4.code = addPreAnimation(moveData4, preAnimation4);
-                moveData1.code = addPostAnimation(moveData1, postAnimation1)
-                moveData2.code = addPostAnimation(moveData2, postAnimation2)
-                moveData3.code = addPostAnimation(moveData3, postAnimation3)
-                moveData4.code = addPostAnimation(moveData4, postAnimation4)
-
-                combinedAnimation = concatFourAnimations(moveData1.code, moveData2.code, moveData3.code, moveData4.code);
-                combinedAnimation = concat08(combinedAnimation)
-
-                bytesNeeded = getBytesNeeded(combinedAnimation)
-                createInsertWindow();
-                insertWindow.webContents.on('did-finish-load', function () {
-                    insertWindow.webContents.send('setInsertWindowVariables', bytesNeeded, combinedAnimation);
-                });
+                moveData4.code = addPostAnimation(moveData4, postAnimation4);
             }
-            
+
+            combinedAnimation = concatAnimation(moveData1, moveData2, moveData3, moveData4);
+            combinedAnimation = concat08(combinedAnimation);
+            bytesNeeded = getBytesNeeded(combinedAnimation)
+            createInsertWindow();
+            insertWindow.webContents.on('did-finish-load', function () {
+                insertWindow.webContents.send('setInsertWindowVariables', bytesNeeded, combinedAnimation);
+            });   
         } 
-
-        //Case 2 User selects No Background
-        else if (background == "No Background"){
-            backgroundCode = null;
-            removeBackround = true;
-
-            //If only 1 move
-            if(attack2 == "---"){
-                var moveData1 = getMoveAnimationData(attack1);
-                //Remove background if animation has one and user hasn't clicked Keep Background
-                if(moveData1.background == true && attack1KeepBackground == false){
-                   moveData1.code = removeBackground(moveData1)
-                }
-                moveData1.code = trimTrailing08(moveData1.code)
-                moveData1.code = addPreAnimation(moveData1, preAnimation1);
-                moveData1.code = addPostAnimation(moveData1, postAnimation1)
-                moveData1.code = concat08(moveData1.code)
-
-                bytesNeeded = getBytesNeeded(moveData1.code);
-                createInsertWindow();
-                insertWindow.webContents.on('did-finish-load', function () {
-                    insertWindow.webContents.send('setInsertWindowVariables', bytesNeeded, moveData1.code);
-                });
-            }
-            //2 Moves
-            else if (attack2 != '---' && attack3 == "---"){
-                //Remove backgrounds from both animations 
-                var moveData1 = getMoveAnimationData(attack1);
-                var moveData2 = getMoveAnimationData(attack2);
-                if(moveData1.background == true && attack1KeepBackground == false){
-                    moveData1.code = removeBackground(moveData1)
-                }
-                if(moveData2.background == true && attack2KeepBackground == false){
-                    moveData2.code = removeBackground(moveData2)
-                }
-
-                moveData1.code = trimTrailing08(moveData1.code)
-                moveData2.code = trimTrailing08(moveData2.code)
-                moveData1.code = addPreAnimation(moveData1, preAnimation1);
-                moveData2.code = addPreAnimation(moveData2, preAnimation2);
-                moveData1.code = addPostAnimation(moveData1, postAnimation1)
-                moveData2.code = addPostAnimation(moveData2, postAnimation2)
-
-                combinedAnimation = concatTwoAnimations(moveData1.code, moveData2.code);
-                combinedAnimation = concat08(combinedAnimation)
-
-                bytesNeeded = getBytesNeeded(combinedAnimation)
-                createInsertWindow();
-                insertWindow.webContents.on('did-finish-load', function () {
-                    insertWindow.webContents.send('setInsertWindowVariables', bytesNeeded, combinedAnimation);
-                });
-            }
-            //3 Moves
-            else if (attack2 != '---' && attack3 != "---" && attack4 == "---") {
-                //Remove backgrounds from both animations (if it has one)
-                var moveData1 = getMoveAnimationData(attack1);
-                var moveData2 = getMoveAnimationData(attack2);
-                var moveData3 = getMoveAnimationData(attack3);
-                if(moveData1.background == true && attack1KeepBackground == false){
-                    moveData1.code = removeBackground(moveData1)
-                }
-                if(moveData2.background == true && attack2KeepBackground == false){
-                    moveData2.code = removeBackground(moveData2)
-                }
-                if(moveData3.background == true && attack3KeepBackground == false){
-                    moveData3.code = removeBackground(moveData3)
-                }
-
-                moveData1.code = trimTrailing08(moveData1.code)
-                moveData2.code = trimTrailing08(moveData2.code)
-                moveData3.code = trimTrailing08(moveData3.code)
-                moveData1.code = addPreAnimation(moveData1, preAnimation1);
-                moveData2.code = addPreAnimation(moveData2, preAnimation2);
-                moveData3.code = addPreAnimation(moveData3, preAnimation3);
-                moveData1.code = addPostAnimation(moveData1, postAnimation1)
-                moveData2.code = addPostAnimation(moveData2, postAnimation2)
-                moveData3.code = addPostAnimation(moveData3, postAnimation3)
-                combinedAnimation = concatThreeAnimations(moveData1.code, moveData2.code, moveData3.code);
-                combinedAnimation = concat08(combinedAnimation)
-                bytesNeeded = getBytesNeeded(combinedAnimation)
-
-                createInsertWindow();
-                insertWindow.webContents.on('did-finish-load', function () {
-                    insertWindow.webContents.send('setInsertWindowVariables', bytesNeeded, combinedAnimation);
-                });
-            }
-            //4 Moves
-            else if (attack2 != '---' && attack3 != "---" && attack4 != "---") {
-                //Remove backgrounds from both animations (if it has one)
-                var moveData1 = getMoveAnimationData(attack1);
-                var moveData2 = getMoveAnimationData(attack2);
-                var moveData3 = getMoveAnimationData(attack3);
-                var moveData4 = getMoveAnimationData(attack4);
-                if(moveData1.background == true && attack1KeepBackground == false){
-                    moveData1.code = removeBackground(moveData1)
-                }
-                if(moveData2.background == true && attack2KeepBackground == false){
-                    moveData2.code = removeBackground(moveData2)
-                }
-                if(moveData3.background == true && attack3KeepBackground == false){
-                    moveData3.code = removeBackground(moveData3)
-                }
-                if(moveData4.background == true && attack4KeepBackground == false){
-                    moveData4.code = removeBackground(moveData4)
-                }
-
-                moveData1.code = trimTrailing08(moveData1.code)
-                moveData2.code = trimTrailing08(moveData2.code)
-                moveData3.code = trimTrailing08(moveData3.code)
-                moveData4.code = trimTrailing08(moveData4.code)
-                moveData1.code = addPreAnimation(moveData1, preAnimation1);
-                moveData2.code = addPreAnimation(moveData2, preAnimation2);
-                moveData3.code = addPreAnimation(moveData3, preAnimation3);
-                moveData4.code = addPreAnimation(moveData4, preAnimation4);
-                moveData1.code = addPostAnimation(moveData1, postAnimation1)
-                moveData2.code = addPostAnimation(moveData2, postAnimation2)
-                moveData3.code = addPostAnimation(moveData3, postAnimation3)
-                moveData4.code = addPostAnimation(moveData4, postAnimation4)
-
-                combinedAnimation = concatFourAnimations(moveData1.code, moveData2.code, moveData3.code, moveData4.code);
-                combinedAnimation = concat08(combinedAnimation)
-                bytesNeeded = getBytesNeeded(combinedAnimation)
-
-                createInsertWindow();
-                insertWindow.webContents.on('did-finish-load', function () {
-                    insertWindow.webContents.send('setInsertWindowVariables', bytesNeeded, combinedAnimation);
-                });
-            }
-        }
-
-        //CASE 3 User selects a specific Background. 
+        //CASE 2 User selects a specific Background. 
         //There are LOTS of weird use cases when the user selects a background but then wants to Keep a PSYCHIC background for 1 or more of the moves.
         //When a move has Keep Background checked, all the moves after it will use that background. For example -> Background: Dark; Moves: Absorb, tackle, Shadow Ball with Keep Background checked, Bite; Absorb and Tackle will use dark background, then Shadown Ball will use ghost background and then bite will use ghost background
-        else{
-            //1 Move
-            if(attack2 == "---"){
-                var moveData1 = getMoveAnimationData(attack1);
-                psychicBackgroundUsed = false;
-                //Remove background if animation has one and user hasn't clicked Keep Background
-                if(moveData1.background == true && attack1KeepBackground == false){
-                    moveData1.code = removeBackground(moveData1)
+        else {
+            moveData1 = getMoveAnimationData(attack1);
+            moveData1.code = selectAnimationCodeToUse(moveData1);
+            if(moveData1.background == true && attack1KeepBackground == false){
+                moveData1.code = removeBackground(moveData1)
+            } else {
                 //Just remove the black fade out at the end. One will get added later and we don't want to have 2 spearate fade outs
-                } else {
-                    moveData1.code = removeBackgroundEnding(moveData1.code);
+                moveData1.code = removeBackgroundEnding(moveData1.code);
+                //Keep track if a psychic background was used
+                if(moveData1.psychicBackground == true){
+                    psychicBackgroundUsed = true;
                 }
-
-                moveData1.code = trimTrailing08(moveData1.code)
-                moveData1.code = addPreAnimation(moveData1, preAnimation1);
-                moveData1.code = addPostAnimation(moveData1, postAnimation1)
-                moveData1.code = addBackground(moveData1.code, background, scrollType, scrollSpeed, psychicBackgroundUsed)
-
-                //Weird scenario where use selects background for 1 move, but then keeps existing background which is Psychic background
-                if(moveData1.psychicBackground == true && attack1KeepBackground == true){
-                    moveData1.code = moveData1.code.concat(" 0E C7 59 1D 08");
-                } else {
-                    if(background != "Psychic (03)" 
-                        && background != "Light Green" && background != "Deep Green" && background != "Light Red" && background != "Deep Red" && background != "Light Orange" 
-                        && background != "Deep Orange" && background != "Light Blue" && background != "Deep Blue" && background != "Light Sky Blue" && background != "Deep Sky Blue"
-                        && background != "Light Pink" && background != "Deep Pink" && background != "Light Purple" && background != "Deep Purple" && background != "Light Black"
-                        && background != "Deep Black"
-                        && scrollType == "No Scroll"
-                    ){
-                        moveData1.code = moveData1.code.concat(" 15 17");
-                    }
-                }
-
-                moveData1.code = concat08(moveData1.code)
-                bytesNeeded = getBytesNeeded(moveData1.code);
-
-                createInsertWindow();
-                insertWindow.webContents.on('did-finish-load', function () {
-                    insertWindow.webContents.send('setInsertWindowVariables', bytesNeeded, moveData1.code);
-                });
             }
-            //2 Moves
-            else if (attack2 != '---' && attack3 == "---"){
-                var moveData1 = getMoveAnimationData(attack1);
-                var moveData2 = getMoveAnimationData(attack2);
-                var isLastMoveWithBackgroundPsychic = false;
-                psychicBackgroundUsed = false;
+            
+            moveData1.code = trimTrailing08(moveData1.code)
+            moveData1.code = addPreAnimation(moveData1, preAnimation1);
+            moveData1.code = addPostAnimation(moveData1, postAnimation1)
 
-                if(moveData1.background == true && attack1KeepBackground == false){
-                    moveData1.code = removeBackground(moveData1);
-                } else {
-                    moveData1.code = removeBackgroundEnding(moveData1.code);
-                    if(moveData1.psychicBackground == true){
-                        isLastMoveWithBackgroundPsychic = true;
-                        psychicBackgroundUsed = true;
-                    } else {
-                        isLastMoveWithBackgroundPsychic = false
-                    }
-                }
+            if(attack2 != "---"){
+                moveData2 = getMoveAnimationData(attack2);
+                moveData2.code = selectAnimationCodeToUse(moveData2);
                 if(moveData2.background == true && attack2KeepBackground == false){
                     moveData2.code = removeBackground(moveData2);
                 } else {
                     moveData2.code = removeBackgroundEnding(moveData2.code);
                     if(moveData2.psychicBackground == true){
-                        isLastMoveWithBackgroundPsychic = true;
                         psychicBackgroundUsed = true;
-                    } else {
-                        isLastMoveWithBackgroundPsychic = false
                     }
                 }
-
-                moveData1.code = trimTrailing08(moveData1.code);
-                moveData1.code = addPreAnimation(moveData1, preAnimation1);
-                moveData1.code = addPostAnimation(moveData1, postAnimation1)
                 moveData2.code = trimTrailing08(moveData2.code);
                 moveData2.code = addPreAnimation(moveData2, preAnimation2);
                 moveData2.code = addPostAnimation(moveData2, postAnimation2)
-
-                //Psychic background can not go beyond 1 move when using Keep Background functionality. If another move with a psychic background comes after this, don't incldde closing animation.
-                //If 2 Psychic moves are back to back, the 2nd Psychic move will have a glithed background if you use the Psychic ending code on the first move
-                if((moveData1.psychicBackground == true && attack1KeepBackground == true) && (moveData2.psychicBackground != true || attack2KeepBackground != true)){
-                    moveData1.code = moveData1.code.concat(" 0E C7 59 1D 08");
-                }
-                if(moveData2.psychicBackground == true && attack2KeepBackground == true){
-                    moveData2.code = moveData2.code.concat(" 0E C7 59 1D 08 08");
-                }
-
-                combinedAnimation = concatTwoAnimations(moveData1.code, moveData2.code);
-                //combinedAnimation = trimTrailing08(combinedAnimation);
-                combinedAnimation = addBackground(combinedAnimation, background, scrollType, scrollSpeed, psychicBackgroundUsed);
-                //Only add Black Fade out if there are no Psychic Backgrounds in the animation. Otherwise you will get a double black out which looks awkward
-                if(isLastMoveWithBackgroundPsychic == false && background != "Psychic (03)" 
-                    && background != "Light Green" && background != "Deep Green" && background != "Light Red" && background != "Deep Red" && background != "Light Orange" && background != "Deep Orange" 
-                    && background != "Light Blue" && background != "Deep Blue" && background != "Light Sky Blue" && background != "Deep Sky Blue" && background != "Light Pink" && background != "Deep Pink"
-                    && background != "Light Purple" && background != "Deep Purple" && background != "Light Black" && background != "Deep Black"
-                    && scrollType == "No Scroll"
-                ){
-                    combinedAnimation = combinedAnimation.concat(" 15 17");
-                }
-
-                combinedAnimation = concat08(combinedAnimation);
-                bytesNeeded = getBytesNeeded(combinedAnimation);
-
-                createInsertWindow();
-                insertWindow.webContents.on('did-finish-load', function () {
-                    insertWindow.webContents.send('setInsertWindowVariables', bytesNeeded, combinedAnimation);
-                });
             }
-            //3 Moves
-            else if (attack2 != '---' && attack3 != "---" && attack4 == "---"){
-                var moveData1 = getMoveAnimationData(attack1);
-                var moveData2 = getMoveAnimationData(attack2);
-                var moveData3 = getMoveAnimationData(attack3);
-                var isLastMoveWithBackgroundPsychic = false;
-                psychicBackgroundUsed = false;
-                //If move has a background and the user doesn't select Keep Background, remove it. Otherwise, just remove the ending fade out part of the background
-                
-                if(moveData1.background == true && attack1KeepBackground == false){
-                    moveData1.code = removeBackground(moveData1);
-                } else {
-                    //User wants to keep background. Only remove ending
-                    moveData1.code = removeBackgroundEnding(moveData1.code);
-                    if(moveData1.psychicBackground == true){
-                        isLastMoveWithBackgroundPsychic = true;
-                        psychicBackgroundUsed = true;
-                    } else {
-                        isLastMoveWithBackgroundPsychic = false
-                    }
-                }
-                if(moveData2.background == true && attack2KeepBackground == false){
-                    moveData2.code = removeBackground(moveData2);
-                } else {
-                    moveData2.code = removeBackgroundEnding(moveData2.code);
-                    if(moveData2.psychicBackground == true){
-                        isLastMoveWithBackgroundPsychic = true;
-                        psychicBackgroundUsed = true;
-                    } else {
-                        isLastMoveWithBackgroundPsychic = false
-                    }
-                }
+
+            if(attack3 != "---"){
+                moveData3 = getMoveAnimationData(attack3);
+                moveData3.code = selectAnimationCodeToUse(moveData3);
                 if(moveData3.background == true && attack3KeepBackground == false){
                     moveData3.code = removeBackground(moveData3);
                 } else {
                     moveData3.code = removeBackgroundEnding(moveData3.code);
-                    if(moveData3.psychicBackground == true){
-                        isLastMoveWithBackgroundPsychic = true;
+                     if(moveData3.psychicBackground == true){
                         psychicBackgroundUsed = true;
-                    } else {
-                        isLastMoveWithBackgroundPsychic = false
                     }
                 }
-
-                moveData1.code = trimTrailing08(moveData1.code);
-                moveData2.code = trimTrailing08(moveData2.code);
                 moveData3.code = trimTrailing08(moveData3.code);
-                moveData1.code = addPreAnimation(moveData1, preAnimation1);
-                moveData2.code = addPreAnimation(moveData2, preAnimation2);
                 moveData3.code = addPreAnimation(moveData3, preAnimation3);
-                moveData1.code = addPostAnimation(moveData1, postAnimation1)
-                moveData2.code = addPostAnimation(moveData2, postAnimation2)
                 moveData3.code = addPostAnimation(moveData3, postAnimation3)
-
-                //If the user wants to keep a Psychic background, unqiue Psychic background ending needs to be added. If there are multiple Psychic backgrounds back to back, only add the closing code to the LAST Psychic animation
-                if((moveData1.psychicBackground == true && attack1KeepBackground == true) && (moveData2.psychicBackground != true || attack2KeepBackground != true)){
-                    moveData1.code = moveData1.code.concat(" 0E C7 59 1D 08");
-                }
-                if(moveData2.psychicBackground == true && attack2KeepBackground == true && (moveData3.psychicBackground != true || attack3KeepBackground != true)){
-                    moveData2.code = moveData2.code.concat(" 0E C7 59 1D 08");
-                }
-                if(moveData3.psychicBackground == true && attack3KeepBackground == true){
-                    moveData3.code = moveData3.code.concat(" 0E C7 59 1D 08 08");
-                }
-
-                combinedAnimation = concatThreeAnimations(moveData1.code, moveData2.code, moveData3.code);
-                combinedAnimation = addBackground(combinedAnimation, background, scrollType, scrollSpeed, psychicBackgroundUsed);
-                //Add Black fade out for all bakgrounds except Psychic
-              //  if((moveData1.psychicBackground != true || attack1KeepBackground != true) && (moveData2.psychicBackground != true || attack2KeepBackground != true) && (moveData3.psychicBackground != true || attack3KeepBackground != true)){
-                //    combinedAnimation = combinedAnimation.concat(" 15 17");
-               // }
-                if(isLastMoveWithBackgroundPsychic == false && background != "Psychic (03)" 
-                    && background != "Light Green" && background != "Deep Green" && background != "Light Red" && background != "Deep Red" && background != "Light Orange" && background != "Deep Orange" 
-                    && background != "Light Blue" && background != "Deep Blue" && background != "Light Sky Blue" && background != "Deep Sky Blue" && background != "Light Pink" && background != "Deep Pink"
-                    && background != "Light Purple" && background != "Deep Purple" && background != "Light Black" && background != "Deep Black"
-                    && scrollType == "No Scroll"
-                ){
-                    combinedAnimation = combinedAnimation.concat(" 15 17");
-                }
-                combinedAnimation = concat08(combinedAnimation);
-                bytesNeeded = getBytesNeeded(combinedAnimation);
-
-                createInsertWindow();
-                insertWindow.webContents.on('did-finish-load', function () {
-                    insertWindow.webContents.send('setInsertWindowVariables', bytesNeeded, combinedAnimation);
-                });
             }
-            //4 Moves
-            else if(attack2 != '---' && attack3 != "---" && attack4 != "---"){
-                var moveData1 = getMoveAnimationData(attack1);
-                var moveData2 = getMoveAnimationData(attack2);
-                var moveData3 = getMoveAnimationData(attack3);
-                var moveData4 = getMoveAnimationData(attack4);
-                var isLastMoveWithBackgroundPsychic = false;
-                psychicBackgroundUsed = false;
 
-                if(moveData1.background == true && attack1KeepBackground == false){
-                    moveData1.code = removeBackground(moveData1);
-                } else {
-                    moveData1.code = removeBackgroundEnding(moveData1.code);
-                    if(moveData1.psychicBackground == true){
-                        isLastMoveWithBackgroundPsychic = true;
-                        psychicBackgroundUsed = true;
-                    } else {
-                        isLastMoveWithBackgroundPsychic = false
-                    }
-                }
-                if(moveData2.background == true && attack2KeepBackground == false){
-                    moveData2.code = removeBackground(moveData2);
-                } else {
-                    moveData2.code = removeBackgroundEnding(moveData2.code);
-                    if(moveData2.psychicBackground == true){
-                        isLastMoveWithBackgroundPsychic = true;
-                        psychicBackgroundUsed = true;
-                    } else {
-                        isLastMoveWithBackgroundPsychic = false
-                    }
-                }
-                if(moveData3.background == true && attack3KeepBackground == false){
-                    moveData3.code = removeBackground(moveData3);
-                } else {
-                    moveData3.code = removeBackgroundEnding(moveData3.code);
-                    if(moveData3.psychicBackground == true){
-                        isLastMoveWithBackgroundPsychic = true;
-                        psychicBackgroundUsed = true;
-                    } else {
-                        isLastMoveWithBackgroundPsychic = false
-                    }
-                }
+            if(attack4 != "---"){
+                moveData4 = getMoveAnimationData(attack4);
+                moveData4.code = selectAnimationCodeToUse(moveData4);
                 if(moveData4.background == true && attack4KeepBackground == false){
                     moveData4.code = removeBackground(moveData4);
                 } else {
                     moveData4.code = removeBackgroundEnding(moveData4.code);
-                    if(moveData4.psychicBackground == true){
-                        isLastMoveWithBackgroundPsychic = true;
+                     if(moveData4.psychicBackground == true){
                         psychicBackgroundUsed = true;
-                    } else {
-                        isLastMoveWithBackgroundPsychic = false
-                    }
+                    } 
                 }
-
-                moveData1.code = trimTrailing08(moveData1.code);
-                moveData2.code = trimTrailing08(moveData2.code);
-                moveData3.code = trimTrailing08(moveData3.code);
                 moveData4.code = trimTrailing08(moveData4.code);
-                moveData1.code = addPreAnimation(moveData1, preAnimation1);
-                moveData2.code = addPreAnimation(moveData2, preAnimation2);
-                moveData3.code = addPreAnimation(moveData3, preAnimation3);
                 moveData4.code = addPreAnimation(moveData4, preAnimation4);
-                moveData1.code = addPostAnimation(moveData1, postAnimation1)
-                moveData2.code = addPostAnimation(moveData2, postAnimation2)
-                moveData3.code = addPostAnimation(moveData3, postAnimation3)
                 moveData4.code = addPostAnimation(moveData4, postAnimation4)
-
-                //If the user wants to keep a Psychic background, unqiue Psychic background ending needs to be added. If there are multiple Psychic backgrounds back to back, only add the closing code to the LAST Psychic animation
-                if((moveData1.psychicBackground == true && attack1KeepBackground == true) && (moveData2.psychicBackground != true || attack2KeepBackground != true)){
-                    moveData1.code = moveData1.code.concat(" 0E C7 59 1D 08");
-                }
-                if(moveData2.psychicBackground == true && attack2KeepBackground == true && (moveData3.psychicBackground != true || attack3KeepBackground != true)){
-                    moveData2.code = moveData2.code.concat(" 0E C7 59 1D 08");
-                }
-                if(moveData3.psychicBackground == true && attack3KeepBackground == true){
-                    moveData3.code = moveData3.code.concat(" 0E C7 59 1D 08");
-                }
-                if(moveData4.psychicBackground == true && attack4KeepBackground == true){
-                    moveData4.code = moveData4.code.concat(" 0E C7 59 1D 08 08");
-                }
-
-                combinedAnimation = concatFourAnimations(moveData1.code, moveData2.code, moveData3.code, moveData4.code);
-                combinedAnimation = addBackground(combinedAnimation, background, scrollType, scrollSpeed, psychicBackgroundUsed);
-
-                if(isLastMoveWithBackgroundPsychic == false && background != "Psychic (03)" 
-                    && background != "Light Green" && background != "Deep Green" && background != "Light Red" && background != "Deep Red" && background != "Light Orange" && background != "Deep Orange" 
-                    && background != "Light Blue" && background != "Deep Blue" && background != "Light Sky Blue" && background != "Deep Sky Blue" && background != "Light Pink" && background != "Deep Pink"
-                    && background != "Light Purple" && background != "Deep Purple" && background != "Light Black" && background != "Deep Black"
-                    && scrollType == "No Scroll"
-                ){
-                    combinedAnimation = combinedAnimation.concat(" 15 17");
-                }
-                combinedAnimation = concat08(combinedAnimation);
-
-                bytesNeeded = getBytesNeeded(combinedAnimation);
-
-                createInsertWindow();
-                insertWindow.webContents.on('did-finish-load', function () {
-                    insertWindow.webContents.send('setInsertWindowVariables', bytesNeeded, combinedAnimation);
-                });
             }
-        }
 
-    } else{
+            combinedAnimation = concatAnimation(moveData1, moveData2, moveData3, moveData4);
+            combinedAnimation = addBackground(combinedAnimation, background, scrollType, scrollSpeed, psychicBackgroundUsed)
+            //If the background isn't Psychic, but a move with a psychic background was used and the user selected keep background, append the psychic closig to the end of the animation
+            if(psychicBackgroundUsed == true && background != "Psychic (03)"){
+                if(romType == "Fire Red"){
+                    combinedAnimation = combinedAnimation.concat(" 0E C7 59 1D 08")
+                } else if(romType == "Emerald"){
+                    combinedAnimation = combinedAnimation.concat(" 0E DD 7C 2D 08")
+                }
+            } 
+            if (background != "Psychic (03)"  && psychicBackgroundUsed == false && background != "Fissure (15)"
+            && background != "Light Green" && background != "Deep Green" && background != "Light Red" && background != "Deep Red" && background != "Light Orange" && background != "Deep Orange" 
+            && background != "Light Blue" && background != "Deep Blue" && background != "Light Sky Blue" && background != "Deep Sky Blue" && background != "Light Pink" && background != "Deep Pink"
+            && background != "Light Purple" && background != "Deep Purple" && background != "Light Black" && background != "Deep Black"
+            && scrollType == "No Scroll")
+            {
+                combinedAnimation = combinedAnimation.concat(" 15 17");
+            }
+            combinedAnimation = concat08(combinedAnimation);
+            bytesNeeded = getBytesNeeded(combinedAnimation);
+            createInsertWindow();
+            insertWindow.webContents.on('did-finish-load', function () {
+                insertWindow.webContents.send('setInsertWindowVariables', bytesNeeded, combinedAnimation);
+            });
+        }
+    } else {
         //ROM has not been loaded. Display error message
         mainWindow.webContents.send('romNotLoaded');
     }
@@ -852,13 +505,11 @@ ipcMain.on('backgroud:change', function(event, data) {
 
 ipcMain.on('postAttack:change', function(event, data) {
     postAnimationWindow.webContents.send('postAttackImage', data);
-
    // loadPostAttackImageToUI(data);
 });
 
 ipcMain.on('preAttack:change', function(event, data) {
     preAnimationWindow.webContents.send('preAttackImage', data);
-    
 });
 
 ipcMain.on('button:searchFreeSpace', function(event, bytesNeeded){
@@ -871,7 +522,7 @@ ipcMain.on('button:searchFreeSpace', function(event, bytesNeeded){
 ipcMain.on('form:freeSpaceFinderInsertMemory', function(event, memoryOffset){
     insertWindow.webContents.send('setInputMemoryOffset', memoryOffset)
     freeSpaceFinderWindow.close();
-})
+});
 
 ipcMain.on('form:searchForFreeSpace', function(event, startingOffset, bytesNeeded){
 
@@ -925,7 +576,7 @@ ipcMain.on('form:insertAnimationSubmit', function(event, memoryOffset, hex){
                     }
                 );
             } else{
-                mainWiinsertWindowndow.webContents.send('errorMessage', "Error: Could not open ROM for writing");
+                mainWindow.webContents.send('errorMessage', "Error: Could not open ROM for writing");
             }
         });
     }
@@ -961,6 +612,17 @@ async function setCheckboxPermisssion(backgroundName){
 
 
 ///HELPER FUNCTIONS
+
+//Function recieves a move object and returns the animation code to use. (Either Fire Red  or Emerald)
+function selectAnimationCodeToUse(moveData){
+    if(romType == "Fire Red"){
+        return moveData.code;
+    } else if(romType == "Emerald"){
+        return moveData.emeraldCode;
+    }
+}
+
+//Function recieves a move name and returns its entire move object 
 function getMoveAnimationData(move){
     var moveData;
     attackData.attacks.map(function(attack){
@@ -971,470 +633,334 @@ function getMoveAnimationData(move){
     return moveData;
 }
 
-
-//Function receives Move Data Object and removes background hex data from an animation including the ending animation code
+//Function receives Move Data Object and removes the background hex data from the animation code including the ending animation code
 function removeBackground(moveData){
-    //CASE 1 Remove Colored Background (i.e absorb, Ice Beam).  Some colored backgrounds can not have their Background removed
+    //CASE 1 Remove Colored Background (i.e absorb, Ice Beam).
     if(moveData.coloredBackground == true && moveData.scroll == false){  
         //These moves can not have their colored backgrounds removed
-        if (moveData.name == "Aromatherapy" || moveData.name == "Calm Mind 1" || moveData.name == "Double Edge" || moveData.name == "Eruption" || moveData.name == "Explosion" || moveData.name == "Fire Blast" || moveData.name == "Flatter" || moveData.name == "Glare" || moveData.name == "Hail" || moveData.name == "Moonlight" || moveData.name == "Rain Dance" || moveData.name == "Sky Attack Turn 1" || moveData.name == "Sky Attack Turn 2" || moveData.name == "Sunny Day"){
+        if (moveData.name == "Calm Mind 1" || moveData.name == "Explosion" || moveData.name == "Flatter"){
             return moveData.code;
         } 
-        //These elecric moves have their own custom colored background settings
         else if (moveData.name == "Thunderbolt" || moveData.name == "Thundershock" || moveData.name == "Thunder Wave" || moveData.name == "Volt Tackle"){
-            var position = 0;
-            var electricPositionToDelete = [];
-            var colorCodeStart = background.coloredBackground[0].startOfElectricCode; //03 F9 A7 0B 08 0A 05 01 00 00 00 00 00 06 00 00 00 05
-
-            for(var i=0; i<moveData.code.length; i++){
-                if(moveData.code[i] == colorCodeStart[0] && moveData.code[i+1] == colorCodeStart[1] && moveData.code[i+3] == colorCodeStart[3] && moveData.code[i+4] == colorCodeStart[4]){ //Only need to search for 03 F9 A7 0B 08
-                    electricPositionToDelete.push(position)
-                }  
-                position += 1; 
-            }
-            var codeWithoutBackground="";
-            var reachedPosition;
-
-            for(var i=0; i<moveData.code.length; i++){
-                reachedPosition = false
-                for(var j=0; j<electricPositionToDelete.length; j++){
-                    if(i == electricPositionToDelete[j]){
-                        reachedPosition = true
-                    } 
-                }
-                if(reachedPosition == true){
-                    //Some electric moves have an 06 appended, but not always. Example is Thunderbolt. If 06 is present, delete it too
-                    if(moveData.code[i+52] == 4){
-                        i += 55
-                    } else {
-                        i += 53
-                    }
-                    
-                } else {
-                    codeWithoutBackground += moveData.code[i]
-                }
-            }
-            return codeWithoutBackground;
+            return removeElectricBackground(moveData);
+        }
+        else if (moveData.name == "Glare" || moveData.name == "Hail" || moveData.name == "Rain Dance" || moveData.name == "Sky Attack Turn 1" || moveData.name == "Sunny Day"){
+            return removeFadePalette(moveData)
         }
         else {
-            //53 spaces to remove (52 + 1 empty space) 
-            var colorCodeStart = background.coloredBackground[0].startOfCode; //02 24 7B 3E 08 02 05 01 00
-            var position = 0;
-            var positionToDelete = []; //Array of byte locations where colored background begins
-
-            //Find where color background code is located (There can be multiple locations)
-            for(var i = 0; i<moveData.code.length; i++){
-                //Search for code that matches the start of color code
-                if(moveData.code[i] == colorCodeStart[0] && moveData.code[i+1] == colorCodeStart[1]){
-                    //Loop through to make sure the code matches color code
-                    var match = true;
-                    var z = i;
-                    for(var j=0; j<colorCodeStart.length; j++){
-                        if(moveData.code[z] == colorCodeStart[j]){
-                            //It's a match.
-                        } else {
-                            match = false
-                        }
-                        z += 1;
-                    }
-                    if(match == true){
-                        positionToDelete.push(position)
-                    }
-                } 
-                position += 1;
-            }
-
-            var codeWithoutBackground="";
-            var reachedPosition;
-            
-            //Loop over Animation code and skip over indexes (Exactly 53 bytes) that contain colored background
-            for (var i=0; i<moveData.code.length; i++){
-                reachedPosition = false
-                for(var j=0; j<positionToDelete.length; j++){
-                    if(i == positionToDelete[j]){
-                        reachedPosition = true
-                    } 
-                }
-                if(reachedPosition == true){
-                    //Skip over colored background code
-                    i += 53
-                } else {
-                    codeWithoutBackground += moveData.code[i]
-                }
-            }
-            return codeWithoutBackground;
+            return removeColoredBackground(moveData);
         }
     } 
-
     //CASE 2: Background is Psychic. No need to check for scroll as it doesn't work with Psychcic background
     else if(moveData.psychicBackground == true){
-        //These psychic moves can not have their background removed
-        if(moveData.name == "Luster Purge" || moveData.name == "Psycho Boost"){
-            return moveData.code
-        } else {
-            var position = 0;
-            var positionToDelete = []; //Start of background
-            var positionEndToDelete = []; //End of some backgrounds
-            //Search for 0E BB 59 1D 08 ->Begin background
-            //Search for 0E C7 59 1D 08 ->Close Background
-            for(var i=0; i<moveData.code.length; i++){
-                if(moveData.code[i] == '0' && moveData.code[i+1] == 'E' && moveData.code[i+3] == 'B' && moveData.code[i+4] == 'B' && moveData.code[i+6] == '5' && moveData.code[i+7] == '9' ) { //Only need to look for OE BB 59. Will always be psychic if this combination is found
-                    positionToDelete.push(position);
-                }
-                if(moveData.code[i] == '0' && moveData.code[i+1] == 'E' && moveData.code[i+3] == 'C' && moveData.code[i+4] == '7' && moveData.code[i+6] == '5' && moveData.code[i+7] == '9'){
-                    positionEndToDelete.push(position);
-                }
-                position += 1;
-            }
-
-            var codeWithoutBackground = "";
-            var psychicStartAnimation;
-            var psychicEndAnimation;
-
-            //Delete bytes
-            for (var i=0; i<moveData.code.length; i++){
-                psychicStartAnimation = false;
-                psychicEndAnimation = false;
-
-                for(var j=0; j<positionToDelete.length; j++){
-                    if(i == positionToDelete[j]){
-                        psychicStartAnimation = true;
-                    }
-                }
-                for(var z=0; z<positionEndToDelete.length; z++){
-                    if(i == positionEndToDelete[z]){
-                        psychicEndAnimation = true;
-                    }
-                }
-
-                if(psychicStartAnimation == true){
-                    //Skip over 14 bytes
-                    i += 14;
-                }
-                else if(psychicEndAnimation == true){
-                    //Skip over 14 bytes
-                    i += 14;
-                }
-                else {
-                    codeWithoutBackground += moveData.code[i]
-                }
-            }
-            return codeWithoutBackground;
-        }
+        return removePsychicBackground(moveData);
     }
-
     //CASE 3: Background is template like Ghost, Dark etc
     else{
         //If background isn't scrolling
         if(moveData.scroll == false){
-            //The following non scrolled backgrounds can not be removed
-            if(moveData.name == "Attract" || moveData.name == "Destiny Bond" || moveData.name == "Earth Power" || moveData.name == "Fissure" || moveData.name == "Guillotine" || moveData.name == "Hyper Fang" || moveData.name == "Mega Kick" || moveData.name == "Mega Punch" || moveData.name == "Nasty Plot" || moveData.name == "Power Whip" || moveData.name == "Grudge" || moveData.name == "Solarbeam Turn 2" || moveData.name == "Spite"){
-                return moveData.code;
-            } else {
-                var position = 0;
-                var positionToDelete = []; //Start of background
-                var positionEndToDelete = []; //End of some backgrounds
-                //Search for 14 WW 17 or 14 WW 16 where WW can be 00 - 1A
-                //Search for 15 17 (split second black screen often used at the end of animations like Shadow Ball and Confuse Ray)
-                for (var i=0; i<moveData.code.length; i++){
-                    if(moveData.code[i] == '1' && moveData.code[i+1] == '4' && moveData.code[i+6] == "1" && moveData.code[i+7] == "7"){
-                        positionToDelete.push(position);
-                    }
-                    if(moveData.code[i] == '1' && moveData.code[i+1] == '5' && moveData.code[i+3] == '1' && moveData.code[i+4] == '7'){
-                        positionEndToDelete.push(position);
-                    }
-                    position += 1;
-                }
-
-                var codeWithoutBackground = "";
-                var reachedPosition;
-                var blackScreenReached;
-
-                //Delete Bytes
-                for(var i=0; i<moveData.code.length; i++){
-                    reachedPosition = false
-                    blackScreenReached = false
-                    for(var j=0; j<positionToDelete.length; j++){
-                        if(i == positionToDelete[j]){
-                            reachedPosition = true;
-                        } 
-                    }
-                    for(var z=0; z<positionEndToDelete.length; z++){
-                        if(i == positionEndToDelete[z]){
-                            blackScreenReached = true;
-                        }
-                    }
-                    if(reachedPosition == true){
-                        //Skip over template background code (Ghost/Dark etc)
-                        i += 8
-                    }  else if(blackScreenReached == true){
-                        //Skip over black screen that occurs at the end of background transition
-                        i += 5
-                    }
-                    else {
-                        codeWithoutBackground += moveData.code[i]
-                    }
-                }
-                return codeWithoutBackground
+            if (moveData.name == "Focus Punch" || moveData.name == "Hyper Fang" || moveData.name == "Mega Kick" || moveData.name == "Mega Punch"){
+                return removeChooseBGImpact(moveData);
+            }
+            else if (moveData.name == "Guillotine"){
+                return removeChooseBGGuillotine(moveData);
+            }
+            else if(moveData.name == "Destiny Bond" || moveData.name == "Grudge" || moveData.name == "Spite"){
+                return removeDestinyBondBackground(moveData);
+            } 
+            else if(moveData.name == "Fissure"){
+                return removeFissureBackground(moveData);
+            } 
+            else if(moveData.name == "Solarbeam Turn 2"){
+                return removeSolarbeamBackground(moveData)
+            }
+            else {
+                return removeStaticTemplateBackground(moveData);
             }
         } 
         //Else Background is scrolling vertically or horizontally
         else {
-            //These scrolling backgrounds can not be removed
-            if(moveData.name == "Seismic Toss" || moveData.name == "Sky Uppercut"){
-                return moveData.code;
-            } else {
-                var position = 0;
-                var positionToDelete = []; //Start of background
-                var positionEndToDelete = []; //End of some backgrounds
-                var fadeOutToDelete = []; //15 16
-                var colorBackgroundToDelete = [];
-                //Search for 14 WW (17 or 16) 03 2D B8 0B 08 05 04 ....
-                //Search for 0E C7 59 1D 08
-                //Search for 15 16
-                for(var i=0; i<moveData.code.length; i++){
-                    if(moveData.code[i] == '1' && moveData.code[i+1] == '4' && moveData.code[i+6] == '1' && (moveData.code[i+7] == '7' || moveData.code[i+7] == '6') && moveData.code[i+9] == '0' && moveData.code[i+10] == '3'){
-                        positionToDelete.push(position);
-                    }
-                    if(moveData.code[i] == '0' && moveData.code[i+1] == 'E' && moveData.code[i+3] == 'C' && moveData.code[i+4] == '7' && moveData.code[i+6] == '5' && moveData.code[i+7] == '9') {
-                        positionEndToDelete.push(position);
-                    }
-                    if(moveData.code[i] == '1' && moveData.code[i+1] == '5' && moveData.code[i+3] == '1' && moveData.code[i+4] == '6'){
-                        fadeOutToDelete.push(position)
-                    }
-                    if(moveData.coloredBackground == true && moveData.code[i] == '0' && moveData.code[i+1] == '2' && moveData.code[i+3] == '2' && moveData.code[i+4] == '4' && moveData.code[i+6] == '7' && moveData.code[i+7] == 'B' && moveData.code[i+9] == '3' && moveData.code[i+10] == 'E'){
-                        colorBackgroundToDelete.push(position)
-                    } 
-                    position += 1;
-                }
-    
-                var codeWithoutBackground = "";
-                var reachedPosition;
-                var scrollEndingReched;
-                var colorBackgroundReached;
-                var fadeOutReached;
-
-                //Delete Bytes
-                for(var i=0; i<moveData.code.length; i++){
-                    reachedPosition = false
-                    scrollEndingReched = false
-                    fadeOutReached = false
-                    colorBackgroundReached = false
-                    for(var j=0; j<positionToDelete.length; j++){
-                        if(i == positionToDelete[j]){
-                            reachedPosition = true;
-                        } 
-                    }
-                    for(var z=0; z<positionEndToDelete.length; z++){
-                        if(i == positionEndToDelete[z]){
-                            scrollEndingReched = true;
-                        }
-                    }
-                    for(var q=0; q<fadeOutToDelete.length; q++){
-                        if(i == fadeOutToDelete[q]){
-                            fadeOutReached = true
-                        }
-                    }
-                    for(var y=0; y<colorBackgroundToDelete.length; y++){
-                        if(i == colorBackgroundToDelete[y]){
-                            colorBackgroundReached = true;
-                        }
-                    }
-                    if(reachedPosition == true){
-                        //Skip over scrolling background code
-                        i += 53
-                    }  else if(scrollEndingReched == true){
-                        //Skip over scrolling background ending
-                        i += 14
-                    } else if(fadeOutReached == true){
-                        //Skip over black fade out
-                        i += 5;
-                    } else if(colorBackgroundReached == true){
-                        //Skip over colored background. Colored background might end with a 05 or 04. ONLY delete if it's 05
-                        if(moveData.code[i+52] == '5'){ 
-                            i += 53;
-                        } else {
-                            i += 50
-                        }
-                    }
-                    else {
-                        codeWithoutBackground += moveData.code[i]
-                    }
-                }
-                return codeWithoutBackground
+            if(moveData.name == "Aeroblast" || moveData.name == "Sky Attack Turn 2"){
+                return removeScrollFlyingBackground(moveData);
             }
+            return removeScrollingTemplateBackground(moveData);
         }   
     }
 }
 
-//Function recieves a move hex code and adds a background to it
+
+//Function recieves a move hex code and adds a background to it as well as the code to end the background at the end
 function addBackground(hex, backgroundName, scrollType, scrollSpeed, psychicBackgroundUsed){
     var backgroundObject = getBackgroundObject(backgroundName)  //Gets ths background object i.e. (Dark (00), Ghost(02))
+    var backgroundStart;
+    var backgroundEnd;
+    var emeraldColourCodePointer = background.coloredBackground[0].startOfEmeraldCodePointer;
+    var fireRedColourCodePointer = background.coloredBackground[0].pointer;
     //Background is static (not scrolling)
     if(scrollType == "No Scroll"){
         if(backgroundName == "Psychic (03)"){
-            var backgroundStart = background.srollBackground[0].psychicCode;
+            if(romType == "Fire Red"){
+                backgroundStart = background.srollBackground[0].psychicCode;
+                hex = hex.concat(" 0E C7 59 1D 08");
+            } else if(romType == "Emerald") {
+                backgroundStart = background.srollBackground[0].psychicCodeEmerald;
+                hex = hex.concat(" 0E DD 7C 2D 08");
+            }
             hex = hex.replace(/^/, backgroundStart + " ");
-            hex = hex.concat(" 0E C7 59 1D 08");
         }
         else if(backgroundName == "Solarbeam (18)"){
-            var backgroundStart = background.staticBackground[0].solarbeamCode;
+            if(romType == "Fire Red"){
+                backgroundStart = background.staticBackground[0].solarbeamCode;
+            } else if(romType == "Emerald"){
+                backgroundStart = background.staticBackground[0].solarbeamCodeEmerald;
+            }
             hex = hex.replace(/^/, backgroundStart + " ");
         }
         else if(backgroundName == "High Impact (04)"){
-            var backgroundStart = background.staticBackground[0].highImpactCode;
+            if(romType == "Fire Red"){
+                backgroundStart = background.staticBackground[0].highImpactCode;
+            } else if(romType == "Emerald"){
+                backgroundStart = background.staticBackground[0].highImpactCodeEmerald;
+            }
             hex = hex.replace(/^/, backgroundStart + " ");
         }
         else if(backgroundName == "Guillotine (0C)"){
-            var backgroundStart = background.staticBackground[0].guillotineCode;
+            if(romType == "Fire Red"){
+                backgroundStart = background.staticBackground[0].guillotineCode;
+            } else if(romType == "Emerald"){
+                backgroundStart = background.staticBackground[0].guillotineCodeEmerald;
+            }
             hex = hex.replace(/^/, backgroundStart + " ");
         }
+        else if(backgroundName == "Fissure (15)"){
+            if(romType == "Fire Red"){
+                backgroundStart = background.staticBackground[0].fissureBackgroundCode;
+            } else if(romType == "Emerald"){
+                backgroundStart = background.staticBackground[0].fissureBackgroundEmerald;
+            }
+            backgroundEnd = background.staticBackground[0].fissureBackgroundEndCode;
+            hex = hex.replace(/^/, backgroundStart + " ");
+            hex = hex.concat(backgroundEnd);
+        }
         else if(backgroundName == "Light Green"){
-            var backgroundStart = background.coloredBackground[0].lightGreen;
+            backgroundStart = background.coloredBackground[0].lightGreen;
             var backgroundEnd = background.coloredBackground[0].lightGreenEnd;
             hex = hex.replace(/^/, backgroundStart + " ");
             hex = hex.concat(backgroundEnd);
+            if(romType == "Emerald"){
+                //Replace the start of Fire Red Colour background pointer with Emerald
+                hex = replaceCode(hex, fireRedColourCodePointer, emeraldColourCodePointer)
+            }
         }
         else if(backgroundName == "Deep Green"){
-            var backgroundStart = background.coloredBackground[0].deepGreen;
+            backgroundStart = background.coloredBackground[0].deepGreen;
             var backgroundEnd = background.coloredBackground[0].deepGreenEnd;
             hex = hex.replace(/^/, backgroundStart + " ");
             hex = hex.concat(backgroundEnd);
+            if(romType == "Emerald"){
+                hex = replaceCode(hex, fireRedColourCodePointer, emeraldColourCodePointer)
+            }
         }
         else if(backgroundName == "Deep Green Slow"){
-            var backgroundStart = background.coloredBackground[0].deepGreenSlow;
+            backgroundStart = background.coloredBackground[0].deepGreenSlow;
             var backgroundEnd = background.coloredBackground[0].deepGreenSlowEnd;
             hex = hex.replace(/^/, backgroundStart + " ");
             hex = hex.concat(backgroundEnd);
+            if(romType == "Emerald"){
+                hex = replaceCode(hex, fireRedColourCodePointer, emeraldColourCodePointer)
+            }
         }
         else if(backgroundName == "Light Red"){
-            var backgroundStart = background.coloredBackground[0].lightRed;
+            backgroundStart = background.coloredBackground[0].lightRed;
             var backgroundEnd = background.coloredBackground[0].lightRedEnd;
             hex = hex.replace(/^/, backgroundStart + " ");
             hex = hex.concat(backgroundEnd);
+            if(romType == "Emerald"){
+                hex = replaceCode(hex, fireRedColourCodePointer, emeraldColourCodePointer)
+            }
         }
         else if(backgroundName == "Deep Red"){
-            var backgroundStart = background.coloredBackground[0].deepRed;
+            backgroundStart = background.coloredBackground[0].deepRed;
             var backgroundEnd = background.coloredBackground[0].deepRedEnd;
             hex = hex.replace(/^/, backgroundStart + " ");
             hex = hex.concat(backgroundEnd);
+            if(romType == "Emerald"){
+                hex = replaceCode(hex, fireRedColourCodePointer, emeraldColourCodePointer)
+            }
         }
         else if(backgroundName == "Deep Red Slow"){
-            var backgroundStart = background.coloredBackground[0].deepRedSlow;
+            backgroundStart = background.coloredBackground[0].deepRedSlow;
             var backgroundEnd = background.coloredBackground[0].deepRedSlowEnd;
             hex = hex.replace(/^/, backgroundStart + " ");
             hex = hex.concat(backgroundEnd);
+            if(romType == "Emerald"){
+                hex = replaceCode(hex, fireRedColourCodePointer, emeraldColourCodePointer)
+            }
         }
         else if(backgroundName == "Light Orange"){
-            var backgroundStart = background.coloredBackground[0].lightOrange;
+            backgroundStart = background.coloredBackground[0].lightOrange;
             var backgroundEnd = background.coloredBackground[0].lightOrangeEnd;
             hex = hex.replace(/^/, backgroundStart + " ");
             hex = hex.concat(backgroundEnd);
+            if(romType == "Emerald"){
+                hex = replaceCode(hex, fireRedColourCodePointer, emeraldColourCodePointer)
+            }
         }
         else if (backgroundName == "Deep Orange"){
-            var backgroundStart = background.coloredBackground[0].deepOrange;
+            backgroundStart = background.coloredBackground[0].deepOrange;
             var backgroundEnd = background.coloredBackground[0].deepOrangeEnd;
             hex = hex.replace(/^/, backgroundStart + " ");
             hex = hex.concat(backgroundEnd);
+            if(romType == "Emerald"){
+                hex = replaceCode(hex, fireRedColourCodePointer, emeraldColourCodePointer)
+            }
         }
         else if (backgroundName == "Deep Orange Slow"){
-            var backgroundStart = background.coloredBackground[0].deepOrangeSlow;
+            backgroundStart = background.coloredBackground[0].deepOrangeSlow;
             var backgroundEnd = background.coloredBackground[0].deepOrangeSlowEnd;
             hex = hex.replace(/^/, backgroundStart + " ");
             hex = hex.concat(backgroundEnd);
+            if(romType == "Emerald"){
+                hex = replaceCode(hex, fireRedColourCodePointer, emeraldColourCodePointer)
+            }
         }
         else if (backgroundName == "Light Blue"){
-            var backgroundStart = background.coloredBackground[0].lightBlue;
+            backgroundStart = background.coloredBackground[0].lightBlue;
             var backgroundEnd = background.coloredBackground[0].lightBlueEnd;
             hex = hex.replace(/^/, backgroundStart + " ");
             hex = hex.concat(backgroundEnd);
+            if(romType == "Emerald"){
+                hex = replaceCode(hex, fireRedColourCodePointer, emeraldColourCodePointer)
+            }
         }
         else if (backgroundName == "Deep Blue"){
-            var backgroundStart = background.coloredBackground[0].deepBlue;
+            backgroundStart = background.coloredBackground[0].deepBlue;
             var backgroundEnd = background.coloredBackground[0].deepBlueEnd;
             hex = hex.replace(/^/, backgroundStart + " ");
             hex = hex.concat(backgroundEnd);
+            if(romType == "Emerald"){
+                hex = replaceCode(hex, fireRedColourCodePointer, emeraldColourCodePointer)
+            }
         }
         else if(backgroundName == "Deep Blue Slow"){
-            var backgroundStart = background.coloredBackground[0].deepBlueSlow;
+            backgroundStart = background.coloredBackground[0].deepBlueSlow;
             var backgroundEnd = background.coloredBackground[0].deepBlueSlowEnd;
             hex = hex.replace(/^/, backgroundStart + " ");
             hex = hex.concat(backgroundEnd);
+            if(romType == "Emerald"){
+                hex = replaceCode(hex, fireRedColourCodePointer, emeraldColourCodePointer)
+            }
         }
         else if (backgroundName == "Light Sky Blue"){
-            var backgroundStart = background.coloredBackground[0].lightSkyBlue;
+            backgroundStart = background.coloredBackground[0].lightSkyBlue;
             var backgroundEnd = background.coloredBackground[0].lightSkyBlueEnd;
             hex = hex.replace(/^/, backgroundStart + " ");
             hex = hex.concat(backgroundEnd);
+            if(romType == "Emerald"){
+                hex = replaceCode(hex, fireRedColourCodePointer, emeraldColourCodePointer)
+            }
         }
         else if (backgroundName == "Deep Sky Blue"){
-            var backgroundStart = background.coloredBackground[0].deepSkyBlue;
+            backgroundStart = background.coloredBackground[0].deepSkyBlue;
             var backgroundEnd = background.coloredBackground[0].deepSkyBlueEnd;
             hex = hex.replace(/^/, backgroundStart + " ");
             hex = hex.concat(backgroundEnd);
+            if(romType == "Emerald"){
+                hex = replaceCode(hex, fireRedColourCodePointer, emeraldColourCodePointer)
+            }
         }
         else if(backgroundName == "Deep Sky Blue Slow"){
-            var backgroundStart = background.coloredBackground[0].deepSkyBlueSlow;
+            backgroundStart = background.coloredBackground[0].deepSkyBlueSlow;
             var backgroundEnd = background.coloredBackground[0].deepSkyBlueSlowEnd;
             hex = hex.replace(/^/, backgroundStart + " ");
             hex = hex.concat(backgroundEnd);
+            if(romType == "Emerald"){
+                hex = replaceCode(hex, fireRedColourCodePointer, emeraldColourCodePointer)
+            }
         }
         else if (backgroundName == "Light Pink"){
-            var backgroundStart = background.coloredBackground[0].lightPink;
+            backgroundStart = background.coloredBackground[0].lightPink;
             var backgroundEnd = background.coloredBackground[0].lightPinkEnd;
             hex = hex.replace(/^/, backgroundStart + " ");
             hex = hex.concat(backgroundEnd);
+            if(romType == "Emerald"){
+                hex = replaceCode(hex, fireRedColourCodePointer, emeraldColourCodePointer)
+            }
         }
         else if (backgroundName == "Deep Pink"){
-            var backgroundStart = background.coloredBackground[0].deepPink;
+            backgroundStart = background.coloredBackground[0].deepPink;
             var backgroundEnd = background.coloredBackground[0].deepPinkEnd;
             hex = hex.replace(/^/, backgroundStart + " ");
             hex = hex.concat(backgroundEnd);
+            if(romType == "Emerald"){
+                hex = replaceCode(hex, fireRedColourCodePointer, emeraldColourCodePointer)
+            }
         }
         else if(backgroundName == "Deep Pink Slow"){
-            var backgroundStart = background.coloredBackground[0].deepPinkSlow;
+            backgroundStart = background.coloredBackground[0].deepPinkSlow;
             var backgroundEnd = background.coloredBackground[0].deepPinkSlowEnd;
             hex = hex.replace(/^/, backgroundStart + " ");
             hex = hex.concat(backgroundEnd);
+            if(romType == "Emerald"){
+                hex = replaceCode(hex, fireRedColourCodePointer, emeraldColourCodePointer)
+            }
         }
         else if (backgroundName == "Light Purple"){
-            var backgroundStart = background.coloredBackground[0].lightPurple;
+            backgroundStart = background.coloredBackground[0].lightPurple;
             var backgroundEnd = background.coloredBackground[0].lightPurpleEnd;
             hex = hex.replace(/^/, backgroundStart + " ");
             hex = hex.concat(backgroundEnd);
+            if(romType == "Emerald"){
+                hex = replaceCode(hex, fireRedColourCodePointer, emeraldColourCodePointer)
+            }
         }
         else if (backgroundName == "Deep Purple"){
-            var backgroundStart = background.coloredBackground[0].deepPurple;
+            backgroundStart = background.coloredBackground[0].deepPurple;
             var backgroundEnd = background.coloredBackground[0].deepPurpleEnd;
             hex = hex.replace(/^/, backgroundStart + " ");
             hex = hex.concat(backgroundEnd);
+            if(romType == "Emerald"){
+                hex = replaceCode(hex, fireRedColourCodePointer, emeraldColourCodePointer)
+            }
         }
         else if(backgroundName == "Deep Purple Slow"){
-            var backgroundStart = background.coloredBackground[0].deepPurpleSlow;
+            backgroundStart = background.coloredBackground[0].deepPurpleSlow;
             var backgroundEnd = background.coloredBackground[0].deepPurpleSlowEnd;
             hex = hex.replace(/^/, backgroundStart + " ");
             hex = hex.concat(backgroundEnd);
+            if(romType == "Emerald"){
+                hex = replaceCode(hex, fireRedColourCodePointer, emeraldColourCodePointer)
+            }
         }
         else if (backgroundName == "Light Black"){
-            var backgroundStart = background.coloredBackground[0].lightBlack;
+            backgroundStart = background.coloredBackground[0].lightBlack;
             var backgroundEnd = background.coloredBackground[0].lightBlackEnd;
             hex = hex.replace(/^/, backgroundStart + " ");
             hex = hex.concat(backgroundEnd);
+            if(romType == "Emerald"){
+                hex = replaceCode(hex, fireRedColourCodePointer, emeraldColourCodePointer)
+            }
         }
         else if (backgroundName == "Deep Black") {
-            var backgroundStart = background.coloredBackground[0].deepBlack;
+            backgroundStart = background.coloredBackground[0].deepBlack;
             var backgroundEnd = background.coloredBackground[0].deepBlackEnd;
             hex = hex.replace(/^/, backgroundStart + " ");
             hex = hex.concat(backgroundEnd);
+            if(romType == "Emerald"){
+                hex = replaceCode(hex, fireRedColourCodePointer, emeraldColourCodePointer)
+            }
         }
         else if (backgroundName == "Deep Black Slow"){
-            var backgroundStart = background.coloredBackground[0].deepBlackSlow;
+            backgroundStart = background.coloredBackground[0].deepBlackSlow;
             var backgroundEnd = background.coloredBackground[0].deepBlackSlowEnd;
             hex = hex.replace(/^/, backgroundStart + " ");
             hex = hex.concat(backgroundEnd);
+            if(romType == "Emerald"){
+                hex = replaceCode(hex, fireRedColourCodePointer, emeraldColourCodePointer)
+            }
         }
         else {
-            var backgroundStart = background.staticBackground[0].code;
+            backgroundStart = background.staticBackground[0].code;
             backgroundStart = addBackgroundIdToCode(backgroundStart, backgroundObject.code);
             hex = hex.replace(/^/, backgroundStart + " ");
             //hex = hex.concat(" 15 17");
@@ -1442,11 +968,10 @@ function addBackground(hex, backgroundName, scrollType, scrollSpeed, psychicBack
     } 
     //Background is scrolling vertically or horizontally
     else{
-        //Some backgrounds cant start immediately and need to use 14 XX 17 instead of 14 XX 16
-        if(backgroundName == "Ghost (02)" || backgroundName == "Space (10)"){
-            var backgroundStart = background.srollBackground[0].codeDelay;
-        } else{
-            var backgroundStart = background.srollBackground[0].code;
+        if(romType == "Fire Red"){
+            backgroundStart = background.srollBackground[0].code;
+        } else if(romType == "Emerald"){
+            backgroundStart = background.srollBackground[0].codeEmerald;
         }
         backgroundStart = addBackgroundIdToCode(backgroundStart, backgroundObject.code);
         if(scrollType == "Vertical Scroll"){
@@ -1458,61 +983,508 @@ function addBackground(hex, backgroundName, scrollType, scrollSpeed, psychicBack
             backgroundStart = addVerticalSpeedToCode(backgroundStart, "00")
         }
         hex = hex.replace(/^/, backgroundStart + " ");
-        //If a Psychic background has already been used in the animation, that means 0E C7 59 1D 08 has already been added, so no need to append it again
+        //If a Psychic background has already been used in the animation, Psychic ending has already been appended to the end, so no need to add background scroll ending on top of that.
         if(psychicBackgroundUsed == false){
-            hex = hex = hex.concat(" 0E C7 59 1D 08");
+            hex = hex.concat(" 15 16 10 07 FF FF 17")
         }
     }
     return hex;
 }
 
-//Function receives a background and removes the ending (fade) part of the anumation i.e (15 17) or Psychic ending. Does NOT touch Colored Ending
-function removeBackgroundEnding(hex){
-    var position = 0;
-    var positionEndToDelete = []; //End of some backgrounds
-    var psychicEndToDelete = []; 
+//Function removes the Background and background ending for Aeroblast and Sky Attack Turn 2
+function removeScrollFlyingBackground(moveData){
+    var codeWithoutBackground = "";
+    var positionToDelete;
+    var positionEndToDelete;
+    var aeroblastCode;
+    var aeroblastEndCode;
 
-    for(var i=0; i<hex.length; i++){
-        if(hex[i] == '1' && hex[i+1] == '5' && hex[i+3] == '1' && (hex[i+4] == '7' || hex[i+4] == '6')){
-            positionEndToDelete.push(position);
+    if(romType == "Fire Red"){
+        if(moveData.name == "Aeroblast"){
+            aeroblastCode = background.srollBackground[0].aeroblastCode;
+            aeroblastEndCode = background.srollBackground[0].aeroblastEndCode;
+        } else if(moveData.name == "Sky Attack Turn 2"){
+            aeroblastCode = background.srollBackground[0].skyAttackCode;
+            aeroblastEndCode = background.srollBackground[0].aeroblastEndCode;
         }
-        if(hex[i] == '0' && hex[i+1] == 'E' && hex[i+3] == 'C' && hex[i+4] == '7' && hex[i+6] == '5' && hex[i+7] == '9'){
-            psychicEndToDelete.push(position);
+    } else if(romType == "Emerald"){
+        if(moveData.name == "Aeroblast"){
+            aeroblastCode = background.srollBackground[0].aeroblastCodeEmerald;
+            aeroblastEndCode = background.srollBackground[0].aeroblastEndCodeEmerald;
+        } else if(moveData.name == "Sky Attack Turn 2"){
+            aeroblastCode = background.srollBackground[0].skyAttackCodeEmerald;
+            aeroblastEndCode = background.srollBackground[0].skyAttackEndCodeEmerald;
+        }
+    }
+    positionToDelete = findWhereCodeBegins(moveData.code, aeroblastCode);
+    positionEndToDelete = findWhereCodeBegins(moveData.code, aeroblastEndCode)
+
+    //Delete Bytes
+    for(var i=0; i<moveData.code.length; i++){
+         //Skip over background
+        if(i == positionToDelete){
+            i += aeroblastCode.length;
+        }
+        if(i == positionEndToDelete){
+            i += aeroblastEndCode.length;
+        }
+        codeWithoutBackground += moveData.code[i];
+    }
+    return codeWithoutBackground;
+}
+
+//Function removes the Fissure background from an animation
+function removeFissureBackground(moveData){
+    var codeWithoutBackground = "";
+    var fissureBackgroundPos;
+    var scrollEndingPos;
+    var fissureBackgroundCode;
+    var scrollEndingCode =  background.srollBackground[0].scrollEnding; //Fissure uses scrollEnding to end Fissure background
+    
+    if(romType == "Fire Red"){
+        fissureBackgroundCode = background.staticBackground[0].fissureBackground;
+    } else if(romType == "Emerald"){
+        fissureBackgroundCode = background.staticBackground[0].fissureBackgroundEmerald;
+    }
+
+    fissureBackgroundPos = findWhereCodeBegins(moveData.code, fissureBackgroundCode);
+    scrollEndingPos = findWhereCodeBegins(moveData.code, scrollEndingCode);
+
+    for(var i=0; i<moveData.code.length; i++){
+        if (i == fissureBackgroundPos){
+            i += fissureBackgroundCode.length;
+        }
+        if (i == scrollEndingPos){
+            i += scrollEndingCode.length;
+        }
+        codeWithoutBackground += moveData.code[i];
+    }
+    return codeWithoutBackground;
+}
+
+function removeSolarbeamBackground(moveData){
+    var codeWithoutBackground = "";
+    var solarbeamLoadPosition;
+    var solarbeamEndPosition;
+    var solarbeamStartCode
+    var solarbeamEndCode
+
+    if(romType == "Fire Red"){
+        solarbeamStartCode = background.staticBackground[0].solarbeamCode;
+        solarbeamEndCode = background.staticBackground[0].solarbeamEndCode;
+    } else if(romType == "Emerald"){
+        solarbeamStartCode = background.staticBackground[0].solarbeamCodeEmerald;
+        solarbeamEndCode = background.staticBackground[0].solarbeamEndCodeEmerald;
+    }
+
+    solarbeamLoadPosition = findWhereCodeBegins(moveData.code, solarbeamStartCode);
+    solarbeamEndPosition = findWhereCodeBegins(moveData.code, solarbeamEndCode);
+
+    for(var i=0; i<moveData.code.length; i++){
+        if (i == solarbeamLoadPosition){
+            i += solarbeamStartCode.length;
+        }
+        if (i == solarbeamEndPosition){
+            i += solarbeamEndCode.length;
+        }
+        codeWithoutBackground += moveData.code[i];
+    }
+    return codeWithoutBackground;
+}
+
+//Function recieves a move object for a scrolled animation and removes the background from it
+function removeScrollingTemplateBackground(moveData){
+    var codeWithoutBackground = "";
+    var scrollingBackgroundLoadPosition;
+    var scrollingFadeoutPosition;
+    var psychicEndingPosition;
+    var blackFadeoutPosition;
+    var scrollingFadeoutCode = background.srollBackground[0].scrollEnding;
+    var psychicEndingCode =  background.srollBackground[0].endingCode;
+    var blackFadeoutCode =  background.staticBackground[0].blackFadeout;
+
+    scrollingBackgroundLoadPosition = findStartOfScrollingBackground(moveData.code);
+    scrollingFadeoutPosition = findWhereCodeBegins(moveData.code, scrollingFadeoutCode);
+    psychicEndingPosition = findWhereCodeBegins(moveData.code, psychicEndingCode);
+    blackFadeoutPosition = findWhereCodeBegins(moveData.code, blackFadeoutCode);
+    
+    //Delete Bytes
+    for(var i=0; i<moveData.code.length; i++){
+        if(i == scrollingBackgroundLoadPosition){
+            i += 53; //Length of scrolling background code
+        }
+        if(i == scrollingFadeoutPosition){
+            i += scrollingFadeoutCode.length;
+        }
+        if(i == psychicEndingPosition){
+            i += psychicEndingCode.length;
+        }
+        if(i == blackFadeoutPosition){
+            i += blackFadeoutCode.length;
+        }
+        codeWithoutBackground += moveData.code[i];
+    }
+    return codeWithoutBackground;
+}
+
+//This function removes the background from moves with the Impact background that changes depending on if the user or foe is attacking. I.e. Mega Punch, Focus Punch etc
+function removeChooseBGImpact(moveData){
+    var codeWithoutBackground = "";
+    var chooseBGImpactCode = background.generalCommands[0].chooseBGImpact;  //... 16
+    var chooseBGImpactTransparent = background.generalCommands[0].chooseBGImpactTransparent; //... 17
+    var transparentFadeoutCode = background.generalCommands[0].waitForTransparentBGFadeOut; //15 17
+    var blackFadeoutCode = background.staticBackground[0].blackFadeout; //15 16
+    var chooseBackgroundPos;
+    var chooseBackgroundTransparentPos
+    var transparenFadeoutPos;
+    var chooseBgAlternatePos;
+    var colorCodeStart;
+    var colorCodeLength = background.coloredBackground[0].code.length; //53
+    var chooseBGImpactAlternate;
+    var colourCodePositions = [];
+
+    if(romType == "Fire Red"){
+        colorCodeStart = background.coloredBackground[0].startOfCode;
+        chooseBGImpactAlternate = background.generalCommands[0].chooseBGImpactAlternate;
+    } else if (romType == "Emerald"){
+        colorCodeStart = background.coloredBackground[0].startOfEmeraldCode; 
+        chooseBGImpactAlternate = background.generalCommands[0].chooseBGImpactAlternateEmerald;
+    }
+
+    chooseBackgroundPos = findWhereCodeBegins(moveData.code, chooseBGImpactCode);
+    chooseBackgroundTransparentPos = findWhereCodeBegins(moveData.code, chooseBGImpactTransparent);
+    transparenFadeoutPos = findWhereCodeBegins(moveData.code, transparentFadeoutCode);
+    blackFadeoutPosition = findWhereCodeBegins(moveData.code, blackFadeoutCode);
+    colourCodePositions = findWhereCodeExists(moveData.code, colorCodeStart);
+    chooseBgAlternatePos = findWhereCodeBegins(moveData.code, chooseBGImpactAlternate);
+
+    for(var i=0; i<moveData.code.length; i++){
+        if (i == chooseBackgroundPos){
+            i += chooseBGImpactCode.length;
+        }
+        if(i == chooseBackgroundTransparentPos){
+            i += chooseBGImpactTransparent.length;
+        }
+        if(i == transparenFadeoutPos){
+            i += transparentFadeoutCode.length;
+        }
+        if(i == blackFadeoutPosition){
+            i += blackFadeoutCode.length;
+        }
+        if(i == chooseBgAlternatePos){
+            i += chooseBGImpactAlternate.length;
+        }
+        if(i == colourCodePositions[0]){
+            i += colorCodeLength - 2; //Wait command isn't used for impact color code
+            colourCodePositions.shift();
+        }
+        codeWithoutBackground += moveData.code[i];
+    }
+    return codeWithoutBackground;
+}
+
+//Function removes the Choose Guillotine background command from an animation
+function removeChooseBGGuillotine(moveData){
+    var codeWithoutBackground = "";
+    var chooseBGGuillotineCode = background.generalCommands[0].chooseBGGuillotineTransparent; 
+    var transparentFadeoutCode = background.generalCommands[0].waitForTransparentBGFadeOut; 
+    var chooseBackgroundPos;
+    var transparentFadeoutPos;
+
+    chooseBackgroundPos = findWhereCodeBegins(moveData.code, chooseBGGuillotineCode);
+    transparentFadeoutPos = findWhereCodeBegins(moveData.code, transparentFadeoutCode);
+
+    for(var i=0; i<moveData.code.length; i++){
+        if(i == chooseBackgroundPos){
+            i += chooseBGGuillotineCode.length;
+        }
+        if(i == transparentFadeoutPos){
+            i += transparentFadeoutCode.length;
+        }
+        codeWithoutBackground += moveData.code[i];
+    }
+    return codeWithoutBackground;
+}
+
+function removeStaticTemplateBackground(moveData){
+    var position = 0;
+    var positionToDelete = []; //Start of background
+    var positionEndToDelete = []; //End of some backgrounds
+    var codeWithoutBackground = "";
+    var reachedPosition;
+    var blackScreenReached;
+
+    //Some template backgrounds also have colored backgrounds that you also need to remove (Ex: Icy Wind)
+    if(moveData.name == "Icy Wind"){
+        moveData.code = removeFadePalette(moveData);
+    }
+
+    //Search for 14 WW 17 or 14 WW 16 where WW can be 00 - 1A
+    //Search for 15 (17 or 16) (split second black screen often used at the end of animations like Shadow Ball and Confuse Ray)
+    for (var i=0; i<moveData.code.length; i++){
+        if(moveData.code[i] == '1' && moveData.code[i+1] == '4' && moveData.code[i+6] == "1" && (moveData.code[i+7] == "7" || moveData.code[i+7] == "6")){
+            positionToDelete.push(position);
+        }
+        if(moveData.code[i] == '1' && moveData.code[i+1] == '5' && moveData.code[i+3] == '1' && (moveData.code[i+4] == '7' || moveData.code[i+4] == '6')){
+            positionEndToDelete.push(position);
         }
         position += 1;
     }
 
-    var codeWithoutEndFade = "";
-    var reachedPosition;
-    var blackScreenReached;
-    var psychicScreenReached;
-
     //Delete Bytes
-    for(var i=0; i<hex.length; i++){
+    for(var i=0; i<moveData.code.length; i++){
         reachedPosition = false
         blackScreenReached = false
-        psychicScreenReached = false;
-
-        for(var j=0; j<psychicEndToDelete.length; j++){
-            if(i == psychicEndToDelete[j]){
-                psychicScreenReached = true
-            }
+        for(var j=0; j<positionToDelete.length; j++){
+            if(i == positionToDelete[j]){
+                reachedPosition = true;
+            } 
         }
         for(var z=0; z<positionEndToDelete.length; z++){
             if(i == positionEndToDelete[z]){
                 blackScreenReached = true;
             }
         }
-        if(blackScreenReached == true){
+        if(reachedPosition == true){
+            //Skip over template background code (Ghost/Dark etc)
+            i += 8
+        }  else if(blackScreenReached == true){
             //Skip over black screen that occurs at the end of background transition
             i += 5
         }
-        else if (psychicScreenReached == true){
-            i += 14
-        }
         else {
-            codeWithoutEndFade += hex[i]
+            codeWithoutBackground += moveData.code[i]
         }
+    }
+    return codeWithoutBackground
+}
+
+//Destiny Bond background doesn't load background like other moves. It loads background partially (14 02 instead of 14 02 16), does something else and then waits for background to fully load (17)
+function removeDestinyBondBackground(moveData){
+    var codeWithoutBackground = "";
+    var backgroundBeginPos;
+    var transparentBGLoadPos;
+    var blackFadeoutPos;
+    var partialBackgroundLoad = "14 02"
+    var WaitForTransparentBGLoad = background.generalCommands[0].waitForTransparentBGLoad; 
+    var blackFadeoutCode =  background.generalCommands[0].waitForTransparentBGFadeOut;
+
+    backgroundBeginPos = findWhereCodeBegins(moveData.code, partialBackgroundLoad);
+    transparentBGLoadPos = findWhereCodeBegins(moveData.code, WaitForTransparentBGLoad);
+    blackFadeoutPos = findWhereCodeBegins(moveData.code, blackFadeoutCode);
+
+    for(var i=0; i<moveData.code.length; i++){
+        if(i == backgroundBeginPos){
+            i += partialBackgroundLoad.length;
+        }
+        if(i == transparentBGLoadPos){
+            i += WaitForTransparentBGLoad.length;
+        }
+        if(i == blackFadeoutPos){
+            i += blackFadeoutCode.length;
+        }
+        codeWithoutBackground += moveData.code[i];
+    }
+    return codeWithoutBackground;
+}
+
+//Function receives a move data object and removes the Psychic background from it
+function removePsychicBackground(moveData){
+    var codeWithoutBackground = "";
+    var psychicStartCode;
+    var psychicEndCode;
+    var psychicStartPosition;
+    var psychicEndPosition;
+    var psychicRareStartPosition; //Only for Luster Purge and Psycho Boost
+    var psychicRareStartCode; 
+
+    if(romType == "Fire Red"){
+        psychicStartCode = background.srollBackground[0].psychicCode; 
+        psychicEndCode = background.srollBackground[0].endingCode; 
+        psychicRareStartCode = background.srollBackground[0].psychicCodeRare; 
+    } else if(romType == "Emerald"){
+        psychicStartCode = background.srollBackground[0].psychicCodeEmerald; 
+        psychicEndCode = background.srollBackground[0].psychicEndingCodeEmerald; 
+        psychicRareStartCode = background.srollBackground[0].psychicCodeRareEmerald;
+    }
+
+    psychicStartPosition = findWhereCodeBegins(moveData.code, psychicStartCode);
+    psychicEndPosition = findWhereCodeBegins(moveData.code, psychicEndCode);
+    psychicRareStartPosition = findStartOfScrollingBackground(moveData.code, psychicRareStartCode);
+
+    //Skip over Bytes
+    for(var i=0; i<moveData.code.length; i++){
+        if(i == psychicStartPosition){
+            i +=  psychicStartCode.length;
+        }
+        if(i == psychicRareStartPosition){
+            i += psychicRareStartCode.length;
+        }
+        if(i == psychicEndPosition){
+            i += psychicEndCode.length;
+        }
+        codeWithoutBackground += moveData.code[i];
+    }
+    return codeWithoutBackground;
+}
+
+//Function removes a colored background from its animation
+//For some reason, a handful of Emerald colored animations use a different start code which means standard algorithm wont pick them up. They must be manually entered. More research/testing needed
+function removeColoredBackground(moveData){
+    var colorCodeStart;
+    var fadeTempCodeStart;
+    var aromatherapyCodeStart;
+    var fireBlastCodeStart;
+    var frenzyPlantCodeStart;
+    var powderSnowStart;
+    var scaryFaceStart;
+    var spiderWebStart;
+    var colorCodeLength;
+    var codeWithoutBackground="";
+    var coloredCodePosition = [];
+
+    if(romType == "Fire Red"){
+        colorCodeStart = background.coloredBackground[0].startOfCode;
+        fadeTempCodeStart = background.generalCommands[0].fadeTempStart;
+        aromatherapyCodeStart = background.aromatherapyBackground[0].startOfCodeAromatherapy;
+        fireBlastCodeStart = background.fireBlastBackground[0].startOfBackground;
+        frenzyPlantCodeStart = background.frenzyPlantBackground[0].startOfBackground;
+        powderSnowStart = background.powderSnowBackground[0].startOfBackground;
+        scaryFaceStart = background.scaryFaceBackground[0].startOfBackground;
+        spiderWebStart = background.spiderWebBackground[0].startOfBackground;
+    } else if (romType == "Emerald"){
+        colorCodeStart = background.coloredBackground[0].startOfEmeraldCode; 
+        fadeTempCodeStart = background.generalCommands[0].fadeTempStartEmerald;
+        aromatherapyCodeStart = background.aromatherapyBackground[0].startOfCodeAromatherapyEmerald;
+        fireBlastCodeStart = background.fireBlastBackground[0].startOfBackgroundEmerald;
+        frenzyPlantCodeStart = background.frenzyPlantBackground[0].startOfBackgroundEmerald;
+        powderSnowStart = background.powderSnowBackground[0].startOfBackgroundEmerald;
+        scaryFaceStart = background.scaryFaceBackground[0].startOfBackgroundEmerald;
+        spiderWebStart = background.spiderWebBackground[0].startOfBackgroundEmerald;
+    }
+    
+    //Some moves have their own slight variations to the colored background code
+    if(moveData.name == "Eruption"){
+        colorCodeStart = fadeTempCodeStart;
+        colorCodeLength = background.generalCommands[0].fadeTempCode.length; //34
+    } else if(moveData.name == "Aromatherapy"){
+        colorCodeStart = aromatherapyCodeStart;
+        //colorCodeLength = background.aromatherapyBackground[0].code.length; //51
+        colorCodeLength = background.coloredBackground[0].code.length;
+    } 
+    else if(moveData.name == "Fire Blast"){
+        colorCodeStart = fireBlastCodeStart;
+       // colorCodeLength = background.fireBlastBackground[0].code.length; //51
+       colorCodeLength = background.coloredBackground[0].code.length;
+    } else if(moveData.name == "Frenzy Plant"){
+        colorCodeStart = frenzyPlantCodeStart;
+      //  colorCodeLength = background.frenzyPlantBackground[0].code.length; //
+      colorCodeLength = background.coloredBackground[0].code.length;
+    } else if(moveData.name == "Powder Snow"){
+        colorCodeStart = powderSnowStart;
+        colorCodeLength = background.coloredBackground[0].code.length;
+    } else if(moveData.name == "Scary Face"){
+        colorCodeStart = scaryFaceStart;
+        colorCodeLength = background.coloredBackground[0].code.length;
+    } else if(moveData.name == "Spider Web" || moveData.name == "String Shot"){
+        colorCodeStart = spiderWebStart;
+        colorCodeLength = background.coloredBackground[0].code.length;
+    }
+    //All other colored background that use standard method
+    else {
+        colorCodeLength = background.coloredBackground[0].code.length; //53
+    }
+
+    coloredCodePosition = findWhereCodeExists(moveData.code, colorCodeStart);
+
+    for(var i=0; i<moveData.code.length; i++){
+        if(i == coloredCodePosition[0]){
+            //If colored background ends with wait command (05) delete that too
+            if(checkForEndingWaitAnimation(moveData.code, coloredCodePosition[0], colorCodeLength) ){
+                i += colorCodeLength;
+            } else {
+                i += (colorCodeLength - 2);
+            }
+            coloredCodePosition.shift();
+        }
+        codeWithoutBackground += moveData.code[i];
+    }
+    return codeWithoutBackground;
+}
+
+//Function recieves one of a few electric moves and removes the light black custom background used in it
+function removeElectricBackground(moveData){
+    var codeWithoutBackground="";
+    var reachedPosition;
+    var position = 0;
+    var electricPositionToDelete = [];
+    var colorCodeStart;
+    
+    if(romType == "Fire Red"){
+        colorCodeStart = background.coloredBackground[0].startOfElectricCode; //03 F9 A7 0B 08 0A 05 01 00 00 00 00 00 06 00 00 00 05
+    } else if(romType == "Emerald"){
+        colorCodeStart = background.coloredBackground[0].startOfElectricCodeEmerald; 
+    }
+
+    for(var i=0; i<moveData.code.length; i++){
+        if(moveData.code[i] == colorCodeStart[0] && moveData.code[i+1] == colorCodeStart[1] && moveData.code[i+3] == colorCodeStart[3] && moveData.code[i+4] == colorCodeStart[4]){ //Only need to search for 03 F9 A7 0B 08
+            electricPositionToDelete.push(position)
+        }  
+        position += 1; 
+    }
+
+    for(var i=0; i<moveData.code.length; i++){
+        reachedPosition = false
+        for(var j=0; j<electricPositionToDelete.length; j++){
+            if(i == electricPositionToDelete[j]){
+                reachedPosition = true
+            } 
+        }
+        if(reachedPosition == true){
+            //Some electric moves have an 04 appended, but not always. Example is Thunderbolt. If 04 is present, delete it too
+            if(moveData.code[i+52] == 4){
+                i += 55
+            } else {
+                i += 53
+            }
+            
+        } else {
+            codeWithoutBackground += moveData.code[i]
+        }
+    }
+    return codeWithoutBackground;
+    
+}
+
+//Function receives a background and removes the ending (fade) part of the animation i.e (15 17) or Psychic ending. Does NOT touch Colored Ending
+function removeBackgroundEnding(hex){
+    var codeWithoutEndFade = "";
+    var blackFadeoutCode = background.staticBackground[0].blackFadeout;
+    var blackFadeoutTransparentCode = background.generalCommands[0].waitForTransparentBGFadeOut;
+    var psychicEndingCode;
+    
+
+    if(romType == "Fire Red"){
+        psychicEndingCode = background.srollBackground[0].endingCode;
+    } else if(romType == "Emerald"){
+        psychicEndingCode = background.srollBackground[0].psychicEndingCodeEmerald;
+    }
+
+    var blackFadeoutPos = findWhereCodeBegins(hex, blackFadeoutCode);
+    var blackFadeoutTransparentPos = findWhereCodeBegins(hex, blackFadeoutTransparentCode);
+    var psychicEndPos = findWhereCodeBegins(hex, psychicEndingCode);
+
+    for(var i=0; i<hex.length; i++){
+        if (i == blackFadeoutPos){
+            i += blackFadeoutCode.length;
+        }
+        if(i == blackFadeoutTransparentPos){
+            i += blackFadeoutTransparentCode.length;
+        }
+        if(i == psychicEndPos){
+            i += psychicEndingCode.length;
+        }
+        codeWithoutEndFade += hex[i]
     }
     return codeWithoutEndFade
 }
@@ -1529,6 +1501,10 @@ function addPostAnimation(moveData, postAnimation){
     else {
         //User wants to add a post animation
         var postAnimationObjectToAdd = getPostAnimationObject(postAnimation);
+        //If rom is Emerald, switch to Emerald Code
+        if(romType == "Emerald"){
+            postAnimationObjectToAdd.pointer = postAnimationObjectToAdd.emeraldPointer;
+        }
         //Remove any existing post animation
         if(moveData.postAnimation.length > 0){
             moveData.code = removePostAnimation(moveData)
@@ -1551,12 +1527,22 @@ function addPreAnimation(moveData, preAnimation){
     else{
         var preAnimationObjectToAdd = getPreAnimationObject(preAnimation);
 
+        if(romType == "Emerald"){
+            preAnimationObjectToAdd.pointer = preAnimationObjectToAdd.emeraldPointer;
+            preAnimationObjectToAdd.ending = preAnimationObjectToAdd.endingEmerald;
+        }
+
         //Add the animation pointer to the start
         moveData.code = moveData.code.replace(/^/, preAnimationObjectToAdd.pointer + " ");
 
         //Add any imports to the start
         if(preAnimationObjectToAdd.import != ""){
             moveData.code = moveData.code.replace(/^/, preAnimationObjectToAdd.import + " ");
+        }
+
+        //Add any ending commands to the end
+        if(preAnimationObjectToAdd.ending != ""){
+            moveData.code = moveData.code.concat(" " + preAnimationObjectToAdd.ending)
         }
 
         return moveData.code;
@@ -1631,6 +1617,10 @@ function removePostAnimation(moveData){
 function getPostAnimationPointer(moveName, postAnimationName){
     var postAnimationObject = getPostAnimationObject(postAnimationName);
 
+    if(romType == "Emerald"){
+        postAnimationObject.pointer = postAnimationObject.emeraldPointer;
+    }
+
     if(postAnimationName == "Scattered Flames"){
         if(moveName == "Blaze Kick" || moveName == "Fire Punch"){
             return postAnimationObject.shortPointer;
@@ -1656,14 +1646,171 @@ function getPostAnimationPointer(moveName, postAnimationName){
     }
 }
 
-//Function recieves move animation hex code, as well as a pointer. It finds the postition where the pointer begins and returns that position
-function findWhereCodeBegins(code, pointerToRemove){
-    var x = 0;
+//Function receives code for a scrolling background and searches for 1st instance of 14 XX 17 03 or 14 XX 16 03
+function findStartOfScrollingBackground(code){
     for(var i=0; i<code.length; i++){
-        if(code[i] == pointerToRemove[x] && code[i+1] == pointerToRemove[x+1] && code[i+3] == pointerToRemove[x+3] && code[i+4] == pointerToRemove[x+4] && code[i+6] == pointerToRemove[x+6] && code[i+7] == pointerToRemove[x+7] && code[i+9] == pointerToRemove[x+9] && code[i+10] == pointerToRemove[x+10] && code[i+12] == pointerToRemove[x+12] && code[i+13] == pointerToRemove[x+13]){
-            //console.log(code[i] + "" + code[i+1] + " " + code[i+3] + "" + code[i+4] + " " + code[i+6] + "" + code[i+7] + " " + code[i+9] + "" + code[i+10] + " " + code[i+12] + code[i+13])
+        if(code[i] == '1' && code[i+1] == '4' && code[i+6] == '1' && (code[i+7] == '7' || code[i+7] == '6') && code[i+9] == '0' && code[i+10] == '3'){
             return i;
         }
+    }
+}
+
+//Function receives animation code and finds the starting position of ALL instances of colored backgrounds
+function findAllColoredBackgrounds(code){
+    var array = [];
+    var coloredBackground = background.coloredBackground[0].startOfCode;
+
+    for(var i=0; i<code.length; i++){
+        var found = true;
+        var pos = i
+        for(var j=0; j<coloredBackground.length; j++){
+            if(code[pos] != coloredBackground[j]){
+                found = false;
+                break;
+            }
+            pos++;
+        }
+        if(found == true){
+            array.push(i);
+        }
+    }
+    return array;
+}
+
+//Function recieves an animation code, and a string of characters to search for. It returns the FIRST location where these string of characters begin
+//Example: code = 10 11 12 13 14 15 -> stringToSearchFor = 13 14 >>>>>  function will return 9 as 13 14 occurs 9 spaces from the start of code
+function findWhereCodeBegins(code, stringToSearchFor){
+    for(var i=0; i<code.length; i++){
+        var found = true;
+        var pos = i
+        for(var j=0; j<stringToSearchFor.length; j++){
+            if(code[pos] != stringToSearchFor[j]){
+                found = false;
+                break;
+            }
+            pos++;
+        }
+        if(found == true){
+            return i;
+        }
+    }
+}
+
+//The same as findWhereCodeBegins except this will return ALL locations of the string instead of just the 1st
+function findWhereCodeExists(code, stringToSearchFor){
+    var array = []
+    for(var i=0; i<code.length; i++){
+        var found = true;
+        var pos = i
+        for(var j=0; j<stringToSearchFor.length; j++){
+            if(code[pos] != stringToSearchFor[j]){
+                found = false;
+                break;
+            }
+            pos++;
+        }
+        if(found == true){
+            array.push(i);
+        }
+    }
+    return array;
+}
+
+//Function replaces code at a specific loctation with different code
+function replaceCode(code, codeToReplace, codeToAdd){
+    var newCode = ""
+    var positionToDelete = [];
+
+    positionToDelete = findWhereCodeExists(code, codeToReplace);
+
+    for(var i=0; i<code.length; i++){
+        if(i == positionToDelete[0]){
+            //Skip over code
+            i += codeToReplace.length;
+            positionToDelete.shift();
+            //Add new code in its place
+            for(var j=0; j<codeToAdd.length; j++){
+                newCode += codeToAdd[j];
+            }
+        }
+        if(typeof(code[i]) != "undefined"){
+            newCode += code[i];
+        }
+    }
+    return newCode;
+}
+
+//Function recieves an animation code and removes the BlinkTemp command from it
+//Blink Template is a command that causes the screen to flash between 2 colours over a period of time, Example: Explosion OR is used on impact as a quick flash such as Blaze Kick/Double Edge
+function removeBlinkTemp(code){
+    var blinkTemplateShort;
+    var blinkTemplate = background.generalCommands[0].blinkTemplate;
+    var blinkPositions = [];
+    var codeWithoutBlinkTemplate = ""
+
+    if(romType == "Fire Red"){
+        blinkTemplateShort = background.generalCommands[0].blinkTemplateStart;
+    } else if(romType == "Emerald"){
+        blinkTemplateShort = background.generalCommands[0].blinkTemplateEmeraldStart;
+    }
+
+    blinkPositions = findWhereCodeExists(code, blinkTemplateShort);
+
+    for(var i=0; i<code.length; i++){
+        if(i == blinkPositions[0]){
+            //Some blink templates end in 05. If so, delete the 05 as well
+            if(checkForEndingWaitAnimation(code, blinkPositions[0], blinkTemplate.length)){
+                i += blinkTemplate.length;
+            } else {
+                i += (blinkTemplate.length - 2);
+            }   
+            blinkPositions.shift();
+        }
+        codeWithoutBlinkTemplate += code[i];
+    }
+    return codeWithoutBlinkTemplate;
+}
+
+//Function recieves an animation code and removes the fade palette code from it
+function removeFadePalette(moveData){
+    var fadePaletteShort;
+    var fadePalette = background.generalCommands[0].fadePaletteCode;
+    var fadePalettePositions = [];
+    var codeWithoutFadePalette = ""
+
+    if(romType == "Fire Red"){
+        fadePaletteShort = background.generalCommands[0].fadePaletteStart;
+    } else if (romType == "Emerald"){
+        fadePaletteShort = background.generalCommands[0].fadePaletteStartEmerald;
+    }
+
+    fadePalettePositions = findWhereCodeExists(moveData.code, fadePaletteShort);
+
+    for(var i=0; i<moveData.code.length; i++){
+        if(i == fadePalettePositions[0]){
+            i += fadePalette.length;
+            fadePalettePositions.shift();
+        }
+        codeWithoutFadePalette += moveData.code[i];
+    }
+    return codeWithoutFadePalette;
+}
+
+//Function recieves animation code and checks to see if the last 2 bytes are the wait animation command (05)
+//Recieves 3 arguments. 1st is the entire animation code. 2nd is index to start looking from. 3rd is index to stop looking from
+function checkForEndingWaitAnimation(code, searchFromIndex, searchToIndex){
+    var section;
+
+    for(var i=searchFromIndex; i<(searchFromIndex + searchToIndex); i++){
+        section += code[i];
+    }
+    var bit1 = (section[section.length - 2]);
+    var bit2 = (section[section.length - 1]);
+    bit1 = bit1.concat(bit2);
+    if(bit1 == "05"){
+        return true;
+    } else {
+        return false;
     }
 }
 
@@ -1764,6 +1911,20 @@ function addHorizontalSpeedToCode(code, value){
 
 function addVerticalSpeedToCode(code, value){
     return code.replace("YY", value)
+}
+
+function concatAnimation(move1, move2, move3, move4){
+    var combinedAnimation = move1.code
+    if(typeof(move2) != 'undefined'){
+        combinedAnimation = combinedAnimation.concat(move2.code);
+    }
+    if(typeof(move3) != 'undefined'){
+        combinedAnimation = combinedAnimation.concat(move3.code);
+    }
+    if(typeof(move4) != 'undefined'){
+        combinedAnimation = combinedAnimation.concat(move4.code);
+    }
+    return combinedAnimation;
 }
 
 //Function appends move2 to the end of move1

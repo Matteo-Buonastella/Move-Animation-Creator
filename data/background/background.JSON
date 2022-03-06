@@ -1,28 +1,130 @@
 {
+    "generalCommands": [
+        {
+            "waitForTransparentBGLoad": "17",
+            "waitForTransparentBGFadeOut": "15 17",
+            "fadeTempStart": "02 24 7B 3E 08",
+            "fadeTempStartEmerald": "02 74 72 59 08",
+            "fadeTempCode": "02 74 72 59 08 02 05 XX 00 XX 00 00 00 XX 00 XX 00",
+            "fadePaletteStart": "03 F9 A7 0B 08",
+            "fadePaletteStartEmerald": "03 21 66 11 08",
+            "fadePaletteCode": "03 F9 A7 0B 08 05 05 01 00 00 00 00 00 XX 00 00 00",
+            "blinkTemplate": "02 3C 7B 3E 08 02 07 01 00 08 00 09 00 1A 21 08 00 00 00 08 00 ZZ",
+            "blinkTemplateStart": "02 3C 7B 3E 08 02 07",
+            "blinkTemplateEmerald": "02 8C 72 59 08 02 07 01 00 08 00 09 00 1A 21 08 00 00 00 08 00",
+            "blinkTemplateEmeraldStart": "02 8C 72 59 08 02 07",
+            "chooseBGImpact": "25 04 05 06 16",
+            "chooseBGImpactTransparent": "25 04 05 06 17",
+            "chooseBGImpactAlternate": "0E 89 7D 1C 08",
+            "chooseBGImpactAlternateEmerald": "0E E9 A1 2C 08",
+            "chooseBGGuillotine": "25 0C 0D 0E",
+            "chooseBGGuillotineTransparent": "25 0C 0D 0E 17"
+        }
+    ],
+
     "staticBackground": [
         {
             "code": "14 WW 17",
+            "blackFadeout": "15 16",
             "solarbeamCode": "0E 07 5A 1D 08",
+            "solarbeamCodeEmerald": "0E 1D 7D 2D 08",
+            "solarbeamEndCode": "0E 41 5A 1D 08",
+            "solarbeamEndCodeEmerald": "0E 57 7D 2D 08",
             "highImpactCode": "0E 89 7D 1C 08",
-            "guillotineCode": "25 0C 0D 0E 17 19 95 00 3F"
+            "highImpactCodeEmerald": "0E E9 A1 2C 08",
+            "guillotineCode": "25 0C 0D 0E 17",
+            "guillotineCodeEmerald": "25 0C 0D 0E 17",
+            "fissureBackground": "14 15 16 03 01 98 0B 08 05 03 01 00 05 00 FF FF 17",
+            "fissureBackgroundEmerald": "14 15 16 03 29 56 11 08 05 03 01 00 05 00 FF FF 17",
+            "fissureBackgroundEndCode": "15 16 10 07 FF FF 17 08"
         }
     ],
 
     "srollBackground": [
-        {
-            "code": "14 WW 16 03 2D B8 0B 08 05 04 00 XX 00 YY 00 00 FF FF",
-            "codeDelay": "14 WW 17 03 2D B8 0B 08 05 04 00 XX 00 YY 00 00 FF FF",
+        { 
+            "code":"14 WW 16 03 2D B8 0B 08 05 04 00 XX 00 YY 00 00 FF FF 17",
+            "codeEmerald": "14 WW 16 03 61 76 11 08 05 04 00 XX 00 YY 00 00 FF FF 17",
+            "codeDelay": "14 WW 17 03 2D B8 0B 08 05 04 00 XX 00 YY 00 00 FF FF 17",
             "psychicCode": "0E BB 59 1D 08",
-            "endingCode": "0E C7 59 1D 08"
+            "psychicCodeEmerald": "0E D1 7C 2D 08",
+            "endingCode": "0E C7 59 1D 08",
+            "psychicEndingCodeEmerald": "0E DD 7C 2D 08",
+            "psychicCodeRare": "14 03 16 03 B5 E7 0D 08 05 00 17",
+            "psychicCodeRareEmerald": "14 03 16 03 C9 A5 15 08 05 00 17",
+            "scrollEnding": "15 16 10 07 FF FF 17",
+            "aeroblastCode": "0E CF 59 1D 08 28 01 0C 0C 08 0E B9 F7 1C 08",
+            "aeroblastCodeEmerald": "0E E5 7C 2D 08 28 01 0C 0C 08 0E 82 1B 2D 08",
+            "aeroblastEndCode": "0E FF 59 1D 08",
+            "aeroblastEndCodeEmerald": "0E 15 7D 2D 08",
+            "skyAttackCode": "0E CF 59 1D 08",
+            "skyAttackCodeEmerald": "0E E5 7C 2D 08",
+            "skyAttackEndCodeEmerald": "0E DD 7C 2D 08"
+        }
+    ],
+
+    "aromatherapyBackground": [
+        {       
+        "code": "02 24 7B 3E 08 00 05 01 00 00 00 00 00 07 00 ED 33",
+        "startOfCodeAromatherapy": "02 24 7B 3E 08 00 05",
+        "startOfCodeAromatherapyEmerald": "02 74 72 59 08 00 05"
+        }
+    ],
+
+    "fireBlastBackground": [
+        {
+            "code": "03 F9 A7 0B 08 0A 05 01 00 03 00 00 00 08 00 00 00",
+            "emeraldCode": "03 21 66 11 08 0A 05 01 00 03 00 00 00 08 00 00 00",
+            "startOfBackground": "03 F9 A7 0B 08",
+            "startOfBackgroundEmerald": "03 21 66 11 08"
+        }
+    ],
+
+    "frenzyPlantBackground": [
+        {
+            "code": " 02 24 7B 3E 08 02 05 01 00 02 00 00 00 05 00 00 00 05",
+            "emeraldCode": "02 74 72 59 08 00 05 01 00 02 00 00 00 05 00 00 00 05",
+            "startOfBackground": "02 24 7B 3E 08 02 05 01",
+            "startOfBackgroundEmerald": "02 74 72 59 08 00 05 01"
+        }
+    ],
+
+    "powderSnowBackground": [
+        {
+            "code": " 02 24 7B 3E 08 02 05 01 00 01 00 00 00 03 00 00 00 05",
+            "emeraldCode": "02 74 72 59 08 02 05 1F 00 01 00 00 00 03 00 00 00 05",
+            "startOfBackground": "02 24 7B 3E 08 02 05 01",
+            "startOfBackgroundEmerald": "02 74 72 59 08 02 05"
+        }
+    ],
+
+    "scaryFaceBackground": [
+        {
+            "code": "02 24 7B 3E 08 02 05 01 00 03 00 00 00 10 00 00 00",
+            "emeraldCode": "02 74 72 59 08 05 05 01 00 02 00 00 00 09 00 00 00 05",
+            "startOfBackground": "02 24 7B 3E 08 02 05 01",
+            "startOfBackgroundEmerald": "02 74 72 59 08 05 05 01"
+        }
+    ],
+
+    "spiderWebBackground": [
+        {
+            "code": "02 24 7B 3E 08 02 05 01 00 02 00 00 00 09 00 00 00",
+            "emeraldCode": "02 74 72 59 08 02 05 1B 00 03 00 00 00 10 00 00 00",
+            "startOfBackground": "02 24 7B 3E 08 02 05 01",
+            "startOfBackgroundEmerald": "02 74 72 59 08 05 05 01"
         }
     ],
 
     "coloredBackground": [
-        {
+        {           
             "code": "02 24 7B 3E 08 02 05 01 00 SS 00 00 00 YY 00 XX XX 05",
+            "pointer": "02 24 7B 3E 08",
+            "emeraldCode": "02 74 72 59 08 02 05 01 00 01 00 00 00 XX 00 XX XX 05",
             "startOfCode": "02 24 7B 3E 08 02 05 01 00",
+            "startOfEmeraldCode": "02 74 72 59 08 02 05 01 00",
+            "startOfEmeraldCodePointer": "02 74 72 59 08",
             "startOfElectricCode": "03 F9 A7 0B 08 0A 05 01 00 00 00 00 00 06 00 00 00 05",
-
+            "startOfElectricCodeEmerald": "03 21 66 11 08 0A 05 01 00 00 00 00 00 06 00 00 00 05",
             "lightGreen": "02 24 7B 3E 08 02 05 01 00 01 00 00 00 04 00 ED 33 05",
             "lightGreenEnd": "02 24 7B 3E 08 02 05 01 00 01 00 04 00 00 00 ED 33 05 0B 03 0D 08",
             "deepGreen": "02 24 7B 3E 08 02 05 01 00 01 00 00 00 0C 00 ED 33 05",

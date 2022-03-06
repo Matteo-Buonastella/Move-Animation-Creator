@@ -1,143 +1,264 @@
 {
     "preAttack": [
         {
+            "id": 666,
+            "name": "TEST",
+            "pointer": "0C 00 10 02 34 37 3E 08 02 02 78 00 38 00 03 49 60 07 08 03 05 00 00 10 00 10 00 00 00 01 00 19 CC 00 00 04 1E",
+            "emeraldPointer": "0C 00 10 02 BC 2E 59 08 02 02 78 00 38 00 03 75 7A 0A 08 03 05 00 00 10 00 10 00 00 00 01 00 19 D3 00 00 04 C8 03 C1 25 10 08 02 00",
+            "ending": "",
+            "endingEmerald": "",
+            "import": "00 D2 27"
+        },
+        {
             "id": 4,
             "name": "Air Cutter Start",
             "pointer": "03 F1 76 0A 08 02 05 20 00 E8 FF 00 06 02 00 80 00 05",
+            "emeraldPointer": "03 F1 3C 10 08 02 05 20 00 E8 FF 00 06 02 00 80 00 05",
+            "ending": "",
+            "endingEmerald": "",
             "import": "00 13 27"
         },
         {
             "id": 5,
             "name": "Ancientpower Lift Rocks",
-            "pointer": "00 4A 27 00 97 27 0A 03 0C 0C 08 02 88 7B 3E 08 02 04 04 00 01 00 0A 00 01 00 02 C0 74 3E 08 02 05 14 00 20 00 D0 FF 32 00 02 00 02 C0 74 3E 08 02 05 00 00 20 00 DA FF 19 00 05 00 02 C0 74 3E 08 02 05 20 00 20 00 E4 FF 28 00 03 00 02 C0 74 3E 08 02 05 EC FF 20 00 D0 FF 32 00 02 00 02 C0 74 3E 08 02 05 14 00 20 00 E4 FF 3C 00 01 00 02 C0 74 3E 08 02 05 00 00 20 00 E4 FF 1E 00 04 00 03 1D 8B 09 08 02 05 00 00 01 00 00 00 1E 00 01 00 05",
-            "ending": "05 0B 03 0D 08",
+            "pointer": "0A 03 0C 0C 08 02 88 7B 3E 08 02 04 04 00 01 00 0A 00 01 00 02 C0 74 3E 08 02 05 14 00 20 00 D0 FF 32 00 02 00 02 C0 74 3E 08 02 05 00 00 20 00 DA FF 19 00 05 00 02 C0 74 3E 08 02 05 20 00 20 00 E4 FF 28 00 03 00 02 C0 74 3E 08 02 05 EC FF 20 00 D0 FF 32 00 02 00 02 C0 74 3E 08 02 05 14 00 20 00 E4 FF 3C 00 01 00 02 C0 74 3E 08 02 05 00 00 20 00 E4 FF 1E 00 04 00 03 1D 8B 09 08 02 05 00 00 01 00 00 00 1E 00 01 00 05",
+            "emeraldPointer": "0A 03 0C 0C 08 02 D8 72 59 08 02 04 04 00 01 00 0A 00 01 00 02 10 6C 59 08 02 05 14 00 20 00 D0 FF 32 00 02 00 02 10 6C 59 08 02 05 00 00 20 00 DA FF 19 00 05 00 02 10 6C 59 08 02 05 20 00 20 00 E4 FF 28 00 03 00 02 10 6C 59 08 02 05 EC FF 20 00 D0 FF 32 00 02 00 02 10 6C 59 08 02 05 14 00 20 00 E4 FF 3C 00 01 00 02 10 6C 59 08 02 05 00 00 20 00 E4 FF 1E 00 04 00 03 D1 52 0D 08 02 05 00 00 01 00 00 00 1E 00 01 00 05",
+            "ending": "05 0B 03 0D",
+            "endingEmerald": "05 0B 03 0D",
+            "import": "00 4A 27 00 97 27"
+        },
+        {
+            "id": 25,
+            "name": "Become Wavey",
+            "pointer": "0A 00 28 00 04 01 03 E1 75 0B 08 05 00 19 C4 00 C0 04 08",
+            "emeraldPointer": "0A 00 28 00 04 01 03 E9 33 11 08 05 00 19 CB 00 C0 04 08",
+            "ending": "0B 00 04 01",
+            "endingEmerald": "0B 00 04 01",
             "import": ""
         },
         {
             "id": 16,
             "name": "Bigger Shadow User",
             "pointer": "0C 0C 08 03 79 3C 0B 08 05 01 00 00 03 59 3A 0B 08 05 01 02 00 19 B9 00 C0 05",
+            "emeraldPointer": "0C 0C 08 03 35 00 11 08 05 01 00 00 03 15 FE 10 08 05 01 02 00 19 C0 00 C0 05",
+            "ending": "",
+            "endingEmerald": "",
+            "import": ""
+        },
+        {
+            "id": 26,
+            "name": "Block Dissapear",
+            "pointer": "0A 00 03 9D EF 0D 08 02 03 00 00 02 00 00 00 1C 99 00 C0 08 04 05",
+            "emeraldPointer": "0A 00 02 88 E2 5C 08 02 06 00 00 00 00 20 00 E0 FF 28 00 FE FF 03 B1 AD 15 08 02 03 00 00 02 00 00 00 1C A0 00 C0 08 04 05",
+            "ending": "0A 00 03 9D EF 0D 08 02 03 00 00 02 00 01 00 1C 99 00 C0 08 04 05 0B 00",
+            "endingEmerald": "0A 00 03 B1 AD 15 08 02 03 00 00 02 00 01 00 1C A0 00 C0 08 04 05 0B 00",
+            "import": "00 F5 27"
+        },
+        {
+            "id": 27,
+            "name": "Buff Up",
+            "pointer": "19 91 00 C0 03 A1 F8 0D 08 05 00 05",
+            "emeraldPointer": "19 98 00 C0 03 B5 B6 15 08 05 00 05",
+            "ending": "",
+            "endingEmerald": "",
             "import": ""
         },
         {
             "id": 22,
             "name": "Charm",
             "pointer": "03 59 05 0E 08 05 03 00 00 02 00 00 00 02 E8 41 3E 08 03 02 00 00 14 00 19 CD 00 C0 04 0F 02 E8 41 3E 08 03 02 EC FF 14 00 19 CD 00 C0 04 0F 02 E8 41 3E 08 03 02 14 00 14 00 19 CD 00 C0 05",
+            "emeraldPointer": "03 79 C4 15 08 05 03 00 00 02 00 00 00 02 70 39 59 08 03 02 00 00 14 00 19 D4 00 C0 04 0F 02 70 39 59 08 03 02 EC FF 14 00 19 D4 00 C0 04 0F 02 70 39 59 08 03 02 14 00 14 00 19 D4 00 C0 05",
+            "ending": "",
+            "endingEmerald": "",
             "import": "00 E2 27"
         },
         {
             "id": 7,
             "name": "Hearts User",
             "pointer": "02 E8 41 3E 08 03 02 00 00 14 00 19 CD 00 C0 04 0F 02 E8 41 3E 08 03 02 EC FF 14 00 19 CD 00 C0 04 0F 02 E8 41 3E 08 03 02 14 00 14 00 19 CD 00 C0 05",
+            "emeraldPointer": "02 70 39 59 08 03 02 00 00 14 00 19 D4 00 C0 04 0F 02 70 39 59 08 03 02 EC FF 14 00 19 D4 00 C0 04 0F 02 70 39 59 08 03 02 14 00 14 00 19 D4 00 C0 05",
+            "ending": "",
+            "endingEmerald": "",
             "import": "00 E2 27"
         },
         {
             "id": 9,
             "name": "Curse Ghost",
             "pointer": "19 72 00 3F 02 98 76 3E 08 82 00 03 1D 8B 09 08 02 05 01 00 02 00 00 00 0E 00 01 00 05",
+            "emeraldPointer": "19 79 00 3F 02 E8 6D 59 08 82 00 03 D1 52 0D 08 02 05 01 00 02 00 00 00 0E 00 01 00 05",
+            "ending": "",
+            "endingEmerald": "",
             "import": "00 D8 27"
         },
         {
             "id": 10,
             "name": "Destiny Bond Surface",
-            "pointer": "19 72 00 3F 03 21 60 0B 08 05 02 00 00 30 00 05",
+            "pointer": "19 B6 00 C0 03 21 60 0B 08 05 02 00 00 30 00 05",
+            "emeraldPointer": "19 BD 00 C0 03 C5 23 11 08 05 02 00 00 30 00 05",
+            "ending": "",
+            "endingEmerald": "",
             "import": "00 CC 27"
         },
         {
-            "id": 15,
-            "name": "Drill Pecks",
-            "pointer": "00 97 27 1C 9F 00 3F 04 08 03 69 28 0B 08 05 00 03 1D 8B 09 08 02 05 01 00 04 00 00 00 12 00 01 00 05",
+            "id": 24,
+            "name": "Fade But Not You",
+            "pointer": "03 3D A8 0B 08 05 05 00 00 00 00 00 00 10 00 00 00 05",
+            "emeraldPointer": "03 65 66 11 08 05 05 00 00 00 00 00 00 10 00 00 00 05",
+            "ending": "03 3D A8 0B 08 05 05 00 00 00 00 10 00 00 00 00 00 05",
+            "endingEmerald": "03 65 66 11 08 05 05 00 00 00 00 10 00 00 00 00 00 05",
             "import": ""
+        },
+        {
+            "id": 23,
+            "name": "Head Down User",
+            "pointer": "02 50 35 3E 08 02 01 00 00 19 9B 00 C0 05 04 02 02 50 35 3E 08 02 01 01 00 05",
+            "emeraldPointer": "02 D8 2C 59 08 02 01 00 00 19 A2 00 C0 05 04 02 02 D8 2C 59 08 02 01 01 00 05",
+            "ending": "02 50 35 3E 08 02 01 02 00",
+            "endingEmerald": "02 D8 2C 59 08 02 01 02 00",
+            "import": ""    
         },
         {
             "id": 12,
             "name": "Heavy Shake Foe",
             "pointer": "03 1D 8B 09 08 02 05 01 00 04 00 00 00 16 00 01 00 03 F9 A7 0B 08 0A 05 04 00 02 00 00 00 00 00 FF 7F 02 3C 7B 3E 08 02 07 1F 00 03 00 01 00 00 00 08 00 00 00 00 00 19 74 00 3F 05 0B 01 0D 04 02",
+            "emeraldPointer": "03 D1 52 0D 08 02 05 01 00 04 00 00 00 16 00 01 00 03 21 66 11 08 0A 05 04 00 02 00 00 00 00 00 FF 7F 02 8C 72 59 08 02 07 1F 00 03 00 01 00 00 00 08 00 00 00 00 00 19 7B 00 3F 05 0B 01 0D 04 02",
+            "ending": "",
+            "endingEmerald": "",
             "import": ""    
+        },
+        {
+            "id": 28,
+            "name": "Invert Background",
+            "pointer": "03 E9 A0 0B 08 02 03 01 01 01 01 01 01 04 08",
+            "emeraldPointer": "03 11 5F 11 08 02 03 01 01 01 01 01 01 04 08",
+            "ending": "03 E9 A0 0B 08 02 03 01 01 01 01 01 01",
+            "endingEmerald": "03 11 5F 11 08 02 03 01 01 01 01 01 01",
+            "import": ""
         },
         {
             "id": 18,
             "name": "Leafs",
             "pointer": "1C A2 00 C0 0A 05 02 08 2C 3E 08 02 03 FD FF FE FF 0A 00 04 02 02 08 2C 3E 08 02 03 FF FF FF FF 0F 00 04 02 02 08 2C 3E 08 02 03 FC FF FC FF 07 00 04 02 02 08 2C 3E 08 02 03 03 00 FD FF 0B 00 04 02 02 08 2C 3E 08 02 03 FF FF FA FF 08 00 04 02 02 08 2C 3E 08 02 03 02 00 FF FF 0C 00 04 02 02 08 2C 3E 08 02 03 FD FF FC FF 0D 00 04 02 02 08 2C 3E 08 02 03 04 00 FB FF 07 00 04 02 02 08 2C 3E 08 02 03 02 00 FA FF 0B 00 04 02 02 08 2C 3E 08 02 03 FD FF FB FF 08 00 04 3C",
+            "emeraldPointer": "1C A9 00 C0 0A 05 02 90 23 59 08 02 03 FD FF FE FF 0A 00 04 02 02 90 23 59 08 02 03 FF FF FF FF 0F 00 04 02 02 90 23 59 08 02 03 FC FF FC FF 07 00 04 02 02 90 23 59 08 02 03 03 00 FD FF 0B 00 04 02 02 90 23 59 08 02 03 FF FF FA FF 08 00 04 02 02 90 23 59 08 02 03 02 00 FF FF 0C 00 04 02 02 90 23 59 08 02 03 FD FF FC FF 0D 00 04 02 02 90 23 59 08 02 03 04 00 FB FF 07 00 04 02 02 90 23 59 08 02 03 02 00 FA FF 0B 00 04 02 02 90 23 59 08 02 03 FD FF FB FF 08 00 04 3C",
+            "ending": "",
+            "endingEmerald": "",
             "import": "00 4F 27"
-        },
-        {
-            "id": 19,
-            "name": "Razor Leaf Blades",
-            "pointer": "02 50 2C 3E 08 83 07 14 00 F6 FF 14 00 00 00 16 00 14 00 01 00 02 50 2C 3E 08 83 07 14 00 F6 FF 14 00 00 00 16 00 EC FF 01 00 04 14 19 81 00 3F 03 1D 8B 09 08 02 05 01 00 02 00 00 00 08 00 01 00 03 1D 8B 09 08 02 05 03 00 02 00 00 00 08 00 01 00 05",
-            "import": "00 B0 27"
-        },
-        {
-            "id": 11,
-            "name": "Hearts Foe",
-            "pointer": "19 DB 00 3F 02 38 43 3E 08 83 02 00 FF D6 FF 02 38 43 3E 08 83 02 80 00 F2 FF 02 38 43 3E 08 83 02 A0 01 DA FF 02 38 43 3E 08 83 02 80 FF EA FF",
-            "import": "00 EB 27"
         },
         {
             "id": 6,
             "name": "Move Down User",
-            "pointer": "19 91 00 C0 19 91 00 C0 02 6C 4E 3D 08 02 03 06 00 01 00 00 00 05",
+            "pointer": "19 91 00 C0 02 6C 4E 3D 08 02 03 06 00 01 00 00 00 05",
+            "emeraldPointer": "19 98 00 C0 02 40 FE 57 08 02 03 06 00 01 00 00 00 05",
+            "ending": "",
+            "endingEmerald": "",
             "import": ""
         },
         {
             "id": 8,
             "name": "Move Circle User",
             "pointer": "03 7D 90 09 08 02 05 00 00 12 00 06 00 01 00 04 00 19 73 00 C0 05",
+            "emeraldPointer": "03 31 58 0D 08 02 05 00 00 12 00 06 00 01 00 04 00 19 7A 00 C0 05",
+            "ending": "",
+            "endingEmerald": "",
             "import": ""
         },
         {
             "id": 2,
             "name": "Move Left and Right User",
             "pointer": "03 05 97 09 08 03 05 00 00 06 00 00 05 03 00 00 00",
+            "emeraldPointer": "03 B9 5E 0D 08 03 05 00 00 06 00 00 05 03 00 00 00",
+            "ending": "",
+            "endingEmerald": "",
             "import": ""
         },
         {
             "id": 17,
             "name": "Psychic Shadow User",
             "pointer": "0C 08 08 19 B1 00 C0 03 DD 9B 0B 08 02 06 02 00 00 00 02 00 00 00 08 00 FF 7F 03 B1 98 09 08 05 05 FC FF FC FF 0F 00 00 00 01 00 05",
+            "emeraldPointer": "0C 08 08 19 B8 00 C0 03 05 5A 11 08 02 06 02 00 00 00 02 00 00 00 08 00 FF 7F 03 65 60 0D 08 05 05 FC FF FC FF 0F 00 00 00 01 00 05",
+            "ending": "",
+            "endingEmerald": "",
+            "import": ""
+        },
+        {
+            "id": 30,
+            "name": "Ready Aim",
+            "pointer": "03 95 56 0A 08 02 01 00 00 19 91 00 C0 05",
+            "emeraldPointer": "03 95 1C 10 08 02 01 00 00 19 98 00 C0 05",
+            "ending": "03 95 56 0A 08 02 01 01 00",
+            "endingEmerald": "03 95 1C 10 08 02 01 01 00",
             "import": ""
         },
         {
             "id": 20,
             "name": "Shooting Stars",
             "pointer": "19 C9 00 3F 02 BC F6 3F 08 83 05 D0 FF C0 FF 48 00 20 00 1E 00 04 0A 02 BC F6 3F 08 83 05 90 FF C0 FF 08 00 20 00 1E 00 04 28 02 BC F6 3F 08 83 05 B0 FF C0 FF 28 00 20 00 1E 00 05",
+            "emeraldPointer": "19 D0 00 3F 02 DC E8 5C 08 83 05 D0 FF C0 FF 48 00 20 00 1E 00 04 0A 02 DC E8 5C 08 83 05 90 FF C0 FF 08 00 20 00 1E 00 04 28 02 DC E8 5C 08 83 05 B0 FF C0 FF 28 00 20 00 1E 00 05",
+            "ending": "",
+            "endingEmerald": "",
             "import": "00 F9 27"
         },
         {
             "id": 3,
             "name": "Slight Shake User",
             "pointer": "03 05 97 09 08 03 05 00 00 06 00 00 05 03 00 00 00",
+            "emeraldPointer": "03 B9 5E 0D 08 03 05 00 00 06 00 00 05 03 00 00 00",
+            "ending": "",
+            "endingEmerald": "",
             "import": ""
         },
         {
             "id": 14,
             "name": "Shake Up & Down User",
             "pointer": "19 A4 00 C0 03 F9 89 09 08 05 05 00 00 00 00 02 00 28 00 01 00 05",
+            "emeraldPointer": "19 AB 00 C0 03 AD 51 0D 08 05 05 00 00 00 00 02 00 28 00 01 00 05",
+            "ending": "",
+            "endingEmerald": "",
             "import": ""
         },
         {
             "id": 23,
             "name": "Shake Turn Red",
             "pointer": "03 D1 8C 09 08 02 05 00 00 01 00 00 00 14 00 01 00 19 A4 00 C0 05 03 D1 8C 09 08 02 05 00 00 03 00 00 00 30 00 01 00 03 6D 61 07 08 02 05 00 00 DF 04 0C 00 04 00 01 00 05",
+            "emeraldPointer": "03 85 54 0D 08 02 05 00 00 01 00 00 00 14 00 01 00 19 AB 00 C0 05 03 85 54 0D 08 02 05 00 00 03 00 00 00 30 00 01 00 03 99 7B 0A 08 02 05 00 00 DF 04 0C 00 04 00 01 00 05",
+            "ending": "",
+            "endingEmerald": "",
             "import": ""
         },
         {
             "id": 13,
             "name": "Superpower Beginning",
             "pointer": "0A 02 28 00 0C 0C 08 02 64 68 3E 08 82 01 00 00 19 85 00 C0 04 14 02 88 7B 3E 08 02 04 04 00 01 00 B4 00 01 00 03 11 D4 0D 08 05 02 E3 00 00 00 04 28 02 7C 68 3E 08 29 04 C8 00 60 00 01 00 78 00 04 08 02 7C 68 3E 08 29 04 14 00 F8 00 04 00 70 00 04 08 02 7C 68 3E 08 29 04 82 00 A0 00 02 00 68 00 04 08 02 7C 68 3E 08 29 04 A0 00 C0 00 00 00 60 00 04 08 02 7C 68 3E 08 29 04 3C 00 20 01 03 00 58 00 04 4A",
+            "emeraldPointer": "0A 02 28 00 0C 0C 08 02 EC 5F 59 08 82 01 00 00 19 8C 00 C0 04 14 02 D8 72 59 08 02 04 04 00 01 00 B4 00 01 00 03 45 92 15 08 05 02 EA 00 00 00 04 28 02 04 60 59 08 29 04 C8 00 60 00 01 00 78 00 04 08 02 04 60 59 08 29 04 14 00 F8 00 04 00 70 00 04 08 02 04 60 59 08 29 04 82 00 A0 00 02 00 68 00 04 08 02 04 60 59 08 29 04 A0 00 C0 00 00 00 60 00 04 08 02 04 60 59 08 29 04 3C 00 20 01 03 00 58 00 04 4A",
             "import": "00 E4 27 00 10 28 00 11 28",
-            "ending": "05 0B 03 0D 08" 
+            "ending": "05 0B 03 0D 08" ,
+            "endingEmerald": ""
+        },
+        {
+            "id": 29,
+            "name": "Sun Rays",
+            "pointer": "03 51 FC 0D 08 05 00 05",
+            "emeraldPointer": "03 85 BB 15 08 05 00 05",
+            "ending": "",
+            "endingEmerald": "",
+            "import": ""
         },
         {
             "id": 1,
             "name": "Tickle Shake Foe",
             "pointer": "03 59 05 0E 08 03 03 01 00 06 00 02 00 1C A0 00 3F 08 08 05",
+            "emeraldPointer": "03 79 C4 15 08 03 03 01 00 06 00 02 00 1C A7 00 3F 08 08 05",
+            "ending": "",
+            "endingEmerald": "",
             "import": ""
         },
         {
             "id": 21,
             "name": "User Yawns",
             "pointer": "03 05 17 0E 08 02 01 00 00 19 E6 00 C0 05",
+            "emeraldPointer": "03 4D D6 15 08 02 01 00 00 19 ED 00 C0 05",
+            "ending": "",
+            "endingEmerald": "",
             "import": ""
         }
     ]
