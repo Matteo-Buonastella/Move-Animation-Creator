@@ -46,6 +46,9 @@ Notice how Tackle uses the Ghost background. This is because when you select Kee
 
 ![KeepBackground](https://imgur.com/vfJnVTx.png)
 
+## Pre Attack Animation
+A pre attack animation is an animation that will display before the move occurs, such as making the user move in a circle before attacking. These animations are appended to the front and will NOT replace any existing pre attack animations that a move may have.
+
 ## Post Attack Animation
 A post attack animation is the little animation that occurs after an attack, like the water bubbles after Bubble, the poison bubbles after Poison Sting, the ice crystals after Ice Beam and so on and so on. For each animation in the sequence, you can now control what post attack animation displays. You can either leave it as a default, remove it (like removing the poison bubbles from Poison Sting) or insert your own from a list of 30 options. If you add a post attack animation to an animation that already has one, the program will automatically replace the old one with the new one. Check out the example below where we replace the poison bubbles with scattered flames. If you ever wanted to create a move like Ice Fang, now you can by doing Bite + Ice Crystals
 
