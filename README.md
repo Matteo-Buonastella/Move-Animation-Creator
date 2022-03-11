@@ -53,7 +53,7 @@ A pre attack animation is an animation that will display before the move occurs,
 A post attack animation is the little animation that occurs after an attack, like the water bubbles after Bubble, the poison bubbles after Poison Sting, the ice crystals after Ice Beam and so on and so on. For each animation in the sequence, you can now control what post attack animation displays. You can either leave it as a default, remove it (like removing the poison bubbles from Poison Sting) or insert your own from a list of 30 options. If you add a post attack animation to an animation that already has one, the program will automatically replace the old one with the new one. Check out the example below where we replace the poison bubbles with scattered flames. If you ever wanted to create a move like Ice Fang, now you can by doing Bite + Ice Crystals
 
 ## Inserting an Animation
-To insert an animation, you will need to provide a memory offset. A built in Free Space Finder is provided in the tool. Once you insert the animation at an offset, for example, 82748A, assign this animation to a move by going to PGE -> Attack Editor and then inserting the new animation offset to the Animation textbox on the left side of the screen. Make sure yo click Repoint!
+To insert an animation, you will need to provide a memory offset. A built in Free Space Finder is provided in the tool. Once you insert the animation at an offset, for example, 82748A, assign this animation to a move by using tool such as Hex Maniac Advance or PGE
 
 ![Insert Image](https://imgur.com/yK56w0U.png)
 
