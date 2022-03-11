@@ -55,7 +55,7 @@ A post attack animation is the little animation that occurs after an attack, lik
 ## Inserting an Animation
 To insert an animation, you will need to provide a memory offset. A built in Free Space Finder is provided in the tool. Once you insert the animation at an offset, for example, 82748A, assign this animation to a move by going to PGE -> Attack Editor and then inserting the new animation offset to the Animation textbox on the left side of the screen. Make sure yo click Repoint!
 
-![Insert Image](https://imgur.com/UVjpqI7.png)
+![Insert Image](https://imgur.com/yK56w0U)
 
 ## Examples
 1. [Default Background: Harden + Mach Punch + Take Down + Recover](https://www.youtube.com/watch?v=RDaWZ_JCh1g&ab_channel=KakashiSensei)
