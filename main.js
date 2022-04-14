@@ -17,6 +17,7 @@ let insertWindow
 let preAnimationWindow;
 let postAnimationWindow;
 let freeSpaceFinderWindow;
+let opacityWindow;
 var rom = null;
 var romType = null; //Either FireRed or Emerald
 
@@ -26,7 +27,7 @@ function createWindow(){
     mainWindow = new BrowserWindow({
         width: 1100,
         height: 800,
-        title:'Move Animation Creator 1.4',
+        title:'Move Animation Creator 1.4.1',
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false,
@@ -50,7 +51,7 @@ function createWindow(){
     })    
 
     mainWindow.webContents.on('did-finish-load', () => {
-    mainWindow.setTitle("Move Animation Creator 1.4")
+    mainWindow.setTitle("Move Animation Creator 1.4.1")
     })
 }
 
@@ -94,7 +95,7 @@ function createInsertWindow(){
         modal: true,
         show: false,
         width: 600,
-        height: 250,
+        height: 350,
         title:'Post Animation Images',
         webPreferences: {
           nodeIntegration: true,
@@ -128,7 +129,7 @@ function createInsertWindow(){
         modal: true,
         show: false,
         width: 600,
-        height: 250,
+        height: 350,
         title:'Pre Animation Images',
         webPreferences: {
           nodeIntegration: true,
@@ -191,6 +192,39 @@ function createInsertWindow(){
       })
   }
 
+  function createOpacityMenu(){
+    opacityWindow = new BrowserWindow({
+        parent:insertWindow,
+        modal: true,
+        show: false,
+        width: 520,
+        height: 560,
+        title:'Opacity Levels',
+        webPreferences: {
+          nodeIntegration: true,
+          contextIsolation: false,
+          enableRemoteModule: true,
+        },
+      });
+      opacityWindow.loadURL(url.format({
+        pathname: path.join(__dirname, 'opacityLevel.html'),
+        protocol: 'file:',
+        slashes:true
+      }));
+      opacityWindow.setMenu(null);
+      // Handle garbage collection
+      opacityWindow.on('close', function(){
+        opacityWindow = null;
+      });
+  
+      opacityWindow.once('ready-to-show', () => {
+        opacityWindow.show()
+      })
+  
+      opacityWindow.webContents.on('did-finish-load', () => {
+        opacityWindow.setTitle("Opacity Levels")
+      })
+  }
 
 //Create Menu Template
 const mainMenuTemplate = [
@@ -215,34 +249,35 @@ const mainMenuTemplate = [
 ]
 
 mainMenuTemplate.push({
-    label: 'Pre Attack Images',
+    label: 'View',
     submenu: [
         {
-            label: 'View',
+            label: 'Pre Attack Images',
             click(item, focusedWindow){
                 createPreAnimationWindow();
             }
-        }
-    ]
-})
-
-mainMenuTemplate.push({
-    label: 'Post Attack Images',
-    submenu: [
+        },
         {
-            label: 'View',
+            label: 'Post Attack Images',
             click(item, focusedWindow){
                 createPostAnimationWindow();
             }
-        }
+        },
+        {
+            label: 'Opacity Levels',
+            click(item, focusedWindow){
+                createOpacityMenu();
+            }
+        },
     ]
 })
+
 
 
 
 //Add developer tools item if not in production
-
-/*if(process.env.Node_ENV !== 'production'){
+/*
+if(process.env.Node_ENV !== 'production'){
     mainMenuTemplate.push({
         label: 'Developer Tools',
         submenu: [
@@ -254,7 +289,7 @@ mainMenuTemplate.push({
             }
         ]
     })
-} */
+}  */
 
 //Run create window
 app.whenReady().then(() => {
@@ -311,7 +346,7 @@ function determineRomType(rom){
 /////Ipc's
 
 //Create Animation
-ipcMain.on('form:submit', function(event, attackName, background, scrollType, scrollSpeed, removeBlink, attack1, attack2, attack3, attack4, attack1KeepBackground, attack2KeepBackground, attack3KeepBackground, attack4KeepBackground, postAnimation1, postAnimation2, postAnimation3, postAnimation4, preAnimation1, preAnimation2, preAnimation3, preAnimation4) {
+ipcMain.on('form:submit', function(event, attackName, background, scrollType, scrollSpeed, removeBlink, attack1, attack2, attack3, attack4, attack1KeepBackground, attack2KeepBackground, attack3KeepBackground, attack4KeepBackground, postAnimation1, postAnimation2, postAnimation3, postAnimation4, preAnimation1, preAnimation2, preAnimation3, preAnimation4, customParticleColour1, customParticleColour2, customParticleColour3, customParticleColour4, particleColour1, particleColour2, particleColour3, particleColour4, particleOpacity1, particleOpacity2, particleOpacity3, particleOpacity4) {
     var combinedAnimation;
     var bytesNeeded;
     var psychicBackgroundUsed = false;
@@ -319,7 +354,7 @@ ipcMain.on('form:submit', function(event, attackName, background, scrollType, sc
     var moveData2;
     var moveData3;
     var moveData4;
-
+    
     //Check if ROM is open
     if(rom != null){
         //Case 1. User selects Default Background or No Background
@@ -335,7 +370,9 @@ ipcMain.on('form:submit', function(event, attackName, background, scrollType, sc
             moveData1.code = trimTrailing08(moveData1.code);
             moveData1.code = addPreAnimation(moveData1, preAnimation1);
             moveData1.code = addPostAnimation(moveData1, postAnimation1);
-
+            if(customParticleColour1 == "Custom"){
+                moveData1.code = changeParticleColor(moveData1, particleColour1, particleOpacity1, preAnimation1);
+            }
             if(attack2 != "---"){
                 moveData2 = getMoveAnimationData(attack2);
                 moveData2.code = selectAnimationCodeToUse(moveData2);
@@ -348,6 +385,9 @@ ipcMain.on('form:submit', function(event, attackName, background, scrollType, sc
                 moveData2.code = trimTrailing08(moveData2.code);
                 moveData2.code = addPreAnimation(moveData2, preAnimation2);
                 moveData2.code = addPostAnimation(moveData2, postAnimation2);
+                if(customParticleColour2 == "Custom"){
+                    moveData2.code = changeParticleColor(moveData2, particleColour2, particleOpacity2, preAnimation2);
+                }
             }
             if(attack3 != "---"){
                 moveData3 = getMoveAnimationData(attack3);
@@ -361,6 +401,9 @@ ipcMain.on('form:submit', function(event, attackName, background, scrollType, sc
                 moveData3.code = trimTrailing08(moveData3.code);
                 moveData3.code = addPreAnimation(moveData3, preAnimation3);
                 moveData3.code = addPostAnimation(moveData3, postAnimation3);
+                if(customParticleColour3 == "Custom"){
+                    moveData3.code = changeParticleColor(moveData3, particleColour3, particleOpacity3, preAnimation3);
+                }
             }
             if(attack4 != "---"){
                 moveData4 = getMoveAnimationData(attack4);
@@ -374,6 +417,9 @@ ipcMain.on('form:submit', function(event, attackName, background, scrollType, sc
                 moveData4.code = trimTrailing08(moveData4.code);
                 moveData4.code = addPreAnimation(moveData4, preAnimation4);
                 moveData4.code = addPostAnimation(moveData4, postAnimation4);
+                if(customParticleColour4 == "Custom"){
+                    moveData4.code = changeParticleColor(moveData4, particleColour4, particleOpacity4, preAnimation4);
+                }
             }
 
             combinedAnimation = concatAnimation(moveData1, moveData2, moveData3, moveData4);
@@ -404,6 +450,9 @@ ipcMain.on('form:submit', function(event, attackName, background, scrollType, sc
             moveData1.code = trimTrailing08(moveData1.code)
             moveData1.code = addPreAnimation(moveData1, preAnimation1);
             moveData1.code = addPostAnimation(moveData1, postAnimation1)
+            if(customParticleColour1 == "Custom"){
+                moveData1.code = changeParticleColor(moveData1, particleColour1, particleOpacity1, preAnimation1);
+            }
 
             if(attack2 != "---"){
                 moveData2 = getMoveAnimationData(attack2);
@@ -419,6 +468,9 @@ ipcMain.on('form:submit', function(event, attackName, background, scrollType, sc
                 moveData2.code = trimTrailing08(moveData2.code);
                 moveData2.code = addPreAnimation(moveData2, preAnimation2);
                 moveData2.code = addPostAnimation(moveData2, postAnimation2)
+                if(customParticleColour2 == "Custom"){
+                    moveData2.code = changeParticleColor(moveData2, particleColour2, particleOpacity2, preAnimation2);
+                }
             }
 
             if(attack3 != "---"){
@@ -435,6 +487,9 @@ ipcMain.on('form:submit', function(event, attackName, background, scrollType, sc
                 moveData3.code = trimTrailing08(moveData3.code);
                 moveData3.code = addPreAnimation(moveData3, preAnimation3);
                 moveData3.code = addPostAnimation(moveData3, postAnimation3)
+                if(customParticleColour3 == "Custom"){
+                    moveData3.code = changeParticleColor(moveData3, particleColour3, particleOpacity3, preAnimation3);
+                }
             }
 
             if(attack4 != "---"){
@@ -450,7 +505,10 @@ ipcMain.on('form:submit', function(event, attackName, background, scrollType, sc
                 }
                 moveData4.code = trimTrailing08(moveData4.code);
                 moveData4.code = addPreAnimation(moveData4, preAnimation4);
-                moveData4.code = addPostAnimation(moveData4, postAnimation4)
+                moveData4.code = addPostAnimation(moveData4, postAnimation4);
+                if(customParticleColour4 == "Custom"){
+                    moveData4.code = changeParticleColor(moveData4, particleColour4, particleOpacity4, preAnimation4);
+                }
             }
 
             combinedAnimation = concatAnimation(moveData1, moveData2, moveData3, moveData4);
@@ -504,12 +562,14 @@ ipcMain.on('backgroud:change', function(event, data) {
 });
 
 ipcMain.on('postAttack:change', function(event, data) {
-    postAnimationWindow.webContents.send('postAttackImage', data);
+    var obj = getPostAnimationObject(data);
+    postAnimationWindow.webContents.send('postAttackImage', data, obj);
    // loadPostAttackImageToUI(data);
 });
 
 ipcMain.on('preAttack:change', function(event, data) {
-    preAnimationWindow.webContents.send('preAttackImage', data);
+    var obj = getPreAnimationObject(data);
+    preAnimationWindow.webContents.send('preAttackImage', data, obj);
 });
 
 ipcMain.on('button:searchFreeSpace', function(event, bytesNeeded){
@@ -1549,6 +1609,123 @@ function addPreAnimation(moveData, preAnimation){
     }
 }
 
+//Function recieves a move and changes the color of each particle in it (if it has one) to specified color/opacity
+function changeParticleColor(moveData, particleColour, particleOpacity, preAnimation){
+    //Get all the particles
+    var particles = getAllParticlesFromAnimation(moveData.code, preAnimation)
+
+    //If no particles, just return
+    if(particles.length == 0){
+        return moveData.code;
+    } else {
+        //Convert color to GBA format
+        var colorCode = hexToE(particleColour);
+        //Swap particle color >> AABB to BBAA
+        colorCode = colorCode.substring(2) + colorCode.substring(0, 2);
+
+        var codeToAdd = [];
+        for(var i=0; i<particles.length; i++){
+            //Trim the 00 + space at the start of each particle code as it's not needed
+            particles[i] = particles[i].substring(3);
+            codeToAdd.push(createParticleColorCode(particles[i], colorCode, particleOpacity))
+        }
+        //Now its time to insert the code. Needs to be inserted AFTER the last particle decleration
+        var positionToInsert = findWhereCodeBegins(moveData.code, particles[particles.length - 1])
+        positionToInsert += 6 //Skip over final particle decleration => 00 XX 27.
+        
+        var newCode = "";
+        for(var i=0; i<moveData.code.length; i++){
+            if(i == positionToInsert){
+                //Insert colored particle code
+                for(var j=0; j<codeToAdd.length; j++){
+                   // for(var z=0; z<codeToAdd[j].length; z++)
+                    newCode += (codeToAdd[j])
+                } 
+            }
+            newCode += moveData.code[i];
+        }
+        return newCode;
+    }
+   
+}
+
+//Function creates and returns the code that changes the color/opacity of the given particle
+function createParticleColorCode(particle, colorCode, particleOpacity){
+    var baseCode; 
+    if(romType == "Fire Red"){
+        baseCode = background.nonBackgroundCommands[0].colourParticle;
+    } else if(romType == "Emerald"){
+        baseCode = background.nonBackgroundCommands[0].colourParticleEmerald;
+    }
+
+    //Append 0 to if value is 0-9. (This ensures result is 01, not 1 for example)
+    if(particleOpacity.length = 1){
+        particleOpacity = "0" + particleOpacity
+    }
+    baseCode = baseCode.replaceAll('XX', particle)
+    baseCode = baseCode.replaceAll('YY', particleOpacity)
+    baseCode = baseCode.replaceAll('ZZ', colorCode)
+    
+    return baseCode;
+}
+
+//Function recieves animation code and searches for all particle declarations -> 00 XX 27 or 00 xx 28 and returns them in an array
+//Since particle declarations only happen at the beginning of the code, we only need to search in the first 30 byes
+//Since an animation might have a pre animation, you have to look further into the code to find the particle declarations
+function getAllParticlesFromAnimation(code, preAnimation){
+    var particleArray = [];
+    var bytes = 33;
+
+    if(code.length < 33){
+        bytes = code.length;
+    }
+
+    //Increase the search radius for particle declerations if the animation has a pre animation
+    if(preAnimation != "None"){
+        var preAnimationObjectToAdd = getPreAnimationObject(preAnimation);
+        bytes += preAnimationObjectToAdd.pointer.length;
+    }
+
+    for(var i=0; i<bytes; i++){
+        if(code[i] == '0' && code[i+1] == '0' && code[i+6] == '2' && (code[i+7] == '7' || code[i+7] == '8')){
+            particleArray.push(code[i] + "" + code[i+1] + " " + code[i+3] +"" + code[i+4] + " " + code[i+6] + "" + code[i+7])
+        }
+    }
+    
+    return particleArray;
+
+}
+
+function hexToE(h){
+	// get int values of html hex RGB components
+	var red = parseInt((cutHex(h)).substring(0,2),16);	
+	var green = parseInt((cutHex(h)).substring(2,4),16);
+	var blue = parseInt((cutHex(h)).substring(4,6),16)
+
+	// reduce to 5-bit integer values
+	red = Math.floor(red/8);
+	green = Math.floor(green/8);
+	blue = Math.floor(blue/8);
+
+	// convert 5-bit RGB values to binary and combine
+	var bR = PadZero(5,red.toString(2));
+	var bG = PadZero(5,green.toString(2));
+	var bB = PadZero(5,blue.toString(2));
+	var bBGR = bB + bG + bR;
+
+	// convert final binary value to hex
+	var hfinal = PadZero(4,Bin2Hex(bBGR).toUpperCase());
+	return hfinal;
+}
+
+function cutHex(h) { return (h.charAt(0)=="#") ? h.substring(1,7) : h}
+function checkBin(n){return/^[01]{1,64}$/.test(n)}
+function Bin2Hex(n){if(!checkBin(n))return 0;return parseInt(n,2).toString(16)}
+function PadZero(len, input, str){
+	return Array(len-String(input).length+1).join(str||'0')+input;
+}
+
+
 function getPostAnimationObject(postAnimation){
     for(var i=0; i<postAttackAnimation.postAttack.length; i++){
         if(postAnimation == postAttackAnimation.postAttack[i].name){
@@ -1911,6 +2088,10 @@ function addHorizontalSpeedToCode(code, value){
 
 function addVerticalSpeedToCode(code, value){
     return code.replace("YY", value)
+}
+
+function replaceCodeWithGivenValue(code, value, codeToReplace){
+    return code.replace(codeToReplace, value)
 }
 
 function concatAnimation(move1, move2, move3, move4){

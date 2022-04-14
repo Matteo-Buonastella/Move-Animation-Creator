@@ -1,6 +1,6 @@
 {
   "name": "moveanimator",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Create Move Animations for Fire Red",
   "main": "main.js",
   "scripts": {
@@ -14,7 +14,7 @@
   "dependencies": {
     "bootstrap": "^5.0.2",
     "check-disk-space": "^3.0.1",
-    "electron": "^13.1.4",
+    "electron": "^13.6.9",
     "jquery": "^3.6.0"
   },
   "devDependencies": {

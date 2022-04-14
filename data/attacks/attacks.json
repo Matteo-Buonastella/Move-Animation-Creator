@@ -4735,6 +4735,28 @@
             "emeraldCode": "00 97 27 00 9F 27 19 7B 00 3F 02 8C 72 59 08 02 07 1F 00 03 00 01 00 FF 7F 08 00 00 00 00 00 02 98 5E 59 08 84 05 00 00 00 00 0A 00 01 00 00 00 02 58 73 59 08 83 04 00 00 00 00 01 00 01 00 03 89 63 0D 08 05 05 00 00 01 00 08 00 01 00 00 00 05 08"
         },
         {
+            "id": "457",
+            "name": "Push Away",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,   
+            "postAnimation": [],         
+            "code": "03 01 D8 0A 08 05 00 04 0C 05 08",
+            "emeraldCode": "03 BD 9D 10 08 05 00 04 0C 05 08"
+        },
+        {
+            "id": "458",
+            "name": "Push Away 2",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,   
+            "postAnimation": [],         
+            "code": "03 11 92 0A 08 02 00 04 0C 05 08",
+            "emeraldCode": "03 11 58 10 08 02 00 04 0C 05 08"
+        },
+        {
             "id":"435",
             "name": "Razor Leaf Blades",
             "background": false,
@@ -4843,6 +4865,18 @@
             "postAnimation": [],                                                                                                                           
             "code": "00 56 27 19 C8 00 C0 0E 4F DC 1C 08 05 08",
             "emeraldCode": "00 56 27 19 CF 00 C0 0E 14 00 2D 08 05 08"
+        },
+
+        {
+            "id": "456",
+            "name": "Startle Foe",
+            "background": false,
+            "coloredBackground": false,
+            "psychicBackground": false,
+            "scroll": false,   
+            "postAnimation": [],         
+            "code": "03 DD 28 0E 08 03 02 01 00 02 00 1C 7F 00 3F 0C 02 05 08",
+            "emeraldCode": "03 41 E8 15 08 03 02 01 00 02 00 1C 86 00 3F 0C 02 05 08"
         },
         {
             "id":"445",

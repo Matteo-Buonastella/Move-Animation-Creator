@@ -9,27 +9,31 @@ ipcRenderer.on('backgroundImage', (event, accessToken) => {
     document.getElementById("displayBackgroundImage").src = "./data/background/images/" + accessToken + ".png";
 });
 
-ipcRenderer.on('postAttackImage', (event, accessToken) => {
+ipcRenderer.on('postAttackImage', (event, accessToken, obj) => {
     if(accessToken == "Heavy Shake Foe" || accessToken == "Tickle Shake Foe" || accessToken == "Hit Foe In Circle"
-    || accessToken == "Slice-X" || accessToken == "Come Back"
+    || accessToken == "Slice-X" || accessToken == "Come Back" || accessToken == "Startle Foe" || accessToken == "Push Away"
+    || accessToken == "Push Away 2"
     ){
         document.getElementById("displayPostAttackImage").src = "./data/post-attack/" + accessToken + ".gif";
     } else{
         document.getElementById("displayPostAttackImage").src = "./data/post-attack/" + accessToken + ".png";
     }
+    document.getElementById("description").innerHTML = obj.description;
 });
 
-ipcRenderer.on('preAttackImage', (event, accessToken) => {
+ipcRenderer.on('preAttackImage', (event, accessToken, obj) => {
     if(accessToken == "Move Circle User" || accessToken == "Move Down User" || accessToken == "Move Left and Right User" || accessToken == "Shake Up & Down User" 
     || accessToken == "Shake Turn Red" || accessToken == "Slight Shake User" || accessToken == "User Yawns" 
     || accessToken == "Air Cutter Start" || accessToken == "Ancientpower Lift Rocks" || accessToken == "Charm" 
     || accessToken == "Destiny Bond Surface" || accessToken == "Leafs" || accessToken == "Shooting Stars" || accessToken == "Buff Up" 
     || accessToken == "Ready Aim" || accessToken == "Fade But Not You" || accessToken == "Invert Background" || accessToken == "Sun Rays"
+    || accessToken == "Shine" || accessToken == "Three Charges"
     ){
         document.getElementById("displayPreAttackImage").src = "./data/pre-attack/" + accessToken + ".gif"; 
     } else {
         document.getElementById("displayPreAttackImage").src = "./data/pre-attack/" + accessToken + ".png"; 
     }
+    document.getElementById("description").innerHTML = obj.description
 });
 
 //Rom not loaded. Display error popup

@@ -7,7 +7,8 @@
             "emeraldPointer": "0C 00 10 02 BC 2E 59 08 02 02 78 00 38 00 03 75 7A 0A 08 03 05 00 00 10 00 10 00 00 00 01 00 19 D3 00 00 04 C8 03 C1 25 10 08 02 00",
             "ending": "",
             "endingEmerald": "",
-            "import": "00 D2 27"
+            "import": "00 D2 27",
+            "description": ""
         },
         {
             "id": 4,
@@ -21,11 +22,12 @@
         {
             "id": 5,
             "name": "Ancientpower Lift Rocks",
-            "pointer": "0A 03 0C 0C 08 02 88 7B 3E 08 02 04 04 00 01 00 0A 00 01 00 02 C0 74 3E 08 02 05 14 00 20 00 D0 FF 32 00 02 00 02 C0 74 3E 08 02 05 00 00 20 00 DA FF 19 00 05 00 02 C0 74 3E 08 02 05 20 00 20 00 E4 FF 28 00 03 00 02 C0 74 3E 08 02 05 EC FF 20 00 D0 FF 32 00 02 00 02 C0 74 3E 08 02 05 14 00 20 00 E4 FF 3C 00 01 00 02 C0 74 3E 08 02 05 00 00 20 00 E4 FF 1E 00 04 00 03 1D 8B 09 08 02 05 00 00 01 00 00 00 1E 00 01 00 05",
-            "emeraldPointer": "0A 03 0C 0C 08 02 D8 72 59 08 02 04 04 00 01 00 0A 00 01 00 02 10 6C 59 08 02 05 14 00 20 00 D0 FF 32 00 02 00 02 10 6C 59 08 02 05 00 00 20 00 DA FF 19 00 05 00 02 10 6C 59 08 02 05 20 00 20 00 E4 FF 28 00 03 00 02 10 6C 59 08 02 05 EC FF 20 00 D0 FF 32 00 02 00 02 10 6C 59 08 02 05 14 00 20 00 E4 FF 3C 00 01 00 02 10 6C 59 08 02 05 00 00 20 00 E4 FF 1E 00 04 00 03 D1 52 0D 08 02 05 00 00 01 00 00 00 1E 00 01 00 05",
+            "pointer": "0C 0C 08 02 88 7B 3E 08 02 04 04 00 01 00 0A 00 01 00 02 C0 74 3E 08 02 05 14 00 20 00 D0 FF 32 00 02 00 02 C0 74 3E 08 02 05 00 00 20 00 DA FF 19 00 05 00 02 C0 74 3E 08 02 05 20 00 20 00 E4 FF 28 00 03 00 02 C0 74 3E 08 02 05 EC FF 20 00 D0 FF 32 00 02 00 02 C0 74 3E 08 02 05 14 00 20 00 E4 FF 3C 00 01 00 02 C0 74 3E 08 02 05 00 00 20 00 E4 FF 1E 00 04 00 03 1D 8B 09 08 02 05 00 00 01 00 00 00 1E 00 01 00 05",
+            "emeraldPointer": "0C 0C 08 02 D8 72 59 08 02 04 04 00 01 00 0A 00 01 00 02 10 6C 59 08 02 05 14 00 20 00 D0 FF 32 00 02 00 02 10 6C 59 08 02 05 00 00 20 00 DA FF 19 00 05 00 02 10 6C 59 08 02 05 20 00 20 00 E4 FF 28 00 03 00 02 10 6C 59 08 02 05 EC FF 20 00 D0 FF 32 00 02 00 02 10 6C 59 08 02 05 14 00 20 00 E4 FF 3C 00 01 00 02 10 6C 59 08 02 05 00 00 20 00 E4 FF 1E 00 04 00 03 D1 52 0D 08 02 05 00 00 01 00 00 00 1E 00 01 00 05",
             "ending": "05 0B 03 0D",
             "endingEmerald": "05 0B 03 0D",
-            "import": "00 4A 27 00 97 27"
+            "import": "00 4A 27 00 97 27",
+            "description": ""
         },
         {
             "id": 25,
@@ -34,7 +36,8 @@
             "emeraldPointer": "0A 00 28 00 04 01 03 E9 33 11 08 05 00 19 CB 00 C0 04 08",
             "ending": "0B 00 04 01",
             "endingEmerald": "0B 00 04 01",
-            "import": ""
+            "import": "",
+            "description": ""
         },
         {
             "id": 16,
@@ -43,7 +46,8 @@
             "emeraldPointer": "0C 0C 08 03 35 00 11 08 05 01 00 00 03 15 FE 10 08 05 01 02 00 19 C0 00 C0 05",
             "ending": "",
             "endingEmerald": "",
-            "import": ""
+            "import": "",
+            "description": ""
         },
         {
             "id": 26,
@@ -52,7 +56,8 @@
             "emeraldPointer": "0A 00 02 88 E2 5C 08 02 06 00 00 00 00 20 00 E0 FF 28 00 FE FF 03 B1 AD 15 08 02 03 00 00 02 00 00 00 1C A0 00 C0 08 04 05",
             "ending": "0A 00 03 9D EF 0D 08 02 03 00 00 02 00 01 00 1C 99 00 C0 08 04 05 0B 00",
             "endingEmerald": "0A 00 03 B1 AD 15 08 02 03 00 00 02 00 01 00 1C A0 00 C0 08 04 05 0B 00",
-            "import": "00 F5 27"
+            "import": "00 F5 27",
+            "description": ""
         },
         {
             "id": 27,
@@ -61,7 +66,8 @@
             "emeraldPointer": "19 98 00 C0 03 B5 B6 15 08 05 00 05",
             "ending": "",
             "endingEmerald": "",
-            "import": ""
+            "import": "",
+            "description": ""
         },
         {
             "id": 22,
@@ -70,7 +76,8 @@
             "emeraldPointer": "03 79 C4 15 08 05 03 00 00 02 00 00 00 02 70 39 59 08 03 02 00 00 14 00 19 D4 00 C0 04 0F 02 70 39 59 08 03 02 EC FF 14 00 19 D4 00 C0 04 0F 02 70 39 59 08 03 02 14 00 14 00 19 D4 00 C0 05",
             "ending": "",
             "endingEmerald": "",
-            "import": "00 E2 27"
+            "import": "00 E2 27",
+            "description": ""
         },
         {
             "id": 7,
@@ -79,7 +86,8 @@
             "emeraldPointer": "02 70 39 59 08 03 02 00 00 14 00 19 D4 00 C0 04 0F 02 70 39 59 08 03 02 EC FF 14 00 19 D4 00 C0 04 0F 02 70 39 59 08 03 02 14 00 14 00 19 D4 00 C0 05",
             "ending": "",
             "endingEmerald": "",
-            "import": "00 E2 27"
+            "import": "00 E2 27",
+            "description": ""
         },
         {
             "id": 9,
@@ -88,7 +96,8 @@
             "emeraldPointer": "19 79 00 3F 02 E8 6D 59 08 82 00 03 D1 52 0D 08 02 05 01 00 02 00 00 00 0E 00 01 00 05",
             "ending": "",
             "endingEmerald": "",
-            "import": "00 D8 27"
+            "import": "00 D8 27",
+            "description": ""
         },
         {
             "id": 10,
@@ -97,7 +106,8 @@
             "emeraldPointer": "19 BD 00 C0 03 C5 23 11 08 05 02 00 00 30 00 05",
             "ending": "",
             "endingEmerald": "",
-            "import": "00 CC 27"
+            "import": "00 CC 27",
+            "description": ""
         },
         {
             "id": 24,
@@ -106,7 +116,8 @@
             "emeraldPointer": "03 65 66 11 08 05 05 00 00 00 00 00 00 10 00 00 00 05",
             "ending": "03 3D A8 0B 08 05 05 00 00 00 00 10 00 00 00 00 00 05",
             "endingEmerald": "03 65 66 11 08 05 05 00 00 00 00 10 00 00 00 00 00 05",
-            "import": ""
+            "import": "",
+            "description": "The backgroud will fade black, as well as all the monsters except the attacker."
         },
         {
             "id": 23,
@@ -115,7 +126,8 @@
             "emeraldPointer": "02 D8 2C 59 08 02 01 00 00 19 A2 00 C0 05 04 02 02 D8 2C 59 08 02 01 01 00 05",
             "ending": "02 50 35 3E 08 02 01 02 00",
             "endingEmerald": "02 D8 2C 59 08 02 01 02 00",
-            "import": ""    
+            "import": "",
+            "description": ""  
         },
         {
             "id": 12,
@@ -124,7 +136,8 @@
             "emeraldPointer": "03 D1 52 0D 08 02 05 01 00 04 00 00 00 16 00 01 00 03 21 66 11 08 0A 05 04 00 02 00 00 00 00 00 FF 7F 02 8C 72 59 08 02 07 1F 00 03 00 01 00 00 00 08 00 00 00 00 00 19 7B 00 3F 05 0B 01 0D 04 02",
             "ending": "",
             "endingEmerald": "",
-            "import": ""    
+            "import": "",
+            "description": ""    
         },
         {
             "id": 28,
@@ -133,7 +146,8 @@
             "emeraldPointer": "03 11 5F 11 08 02 03 01 01 01 01 01 01 04 08",
             "ending": "03 E9 A0 0B 08 02 03 01 01 01 01 01 01",
             "endingEmerald": "03 11 5F 11 08 02 03 01 01 01 01 01 01",
-            "import": ""
+            "import": "",
+            "description": "Recommended to use with moves that don't have a background or that has a global background set. i.e. instead of Default -> Invert Background -> Shadow Ball, do Ghost Background -> Invert Background -> Shadow Ball"
         },
         {
             "id": 18,
@@ -142,7 +156,8 @@
             "emeraldPointer": "1C A9 00 C0 0A 05 02 90 23 59 08 02 03 FD FF FE FF 0A 00 04 02 02 90 23 59 08 02 03 FF FF FF FF 0F 00 04 02 02 90 23 59 08 02 03 FC FF FC FF 07 00 04 02 02 90 23 59 08 02 03 03 00 FD FF 0B 00 04 02 02 90 23 59 08 02 03 FF FF FA FF 08 00 04 02 02 90 23 59 08 02 03 02 00 FF FF 0C 00 04 02 02 90 23 59 08 02 03 FD FF FC FF 0D 00 04 02 02 90 23 59 08 02 03 04 00 FB FF 07 00 04 02 02 90 23 59 08 02 03 02 00 FA FF 0B 00 04 02 02 90 23 59 08 02 03 FD FF FB FF 08 00 04 3C",
             "ending": "",
             "endingEmerald": "",
-            "import": "00 4F 27"
+            "import": "00 4F 27",
+            "description": ""
         },
         {
             "id": 6,
@@ -151,7 +166,8 @@
             "emeraldPointer": "19 98 00 C0 02 40 FE 57 08 02 03 06 00 01 00 00 00 05",
             "ending": "",
             "endingEmerald": "",
-            "import": ""
+            "import": "",
+            "description": ""
         },
         {
             "id": 8,
@@ -160,7 +176,8 @@
             "emeraldPointer": "03 31 58 0D 08 02 05 00 00 12 00 06 00 01 00 04 00 19 7A 00 C0 05",
             "ending": "",
             "endingEmerald": "",
-            "import": ""
+            "import": "",
+            "description": ""
         },
         {
             "id": 2,
@@ -169,7 +186,8 @@
             "emeraldPointer": "03 B9 5E 0D 08 03 05 00 00 06 00 00 05 03 00 00 00",
             "ending": "",
             "endingEmerald": "",
-            "import": ""
+            "import": "",
+            "description": "The move you select will play at the same time as this pre animation."
         },
         {
             "id": 17,
@@ -178,7 +196,8 @@
             "emeraldPointer": "0C 08 08 19 B8 00 C0 03 05 5A 11 08 02 06 02 00 00 00 02 00 00 00 08 00 FF 7F 03 65 60 0D 08 05 05 FC FF FC FF 0F 00 00 00 01 00 05",
             "ending": "",
             "endingEmerald": "",
-            "import": ""
+            "import": "",
+            "description": ""
         },
         {
             "id": 30,
@@ -187,7 +206,8 @@
             "emeraldPointer": "03 95 1C 10 08 02 01 00 00 19 98 00 C0 05",
             "ending": "03 95 56 0A 08 02 01 01 00",
             "endingEmerald": "03 95 1C 10 08 02 01 01 00",
-            "import": ""
+            "import": "",
+            "description": ""
         },
         {
             "id": 20,
@@ -196,7 +216,8 @@
             "emeraldPointer": "19 D0 00 3F 02 DC E8 5C 08 83 05 D0 FF C0 FF 48 00 20 00 1E 00 04 0A 02 DC E8 5C 08 83 05 90 FF C0 FF 08 00 20 00 1E 00 04 28 02 DC E8 5C 08 83 05 B0 FF C0 FF 28 00 20 00 1E 00 05",
             "ending": "",
             "endingEmerald": "",
-            "import": "00 F9 27"
+            "import": "00 F9 27",
+            "description": ""
         },
         {
             "id": 3,
@@ -205,7 +226,8 @@
             "emeraldPointer": "03 B9 5E 0D 08 03 05 00 00 06 00 00 05 03 00 00 00",
             "ending": "",
             "endingEmerald": "",
-            "import": ""
+            "import": "",
+            "description": ""
         },
         {
             "id": 14,
@@ -214,7 +236,8 @@
             "emeraldPointer": "19 AB 00 C0 03 AD 51 0D 08 05 05 00 00 00 00 02 00 28 00 01 00 05",
             "ending": "",
             "endingEmerald": "",
-            "import": ""
+            "import": "",
+            "description": "GIF doesn't do animation justice. User will shake up and down ever so slightly, but very quickly."
         },
         {
             "id": 23,
@@ -223,7 +246,18 @@
             "emeraldPointer": "03 85 54 0D 08 02 05 00 00 01 00 00 00 14 00 01 00 19 AB 00 C0 05 03 85 54 0D 08 02 05 00 00 03 00 00 00 30 00 01 00 03 99 7B 0A 08 02 05 00 00 DF 04 0C 00 04 00 01 00 05",
             "ending": "",
             "endingEmerald": "",
-            "import": ""
+            "import": "",
+            "description": ""
+        },
+        {
+            "id": 31,
+            "name": "Shine",
+            "pointer": "19 A4 00 C0 03 ED AC 0B 08 05 00 05",
+            "emeraldPointer": "19 AB 00 C0 03 15 6B 11 08 05 00 05",
+            "import": "",
+            "ending": "" ,
+            "endingEmerald": "",
+            "description": ""
         },
         {
             "id": 13,
@@ -232,7 +266,8 @@
             "emeraldPointer": "0A 02 28 00 0C 0C 08 02 EC 5F 59 08 82 01 00 00 19 8C 00 C0 04 14 02 D8 72 59 08 02 04 04 00 01 00 B4 00 01 00 03 45 92 15 08 05 02 EA 00 00 00 04 28 02 04 60 59 08 29 04 C8 00 60 00 01 00 78 00 04 08 02 04 60 59 08 29 04 14 00 F8 00 04 00 70 00 04 08 02 04 60 59 08 29 04 82 00 A0 00 02 00 68 00 04 08 02 04 60 59 08 29 04 A0 00 C0 00 00 00 60 00 04 08 02 04 60 59 08 29 04 3C 00 20 01 03 00 58 00 04 4A",
             "import": "00 E4 27 00 10 28 00 11 28",
             "ending": "05 0B 03 0D 08" ,
-            "endingEmerald": ""
+            "endingEmerald": "",
+            "description": ""
         },
         {
             "id": 29,
@@ -241,7 +276,18 @@
             "emeraldPointer": "03 85 BB 15 08 05 00 05",
             "ending": "",
             "endingEmerald": "",
-            "import": ""
+            "import": "",
+            "description": ""
+        },
+        {
+            "id": 32,
+            "name": "Three Charges",
+            "pointer": "03 E5 2C 0E 08 05 00 05",
+            "emeraldPointer": "03 49 EC 15 08 05 00 05",
+            "import": "",
+            "ending": "" ,
+            "endingEmerald": "",
+            "description": ""
         },
         {
             "id": 1,
@@ -250,7 +296,8 @@
             "emeraldPointer": "03 79 C4 15 08 03 03 01 00 06 00 02 00 1C A7 00 3F 08 08 05",
             "ending": "",
             "endingEmerald": "",
-            "import": ""
+            "import": "",
+            "description": ""
         },
         {
             "id": 21,
@@ -259,7 +306,8 @@
             "emeraldPointer": "03 4D D6 15 08 02 01 00 00 19 ED 00 C0 05",
             "ending": "",
             "endingEmerald": "",
-            "import": ""
+            "import": "",
+            "description": ""
         }
     ]
 }
