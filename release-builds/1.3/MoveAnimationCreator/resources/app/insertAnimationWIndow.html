@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Move Animation Creator</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <meta charset="utf-8">
+    </head>
+
+    <body>
+        <div class="container mt-2">
+            <div class="row">
+                <div class="col">
+                    <button type="submit" id="searchFreeSpaceBtn" class="btn-sm btn-primary mb-2">Find Free Space</button>
+                    <p>Bytes Needed: <strong><span id="bytesNeeded"></span></strong></p>
+                </div>
+            </div>
+            <form>
+                <div class="row">
+                    <div class="col">   
+                        <div class="mb-3">
+                            <label for="offset" class="form-label" >Memory Offset:</label>
+                            <input type="text" class="form-control" id="offset" placeholder="Ex: 82748A" required>
+                            <input type="hidden" id="hex" />
+                        </div>
+                        <div  class="text-center">
+                            <button type="submit" id="insertButton" class="btn-sm btn-success"> Insert </button> 
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <script>
+            require('./renderer.js');
+            const electron = require('electron')
+            const {ipcRenderer} = electron
+
+            const form = document.querySelector('form');
+            form.addEventListener('submit', submitForm);
+
+            function submitForm(e){
+                e.preventDefault();
+
+                //Disable submit
+                document.getElementById('insertButton').disabled = true;
+
+                const memoryOffset = document.querySelector('#offset').value
+                const hex = document.querySelector('#hex').value
+
+                ipcRenderer.send('form:insertAnimationSubmit', memoryOffset, hex);
+            }
+
+            var btn = document.getElementById('searchFreeSpaceBtn');
+            btn.addEventListener('click', function (event) {
+                const bytesNeeded = document.querySelector('#bytesNeeded').innerText
+                ipcRenderer.send('button:searchFreeSpace', bytesNeeded);
+            });
+
+        </script>
+        
+    </body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Move Animation Creator</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <meta charset="utf-8">
+    </head>
+
+    <body>
+        <div class="container mt-2">
+            <div class="row">
+                <div class="col-6">
+                <label for="background" class="form-label" ></i></label>
+                <select class="form-select" id="select-preAnimation" aria-label="Default select example" style="margin-top: 6px;">
+                    <option id="1" value="None" selected>None</option>
+                    <option value="" disabled="disabled">--- Move User (9) ---</option>
+                    <option id="2" value="Bigger Shadow User">Bigger Shadow User</option>
+                    <option id="8" value="Move Circle User">Move Circle User</option>
+                    <option id="6" value="Move Down User">Move Down User</option>
+                    <option id="2" value="Move Left and Right User">Move Left and Right User</option>
+                    <option id="17" value="Psychic Shadow User">Psychic Shadow User</option>
+                    <option id="14" value="Shake Up & Down User">Shake Up & Down User</option>
+                    <option id="23" value="Shake Turn Red">Shake Turn Red</option>
+                    <option id="3" value="Slight Shake User">Slight Shake User</option>
+                    <option id="21" value="User Yawns">User Yawns</option>
+                    <option value="" disabled="disabled">--- Other (6) ---</option>
+                    <option id="4" value="Air Cutter Start">Air Cutter Start</option>
+                    <option id="5" value="Ancientpower Lift Rocks">Ancientpower Lift Rocks</option>
+                    <option id="22" value="Charm">Charm</option>
+                    <option id="10" value="Destiny Bond Surface">Destiny Bond Surface</option>
+                    <option id="7" value="Hearts User">Hearts User</option>
+                    <option id="18" value="Leafs">Leafs</option>
+                    <option id="20" value="Shooting Stars">Shooting Stars</option>
+                </select>
+            </div>
+           
+            <div class="col-6">
+                <img id="displayPreAttackImage" width="400px" src="./data/pre-attack/None.PNG" class="img-fluid" alt="None">
+            </div>
+            
+            
+            </div>
+        </div>
+    </div>
+
+    
+
+
+    <script>
+         var $ = require('jquery');
+         require('./renderer.js');
+         const electron = require('electron')
+         const {ipcRenderer} = electron
+
+         $('#select-preAnimation').on('change', function(e) {
+             e.preventDefault();
+             ipcRenderer.send('preAttack:change', this.value)
+         });
+         
+ 
+        
+ 
+     </script>
+        
+        
+    </body>
+</html>
